@@ -1,0 +1,25 @@
+<%= form_for(@spin_group_member) do |f| %>
+  <% if @spin_group_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_group_member.errors.count, "error") %> prohibited this spin_group_member from being saved:</h2>
+
+      <ul>
+      <% @spin_group_member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spin_uid %><br />
+    <%= f.number_field :spin_uid %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_gid %><br />
+    <%= f.number_field :spin_gid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

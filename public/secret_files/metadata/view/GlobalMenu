@@ -1,0 +1,345 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "globalMenu",
+        "designer|userClassName": "GlobalMenu",
+        "designer|userAlias": "gloabalmenu"
+    },
+    "designerId": "b7f91229-85c8-4abb-98dd-aea8fe406ff0",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "height": 32,
+                "margin": "0 5 0 3",
+                "width": 300,
+                "src": "images/title_UT_s.png"
+            },
+            "designerId": "cc753803-c0a7-4bd2-b706-267084cb863e"
+        },
+        {
+            "type": "Ext.toolbar.TextItem",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "cls": null,
+                "html": null,
+                "margin": null,
+                "style": [
+                    "{\r",
+                    "\t'color': '#fff',\r",
+                    "\t'font-weight': 'bold'\r",
+                    "}"
+                ],
+                "text": "BOOMBOX"
+            },
+            "designerId": "4f4756f6-597e-43c5-b52f-41d9cc6308df"
+        },
+        {
+            "type": "Ext.toolbar.TextItem",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "text": "Ver. 1.10"
+            },
+            "designerId": "3ee39097-9ab1-4813-8ed2-258e66246ed2"
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "frame": true,
+                "id": "activeUser",
+                "itemId": "activeUser",
+                "margin": 2,
+                "padding": 1,
+                "width": 250,
+                "bodyPadding": null,
+                "title": null
+            },
+            "designerId": "0eb95346-dba5-4da0-b5fe-f987ff919d2e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": null,
+                        "margin": "0 0 1 7",
+                        "fieldLabel": "ユーザ名",
+                        "labelWidth": 70,
+                        "name": "active_op_name",
+                        "submitValue": null,
+                        "readOnly": true
+                    },
+                    "designerId": "3a224d47-7aca-433b-9e5d-e3c9813246b2",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTextfieldAfterRender",
+                                "implHandler": [
+                                    "var operatorData = Ext.getStore('ActiveOperatorStore').load();"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "5a8a0047-6977-4bb7-a606-65ff0e141f2b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Fill",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "bb4a1798-782b-4ea9-8f45-dd5984ce29fb"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "hidden": true,
+                "id": "workingBtn",
+                "icon": "data/small_icon/refresh_file.png",
+                "text": "ロックファイル一覧"
+            },
+            "designerId": "f5d4d27e-dd8b-4655-8a6a-3a456b359934",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onWorkingBtnClick",
+                        "implHandler": [
+                            "Ext.create('TeamDomain.view.workingWin').show();"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "6b8e1358-bb01-49c0-bcd9-e1109f5378a3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.resizer.Splitter",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "a1e6693b-8050-4862-9acb-7d58ce97f646"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "id": "optionBtn",
+                "icon": "data/small_icon/system_config.png",
+                "text": "ユーザ情報設定"
+            },
+            "designerId": "f7958752-1d08-496f-a7cd-057950520d5f",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onOptionBtnClick",
+                        "implHandler": [
+                            "Ext.create('TeamDomain.view.optionWin').show();\r",
+                            ""
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "310692fa-04ce-4a7f-943f-bc30b1355ca1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "id": "helpBtn",
+                "icon": "images/help_icon_black.png",
+                "text": "マニュアル"
+            },
+            "designerId": "995d4e4b-7c80-41a0-ab95-a23257ad7346",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onHelpBtnClick",
+                        "implHandler": [
+                            "window.open('help/index.html','help');\r",
+                            ""
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "336613d5-dd0b-4eee-9869-56fa8ef6e9ef"
+                }
+            ]
+        },
+        {
+            "type": "Ext.resizer.Splitter",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "05c137eb-8ba0-45a1-8022-d9a63eda5b64"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "id": "logoutBtn",
+                "icon": "data/small_icon/logout.png",
+                "text": "ログアウト"
+            },
+            "designerId": "e9901ad5-a84b-4805-9e7b-681974a6cc9f",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLogoutBtnClick",
+                        "implHandler": [
+                            "var dataX;\r",
+                            "dataX = Ext.apply({session_id: this_session_id}, dataX);\r",
+                            "dataX = Ext.apply({request_type: \"logout\"}, dataX);\r",
+                            "\r",
+                            "Ext.Msg.confirm('ログアウト','ログアウトしますか?',function(btn){\r",
+                            "\tif (btn == 'yes') {\r",
+                            "\t\tExt.Ajax.request({\r",
+                            "\t\t\turl: 'tdx/updatedata.tdx',\r",
+                            "\t\t\tjsonData: dataX,\r",
+                            "\t\t\tmethod: 'POST',\r",
+                            "\t\t\tsuccess: handleSuccess,\r",
+                            "\t\t\tfailure: handleFailure\r",
+                            "\t\t});\r",
+                            "\t}\r",
+                            "\tif (btn == 'no') {\r",
+                            "\t\t//alert('*****no');\r",
+                            "\t}\t\r",
+                            "});\r",
+                            "\r",
+                            "function handleSuccess(response) {\r",
+                            "\tobj = Ext.JSON.decode(response.responseText);\r",
+                            "\tvar request_success = obj.success;\r",
+                            "\r",
+                            "\tif (request_success === false) {\r",
+                            "\t\tvar request_errors = obj.errors;\r",
+                            "\t\tExt.Msg.show({\r",
+                            "\t\t\ttitle:'ログアウト失敗',\r",
+                            "\t\t\tmsg: request_errors,\r",
+                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                            "\t\t});\r",
+                            "\t} else {\r",
+                            "\t\tvar redirect = obj.initial_uri;\r",
+                            "\t\twindow.location = redirect;\r",
+                            "\t}\r",
+                            "}\r",
+                            "\r",
+                            "function handleFailure(response) {\r",
+                            "\tExt.Msg.show({\r",
+                            "\t\ttitle:'ログアウト失敗',\r",
+                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                            "\t\tbuttons: Ext.Msg.OK\r",
+                            "\t});\r",
+                            "\r",
+                            "}"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "38155afa-d164-4afd-9afd-74fc2a9d7dc7"
+                }
+            ]
+        }
+    ]
+}

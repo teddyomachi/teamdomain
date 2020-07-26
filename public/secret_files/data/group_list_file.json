@@ -1,0 +1,20 @@
+{
+	"groups" :
+	[
+		{
+			"group_name": "営業部",
+			"group_description": "営業部",
+			"group_privilege": "r--"
+		},
+		{
+			"group_name": "開発一部",
+			"group_description": "開発一部",
+			"group_privilege": "rwa"
+		},
+		{
+			"group_name": "開発二部",
+			"group_description": "開発二部",
+			"group_privilege": "r--"
+		}
+	]
+}

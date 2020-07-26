@@ -1,0 +1,79 @@
+<h1>Listing folder_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Hash key</th>
+    <th>Cont location</th>
+    <th>Id</th>
+    <th>Img</th>
+    <th>Text</th>
+    <th>Folder name</th>
+    <th>Owner</th>
+    <th>Ownership</th>
+    <th>Control right</th>
+    <th>Parent readable status</th>
+    <th>Parent writable status</th>
+    <th>Folder readable status</th>
+    <th>Folder writable status</th>
+    <th>Workingfolder</th>
+    <th>Subfolders</th>
+    <th>Filenumber</th>
+    <th>Creator</th>
+    <th>Created date</th>
+    <th>Updater</th>
+    <th>Updated date</th>
+    <th>Usedspace</th>
+    <th>Restspace</th>
+    <th>Capacity</th>
+    <th>Usedrate</th>
+    <th>Cls</th>
+    <th>Expanded</th>
+    <th>Leaf</th>
+    <th>Children</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @folder_data.each do |folder_datum| %>
+  <tr>
+    <td><%= folder_datum.session_id %></td>
+    <td><%= folder_datum.hash_key %></td>
+    <td><%= folder_datum.cont_location %></td>
+    <td><%= folder_datum.id %></td>
+    <td><%= folder_datum.img %></td>
+    <td><%= folder_datum.text %></td>
+    <td><%= folder_datum.folder_name %></td>
+    <td><%= folder_datum.owner %></td>
+    <td><%= folder_datum.ownership %></td>
+    <td><%= folder_datum.control_right %></td>
+    <td><%= folder_datum.parent_readable_status %></td>
+    <td><%= folder_datum.parent_writable_status %></td>
+    <td><%= folder_datum.folder_readable_status %></td>
+    <td><%= folder_datum.folder_writable_status %></td>
+    <td><%= folder_datum.workingFolder %></td>
+    <td><%= folder_datum.subFolders %></td>
+    <td><%= folder_datum.fileNumber %></td>
+    <td><%= folder_datum.creator %></td>
+    <td><%= folder_datum.created_date %></td>
+    <td><%= folder_datum.updater %></td>
+    <td><%= folder_datum.updated_date %></td>
+    <td><%= folder_datum.usedSpace %></td>
+    <td><%= folder_datum.restSpace %></td>
+    <td><%= folder_datum.capacity %></td>
+    <td><%= folder_datum.usedRate %></td>
+    <td><%= folder_datum.cls %></td>
+    <td><%= folder_datum.expanded %></td>
+    <td><%= folder_datum.leaf %></td>
+    <td><%= folder_datum.children %></td>
+    <td><%= link_to 'Show', folder_datum %></td>
+    <td><%= link_to 'Edit', edit_folder_datum_path(folder_datum) %></td>
+    <td><%= link_to 'Destroy', folder_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Folder datum', new_folder_datum_path %>

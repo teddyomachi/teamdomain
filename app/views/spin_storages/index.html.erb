@@ -1,0 +1,31 @@
+<h1>Listing spin_storages</h1>
+
+<table>
+  <tr>
+    <th>Storage server</th>
+    <th>Storage root</th>
+    <th>Mapping logic</th>
+    <th>Storage max size</th>
+    <th>Storage attributes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_storages.each do |spin_storage| %>
+  <tr>
+    <td><%= spin_storage.storage_server %></td>
+    <td><%= spin_storage.storage_root %></td>
+    <td><%= spin_storage.mapping_logic %></td>
+    <td><%= spin_storage.storage_max_size %></td>
+    <td><%= spin_storage.storage_attributes %></td>
+    <td><%= link_to 'Show', spin_storage %></td>
+    <td><%= link_to 'Edit', edit_spin_storage_path(spin_storage) %></td>
+    <td><%= link_to 'Destroy', spin_storage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin storage', new_spin_storage_path %>

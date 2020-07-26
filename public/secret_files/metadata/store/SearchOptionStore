@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "SearchOptionData",
+        "storeId": "SearchOptionStore",
+        "designer|userClassName": "SearchOptionStore",
+        "data": null
+    },
+    "designerId": "263f95f9-5e86-4625-961f-05a61100fac5",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/search_option.sfl"
+            },
+            "designerId": "2125d4e7-7f50-4989-baaf-36c68a324e7e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "option"
+                    },
+                    "designerId": "9ce08b40-41d7-4456-b2e9-cb1561988687"
+                }
+            ]
+        }
+    ]
+}

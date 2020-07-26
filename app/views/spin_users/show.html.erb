@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spin uid:</b>
+  <%= @spin_user.spin_uid %>
+</p>
+
+<p>
+  <b>Spin uname:</b>
+  <%= @spin_user.spin_uname %>
+</p>
+
+<p>
+  <b>User level x:</b>
+  <%= @spin_user.user_level_x %>
+</p>
+
+<p>
+  <b>User level y:</b>
+  <%= @spin_user.user_level_y %>
+</p>
+
+<p>
+  <b>Spin gid:</b>
+  <%= @spin_user.spin_gid %>
+</p>
+
+<p>
+  <b>Spin projid:</b>
+  <%= @spin_user.spin_projid %>
+</p>
+
+<p>
+  <b>Spin passwd:</b>
+  <%= @spin_user.spin_passwd %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_user_path(@spin_user) %> |
+<%= link_to 'Back', spin_users_path %>

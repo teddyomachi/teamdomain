@@ -1,0 +1,5 @@
+<%= form_tag 'upload_proc', :multipart => true do %>
+<label>ファイルを指定：
+	<%= file_field_tag 'upload_filename', { :size => 64 } %></label>
+	<%= submit_tag 'アップロード' %>
+	<% end %>

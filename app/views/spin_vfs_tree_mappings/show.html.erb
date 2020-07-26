@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spin vfs:</b>
+  <%= @spin_vfs_tree_mapping.spin_vfs %>
+</p>
+
+<p>
+  <b>Spin node tree:</b>
+  <%= @spin_vfs_tree_mapping.spin_node_tree %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_vfs_tree_mapping_path(@spin_vfs_tree_mapping) %> |
+<%= link_to 'Back', spin_vfs_tree_mappings_path %>

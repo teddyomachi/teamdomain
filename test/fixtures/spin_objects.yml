@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  node_x_coord: 1
+  node_y_coord: 1
+  node_x_pr_coord: 1
+  node_type: 1
+  node_version: 1
+  object_name: MyString
+  object_attributes: MyText
+  src_platform: MyString
+  src_attributes: MyText
+  date_created: 2012-12-17
+  date_modified: 2012-12-17
+
+two:
+  node_x_coord: 1
+  node_y_coord: 1
+  node_x_pr_coord: 1
+  node_type: 1
+  node_version: 1
+  object_name: MyString
+  object_attributes: MyText
+  src_platform: MyString
+  src_attributes: MyText
+  date_created: 2012-12-17
+  date_modified: 2012-12-17

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_gid: 1
+  spin_group_name: MyString
+  group_descr: MyText
+  group_atrtributes: MyText
+
+two:
+  spin_gid: 1
+  spin_group_name: MyString
+  group_descr: MyText
+  group_atrtributes: MyText

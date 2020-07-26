@@ -1,0 +1,765 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 470,
+        "width": 737,
+        "designer|userClassName": "workingWin",
+        "layout": "fit",
+        "title": "ロックファイル一覧"
+    },
+    "designerId": "66f51bc5-aad5-42b9-934e-4102b5f84fd4",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "workingForm",
+                "layout": "fit",
+                "bodyPadding": null,
+                "title": null
+            },
+            "designerId": "0ce513db-2e8d-41dd-be6a-3e0b12eaad3a",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "workingList",
+                        "itemId": "workingList",
+                        "autoScroll": true,
+                        "title": null,
+                        "store": "workingFileStore"
+                    },
+                    "designerId": "ca54ae30-889b-49ae-91f3-e4cbf733482a",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "style": null
+                            },
+                            "designerId": "71b69c68-dcef-497f-bd29-79fb5e074afb"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 35,
+                                "dataIndex": "lock",
+                                "text": "ST"
+                            },
+                            "designerId": "f50da5a3-f20c-4b9d-a737-117a09515ea7",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (record.data.lock === 1) {\r",
+                                            "\treturn '<img src=\"data/small_icon/my_locked.png\" />';\r",
+                                            "} else if (record.data.lock == 2) {\r",
+                                            "\treturn '<img src=\"data/small_icon/locked.png\" />';\r",
+                                            "/*\r",
+                                            "} else if (record.data.lock == 4) {\r",
+                                            "\treturn '<img src=\"data/small_icon/sco.png\" />';\r",
+                                            "} else if (record.data.lock == 8) {\r",
+                                            "\treturn '<img src=\"data/small_icon/eco.png\" />';\r",
+                                            "*/\r",
+                                            "} else {\r",
+                                            "\treturn;\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "7d525283-6e7a-4c13-8051-1651c90e0187"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 33,
+                                "dataIndex": "dirty",
+                                "text": "変更"
+                            },
+                            "designerId": "6decfa12-f003-49a8-b692-6571ac63b0fa",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (record.data.dirty === true) {\r",
+                                            "\treturn '*';\r",
+                                            "} else {\r",
+                                            "\treturn;\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "cea7dabd-a327-48b6-8d27-eb5dcaebdfc4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 165,
+                                "dataIndex": "file_name",
+                                "text": "名前"
+                            },
+                            "designerId": "7ec4752e-1843-4f55-8599-6051bc1d4214"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 37,
+                                "dataIndex": "file_type",
+                                "text": "種類"
+                            },
+                            "designerId": "b08d60d6-7d13-458b-b005-e8cf57bd88ad"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 32,
+                                "align": "right",
+                                "dataIndex": "file_version",
+                                "text": "バージョン",
+                                "format": "0"
+                            },
+                            "designerId": "df496038-ac40-4435-b931-d363fc40839c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 69,
+                                "align": "right",
+                                "dataIndex": "file_size",
+                                "text": "サイズ (MB)"
+                            },
+                            "designerId": "5ec84ce4-4205-47d4-8047-fc87c581c41f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120,
+                                "dataIndex": "keyword",
+                                "text": "キーワード"
+                            },
+                            "designerId": "c670a1ee-89d9-43c2-82a2-cab7fd3d0f65"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 150,
+                                "dataIndex": "description",
+                                "text": "説明"
+                            },
+                            "designerId": "31778fc8-64c0-48b0-946a-094f0067bafc"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120,
+                                "defaultWidth": null,
+                                "dataIndex": "created_at",
+                                "text": "作成日",
+                                "format": "Y-m-d H:i:s"
+                            },
+                            "designerId": "c6bc1d44-b359-4a6d-a20a-be1f8def3daa"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 80,
+                                "dataIndex": "creator",
+                                "text": "作成者"
+                            },
+                            "designerId": "49f4132f-02c6-4208-a2fa-b097de9843ae"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120,
+                                "dataIndex": "updated_at",
+                                "text": "更新日",
+                                "format": "Y-m-d H:i:s"
+                            },
+                            "designerId": "96a29f57-95ed-494c-8c81-084abf9c31c3"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 80,
+                                "dataIndex": "modifier",
+                                "text": "更新者"
+                            },
+                            "designerId": "95d86caf-c9a6-42c7-883c-0a40c2803ced"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "url",
+                                "text": "URL"
+                            },
+                            "designerId": "614e2424-6c6c-4902-83a7-dc602a8b3475"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "designerId": "b25a20af-f945-47c4-bf8e-6ef4b18bd388"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "margin": 5,
+                        "ui": [
+                            "footer"
+                        ]
+                    },
+                    "designerId": "dfbf9eaa-6445-426b-9b2f-5043540a5cb8",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "93ca8e67-633d-4c6a-a885-a00f6a84b93e"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "hidden": true,
+                                "width": 120,
+                                "text": "チェックイン/更新",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"ファイルをチェックインする場合ないし更新する場合にはこのボタンを押して下さい。\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "6443fe8d-ec51-4cbc-8107-1e9deda17443",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick2",
+                                        "implHandler": [
+                                            "var componentM = Ext.getCmp('workingForm');\r",
+                                            "var grid = componentM.down('#workingList');\r",
+                                            "\r",
+                                            "var recordsX = grid.getSelectionModel().getSelection(), data = [];\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(recordsX)) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ファイル選択',\r",
+                                            "\t\tmsg: 'ファイルを選択して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "var counterX = 0;\r",
+                                            "for (var i = 0; i < recordsX.length; i++) {\r",
+                                            "\tif (recordsX[i].data.lock === 1 && recordsX[i].data.dirty === true) {\r",
+                                            "\t\tdata.push(recordsX[i].data);\r",
+                                            "\t\tcounterX = counterX + 1;\r",
+                                            "\t}\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (counterX >= 1) {\r",
+                                            "\tvar dataX = Ext.apply({session_id: this_session_id}, data);\r",
+                                            "\tdataX = Ext.apply({request_type: \"unlock_refresh_files\"}, dataX);\r",
+                                            "\tExt.Ajax.request({\r",
+                                            "\t\turl: 'tdx/updatedata.tdx',\r",
+                                            "\t\tjsonData: dataX,\r",
+                                            "\t\tsuccess: handleSuccessX,\r",
+                                            "\t\tfailure: handleFailureX\r",
+                                            "\t});\r",
+                                            "\tdata  = [];\r",
+                                            "\tdataX = \"\";\r",
+                                            "\trecordsX = \"\";\r",
+                                            "\tcounterX = 0;\r",
+                                            "}\r",
+                                            "\r",
+                                            "var recordsY = grid.getSelectionModel().getSelection();\r",
+                                            "var counterY = 0;\r",
+                                            "for (var j = 0; j < recordsY.length; j++) {\r",
+                                            "\tif (recordsY[j].data.lock === 4 || recordsY[j].data.lock === 8) {\r",
+                                            "\t\tdata.push(recordsY[j].data);\r",
+                                            "\t\tcounterY = counterY + 1;\r",
+                                            "\t}\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (counterY >= 1) {\r",
+                                            "\tvar dataY = Ext.apply({session_id: this_session_id}, data);\r",
+                                            "\tdataY = Ext.apply({request_type: \"checkin_refresh_files\"}, dataY);\r",
+                                            "\r",
+                                            "\tExt.Ajax.request({\r",
+                                            "\t\turl: 'tdx/updatedata.tdx',\r",
+                                            "\t\tjsonData: dataY,\r",
+                                            "\t\tsuccess: handleSuccessY,\r",
+                                            "\t\tfailure: handleFailureY\r",
+                                            "\t});\r",
+                                            "\tdata  = [];\r",
+                                            "\tdataY = \"\";\r",
+                                            "\trecordsY = \"\";\r",
+                                            "\tcounterY = 0;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleSuccessX(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'ファイルの更新失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tExt.getStore('workingFileStore').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreA').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreB').load();\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailureX(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ファイルの更新失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleSuccessY(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'ファイルのチェックイン失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tExt.getStore('workingFileStore').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreA').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreB').load();\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailureY(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ファイルのチェックイン失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "eec1025c-ec0b-4494-ae8a-ce625ffafe59"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "hidden": true,
+                                "width": 150,
+                                "text": "チェックアウトキャンセル",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"ファイルのチェックアウトをキャンセルする場合にはこのボタンを押して下さい。<br/>ファイルをチエックアウト前の状態に戻します。\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "44fbc45c-206d-4636-8ece-6404b6f7c4fb",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick3",
+                                        "implHandler": [
+                                            "var componentM = Ext.getCmp('workingForm');\r",
+                                            "var grid = componentM.down('#workingList');\r",
+                                            "\r",
+                                            "var records = grid.getSelectionModel().getSelection(), data = [];\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(records)) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ファイル選択',\r",
+                                            "\t\tmsg: 'ファイルを選択して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "var counterX = 0;\r",
+                                            "for (var i = 0; i < records.length; i++) {\r",
+                                            "\tif (records[i].data.lock === 4 || records[i].data.lock === 8) {\r",
+                                            "\t\tdata.push(records[i].data);\r",
+                                            "\t\tcounterX = counterX + 1;\r",
+                                            "\t}\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (counterX >= 1) {\r",
+                                            "\tvar dataX = Ext.apply({session_id: this_session_id}, data);\r",
+                                            "\tdataX = Ext.apply({request_type: \"cancel_checkout_files\"}, dataX);\r",
+                                            "\tExt.Ajax.request({\r",
+                                            "\t\turl: 'tdx/updatedata.tdx',\r",
+                                            "\t\tjsonData: dataX,\r",
+                                            "\t\tsuccess: handleSuccess,\r",
+                                            "\t\tfailure: handleFailure\r",
+                                            "\t});\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleSuccess(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'チェックアウトキャンセル失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tExt.getStore('workingFileStore').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreA').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreB').load();\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailure(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'チェックアウトキャンセル失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "73ddd5ec-99e8-4d6f-8527-4c784501b0e0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 100,
+                                "text": "ロック解除",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"ファイルのロックを解除する場合にはこのボタンを押して下さい。<br/>ファイルをロック前の状態に戻します。\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "4fa8bca4-5133-48ee-ba10-88a07ef39e20",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "var grid = Ext.ComponentQuery.query('#workingList')[0];\r",
+                                            "\r",
+                                            "var records = grid.getSelectionModel().getSelection(), data = [];\r",
+                                            "\r",
+                                            "if (records.length === 0) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ファイル選択',\r",
+                                            "\t\tmsg: 'ファイルを選択して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            "var counterX = 0;\r",
+                                            "for (var i = 0; i < records.length; i++) {\r",
+                                            "\tif (records[i].data.lock === 1) {\r",
+                                            "\t\tdata.push(records[i].data);\r",
+                                            "\t\tcounterX = counterX + 1;\r",
+                                            "\t}\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            "if (counterX >= 1) {\r",
+                                            "\tvar dataX = Ext.apply({session_id: this_session_id}, {data: data});\r",
+                                            "\t\tdataX = Ext.apply({request_type: \"unlock_files\"}, dataX);\r",
+                                            "\tExt.Ajax.request({\r",
+                                            "\t\turl: 'tdx/updatedata.tdx',\r",
+                                            "\t\tjsonData: dataX,\r",
+                                            "\t\tsuccess: handleSuccess,\r",
+                                            "\t\tfailure: handleFailure\r",
+                                            "\t});\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleSuccess(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'ファイルロック解除失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tExt.getStore('workingFileStore').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreA').load();\r",
+                                            "\t\tExt.getStore('FileDataStoreB').load();\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailure(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ファイルロック解除失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "0b771b41-3c74-4556-9d8c-f7e2c59f3297"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 100,
+                                "text": "キャンセル",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"このウィンドウを閉じる場合には、このボタンを押して下さい。\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "0b08d6e4-8e4a-46e9-8c56-828d22eea2fd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "001f8e33-f8f9-4676-b288-76ad34899b73"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "Ext.getStore('workingFileStore').load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "51f2b16b-bf20-4874-b5ff-5d394313b1b2"
+        }
+    ]
+}

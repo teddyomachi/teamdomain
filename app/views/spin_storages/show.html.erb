@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Storage server:</b>
+  <%= @spin_storage.storage_server %>
+</p>
+
+<p>
+  <b>Storage root:</b>
+  <%= @spin_storage.storage_root %>
+</p>
+
+<p>
+  <b>Mapping logic:</b>
+  <%= @spin_storage.mapping_logic %>
+</p>
+
+<p>
+  <b>Storage max size:</b>
+  <%= @spin_storage.storage_max_size %>
+</p>
+
+<p>
+  <b>Storage attributes:</b>
+  <%= @spin_storage.storage_attributes %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_storage_path(@spin_storage) %> |
+<%= link_to 'Back', spin_storages_path %>

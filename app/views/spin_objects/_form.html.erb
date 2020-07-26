@@ -1,0 +1,61 @@
+<%= form_for(@spin_object) do |f| %>
+  <% if @spin_object.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_object.errors.count, "error") %> prohibited this spin_object from being saved:</h2>
+
+      <ul>
+      <% @spin_object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :node_x_coord %><br />
+    <%= f.number_field :node_x_coord %>
+  </div>
+  <div class="field">
+    <%= f.label :node_y_coord %><br />
+    <%= f.number_field :node_y_coord %>
+  </div>
+  <div class="field">
+    <%= f.label :node_x_pr_coord %><br />
+    <%= f.number_field :node_x_pr_coord %>
+  </div>
+  <div class="field">
+    <%= f.label :node_type %><br />
+    <%= f.number_field :node_type %>
+  </div>
+  <div class="field">
+    <%= f.label :node_version %><br />
+    <%= f.number_field :node_version %>
+  </div>
+  <div class="field">
+    <%= f.label :object_name %><br />
+    <%= f.text_field :object_name %>
+  </div>
+  <div class="field">
+    <%= f.label :object_attributes %><br />
+    <%= f.text_area :object_attributes %>
+  </div>
+  <div class="field">
+    <%= f.label :src_platform %><br />
+    <%= f.text_field :src_platform %>
+  </div>
+  <div class="field">
+    <%= f.label :src_attributes %><br />
+    <%= f.text_area :src_attributes %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br />
+    <%= f.date_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :date_modified %><br />
+    <%= f.date_select :date_modified %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

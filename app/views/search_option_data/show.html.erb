@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @search_option_datum.session_id %>
+</p>
+
+<p>
+  <b>Option name:</b>
+  <%= @search_option_datum.option_name %>
+</p>
+
+<p>
+  <b>Field name:</b>
+  <%= @search_option_datum.field_name %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @search_option_datum.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_search_option_datum_path(@search_option_datum) %> |
+<%= link_to 'Back', search_option_data_path %>

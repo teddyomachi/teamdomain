@@ -1,0 +1,63 @@
+<h1>Listing spin_sessions</h1>
+
+<table>
+  <tr>
+    <th>Spin session</th>
+    <th>Session status</th>
+    <th>Session expire</th>
+    <th>Spin uid</th>
+    <th>Spin uname</th>
+    <th>Spin login time</th>
+    <th>Spin last login</th>
+    <th>Spin last logout</th>
+    <th>Spin session data</th>
+    <th>Spin search condition</th>
+    <th>Spin search option</th>
+    <th>Spin domaindata a</th>
+    <th>Spin domaindata b</th>
+    <th>Spin filedata</th>
+    <th>Spin folderdata a</th>
+    <th>Spin folder data b</th>
+    <th>Spin groupdata</th>
+    <th>Spin memberdata</th>
+    <th>Spin operatordata</th>
+    <th>Spin recycledata</th>
+    <th>Spin senderdata</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_sessions.each do |spin_session| %>
+  <tr>
+    <td><%= spin_session.spin_session %></td>
+    <td><%= spin_session.session_status %></td>
+    <td><%= spin_session.session_expire %></td>
+    <td><%= spin_session.spin_uid %></td>
+    <td><%= spin_session.spin_uname %></td>
+    <td><%= spin_session.spin_login_time %></td>
+    <td><%= spin_session.spin_last_login %></td>
+    <td><%= spin_session.spin_last_logout %></td>
+    <td><%= spin_session.spin_session_data %></td>
+    <td><%= spin_session.spin_search_condition_id %></td>
+    <td><%= spin_session.spin_search_option_id %></td>
+    <td><%= spin_session.spin_domaindata_A_id %></td>
+    <td><%= spin_session.spin_domaindata_B_id %></td>
+    <td><%= spin_session.spin_filedata_id %></td>
+    <td><%= spin_session.spin_folderdata_A_id %></td>
+    <td><%= spin_session.spin_folder_data_B_id %></td>
+    <td><%= spin_session.spin_groupdata_id %></td>
+    <td><%= spin_session.spin_memberdata_id %></td>
+    <td><%= spin_session.spin_operatordata_id %></td>
+    <td><%= spin_session.spin_recycledata_id %></td>
+    <td><%= spin_session.spin_senderdata_id %></td>
+    <td><%= link_to 'Show', spin_session %></td>
+    <td><%= link_to 'Edit', edit_spin_session_path(spin_session) %></td>
+    <td><%= link_to 'Destroy', spin_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin session', new_spin_session_path %>

@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  session_id: MyString
+  target_folder: MyString
+  target_file_name: MyString
+  target_file_size_min: 1
+  target_file_size_max: 1
+  target_creator: MyString
+  target_created_by_me: false
+  target_created_date_begin: 2012-11-27
+  target_created_date_end: 2012-11-27
+  target_modifier: MyString
+  target_modified_by_me: false
+  target_modified_date_begin: 2012-11-27
+  target_modified_date_end: 2012-11-27
+  target_subfolder: false
+  target_locked_by_me: false
+  target_checked_out_by_me: false
+  target_max_display_files: 1
+
+two:
+  session_id: MyString
+  target_folder: MyString
+  target_file_name: MyString
+  target_file_size_min: 1
+  target_file_size_max: 1
+  target_creator: MyString
+  target_created_by_me: false
+  target_created_date_begin: 2012-11-27
+  target_created_date_end: 2012-11-27
+  target_modifier: MyString
+  target_modified_by_me: false
+  target_modified_date_begin: 2012-11-27
+  target_modified_date_end: 2012-11-27
+  target_subfolder: false
+  target_locked_by_me: false
+  target_checked_out_by_me: false
+  target_max_display_files: 1

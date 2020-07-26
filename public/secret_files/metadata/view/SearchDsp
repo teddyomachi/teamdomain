@@ -1,0 +1,1261 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "searchDsp",
+        "designer|userClassName": "SearchDsp",
+        "designer|userAlias": "searchdsp",
+        "title": "フォルダ検索結果",
+        "activeTab": 0
+    },
+    "designerId": "0c8f2a45-12f5-4674-8879-48c2eb6309b8",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "listDspS",
+                "layout": "fit",
+                "title": "List表示"
+            },
+            "designerId": "5256b07b-290d-402f-b8bd-4b165b1e1538",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "07c3c3eb-47a3-4227-8afb-215bc39f4294"
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "searchedListGridPanel",
+                        "autoScroll": true,
+                        "title": null,
+                        "store": "FileDataStoreS"
+                    },
+                    "designerId": "4590d84a-a962-4c7a-beaf-df33135a74d5",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "style": null,
+                                "emptyText": "表示するデータがありません。"
+                            },
+                            "designerId": "8ca977c9-9534-4427-8a0e-8f7edb02fe8b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 25,
+                                "dataIndex": "type",
+                                "text": "TP"
+                            },
+                            "designerId": "4ff0be4f-f60f-4f31-b00c-a34f4e0f4ee5",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (record.data.file_type === 'folder') {\r",
+                                            "\treturn '<img src=\"data/small_icon/folder.png\" />';\r",
+                                            "} else {\r",
+                                            "\treturn '<img src=\"data/small_icon/file.png\" />';\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "3b2aeffd-7527-424f-89f9-69c3d926c53c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "itemId": "LC",
+                                "width": 25,
+                                "dataIndex": "lc",
+                                "hideable": false,
+                                "text": "ST"
+                            },
+                            "designerId": "17cfbcc7-a56d-4ea9-924f-8b920031aeab",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (record.data.lock === '1') {\r",
+                                            "\treturn '<img src=\"data/small_icon/my_locked.png\" />';\r",
+                                            "} else if (record.data.lock == '2') {\r",
+                                            "\treturn '<img src=\"data/small_icon/locked.png\" />';\r",
+                                            "\t/*\r",
+                                            "\t} else if (record.data.lock == '4') {\r",
+                                            "\treturn '<img src=\"data/small_icon/sco.png\" />';\r",
+                                            "\t} else if (record.data.lock == '8') {\r",
+                                            "\treturn '<img src=\"data/small_icon/eco.png\" />';\r",
+                                            "\t*/\r",
+                                            "} else {\r",
+                                            "\treturn;\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "b8d7331c-a509-4109-afda-da977f48e86c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 61,
+                                "dataIndex": "name_lc_by",
+                                "hideable": false,
+                                "text": "操作者名"
+                            },
+                            "designerId": "c67d0e6b-e70b-4daa-8b9d-bf8c237890b2"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "minWidth": 150,
+                                "width": 150,
+                                "dataIndex": "file_name",
+                                "text": "名前",
+                                "flex": 1
+                            },
+                            "designerId": "01a7c875-9d77-44d0-a227-878f08b151c5"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 50,
+                                "dataIndex": "file_type",
+                                "text": "種類"
+                            },
+                            "designerId": "49948b57-dfce-424c-abd5-3f42289ab584"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 30,
+                                "align": "right",
+                                "dataIndex": "file_version",
+                                "text": "Ver",
+                                "format": "0"
+                            },
+                            "designerId": "a012077b-9bf5-4a33-90b6-a14e40b16ede"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 65,
+                                "align": "right",
+                                "dataIndex": "file_disp_size",
+                                "text": "サイズ"
+                            },
+                            "designerId": "f305ff36-2c26-4aef-a8b7-4a70a1e11873",
+                            "cn": [
+                                {
+                                    "type": "basicfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value, metaData, record, rowIndex, colIndex, store, view"
+                                        ],
+                                        "implHandler": [
+                                            "var fileSizeUpper = record.data.file_size_upper;\r",
+                                            "var fileSize      = record.data.file_size;\r",
+                                            "var size          = fileSizeUpper * Math.pow(2, 31) + fileSize;\r",
+                                            "\r",
+                                            "if (size === \"\" || size === 0) {\r",
+                                            "\treturn \"-\";\r",
+                                            "} else if (size < 1024) {\r",
+                                            "\treturn size + \" B\";\r",
+                                            "} else if (size < 1048576) {\r",
+                                            "\treturn (Math.round(size / 1024)) + \" KB\";\r",
+                                            "} else if (size < 1073741824) {\r",
+                                            "\treturn (Math.round(((size*10) / 1048576))/10) + \" MB\";\r",
+                                            "} else if (size < 1099511627776) {\r",
+                                            "\treturn (Math.round(((size*100) / 1073741824))/100) + \" GB\";\r",
+                                            "} else if (size < 1125899906842624) {\r",
+                                            "\treturn (Math.round(((size*100) / 1099511627776))/100) + \" TB\";\r",
+                                            "} else {\r",
+                                            "\treturn (Math.round(((size*100) / 1125899906842624))/100) + \" PB\";\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "7cfea88f-f653-4eb0-a084-ec700c8ba2d6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 100,
+                                "dataIndex": "keyword",
+                                "hideable": false,
+                                "text": "キーワード"
+                            },
+                            "designerId": "57c43d08-8202-4e16-b46a-9dd20db8787c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 180,
+                                "dataIndex": "description",
+                                "text": "説明"
+                            },
+                            "designerId": "07b40559-bc10-4221-9164-5ced77a1d685"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 140,
+                                "dataIndex": "created_at",
+                                "text": "作成日",
+                                "format": "Y-m-d H:i:s"
+                            },
+                            "designerId": "b26048a6-d593-4361-8797-0f8a02c1b22f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 80,
+                                "dataIndex": "creator",
+                                "text": "作成者"
+                            },
+                            "designerId": "bacd362e-7418-4b51-91a4-bd2e6695419b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 140,
+                                "dataIndex": "updated_at",
+                                "text": "更新日",
+                                "format": "Y-m-d H:i:s"
+                            },
+                            "designerId": "4f172d1f-2522-49f0-90cc-ea184f2a8b1f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 80,
+                                "dataIndex": "modifier",
+                                "text": "更新者"
+                            },
+                            "designerId": "a19ce32e-b199-4ee3-9fe1-a8c4823cae55"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 250,
+                                "dataIndex": "url",
+                                "hideable": false,
+                                "text": "URL"
+                            },
+                            "designerId": "04c71a2f-2009-45a6-bef8-07aac3c969be"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 80,
+                                "dataIndex": "owner",
+                                "text": "所有者"
+                            },
+                            "designerId": "9c3364a4-edbe-4a3c-95c8-58b4447b2e39"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 25,
+                                "dataIndex": "ownership",
+                                "text": "所有権"
+                            },
+                            "designerId": "0c06f351-c8d5-4b94-8ebe-e6f991588d27"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 25,
+                                "dataIndex": "check",
+                                "hideable": false,
+                                "text": "チェックイン"
+                            },
+                            "designerId": "44841d20-0cf8-4c4a-b4dd-f0538de04048"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "dataIndex": "thumnail_image",
+                                "hideable": false,
+                                "text": "image"
+                            },
+                            "designerId": "658d54da-e539-4ffe-a252-96e44cb48cba"
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "id": "filesS_list",
+                                "width": null,
+                                "afterPageText": null,
+                                "beforePageText": null,
+                                "displayInfo": true,
+                                "displayMsg": null,
+                                "emptyMsg": null,
+                                "firstText": null,
+                                "lastText": null,
+                                "nextText": null,
+                                "prevText": null,
+                                "refreshText": null,
+                                "store": "FileDataStoreS"
+                            },
+                            "designerId": "8674515b-c505-45ae-97c0-0fa97c1b9cee"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "userConfig": {
+                                "mode": "SINGLE"
+                            },
+                            "designerId": "da5762da-1c70-411a-bb16-2d22bf8d871f"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSearchedListGridPanelItemContextMenu",
+                                "implHandler": [
+                                    "tree_context_menu = new Ext.menu.Menu({\r",
+                                    "\titems: [\r",
+                                    "\tdisplayProperty,\r",
+                                    "\t//displayPropertyExpanded,\r",
+                                    "\t//displayPropertyDetails,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\topenFile,\r",
+                                    "\t//copyFile,\r",
+                                    "\t//moveFile,\r",
+                                    "\t//deleteFile,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//checkoutFile,\r",
+                                    "\t//lockFile,\r",
+                                    "\t//releaseFileOwnership,\r",
+                                    "\t//settingFileAccessRight,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//sendingFile,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//searchFiles,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//openTrashbox\r",
+                                    "\t]\r",
+                                    "});\r",
+                                    "\r",
+                                    "tree_context_menu.showAt(e.getXY());\r",
+                                    "return false;\r",
+                                    ""
+                                ],
+                                "name": "itemcontextmenu",
+                                "scope": "me"
+                            },
+                            "designerId": "5912a651-34cc-473b-bbea-c2dd6a697e43"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "iconDspS",
+                "autoScroll": true,
+                "layout": "fit",
+                "title": "Icon表示"
+            },
+            "designerId": "082e5c67-65a3-4ac6-93c0-a51faecf5f99",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "1813b897-d690-47fd-a869-e75e59db8d45"
+                },
+                {
+                    "type": "Ext.view.View",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "iconViewS",
+                        "emptyText": "表示するデータがありません。",
+                        "itemSelector": "div.icon-wrapS",
+                        "multiSelect": true,
+                        "overItemCls": "x-item-over",
+                        "singleSelect": true,
+                        "store": "FileDataStoreS",
+                        "trackOver": true
+                    },
+                    "designerId": "33ed4f5d-b87d-4a81-afbd-7def03af7da4",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "prepareData",
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var lock_check = \"\";\r",
+                                    "if (data.lock === 0) { lock_check = \"small_icon/no_locked.png\";}\r",
+                                    "if (data.lock === 1) { lock_check = \"small_icon/my_locked.png\";}\r",
+                                    "if (data.lock === 2) { lock_check = \"small_icon/locked.png\";}\r",
+                                    "if (data.lock === 4) { lock_check = \"small_icon/sco.png\";}\r",
+                                    "if (data.lock === 8) { lock_check = \"small_icon/eco.png\";}\r",
+                                    "\r",
+                                    "Ext.apply(data, {\r",
+                                    "\tshortName: Ext.util.Format.ellipsis(data.file_name, 20),\r",
+                                    "\tlock_check_img: lock_check\r",
+                                    "});\r",
+                                    "\r",
+                                    "return data;"
+                                ]
+                            },
+                            "designerId": "cc4f4769-8ceb-4131-ad4e-78099034f8f8"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onIconViewSItemDblClick",
+                                "implHandler": [
+                                    "var dataX = record.data;\r",
+                                    "\r",
+                                    "var readableRight  = dataX.file_readable_status;\r",
+                                    "var writableRight  = dataX.file_writable_status;\r",
+                                    "\r",
+                                    "var editableStatus = dataX.lock;\r",
+                                    "var openStatus     = dataX.open_status;\r",
+                                    "\r",
+                                    "var showFileName   = dataX.file_name;\r",
+                                    "var fileType       = dataX.file_type;\r",
+                                    "\r",
+                                    "var contLocation   = dataX.cont_location;\r",
+                                    "\r",
+                                    "var readChecked  = record.data.folder_readable_status;\r",
+                                    "var writeChecked = record.data.folder_writable_status;\r",
+                                    "\r",
+                                    "doOpenFile(dataX, readableRight, writableRight, editableStatus, openStatus, showFileName, fileType, readChecked, writeChecked, contLocation);\r",
+                                    ""
+                                ],
+                                "name": "itemdblclick",
+                                "scope": "me"
+                            },
+                            "designerId": "d0b647f2-2c35-45b6-baab-c6806edb1815"
+                        },
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "implHandler": [
+                                    "<tpl for=\".\">\r",
+                                    "\t<div class=\"icon-wrapS\">\r",
+                                    "\t\t<img src=\"data/{icon_image}\" width=\"64\" height=\"64\"/><img src=\"data/{lock_check_img}\" /><br/>\r",
+                                    "\t\t<span class=\"each_name\">{shortName}<br/>\r",
+                                    "\t\t{updated_at:date(\"Y-m-d H:i:s\")}</span>\r",
+                                    "\t</div>\r",
+                                    "</tpl>\r",
+                                    "<div class=\"x-clear\"></div>"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "3c4fd924-479b-470d-944d-f385567575b4"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onIconViewSItemContextMenu",
+                                "implHandler": [
+                                    "tree_context_menu = new Ext.menu.Menu({\r",
+                                    "\titems: [\r",
+                                    "\tdisplayProperty,\r",
+                                    "\t//displayPropertyExpanded,\r",
+                                    "\t//displayPropertyDetails,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\topenFile,\r",
+                                    "\t//copyFile,\r",
+                                    "\t//moveFile,\r",
+                                    "\t//deleteFile,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//checkoutFile,\r",
+                                    "\t//lockFile,\r",
+                                    "\t//releaseFileOwnership,\r",
+                                    "\t//settingFileAccessRight,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//sendingFile,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//searchFiles,\r",
+                                    "\t//new Ext.menu.Separator(),\r",
+                                    "\t//openTrashbox\r",
+                                    "\t]\r",
+                                    "});\r",
+                                    "\r",
+                                    "tree_context_menu.showAt(e.getXY());\r",
+                                    "return false;\r",
+                                    ""
+                                ],
+                                "name": "itemcontextmenu",
+                                "scope": "me"
+                            },
+                            "designerId": "e7b5167a-9f23-40fa-abcb-293713f8cb8f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "id": "filesS_icon",
+                        "width": null,
+                        "afterPageText": null,
+                        "beforePageText": null,
+                        "displayInfo": true,
+                        "displayMsg": null,
+                        "emptyMsg": null,
+                        "firstText": null,
+                        "lastText": null,
+                        "nextText": null,
+                        "prevText": null,
+                        "refreshText": null,
+                        "store": "FileDataStoreS"
+                    },
+                    "designerId": "088b2e40-713b-49d7-a405-82545fcd3de6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": "thumbDspS",
+                "title": "Thumbnail表示",
+                "activeTab": 0
+            },
+            "designerId": "67acb80f-6291-490e-ba7b-905e104ed017",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": null,
+                        "id": "thumbBlockS",
+                        "autoScroll": true,
+                        "layout": "fit",
+                        "title": "ブロック表示"
+                    },
+                    "designerId": "5b0e4338-582e-4656-8d4e-9e3020cd28ce",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "4aafe153-790a-4cb0-9b25-c455897550b7"
+                        },
+                        {
+                            "type": "Ext.view.View",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "thumbnailViewSB",
+                                "emptyText": "表示するデータがありません。",
+                                "itemSelector": "div.thumb-wrapSB",
+                                "multiSelect": true,
+                                "overItemCls": "x-item-over",
+                                "singleSelect": true,
+                                "store": "FileDataStoreS",
+                                "trackOver": true
+                            },
+                            "designerId": "04b61f6e-9c07-4eda-b0b7-b1e41c01c757",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThumbnailViewSBItemDblClick",
+                                        "implHandler": [
+                                            "var dataX = record.data;\r",
+                                            "\r",
+                                            "var readableRight  = dataX.file_readable_status;\r",
+                                            "var writableRight  = dataX.file_writable_status;\r",
+                                            "\r",
+                                            "var editableStatus = dataX.lock;\r",
+                                            "var openStatus     = dataX.open_status;\r",
+                                            "\r",
+                                            "var showFileName   = dataX.file_name;\r",
+                                            "var fileType       = dataX.file_type;\r",
+                                            "\r",
+                                            "var contLocation   = dataX.cont_location;\r",
+                                            "\r",
+                                            "var readChecked  = record.data.folder_readable_status;\r",
+                                            "var writeChecked = record.data.folder_writable_status;\r",
+                                            "\r",
+                                            "doOpenFile(dataX, readableRight, writableRight, editableStatus, openStatus, showFileName, fileType, readChecked, writeChecked, contLocation);\r",
+                                            ""
+                                        ],
+                                        "name": "itemdblclick",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "e0904d0f-4310-4bce-9b8a-b975772abf9b"
+                                },
+                                {
+                                    "type": "basicfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "prepareData",
+                                        "designer|params": [
+                                            "data"
+                                        ],
+                                        "implHandler": [
+                                            "var lock_check = \"\";\r",
+                                            "if (data.lock === 0) { lock_check = \"small_icon/no_locked.png\";}\r",
+                                            "if (data.lock === 1) { lock_check = \"small_icon/my_locked.png\";}\r",
+                                            "if (data.lock === 2) { lock_check = \"small_icon/locked.png\";}\r",
+                                            "if (data.lock === 4) { lock_check = \"small_icon/sco.png\";}\r",
+                                            "if (data.lock === 8) { lock_check = \"small_icon/eco.png\";}\r",
+                                            "\r",
+                                            "var fileSizeUpper = data.file_size_upper;\r",
+                                            "var fileSize      = data.file_size;\r",
+                                            "var size          = fileSizeUpper * Math.pow(2, 31) + fileSize;\r",
+                                            "var rounded_size;\r",
+                                            "\r",
+                                            "if (size === \"\" || size === 0) {\r",
+                                            "\trounded_size = \"-\";\r",
+                                            "} else if (size < 1024) {\r",
+                                            "\trounded_size = size + \" B\";\r",
+                                            "} else if (size < 1048576) {\r",
+                                            "\trounded_size = (Math.round(size / 1024)) + \" KB\";\r",
+                                            "} else if (size < 1073741824) {\r",
+                                            "\trounded_size = (Math.round(((size*10) / 1048576))/10) + \" MB\";\r",
+                                            "} else if (size < 1099511627776) {\r",
+                                            "\trounded_size = (Math.round(((size*100) / 1073741824))/100) + \" GB\";\r",
+                                            "} else if (size < 1125899906842624) {\r",
+                                            "\trounded_size = (Math.round(((size*100) / 1099511627776))/100) + \" TB\";\r",
+                                            "} else {\r",
+                                            "\trounded_size = (Math.round(((size*100) / 1125899906842624))/100) + \" PB\";\r",
+                                            "}\r",
+                                            "\r",
+                                            "Ext.apply(data, {\r",
+                                            "\tshortName: Ext.util.Format.ellipsis(data.file_name, 20),\r",
+                                            "\tlock_check_img: lock_check,\r",
+                                            "\tfile_disp_size: rounded_size\r",
+                                            "});\r",
+                                            "\r",
+                                            "return data;\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "5ae32012-6e5d-40cb-85f2-4d574e314439"
+                                },
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "tpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "implHandler": [
+                                            "<tpl for=\".\">\r",
+                                            "\t<div class=\"thumb-wrapSB\">\r",
+                                            "\t\t<tpl>\r",
+                                            "\t\t\t<tpl if=\"file_type == 'mp4'\">\r",
+                                            "\t\t\t\t\t<video class=\"each-block\" controls width=\"200px\" height=\"140px\">\r",
+                                            "\t\t\t\t\t\t<source src=\"{url}\" type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"' />\r",
+                                            "\t\t\t\t\t\t<p>動画を再生するには<br/>videoタグをサポートした<br/>ブラウザが必要です。</p>\r",
+                                            "\t\t\t\t\t</video>\r",
+                                            "\t\t\t</tpl>\r",
+                                            "\t\t\t<tpl if=\"file_type == 'ogg'\">\r",
+                                            "\t\t\t\t\t<video class=\"each-block\" controls width=\"200px\" height=\"140px\">\r",
+                                            "\t\t\t\t\t\t<source src=\"{url}\" type='video/ogg; codecs=\"theora, vorbis\"' />\r",
+                                            "\t\t\t\t\t\t<p>動画を再生するには<br/>videoタグをサポートした<br/>ブラウザが必要です。</p>\r",
+                                            "\t\t\t\t\t</video>\r",
+                                            "\t\t\t</tpl>\r",
+                                            "\t\t\t<tpl if=\"file_type != 'mp4' && file_type != 'ogg'\">\r",
+                                            "\t\t\t\t\t<span class=\"icon-block\">\r",
+                                            "\t\t\t\t\t\t<img src=\"data/{thumbnail_image}\" style=\"max-width:200px;max-height: 138px\" />\r",
+                                            "\t\t\t\t\t</span><br/>\r",
+                                            "\t\t\t</tpl>\r",
+                                            "\t\t</tpl>\r",
+                                            "\t\t<caption>\r",
+                                            "\t\t\t<ul>\r",
+                                            "\t\t\t\t<li>タイトル: {title}</li>\r",
+                                            "\t\t\t\t<li>ファイル名: {file_name}</li>\r",
+                                            "\t\t\t\t<li>サイズ: {file_disp_size}</li>\r",
+                                            "\t\t\t\t<li>更新日時: {updated_at:date(\"Y-m-d H:i:s\")} <img src=\"data/{lock_check_img}\" /></li>\r",
+                                            "\t\t\t</ul>\r",
+                                            "\t\t</caption>\r",
+                                            "\t</div>\r",
+                                            "</tpl>\r",
+                                            "<div class=\"x-clear\"></div>"
+                                        ],
+                                        "designer|displayName": "tpl"
+                                    },
+                                    "designerId": "c25af590-ab38-4cba-a04f-63f58267c078"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThumbnailViewSBItemContextMenu",
+                                        "implHandler": [
+                                            "tree_context_menu = new Ext.menu.Menu({\r",
+                                            "\titems: [\r",
+                                            "\tdisplayProperty,\r",
+                                            "\t//displayPropertyExpanded,\r",
+                                            "\t//displayPropertyDetails,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\topenFile,\r",
+                                            "\t//copyFile,\r",
+                                            "\t//moveFile,\r",
+                                            "\t//deleteFile,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//checkoutFile,\r",
+                                            "\t//lockFile,\r",
+                                            "\t//releaseFileOwnership,\r",
+                                            "\t//settingFileAccessRight,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//sendingFile,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//searchFiles,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//openTrashbox\r",
+                                            "\t]\r",
+                                            "});\r",
+                                            "\r",
+                                            "tree_context_menu.showAt(e.getXY());\r",
+                                            "return false;\r",
+                                            ""
+                                        ],
+                                        "name": "itemcontextmenu",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "26008472-2776-46f3-a5ea-c9d95b54024f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "id": "filesS_thumbBlock",
+                                "width": null,
+                                "afterPageText": null,
+                                "beforePageText": null,
+                                "displayInfo": true,
+                                "displayMsg": null,
+                                "emptyMsg": null,
+                                "firstText": null,
+                                "lastText": null,
+                                "nextText": null,
+                                "prevText": null,
+                                "refreshText": null,
+                                "store": "FileDataStoreS"
+                            },
+                            "designerId": "cd1ea6f4-1d79-4573-a521-7b7deeb182a2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": null,
+                        "id": "thumbListS",
+                        "autoScroll": true,
+                        "layout": "fit",
+                        "title": "リスト表示"
+                    },
+                    "designerId": "b6cb51b8-30fe-4f43-bbc4-20e628a55aa3",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "d108af05-fcac-46aa-9782-96246073ca5f"
+                        },
+                        {
+                            "type": "Ext.view.View",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "thumbnailViewSL",
+                                "emptyText": "表示するデータがありません。",
+                                "itemSelector": "div.thumb-wrapSL",
+                                "multiSelect": true,
+                                "overItemCls": "x-item-over",
+                                "singleSelect": true,
+                                "store": "FileDataStoreS",
+                                "trackOver": true
+                            },
+                            "designerId": "4353a6a6-6799-40b3-a92d-a77dbd126d0d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThumbnailViewSLItemDblClick",
+                                        "implHandler": [
+                                            "var dataX = record.data;\r",
+                                            "\r",
+                                            "var readableRight  = dataX.file_readable_status;\r",
+                                            "var writableRight  = dataX.file_writable_status;\r",
+                                            "\r",
+                                            "var editableStatus = dataX.lock;\r",
+                                            "var openStatus     = dataX.open_status;\r",
+                                            "\r",
+                                            "var showFileName   = dataX.file_name;\r",
+                                            "var fileType       = dataX.file_type;\r",
+                                            "\r",
+                                            "var contLocation   = dataX.cont_location;\r",
+                                            "\r",
+                                            "var readChecked  = record.data.folder_readable_status;\r",
+                                            "var writeChecked = record.data.folder_writable_status;\r",
+                                            "\r",
+                                            "doOpenFile(dataX, readableRight, writableRight, editableStatus, openStatus, showFileName, fileType, readChecked, writeChecked, contLocation);\r",
+                                            ""
+                                        ],
+                                        "name": "itemdblclick",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "19405300-c269-4a05-b6a8-1a09fbdb004b"
+                                },
+                                {
+                                    "type": "basicfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "prepareData",
+                                        "designer|params": [
+                                            "data"
+                                        ],
+                                        "implHandler": [
+                                            "var lock_check = \"\";\r",
+                                            "if (data.lock === 0) { lock_check = \"small_icon/no_locked.png\";}\r",
+                                            "if (data.lock === 1) { lock_check = \"small_icon/my_locked.png\";}\r",
+                                            "if (data.lock === 2) { lock_check = \"small_icon/locked.png\";}\r",
+                                            "if (data.lock === 4) { lock_check = \"small_icon/sco.png\";}\r",
+                                            "if (data.lock === 8) { lock_check = \"small_icon/eco.png\";}\r",
+                                            "\r",
+                                            "Ext.apply(data, {\r",
+                                            "\tshortName: Ext.util.Format.ellipsis(data.file_name, 20),\r",
+                                            "\tlock_check_img: lock_check\r",
+                                            "});\r",
+                                            "\r",
+                                            "return data;"
+                                        ]
+                                    },
+                                    "designerId": "1a091364-8add-4f46-adc9-1ee3742f5a9d"
+                                },
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "tpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "implHandler": [
+                                            "<tpl for=\".\">\r",
+                                            "\t<div class=\"thumb-wrapSL\">\r",
+                                            "\t\t<tpl if=\"file_type == 'mp4'\">\r",
+                                            "\t\t\t<video class=\"each-layer\" controls width=\"200px\" height=\"150px\">\r",
+                                            "\t\t\t\t<source src=\"{url}\" type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"' />\r",
+                                            "\t\t\t\t<p>動画を再生するには<br/>videoタグをサポートした<br/>ブラウザが必要です。</p>\r",
+                                            "\t\t\t</video>\r",
+                                            "\t\t</tpl>\r",
+                                            "\t\t<tpl if=\"file_type == 'ogg'\">\r",
+                                            "\t\t\t<video class=\"each-layer\" controls width=\"200px\" height=\"150px\">\r",
+                                            "\t\t\t\t<source src=\"{url}\" type='video/ogg; codecs=\"theora, vorbis\"' />\r",
+                                            "\t\t\t\t<p>動画を再生するには<br/>videoタグをサポートした<br/>ブラウザが必要です。</p>\r",
+                                            "\t\t\t</video>\r",
+                                            "\t\t</tpl>\r",
+                                            "\t\t<tpl if=\"file_type != 'mp4' && file_type != 'ogg'\">\r",
+                                            "\t\t\t<span class=\"each-layer\">\r",
+                                            "\t\t\t\t<img src=\"data/{thumbnail_image}\" style=\"max-width:200px;max-height:150px\" />\r",
+                                            "\t\t\t</span>\r",
+                                            "\t\t</tpl>\r",
+                                            "\t\t<span class=\"property\">\r",
+                                            "\t\t\t<table width=\"100%\">\r",
+                                            "\t\t\t\t<tr><td width=\"100px\">ファイル名: </td><td>{file_name}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>ファイルタイプ: </td><td>{file_type}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>サイズ: </td><td>{file_disp_size}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>バージョン: </td><td>{file_version}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>URL: </td><td>{url}</td></tr>\r",
+                                            "\t\t\t\t<tr><td colspan=\"2\"><hr /></td></tr>\r",
+                                            "\t\t\t\t<tr><td>作成日時: </td><td>{created_at:date(\"Y-m-d H:i:s\")}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>作成者: </td><td>{creator}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>更新日時: </td><td>{updated_at:date(\"Y-m-d H:i:s\")}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>更新者: </td><td>{modifier}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>所有者: </td><td>{owner}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>所有権: </td><td>{ownership}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>ファイルロック:</td><td><img src=\"data/{lock_check_img}\" /></td></tr>\r",
+                                            "\t\t\t\t<tr><td>アクセス権: </td><td>{access_group}</td></tr>\r",
+                                            "\t\t\t</table>\r",
+                                            "\t\t</span>\r",
+                                            "\t\t<span class=\"property\">\r",
+                                            "\t\t\t<table width=\"100%\">\r",
+                                            "\t\t\t\t<tr><td width=\"100px\">タイトル: </td><td>{title}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>サブタイトル: </td><td>{subtitle}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>画像サイズ: </td><td>{frame_size}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>再生時間:</td><td>{duration}</td></tr>\r",
+                                            "\t\t\t\t<tr><td colspan=\"2\"><hr /></td></tr>\r",
+                                            "\t\t\t\t<tr><td>制作者: </td><td>{producer}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>制作日: </td><td>{produced_date:date(\"Y-m-d H:i:s\")}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>ロケーション:</td><td>{location}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>出演者:</td><td>{cast}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>音楽: </td><td>{music}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>著作権: </td><td>{copyright}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>クライアント:</td><td>{client}</td></tr>\r",
+                                            "\t\t\t\t<tr><td colspan=\"2\"><hr /></td></tr>\r",
+                                            "\t\t\t\t<tr><td>キーワード: </td><td>{keyword}</td></tr>\r",
+                                            "\t\t\t\t<tr><td>ノート: </td><td>{description}</td></tr>\r",
+                                            "\t\t\t</table>\r",
+                                            "\t\t</span><br clear=\"both\"/>\r",
+                                            "\t</div>\r",
+                                            "</tpl>\r",
+                                            "<div class=\"x-clear\"></div>"
+                                        ],
+                                        "designer|displayName": "tpl"
+                                    },
+                                    "designerId": "769d2742-f599-4a2f-880c-c56c3031ddcf"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThumbnailViewSLItemContextMenu",
+                                        "implHandler": [
+                                            "tree_context_menu = new Ext.menu.Menu({\r",
+                                            "\titems: [\r",
+                                            "\tdisplayProperty,\r",
+                                            "\t//displayPropertyExpanded,\r",
+                                            "\t//displayPropertyDetails,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\topenFile,\r",
+                                            "\t//copyFile,\r",
+                                            "\t//moveFile,\r",
+                                            "\t//deleteFile,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//checkoutFile,\r",
+                                            "\t//lockFile,\r",
+                                            "\t//releaseFileOwnership,\r",
+                                            "\t//settingFileAccessRight,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//sendingFile,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//searchFiles,\r",
+                                            "\t//new Ext.menu.Separator(),\r",
+                                            "\t//openTrashbox\r",
+                                            "\t]\r",
+                                            "});\r",
+                                            "\r",
+                                            "tree_context_menu.showAt(e.getXY());\r",
+                                            "return false;\r",
+                                            ""
+                                        ],
+                                        "name": "itemcontextmenu",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "78241db4-7658-4eb7-ab37-4f2bdd7514ae"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "id": "filesS_thumbList",
+                                "width": null,
+                                "afterPageText": null,
+                                "beforePageText": null,
+                                "displayInfo": true,
+                                "displayMsg": null,
+                                "emptyMsg": null,
+                                "firstText": null,
+                                "lastText": null,
+                                "nextText": null,
+                                "prevText": null,
+                                "refreshText": null,
+                                "store": "FileDataStoreS"
+                            },
+                            "designerId": "1a36c3b1-9e5a-4585-ad5d-521123454b78"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "b053a4f0-47ea-4621-9f61-fdde49b5432d"
+                }
+            ]
+        }
+    ]
+}

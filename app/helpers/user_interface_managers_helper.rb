@@ -1,0 +1,2 @@
+module UserInterfaceManagersHelper
+end

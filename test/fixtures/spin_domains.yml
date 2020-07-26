@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_did: 1
+  spin_domain_name: MyString
+  spin_domain_root: MyString
+  domain_descr: MyText
+  domain_atrtributes: MyText
+
+two:
+  spin_did: 1
+  spin_domain_name: MyString
+  spin_domain_root: MyString
+  domain_descr: MyText
+  domain_atrtributes: MyText

@@ -1,0 +1,1425 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "autoRender": null,
+        "html": null,
+        "id": "groupDsp",
+        "designer|userClassName": "GroupDsp",
+        "designer|userAlias": "groupdsp",
+        "layout": "hbox",
+        "title": "グループ編集"
+    },
+    "designerId": "c02c6e1b-1e12-485b-9f44-4bb657dba202",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "stretch",
+                "frame": true,
+                "id": "myGroups",
+                "autoScroll": true,
+                "layout": "vbox",
+                "bodyPadding": 5,
+                "title": null
+            },
+            "designerId": "8ec06df7-a17b-4eb5-a2e9-50bb1bb764d2",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "height": 50,
+                        "id": "newGroup",
+                        "margin": 0,
+                        "padding": "0 5 5 10",
+                        "layout": "fit",
+                        "title": "グループを作成"
+                    },
+                    "designerId": "d93ac0c3-12f4-4e37-ab43-0ce4f097f7a8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "width": 400,
+                                "layout": "hbox",
+                                "fieldLabel": null
+                            },
+                            "designerId": "4a442f14-3d45-4f25-b7c2-f5c3eb9a3769",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1.2,
+                                        "height": null,
+                                        "itemId": null,
+                                        "margin": 0,
+                                        "fieldLabel": "新規グループ名",
+                                        "labelWidth": 120,
+                                        "name": "new_my_group"
+                                    },
+                                    "designerId": "557b57e3-702b-4f7a-ab38-10f19f01f7a7"
+                                },
+                                {
+                                    "type": "Ext.resizer.Splitter",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "fa61f70e-90a2-445d-80a6-afda9bc65551"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 0.8,
+                                        "hidden": true,
+                                        "margin": null,
+                                        "fieldLabel": "説明",
+                                        "labelAlign": "right",
+                                        "labelWidth": 40,
+                                        "name": "new_group_description",
+                                        "allowBlank": false
+                                    },
+                                    "designerId": "e2e8f828-91a9-4fca-a3bd-b4de553f28ec"
+                                },
+                                {
+                                    "type": "Ext.resizer.Splitter",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 10
+                                    },
+                                    "designerId": "6d9e8164-32e1-482c-915b-305b04f9f676"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "margin": null,
+                                        "width": 100,
+                                        "text": "作成",
+                                        "tooltip": [
+                                            "{\r",
+                                            "\thtml: \"新規グループを入力した通りに作成します。\"\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "5b77478c-e987-4f0e-9a47-8ceb0077658d",
+                                    "cn": [
+                                        {
+                                            "type": "basicfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var formX = this.up('form').getForm().getFieldValues();\r",
+                                                    "\r",
+                                                    "//if (formX.new_my_group === '' || formX.new_group_description === '') {\r",
+                                                    "if (formX.new_my_group === '') {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\t//title:'新規グループ名・説明入力',\r",
+                                                    "\t\t//msg: '新規グループ名/説明を入力して下さい。',\r",
+                                                    "\t\ttitle:'新規グループ名入力',\r",
+                                                    "\t\tmsg: '新規グループ名を入力して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "formX = Ext.apply({session_id: this_session_id}, formX);\r",
+                                                    "dataY = Ext.apply({request_type: \"create_my_group\"},formX);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tmethod: 'POST',\r",
+                                                    "\tjsonData: dataY,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'新規グループ作成失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.getStore('GroupCreatedStore').load();\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'新規グループ作成成功',\r",
+                                                    "\t\t\tmsg: '新規グループを作成しました。',\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t\tvar thisForm = Ext.ComponentQuery.query('#myGroups')[0].getForm().setValues(\r",
+                                                    "\t\t{\r",
+                                                    "\t\t\tnew_my_group: ''\r",
+                                                    "\t\t}\r",
+                                                    "\t\t);\r",
+                                                    "\t}\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'新規グループ作成失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}\r",
+                                                    ""
+                                                ]
+                                            },
+                                            "designerId": "f49cf832-ce02-4721-8fc2-8e8721419735"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|align": "stretch",
+                        "container|padding": null,
+                        "height": 80,
+                        "id": "createdGroup",
+                        "margin": "3 0 5 0",
+                        "padding": "0 5 5 10",
+                        "layout": "vbox",
+                        "title": "グループを選択"
+                    },
+                    "designerId": "68a08552-7374-4e05-b870-77a7787bf303",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "height": 24,
+                                "width": 400,
+                                "layout": "hbox",
+                                "fieldLabel": null
+                            },
+                            "designerId": "5e258823-d170-4988-9748-88bb4096f7ff",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "id": "myMembers",
+                                        "margin": null,
+                                        "designer|displayName": "my_group",
+                                        "fieldLabel": null,
+                                        "labelWidth": 120,
+                                        "name": "my_group",
+                                        "emptyText": null,
+                                        "selectOnFocus": true,
+                                        "editable": false,
+                                        "displayField": "group_name",
+                                        "forceSelection": true,
+                                        "store": "GroupCreatedStore",
+                                        "valueField": "group_id"
+                                    },
+                                    "designerId": "e3351083-21e4-45d8-989b-81f4af2afa52",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onComboboxSelect",
+                                                "implHandler": [
+                                                    "var selected_group = records[0].raw;\r",
+                                                    "\r",
+                                                    "var formX = Ext.apply({'selected_group': selected_group});\r",
+                                                    "formX = Ext.apply({session_id: this_session_id}, formX);\r",
+                                                    "var dataY = Ext.apply({request_type: \"select_my_group\"},formX);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tmethod: 'POST',\r",
+                                                    "\tjsonData: dataY,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'作成グループ選択失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.getCmp('my_group_bar').moveFirst();\r",
+                                                    "\t}\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'作成グループ選択失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}"
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "4ad08f42-3e01-4a01-87a5-593cb8bb40aa"
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMyMembersBeforeQuery",
+                                                "implHandler": [
+                                                    "Ext.getStore('GroupCreatedStore').load();\r",
+                                                    ""
+                                                ],
+                                                "name": "beforequery",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "2dd63762-a104-4b9b-af7f-5653e81c3c82"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "hidden": true,
+                                        "margin": null,
+                                        "fieldLabel": "説明",
+                                        "labelAlign": "right",
+                                        "labelWidth": 40,
+                                        "name": "group_description",
+                                        "allowBlank": false
+                                    },
+                                    "designerId": "e6276301-29a9-4758-b191-35130a18a6c0"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "fieldLabel": "Label",
+                                        "labelWidth": null,
+                                        "name": "target_hash_key"
+                                    },
+                                    "designerId": "915f4a35-9a6d-45a6-8f55-2c4f742af133"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|padding": null,
+                                "height": 23,
+                                "padding": "0 0 0 0",
+                                "width": 400,
+                                "layout": "hbox",
+                                "fieldLabel": null
+                            },
+                            "designerId": "04b45451-34a3-49db-bd10-502d301a8ebe",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "height": null,
+                                        "margin": 0,
+                                        "fieldLabel": "グループ名の変更",
+                                        "labelWidth": 120,
+                                        "name": "changed_group_name"
+                                    },
+                                    "designerId": "237d93bc-3741-4de3-87bb-28fb1b1dcf2e"
+                                },
+                                {
+                                    "type": "Ext.resizer.Splitter",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "fe06a2e4-b57c-4c34-b612-4bcb670ae03a"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "0 0 0 3",
+                                        "width": 80,
+                                        "text": "名称等変更",
+                                        "tooltip": [
+                                            "{\r",
+                                            "\thtml: \"選択したグループの名称を変更します。\"\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "df18aea2-7141-4b2a-b5ee-f9ae60d66d03",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "var formX = this.up('form').getForm().getFieldValues();\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(formX.my_group)) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'作成グループ名選択',\r",
+                                                    "\t\tmsg: '作成したグループ名を選択して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "formX = Ext.apply({session_id: this_session_id}, formX);\r",
+                                                    "var dataY = Ext.apply({request_type: \"change_my_group_name\"},formX);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tmethod: 'POST',\r",
+                                                    "\tjsonData: dataY,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'グループ名変更失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'グループ名変更成功',\r",
+                                                    "\t\t\tmsg: 'グループ名を変更しました。',\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t\tExt.getStore('GroupCreatedStore').load();\r",
+                                                    "\t\t//Ext.getCmp('my_group_bar').moveFirst();\r",
+                                                    "\t\tvar thisForm = Ext.ComponentQuery.query('#myGroups')[0].getForm().setValues(\r",
+                                                    "\t\t{\r",
+                                                    "\t\t\tchanged_group_name: ''\r",
+                                                    "\t\t}\r",
+                                                    "\t\t);\r",
+                                                    "\t}\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'グループ名変更失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "e96f4f8c-e066-4699-89dc-c7d591cff691"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": "0 0 0 3",
+                                        "width": 90,
+                                        "text": "グループ削除",
+                                        "tooltip": [
+                                            "{\r",
+                                            "\thtml: \"選択したグループを削除します。\"\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "72bab989-6553-4ba7-a920-17b41aa911a8",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "var formX = this.up('form').getForm().getFieldValues();\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(formX.my_group)) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'作成グループ名選択',\r",
+                                                    "\t\tmsg: '作成したグループ名を選択して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "formX = Ext.apply({session_id: this_session_id}, formX);\r",
+                                                    "var dataY = Ext.apply({request_type: \"delete_my_group\"},formX);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tmethod: 'POST',\r",
+                                                    "\tjsonData: dataY,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'グループ削除失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'グループ削除成功',\r",
+                                                    "\t\t\tmsg: 'グループを削除しました。',\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t\tExt.getStore('GroupCreatedStore').load();\r",
+                                                    "\t}\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'グループ削除失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "cb7c07a1-7ab1-44f8-b8f0-333c33e7c0fa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "height": null,
+                        "itemId": "groupMembers",
+                        "margin": null,
+                        "padding": "0 0 0 0",
+                        "width": null,
+                        "autoScroll": true,
+                        "title": null,
+                        "store": "MemberDataStore"
+                    },
+                    "designerId": "2d8a934e-0065-4427-b8a0-6b42ccaf4811",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "style": null,
+                                "emptyText": "表示するデータがありません。"
+                            },
+                            "designerId": "566efba6-3166-4817-94bf-e860cc0440cb"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "designerId": "ee07f2c2-2981-4b31-be01-c897c1a4c0b9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null,
+                                "defaultWidth": null,
+                                "dataIndex": "group_name",
+                                "text": "グループ名",
+                                "flex": 1
+                            },
+                            "designerId": "ae8f2aa5-3091-4de6-9427-2501fd38bbe9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "sortable": false,
+                                "dataIndex": "group_description",
+                                "hideable": false,
+                                "text": "グループ説明",
+                                "flex": 1
+                            },
+                            "designerId": "ce81a493-2123-4317-a284-c5e5c9413af9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 140,
+                                "defaultWidth": null,
+                                "sortable": false,
+                                "dataIndex": "group_id",
+                                "hideable": false,
+                                "text": "グループID"
+                            },
+                            "designerId": "f98de284-e2c8-4978-a749-88c9838e0f23"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null,
+                                "dataIndex": "member_name",
+                                "text": "メンバー名",
+                                "flex": 1
+                            },
+                            "designerId": "fa397494-31cb-49b4-89c8-467d663c0b8c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "sortable": false,
+                                "dataIndex": "member_description",
+                                "hideable": false,
+                                "text": "メンバー補助名",
+                                "flex": 1
+                            },
+                            "designerId": "2cbde85d-1b34-4368-bc4d-d03d71505c7b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "sortable": false,
+                                "dataIndex": "member_id",
+                                "hideable": false,
+                                "text": "メンバーID"
+                            },
+                            "designerId": "4ea0b5df-4ff5-4b03-aa16-c417a46fca9f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 142,
+                                "sortable": false,
+                                "dataIndex": "member_remark",
+                                "hideable": false,
+                                "text": "メンバー特記",
+                                "flex": 1
+                            },
+                            "designerId": "af8eed37-8e4e-48c1-9019-162e5a054cb5"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": null,
+                                "sortable": false,
+                                "dataIndex": "data_class",
+                                "hideable": false,
+                                "text": null
+                            },
+                            "designerId": "d9b89bcf-eef3-41b4-8112-fb42f351271a"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "container|padding": 0,
+                                "padding": 0,
+                                "ui": [
+                                    "footer"
+                                ]
+                            },
+                            "designerId": "b54d882a-b0da-4883-a72f-31041a998927",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "itemId": "deleteMember",
+                                        "margin": 0,
+                                        "width": 100,
+                                        "icon": "data/small_icon/delete.png",
+                                        "iconCls": null,
+                                        "text": "メンバー除外",
+                                        "tooltip": [
+                                            "{\r",
+                                            "\thtml: \"選択したメンバーをグループから除外します。\"\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "c00e30b4-0c68-4450-9c0b-4a596c207275",
+                                    "cn": [
+                                        {
+                                            "type": "basicfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var componentG = Ext.getCmp('myGroups');\r",
+                                                    "var gridG = componentG.down('#groupMembers');\r",
+                                                    "\r",
+                                                    "var records = gridG.getSelectionModel().getSelection(), data = [];\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(records)) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'メンバー選択',\r",
+                                                    "\t\tmsg: 'メンバーを選択して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "for (var i = 0; i < records.length; i++) {\r",
+                                                    "\tdata.push(records[i].data);\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "var formX = this.up('form').getForm().getFieldValues();\r",
+                                                    "\r",
+                                                    "\r",
+                                                    "if (formX.my_group === '') {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'グループ選択',\r",
+                                                    "\t\tmsg: 'グループを選択して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "var dataY = Ext.apply(formX, data);\r",
+                                                    "dataY = Ext.apply({session_id: this_session_id}, dataY);\r",
+                                                    "var dataZ = Ext.apply({request_type: \"dismiss_group_members\"},dataY);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tjsonData: dataZ,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'グループ除外失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.getCmp('my_group_bar').moveFirst();\r",
+                                                    "\t}\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'グループ除外失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "a093863b-fcca-4b08-aa30-57fdfc9e287e"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "id": "my_group_bar",
+                                "width": null,
+                                "displayInfo": true,
+                                "store": "MemberDataStore"
+                            },
+                            "designerId": "524d9400-eb3e-4755-8bf1-75acfaaa6c4a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "stretch",
+                "container|padding": 0,
+                "frame": true,
+                "id": "wholeGroups",
+                "autoScroll": true,
+                "layout": "vbox",
+                "bodyPadding": 5,
+                "title": null
+            },
+            "designerId": "1a2d8fd2-d159-4f74-8454-92ca79433456",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "height": 50,
+                        "id": "searchGroup",
+                        "margin": "0 0 4 0",
+                        "padding": "0 5 5 10",
+                        "title": "グループを検索"
+                    },
+                    "designerId": "1c7aa98b-db54-4981-b1c6-c7ae64ad4ad7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "margin": 0,
+                                "width": null,
+                                "fieldLabel": "検索グループ名",
+                                "name": "searching_group",
+                                "validateOnChange": false,
+                                "validateOnBlur": false,
+                                "allowBlank": false,
+                                "size": null
+                            },
+                            "designerId": "637e1e14-41dc-4c40-ae76-ceef03c72da3"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "fieldLabel": "メンバー追加先グループのhash",
+                                "labelWidth": 150,
+                                "name": "target_hash_key"
+                            },
+                            "designerId": "80aa4b68-d93e-4a2e-9e88-891f223f39fb"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "margin": "-39 0 0 270",
+                                "width": 100,
+                                "text": "検索 ",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"指定した条件によって、グループを検索します。\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "e4ea4907-ed97-47f4-a4bc-1fca9b9a0d57",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "var formX = this.up('form').getForm().getFieldValues();\r",
+                                            "\r",
+                                            "if (formX.searching_group === '') {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'検索グループ名入力',\r",
+                                            "\t\tmsg: '検索グループ名を入力して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "formX = Ext.apply({session_id: this_session_id}, formX);\r",
+                                            "dataY = Ext.apply({request_type: \"search_all_groups\"},formX);\r",
+                                            "\r",
+                                            "Ext.Ajax.request({\r",
+                                            "\turl: 'tdx/updatedata.tdx',\r",
+                                            "\tmethod: 'POST',\r",
+                                            "\tjsonData: dataY,\r",
+                                            "\tsuccess: handleSuccess,\r",
+                                            "\tfailure: handleFailure\r",
+                                            "});\r",
+                                            "\r",
+                                            "Ext.Msg.show({\r",
+                                            "\ttitle: 'グループ検索中',\r",
+                                            "\tmsg: 'グループ検索中です。'\r",
+                                            "});\r",
+                                            "\r",
+                                            "function handleSuccess(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.hide();\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'グループ検索失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tExt.Msg.hide();\r",
+                                            "\t\tExt.getCmp('group_all_bar').moveFirst();\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailure(response) {\r",
+                                            "\tExt.Msg.hide();\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'グループ検索失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "}\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "68630fda-312b-476d-985a-8e3bf4d3e9e3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "dock": null,
+                        "height": null,
+                        "itemId": "groupList",
+                        "margin": null,
+                        "padding": "0 0 0 0",
+                        "width": null,
+                        "autoScroll": true,
+                        "title": null,
+                        "store": "GroupAllStore"
+                    },
+                    "designerId": "4ddc517d-2328-4484-873e-70532498e272",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": true,
+                                "style": null,
+                                "emptyText": "表示するデータがありません。"
+                            },
+                            "designerId": "df8c5fd7-bcd0-4ea8-9887-80350a1dcff4"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "designerId": "1985b63a-d5d4-4bc3-89fc-5c4fee1e8f93"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120,
+                                "dataIndex": "group_name",
+                                "text": "グループ名",
+                                "flex": 1
+                            },
+                            "designerId": "c3bb0c85-4d31-46cf-a6ab-fb5f6d511162"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "draggable": false,
+                                "hidden": true,
+                                "hideMode": "offsets",
+                                "width": 120,
+                                "sortable": false,
+                                "dataIndex": "group_description",
+                                "hideable": false,
+                                "text": "グループ説明",
+                                "flex": 1
+                            },
+                            "designerId": "a4c25b59-5bcf-46ce-ace6-93485abc0ed6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "hideMode": null,
+                                "width": 80,
+                                "sortable": false,
+                                "dataIndex": "group_id",
+                                "hideable": false,
+                                "text": "グループID"
+                            },
+                            "designerId": "66b070f8-cd3d-45c3-9734-4c862d6256ab"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null,
+                                "dataIndex": "member_name",
+                                "text": "メンバー名",
+                                "flex": 1
+                            },
+                            "designerId": "53d32708-1507-43c8-a82c-6a0146c7e025"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": null,
+                                "sortable": false,
+                                "dataIndex": "member_description",
+                                "hideable": false,
+                                "text": "メンバー補助名",
+                                "flex": 1
+                            },
+                            "designerId": "4189f1c7-5540-4b97-ad0d-449e86cca1aa"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "width": 150,
+                                "sortable": false,
+                                "dataIndex": "member_id",
+                                "hideable": false,
+                                "text": "メンバーID"
+                            },
+                            "designerId": "28f97a0d-814a-4f7e-8884-b789b6d22c22"
+                        },
+                        {
+                            "type": "Ext.grid.feature.Grouping",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableGroupingMenu": false,
+                                "groupHeaderTpl": "{name}",
+                                "startCollapsed": true
+                            },
+                            "designerId": "d6eb3532-623c-4896-b09a-67cc487a64ea"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "container|padding": 0,
+                                "padding": 0,
+                                "ui": [
+                                    "footer"
+                                ]
+                            },
+                            "designerId": "db253650-b7c7-45ce-8664-110f83612b91",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "margin": null,
+                                        "width": 100,
+                                        "icon": "data/small_icon/add.png",
+                                        "text": "メンバー追加",
+                                        "tooltip": [
+                                            "{\r",
+                                            "\thtml: \"選択したグループ、メンバーを左のグループのメンバーとして追加します。\"\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "58935ed4-f34c-4f27-8334-2bf9579dd1d5",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "var componentG = Ext.getCmp('wholeGroups');\r",
+                                                    "var gridG = componentG.down('#groupList');\r",
+                                                    "\r",
+                                                    "var records = gridG.getSelectionModel().getSelection(), data = [];\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(records)) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'メンバー選択',\r",
+                                                    "\t\tmsg: 'メンバーを選択して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "for (var i = 0; i < records.length; i++) {\r",
+                                                    "\tdata.push(records[i].data);\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "var formX = this.up('form').getForm().getFieldValues();\r",
+                                                    "var dataY = Ext.apply(formX, data);\r",
+                                                    "dataY = Ext.apply({session_id: this_session_id}, dataY);\r",
+                                                    "var dataZ = Ext.apply({request_type: \"append_my_group_members\"},dataY);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tjsonData: dataZ,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'メンバー追加失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.getCmp('my_group_bar').moveFirst();\r",
+                                                    "\t\t//Ext.getCmp('group_all_bar').moveFirst();\r",
+                                                    "\t}\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'メンバー追加失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "d73ac226-9e49-4387-a870-f60f08458142"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "id": "group_all_bar",
+                                "width": null,
+                                "displayInfo": true,
+                                "store": "GroupAllStore"
+                            },
+                            "designerId": "1c83c51d-37d4-4c2b-b4d3-e8c07c65174b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

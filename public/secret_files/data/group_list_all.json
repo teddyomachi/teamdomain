@@ -1,0 +1,206 @@
+{
+	"members" :
+	[
+		{
+			"group_name": "Xプロジェクト",
+			"member_name": "伊藤, 松方, 山本, 高橋, 若槻, 浜口, 岡田, 廣田",
+			"member_remark": "伊藤, 松方, 山本, 高橋, 若槻, 浜口, 岡田, 廣田"
+		},
+		{
+			"group_name": "a クライアント",
+			"group_description": "A社",
+			"member_name": "伊藤博文",
+			"member_description": "広告宣伝部",
+			"member_id": "d1-0001",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "a クライアント",
+			"group_description": "B社",
+			"member_name": "黒田清隆",
+			"member_description": "マーケティング部",
+			"member_id": "d1-0002",
+			"member_remark": "なし"
+		},
+		/*
+		{
+			"group_name": "a クライアント",
+			"group_description": "C社",
+			"member_name": "三條實美",
+			"member_description": "PR推進室",
+			"member_id": "d1-0003",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "a クライアント",
+			"group_description": "D社",
+			"member_name": "山縣有朋",
+			"member_description": "広報室",
+			"member_id": "d1-0004",
+			"member_remark": "なし"
+		},
+		*/
+		{
+			"id": "5",
+			"group_name": "b 広告代理店",
+			"group_description": "イ社",
+			"member_name": "松方正義",
+			"member_description": "一部",
+			"member_id": "d1-0005",
+			"member_remark": "なし"
+		},
+		{
+			"id": "6",
+			"group_name": "b 広告代理店",
+			"group_description": "ロ社",
+			"member_name": "大隈重信",
+			"member_description": "二部",
+			"member_id": "d1-0006",
+			"member_remark": "なし"
+		},
+		/*
+			{
+			"group_name": "b 広告代理店",
+			"group_description": "ハ社",
+			"member_name": "西園寺公望",
+			"member_description": "第三部",
+			"member_id": "d1-0007",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "b 広告代理店",
+			"group_description": "ニ社",
+			"member_name": "桂太郞",
+			"member_description": "IT部",
+			"member_id": "d1-0008",
+			"member_remark": "なし"
+		},
+		*/
+		{
+			"group_name": "c CM制作会社",
+			"group_description": "I社",
+			"member_name": "山本權兵衞",
+			"member_description": "部長",
+			"member_id": "d1-0009",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "c CM制作会社",
+			"group_description": "II社",
+			"member_name": "寺內正毅",
+			"member_description": "部長",
+			"member_id": "d1-0010",
+			"member_remark": "なし"
+		},
+		/*
+		{
+			"group_name": "c CM制作会社",
+			"group_description": "III社",
+			"member_name": "原敬",
+			"member_description": "次長",
+			"member_id": "d1-0011",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "c CM制作会社",
+			"group_description": "IV社",
+			"member_name": "內田康哉",
+			"member_description": "次長",
+			"member_id": "d1-0012",
+			"member_remark": "なし"
+		},
+		*/
+		{
+			"group_name": "d ポストプロダクション",
+			"group_description": "My Company",
+			"member_name": "高橋是淸",
+			"member_description": "課長",
+			"member_id": "d1-0013",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "d ポストプロダクション",
+			"group_description": "My Company",
+			"member_name": "加藤友三郞",
+			"member_description": "課長",
+			"member_id": "d1-0014",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "d ポストプロダクション",
+			"group_description": "My Company",
+			"member_name": "淸浦奎吾",
+			"member_description": "課長",
+			"member_id": "d1-0015",
+			"member_remark": "なし"
+		},
+		/*
+		{
+			"group_name": "d ポストプロダクション",
+			"group_description": "My Company",
+			"member_name": "加藤高明",
+			"member_description": "課長",
+			"member_id": "d1-0016",
+			"member_remark": "なし"
+		},
+		*/
+		{
+			"group_name": "e プロフェッショナル",
+			"group_description": "CG制作",
+			"member_name": "若槻禮次郎",
+			"member_description": "クリエータ",
+			"member_id": "d1-0017",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "e プロフェッショナル",
+			"group_description": "CG制作",
+			"member_name": "田中義一",
+			"member_description": "クリエータ",
+			"member_id": "d1-0018",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "e プロフェッショナル",
+			"group_description": "アニメ制作",
+			"member_name": "濱口雄幸",
+			"member_description": "クリエータ",
+			"member_id": "d1-0019",
+			"member_remark": "なし"
+		},
+		/*
+		{
+			"group_name": "e プロフェッショナル",
+			"group_description": "アニメ制作",
+			"member_name": "犬養毅",
+			"member_description": "クリエータ",
+			"member_id": "d1-0020",
+			"member_remark": "なし"
+		},
+		*/
+		{
+			"group_name": "e プロフェッショナル",
+			"group_description": "アニメ制作",
+			"member_name": "齋藤實",
+			"member_description": "クリエータ",
+			"member_id": "d1-0021",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "e プロフェッショナル",
+			"group_description": "音楽制作",
+			"member_name": "岡田啓介",
+			"member_description": "ミュージシャン",
+			"member_id": "d1-0022",
+			"member_remark": "なし"
+		},
+		{
+			"group_name": "e プロフェッショナル",
+			"group_description": "撮影",
+			"member_name": "廣田弘毅",
+			"member_description": "カメラマン",
+			"member_id": "d1-0023",
+			"member_remark": "なし"
+		}
+	]
+}

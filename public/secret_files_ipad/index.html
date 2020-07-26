@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>SECRET FILES Mobile</title>
+	<script>
+		var Ext = Ext || {};
+		Ext.theme = {
+			name: "Default"
+		};
+	</script>
+	<script type="text/javascript">
+	<!--
+		//Session Control
+		//When using GET method
+		
+		var args  = {};
+		var query = location.search.substring(1);
+		var pairs = query.split("&");
+		for ( var i = 0; i < pairs.length; i++) {
+			var pos = pairs[i].indexOf('=');
+			if ( pos == -1 ) continue;
+			var name   = pairs[i].substring(0, pos);
+			var value  = pairs[i].substring(pos + 1);
+			value      = decodeURIComponent(value);
+			args[name] = value;
+		}
+		var this_session_name = name;
+		var this_session_id   = args[this_session_name];
+		/*
+		//When using Cookie
+		//session_name = PHPSESSID
+		var cookies = {};
+		var all = document.cookie;
+		if (all !== "") {
+			var list = all.split("; ");
+			for ( var i = 0; i < list.length; i++ )	{
+				var cookie = list[i];
+				var p	  = cookie.indexOf("=");
+				var name   = cookie.substring(0,p);
+				var value  = cookie.substring(p+1);
+				value	  = decodeURIComponent(value);
+				cookies[name] = value;
+				if (name === "PHPSESSID") {
+					var this_session_name = name;
+					var this_session_id   = value;
+					//alert(value);
+				}
+			}
+		}
+		*/
+	// -->
+	</script>
+	<script src="../touch-2.3.1/sencha-touch-all.js"></script>
+	<link rel="stylesheet" href="../touch-2.3.1/resources/css/sencha-touch.css">
+	<link rel="stylesheet" href="css/mycss.css">
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body></body>
+</html>

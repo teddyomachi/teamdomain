@@ -1,0 +1,17 @@
+{
+	"senders" :
+	[
+		{
+			"member_id": "d1-0001",
+			"sender_id": "01",
+			"sender_name": "木村浩二(Woodville)",
+			"sender_email": "kimura@woodville.com"
+		},
+		{
+			"member_id": "d1-0001",
+			"sender_id": "02",
+			"sender_name": "木村浩二(TimeFactor)",
+			"sender_email": "kimura@timefactorinc.com"
+		}
+	]
+}

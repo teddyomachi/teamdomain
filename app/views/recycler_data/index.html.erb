@@ -1,0 +1,35 @@
+<h1>Listing recycler_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Hash key</th>
+    <th>Cont location</th>
+    <th>File name</th>
+    <th>File type</th>
+    <th>File exact size</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recycler_data.each do |recycler_datum| %>
+  <tr>
+    <td><%= recycler_datum.session_id %></td>
+    <td><%= recycler_datum.hash_key %></td>
+    <td><%= recycler_datum.cont_location %></td>
+    <td><%= recycler_datum.file_name %></td>
+    <td><%= recycler_datum.file_type %></td>
+    <td><%= recycler_datum.file_exact_size %></td>
+    <td><%= recycler_datum.url %></td>
+    <td><%= link_to 'Show', recycler_datum %></td>
+    <td><%= link_to 'Edit', edit_recycler_datum_path(recycler_datum) %></td>
+    <td><%= link_to 'Destroy', recycler_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Recycler datum', new_recycler_datum_path %>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="SECRET FILES Manual" />
+		<link rel="stylesheet" href="./css/mycss.css" type="text/css" media="all" />
+		<title>SECRET FILES Manual</title>
+	</head>
+	<body>
+		<div style="margin:10px">
+			<h1>SecretFilesマニュアル</h1>
+			<h2>4.SecretFilesサービス(操作編)</h2>
+			<h3></h3>
+			<h4>4.2.13 グループと共有の設定</h4>
+			<div>
+				共有するフォルダの作成方法について研究室を例に説明します。<br/>
+				<br/>
+				<h5 style="font-size:large;margin-left:-10px">(1) ケース</h5>
+				以下の通りの名称とします。<br/>
+					・研究室名：iST研究室<br/>
+					・教員名：A（１アカウント）<br/>
+					・学生名：１〜30（30アカウント）<br/>
+					<br/>
+
+				<h5 style="font-size:large;margin-left:-10px">(2) 共有用アカウントのアクティベート</h5>
+				アカウント名“iST研究室”でアクティベートして、共有用アカウントを設定します。この共有アカウントの作成者が、この共有フォルダの管理者となります。以下の作業はこの管理者が実施します。<br/>
+
+				<img src="images/040214a.png" width="80%"><br/>
+				<span style="font-size:small;font-weight:bold">共有アカウントのアクティベーション</span><br/>
+				<br/>
+				<h5 style="font-size:large;margin-left:-10px">(3) 研究室グループの作成とメンバーの追加</h5>
+				iST研究室に所属するメンバでグループを作成します。<br/>
+				この例では、教員、学生、２つのグループを作成します。<br/>
+					・a）教員グループ（教員：Aを追加）<br/>
+					・b）学生グループ（学生：１〜3０を追加）<br/>
+				<img src="images/040214b.png" width="80%"><br/>
+				
+				　各グループにメンバが増えた場合は、教員、学生それぞれのグループに対して、新規メンバを追加します。<br/>
+				<img src="images/040214c.png" width="100%"><br/>
+				<span style="font-size:small;font-weight:bold">グループへのメンバ追加</span><br/>
+				<br/>
+				<h5 style="font-size:large;margin-left:-10px">(4) フォルダの作成とアクセス権の設定</h5>
+				<h6 style="font-size:medium;margin-left:0px">4-1) 管理者のアクセス権を設定します。</h6>
+				・『iST研究室』フォルダ（ホームフォルダ）を選択<br/>
+				・グループの追加：管理者として“iST研究室”グループ を追加<br/>
+				・アクセス権設定：読み取り、書き込み、アクセス権編集 を選択<br/>
+				・範囲/対象：下位の全階層フォルダも含む/フォルダとファイル を選択<br/>
+				・アクセス権設定をクリック<br/>
+				<img src="images/040214d.png" width="100%"><br/>
+				<span style="font-size:small;font-weight:bold">共有アカウント作成者（管理者）のアクセス権設定</span><br/>
+				<br/>
+				<h6 style="font-size:medium;margin-left:0px">4-2) 『iST研究室』フォルダへの共有を設定します。</h6>
+				・グループの追加： a）教員グループ、b)学生グループ　を追加<br/>
+				・アクセス権設定：読み取り、書き込み を選択<br/>
+				・範囲と対象：カレントフォルダのみ / フォルダとファイル を選択<br/>
+				・アクセス権設定をクリック<br/>
+				<img src="images/040214e.png" width="100%"><br/>
+				<span style="font-size:small;font-weight:bold">グループのアクセス権設定</span><br/>
+				<br/>
+				<h6 style="font-size:medium;margin-left:0px">4-3)『教員』グループの共有フォルダを作成します。</h6>
+				・“iST研究室フォルダ”配下に、新規に『教員』フォルダを作成<br/>
+				・グループの追加： a）教員グループ を追加<br/>
+				・アクセス権設定：読み取り、書き込み　を選択<br/>
+				・範囲/対象：下位の全階層フォルダも含む/フォルダとファイル を選択<br/>
+				・アクセス権設定をクリック<br/>
+				<img src="images/040214f.png" width="100%"><br/>
+				<span style="font-size:small;font-weight:bold">教員フォルダとアクセス権設定</span><br/>
+				<br/>
+				<h6 style="font-size:medium;margin-left:0px">4-4) 『学生』フォルダ”</h6>
+				・“iST研究室フォルダ”配下に、新規に『学生』フォルダを作成<br/>
+				・グループの追加： b）学生グループ　を追加<br/>
+				・アクセス権設定：読み取り、書き込み　を選択<br/>
+				・範囲/対象：下位の全階層フォルダも含む/フォルダとファイル を選択<br/>
+				・アクセス権設定をクリック<br/>
+				<img src="images/040214g.png" width="100%"><br/>
+				<br/>
+				<h5 style="font-size:large;margin-left:-10px">5) フォルダ構成</h5>
+				・ホームフォルダは研究室メンバ全員で共有<br/>
+				・教員フォルダは教員グループで共有（学生グループはアクセス不可）<br/>
+				・学生フォルダは学生グループで共有（教員グループはアクセス不可）<br/>
+				<br/>
+				<img src="images/040214h.png" width="100%"><br/>
+				<br/>
+				<h5 style="font-size:large;margin-left:-10px">6) 各アカウントからの見えかた</h5>
+				<h6 style="font-size:medium;margin-left:0px">6-1) iST研究室（管理者）</h6>
+				<img src="images/040214i.png" width="100%"><br/>
+				<br/>
+				<h6 style="font-size:medium;margin-left:0px">6-2) 教員A（教員グループ）</h6>
+				<img src="images/040214j.png" width="100%"><br/>
+				<br/>
+				<h6 style="font-size:medium;margin-left:0px">6-3) 学生1（学生グループ）</h6>
+				<img src="images/040214k.png" width="100%"><br/>
+				<br/>
+			<br/>
+			</div>
+		</div>
+	</body>
+</html>

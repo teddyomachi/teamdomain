@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spin vfs:</b>
+  <%= @spin_vfs_storage_mapping.spin_vfs %>
+</p>
+
+<p>
+  <b>Spin storage:</b>
+  <%= @spin_vfs_storage_mapping.spin_storage %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_vfs_storage_mapping_path(@spin_vfs_storage_mapping) %> |
+<%= link_to 'Back', spin_vfs_storage_mappings_path %>

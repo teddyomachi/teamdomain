@@ -1,0 +1,17 @@
+<?php
+$loginUsername = isset($_POST["loginUsername"]) ? $_POST["loginUsername"] : "";
+ 
+if($loginUsername == "woody"){
+	session_start();
+	$_SESSION["title"]="333";
+	echo "{success: true, session: '0x0x0x'}";
+	/*
+	echo "{success: true, session: { id: '000000'}}";
+	*/
+} else {
+	echo "{success: false, errors: 'ユーザ名、パスワードを確認して、ログインして下さい!' }";
+	/*
+	echo "{success: false, errors: { reason: 'ユーザ名、パスワードを確認して、ログインして下さい!' }}";
+	*/
+}
+?>

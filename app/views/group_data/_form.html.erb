@@ -1,0 +1,61 @@
+<%= form_for(@group_datum) do |f| %>
+  <% if @group_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group_datum.errors.count, "error") %> prohibited this group_datum from being saved:</h2>
+
+      <ul>
+      <% @group_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hash_key %><br />
+    <%= f.text_field :hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :target_hash_key %><br />
+    <%= f.text_field :target_hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :editable_status %><br />
+    <%= f.text_field :editable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :group_name %><br />
+    <%= f.text_field :group_name %>
+  </div>
+  <div class="field">
+    <%= f.label :group_description %><br />
+    <%= f.text_field :group_description %>
+  </div>
+  <div class="field">
+    <%= f.label :group_privilege %><br />
+    <%= f.text_field :group_privilege %>
+  </div>
+  <div class="field">
+    <%= f.label :member_id %><br />
+    <%= f.text_field :member_id %>
+  </div>
+  <div class="field">
+    <%= f.label :member_name %><br />
+    <%= f.text_field :member_name %>
+  </div>
+  <div class="field">
+    <%= f.label :member_description %><br />
+    <%= f.text_field :member_description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

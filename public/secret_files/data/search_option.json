@@ -1,0 +1,60 @@
+{
+	"option":
+	[
+		{
+			"option_name": "タイトル",
+			"field_name": "title",
+			"value": "RIA"
+		},
+		{
+			"option_name": "サブタイトル",
+			"field_name": "subtitle",
+			"value": "RIA"
+		},
+		{
+			"option_name": "キーワード",
+			"field_name": "keyword",
+			"value": "RIA"
+		},
+		{
+			"option_name": "ノート",
+			"field_name": "description",
+			"value": "RIA"
+		},
+		{
+			"option_name": "ファイルタイプ",
+			"field_name": "file_type",
+			"value": "ogg"
+		},
+		{
+			"option_name": "制作者",
+			"field_name": "producer",
+			"value": "Woodville"
+		},
+		{
+			"option_name": "ロケーション",
+			"field_name": "location",
+			"value": "横浜"
+		},
+		{
+			"option_name": "出演者",
+			"field_name": "cast",
+			"value": "-"
+		},
+		{
+			"option_name": "クライアント",
+			"field_name": "client",
+			"value": "Woodville"
+		},
+		{
+			"option_name": "著作権",
+			"field_name": "copyright",
+			"value": "-"
+		},
+		{
+			"option_name": "音楽",
+			"field_name": "music",
+			"value": "-"
+		}
+	]
+}

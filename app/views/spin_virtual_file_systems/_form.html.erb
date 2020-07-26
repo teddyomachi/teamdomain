@@ -1,0 +1,33 @@
+<%= form_for(@spin_virtual_file_system) do |f| %>
+  <% if @spin_virtual_file_system.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_virtual_file_system.errors.count, "error") %> prohibited this spin_virtual_file_system from being saved:</h2>
+
+      <ul>
+      <% @spin_virtual_file_system.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spin_vfs_type %><br />
+    <%= f.text_field :spin_vfs_type %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_vfs_access_mode %><br />
+    <%= f.text_field :spin_vfs_access_mode %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_vfs_name %><br />
+    <%= f.text_field :spin_vfs_name %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_vfs_attibutes %><br />
+    <%= f.text_area :spin_vfs_attibutes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

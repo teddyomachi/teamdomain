@@ -1,0 +1,231 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": false,
+        "draggable": false,
+        "height": 350,
+        "hidden": false,
+        "itemId": "loginWin",
+        "width": 410,
+        "designer|userClassName": "LoginWin",
+        "designer|initialView": true,
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "closable": false,
+        "title": "BOOMBOX  Ver. 1.10",
+        "plain": true
+    },
+    "designerId": "03b32c1d-bee4-434c-99e7-069af2f0175f",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "cls": null,
+                "componentCls": null,
+                "height": null,
+                "id": "loginForm",
+                "itemId": "loginForm",
+                "layout": "absolute",
+                "bodyPadding": 10,
+                "bodyStyle": [
+                    "{\r",
+                    "\t\"background-image\":\"url(data/login.png)\"\r",
+                    "}"
+                ],
+                "title": null,
+                "url": "login.php"
+            },
+            "designerId": "1003c5b7-b762-445a-8c11-e0691e77cb1f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 220,
+                        "layout|y": 20,
+                        "style": [
+                            "{\r",
+                            "\tcolor: \"#FFF\",\r",
+                            "\t\"font-weight\": \"bold\",\r",
+                            "\t\"font-size\": \"11px\"\r",
+                            "}"
+                        ],
+                        "fieldLabel": "ユーザ名",
+                        "labelAlign": "top",
+                        "labelWidth": 80,
+                        "name": "loginUsername",
+                        "allowBlank": false,
+                        "blankText": "入力が必須です。　"
+                    },
+                    "designerId": "a6f939ad-8eeb-4cef-9544-135b9bf32d47"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 220,
+                        "layout|y": 70,
+                        "style": [
+                            "{\r",
+                            "\tcolor: \"#FFF\",\r",
+                            "\t\"font-weight\": \"bold\",\r",
+                            "\t\"font-size\": \"11px\"\r",
+                            "}"
+                        ],
+                        "fieldLabel": "パスワード",
+                        "labelAlign": "top",
+                        "labelWidth": 80,
+                        "name": "loginPassword",
+                        "inputType": "password"
+                    },
+                    "designerId": "81f22079-1bb4-4adb-91bb-f594ad873667"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 270,
+                        "layout|y": 130,
+                        "formBind": true,
+                        "style": [
+                            "{\r",
+                            "\t\"font-weight\": \"bold\",\r",
+                            "\t\"font-size\": \"11pt\"\r",
+                            "}"
+                        ],
+                        "width": 100,
+                        "text": "ログイン"
+                    },
+                    "designerId": "06f06f9d-29e7-408f-97a1-fe1d574cdda4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "var inputtedValues = button.up().getForm().getValues();\r",
+                                    "var user_name = inputtedValues.loginUsername;\r",
+                                    "\r",
+                                    "var form = button.up().getForm().submit({\r",
+                                    "\tmethod:'POST', \r",
+                                    "\twaitTitle:'ログイン認証中です。', \r",
+                                    "\twaitMsg:'しばらくお待ちください...',\r",
+                                    "\r",
+                                    "\t// Success function\r",
+                                    "\tsuccess:function(form, action){ \r",
+                                    "\t\tobj = Ext.JSON.decode(action.response.responseText);\r",
+                                    "\t\tSes_id = obj.session;\r",
+                                    "\t\t//var redirect = '../ihab411/index.html?ses_id=' + Ses_id;\r",
+                                    "\t\tvar redirect = '../ihab/index.html?ses_id=' + Ses_id;\r",
+                                    "\t\tvar activation_status = obj.status;\r",
+                                    "\t\tUserId = obj.u_id;\r",
+                                    "\t\tif (activation_status === 1024) {\r",
+                                    "\t\t\twindow.location = redirect;\r",
+                                    "\t\t} else {\r",
+                                    "\t\t\tbutton.up('.window').close();\r",
+                                    "\t\t\tloggedInUserName = user_name;\r",
+                                    "\t\t\tExt.create('MyApp.view.ActivationWin').show();\r",
+                                    "\t\t\tExt.ComponentQuery.query('#activationForm')[0].getForm().setValues({\r",
+                                    "\t\t\t\tuser_id: UserId,\r",
+                                    "\t\t\t\tuser_name: user_name\r",
+                                    "\t\t\t});\r",
+                                    "\t\t}\r",
+                                    "\r",
+                                    "\t},\r",
+                                    "\r",
+                                    "\t// Failure function, see comment above re: success and failure. \r",
+                                    "\t// You can see here, if login fails, it throws a messagebox\r",
+                                    "\t// at the user telling him / her as much.  \r",
+                                    "\r",
+                                    "\tfailure:function(form, action){ \r",
+                                    "\t\tif(action.failureType == 'server'){ \r",
+                                    "\t\t\tobj = Ext.JSON.decode(action.response.responseText); \r",
+                                    "\t\t\tExt.Msg.alert('ログイン失敗', obj.errors); \r",
+                                    "\t\t}else{ \r",
+                                    "\t\t\tExt.Msg.alert('注意!', '認証サーバに接続できませんでした。'); \r",
+                                    "\t\t} \r",
+                                    "\t\t//Ext.getCmp('loginForm').getForm().reset();\r",
+                                    "\t\tExt.ComponentQuery.query('#loginForm')[0].getForm().reset();\r",
+                                    "\t} \r",
+                                    "}); "
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "40af7d34-a8fe-48c8-b180-62bbd7e7aec9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "8711be3f-1e97-45dd-bfef-07a054ca0dc3",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "designerId": "88cd9a0e-a608-4ba9-b579-dc0aa90b341c"
+                },
+                {
+                    "type": "Ext.toolbar.TextItem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "(c)  2018  MAKEWAVE JAPAN Co.,Ltd. All rights reserved."
+                    },
+                    "designerId": "699ae1f6-9586-4ea8-ab8c-0562b15b5933"
+                }
+            ]
+        }
+    ]
+}

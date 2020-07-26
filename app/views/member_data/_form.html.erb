@@ -1,0 +1,41 @@
+<%= form_for(@member_datum) do |f| %>
+  <% if @member_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member_datum.errors.count, "error") %> prohibited this member_datum from being saved:</h2>
+
+      <ul>
+      <% @member_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hash_key %><br />
+    <%= f.text_field :hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :member_id %><br />
+    <%= f.text_field :member_id %>
+  </div>
+  <div class="field">
+    <%= f.label :member_name %><br />
+    <%= f.text_field :member_name %>
+  </div>
+  <div class="field">
+    <%= f.label :member_description %><br />
+    <%= f.text_field :member_description %>
+  </div>
+  <div class="field">
+    <%= f.label :member_remark %><br />
+    <%= f.text_field :member_remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

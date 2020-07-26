@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @group_datum.session_id %>
+</p>
+
+<p>
+  <b>Hash key:</b>
+  <%= @group_datum.hash_key %>
+</p>
+
+<p>
+  <b>Target hash key:</b>
+  <%= @group_datum.target_hash_key %>
+</p>
+
+<p>
+  <b>Id:</b>
+  <%= @group_datum.id %>
+</p>
+
+<p>
+  <b>Editable status:</b>
+  <%= @group_datum.editable_status %>
+</p>
+
+<p>
+  <b>Group name:</b>
+  <%= @group_datum.group_name %>
+</p>
+
+<p>
+  <b>Group description:</b>
+  <%= @group_datum.group_description %>
+</p>
+
+<p>
+  <b>Group privilege:</b>
+  <%= @group_datum.group_privilege %>
+</p>
+
+<p>
+  <b>Member:</b>
+  <%= @group_datum.member_id %>
+</p>
+
+<p>
+  <b>Member name:</b>
+  <%= @group_datum.member_name %>
+</p>
+
+<p>
+  <b>Member description:</b>
+  <%= @group_datum.member_description %>
+</p>
+
+
+<%= link_to 'Edit', edit_group_datum_path(@group_datum) %> |
+<%= link_to 'Back', group_data_path %>

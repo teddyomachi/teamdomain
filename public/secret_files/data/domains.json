@@ -1,0 +1,41 @@
+{
+	"domains" :
+	[
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:10e1",
+			"cont_location": "domain",
+			"domain_name": "個人",
+			"domain_link": "./filearea/private/",
+			"img": "file_type_icon/Drawer.png",
+			"usage": 80,
+			"domain_writable_status": "true"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:10e2",
+			"cont_location": "domain",
+			"domain_name": "組織",
+			"domain_link": "./filearea/section/",
+			"img": "file_type_icon/Drawer.png",
+			"usage": 80,
+			"domain_writable_status": "false"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:10e3",
+			"cont_location": "domain",
+			"domain_name": "プロジェクト",
+			"domain_link": "./filearea/project/",
+			"img": "file_type_icon/Drawer.png",
+			"usage": 80,
+			"domain_writable_status": "true"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:10e4",
+			"cont_location": "domain",
+			"domain_name": "ローカル",
+			"domain_link": "./filearea/local/",
+			"img": "file_type_icon/Drawer.png",
+			"usage": 80,
+			"domain_writable_status": "true"
+		}
+	]
+}

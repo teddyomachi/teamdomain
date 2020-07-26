@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  session_id: MyString
+  hash_key: MyString
+  member_id: MyString
+  member_name: MyString
+  member_description: MyString
+  member_remark: MyString
+
+two:
+  session_id: MyString
+  hash_key: MyString
+  member_id: MyString
+  member_name: MyString
+  member_description: MyString
+  member_remark: MyString

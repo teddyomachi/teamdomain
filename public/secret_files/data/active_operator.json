@@ -1,0 +1,14 @@
+{
+	"operator" :
+	[
+		{
+			"operator_name" : "木村浩二",
+			"operator_id" : "d1-000xxx",
+			"operator_group_editable" : true,
+			"rule_created_date": "local_date",
+			"disp_ext": "hide",
+			"auto_save": "auto_noncog",
+			"disp_tree": "hide"
+		}
+	]
+}

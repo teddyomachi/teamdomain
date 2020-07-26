@@ -1,0 +1,25 @@
+<h1>Listing spin_vfs_storage_mappings</h1>
+
+<table>
+  <tr>
+    <th>Spin vfs</th>
+    <th>Spin storage</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_vfs_storage_mappings.each do |spin_vfs_storage_mapping| %>
+  <tr>
+    <td><%= spin_vfs_storage_mapping.spin_vfs %></td>
+    <td><%= spin_vfs_storage_mapping.spin_storage %></td>
+    <td><%= link_to 'Show', spin_vfs_storage_mapping %></td>
+    <td><%= link_to 'Edit', edit_spin_vfs_storage_mapping_path(spin_vfs_storage_mapping) %></td>
+    <td><%= link_to 'Destroy', spin_vfs_storage_mapping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin vfs storage mapping', new_spin_vfs_storage_mapping_path %>

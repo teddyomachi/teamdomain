@@ -1,0 +1,31 @@
+<h1>Listing sender_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Memeber</th>
+    <th>Sender</th>
+    <th>Sender name</th>
+    <th>Sender email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sender_data.each do |sender_datum| %>
+  <tr>
+    <td><%= sender_datum.session_id %></td>
+    <td><%= sender_datum.memeber_id %></td>
+    <td><%= sender_datum.sender_id %></td>
+    <td><%= sender_datum.sender_name %></td>
+    <td><%= sender_datum.sender_email %></td>
+    <td><%= link_to 'Show', sender_datum %></td>
+    <td><%= link_to 'Edit', edit_sender_datum_path(sender_datum) %></td>
+    <td><%= link_to 'Destroy', sender_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sender datum', new_sender_datum_path %>

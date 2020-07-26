@@ -1,0 +1,93 @@
+<%= form_for(@user_interface_manager) do |f| %>
+  <% if @user_interface_manager.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_interface_manager.errors.count, "error") %> prohibited this user_interface_manager from being saved:</h2>
+
+      <ul>
+      <% @user_interface_manager.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pane_domains_a %><br />
+    <%= f.text_field :pane_domains_a %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_domains_b %><br />
+    <%= f.text_field :pane_domains_b %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_folders_a %><br />
+    <%= f.text_field :pane_folders_a %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_folders_b %><br />
+    <%= f.text_field :pane_folders_b %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_file_list_a %><br />
+    <%= f.text_field :pane_file_list_a %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_file_list_b %><br />
+    <%= f.text_field :pane_file_list_b %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_file_list_s %><br />
+    <%= f.text_field :pane_file_list_s %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_folders_at %><br />
+    <%= f.text_field :pane_folders_at %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_folders_bt %><br />
+    <%= f.text_field :pane_folders_bt %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_groupo_list_all %><br />
+    <%= f.text_field :pane_groupo_list_all %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_group_list_created %><br />
+    <%= f.text_field :pane_group_list_created %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_group_list_file %><br />
+    <%= f.text_field :pane_group_list_file %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_group_list_folder %><br />
+    <%= f.text_field :pane_group_list_folder %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_mail_senders %><br />
+    <%= f.text_field :pane_mail_senders %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_member_list_mygroup %><br />
+    <%= f.text_field :pane_member_list_mygroup %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_recycler %><br />
+    <%= f.text_field :pane_recycler %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_search_conditions %><br />
+    <%= f.text_field :pane_search_conditions %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_search_option %><br />
+    <%= f.text_field :pane_search_option %>
+  </div>
+  <div class="field">
+    <%= f.label :pane_working_files %><br />
+    <%= f.text_field :pane_working_files %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "model": "FileData",
+        "storeId": "FileDataStoreB",
+        "designer|userClassName": "FileDataStoreB"
+    },
+    "designerId": "7c176d6c-78b1-4a5d-a30f-84960e4c708a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/file_listB.sfl"
+            },
+            "designerId": "8e11f3e2-4258-4253-bbff-8f3e8e968c3f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "files"
+                    },
+                    "designerId": "2e7e9818-4feb-4828-913e-fc9f67381d00"
+                }
+            ]
+        }
+    ]
+}

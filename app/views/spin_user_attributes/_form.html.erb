@@ -1,0 +1,101 @@
+<%= form_for(@spin_user_attribute) do |f| %>
+  <% if @spin_user_attribute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_user_attribute.errors.count, "error") %> prohibited this spin_user_attribute from being saved:</h2>
+
+      <ul>
+      <% @spin_user_attribute.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spin_uid %><br />
+    <%= f.number_field :spin_uid %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_uname %><br />
+    <%= f.text_field :spin_uname %>
+  </div>
+  <div class="field">
+    <%= f.label :real_uname1 %><br />
+    <%= f.text_field :real_uname1 %>
+  </div>
+  <div class="field">
+    <%= f.label :real_uname2 %><br />
+    <%= f.text_field :real_uname2 %>
+  </div>
+  <div class="field">
+    <%= f.label :real_unameM %><br />
+    <%= f.text_field :real_unameM %>
+  </div>
+  <div class="field">
+    <%= f.label :mail_addr %><br />
+    <%= f.text_field :mail_addr %>
+  </div>
+  <div class="field">
+    <%= f.label :mail_addr2 %><br />
+    <%= f.text_field :mail_addr2 %>
+  </div>
+  <div class="field">
+    <%= f.label :organization1 %><br />
+    <%= f.text_field :organization1 %>
+  </div>
+  <div class="field">
+    <%= f.label :organization2 %><br />
+    <%= f.text_field :organization2 %>
+  </div>
+  <div class="field">
+    <%= f.label :organization3 %><br />
+    <%= f.text_field :organization3 %>
+  </div>
+  <div class="field">
+    <%= f.label :organization4 %><br />
+    <%= f.text_field :organization4 %>
+  </div>
+  <div class="field">
+    <%= f.label :organization5 %><br />
+    <%= f.text_field :organization5 %>
+  </div>
+  <div class="field">
+    <%= f.label :organization6 %><br />
+    <%= f.text_field :organization6 %>
+  </div>
+  <div class="field">
+    <%= f.label :organization8 %><br />
+    <%= f.text_field :organization8 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_country_code_1 %><br />
+    <%= f.text_field :tel_country_code_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_area_code_1 %><br />
+    <%= f.text_field :tel_area_code_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_pid_code_1 %><br />
+    <%= f.text_field :tel_pid_code_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_number_1 %><br />
+    <%= f.text_field :tel_number_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_ext_1 %><br />
+    <%= f.text_field :tel_ext_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_attributes %><br />
+    <%= f.text_area :user_attributes %>
+  </div>
+  <div class="field">
+    <%= f.label :organization7 %><br />
+    <%= f.text_field :organization7 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

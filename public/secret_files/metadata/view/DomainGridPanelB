@@ -1,0 +1,131 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stateful": false,
+        "height": 50,
+        "id": "domainGridPanelB",
+        "itemId": "domainGridPanelB",
+        "minHeight": null,
+        "width": null,
+        "designer|userClassName": "DomainGridPanelB",
+        "designer|userAlias": "domaingridpanelb",
+        "autoScroll": null,
+        "autoDestroy": null,
+        "animCollapse": null,
+        "collapseDirection": null,
+        "collapseFirst": null,
+        "collapsed": null,
+        "overlapHeader": null,
+        "title": null,
+        "titleCollapse": null,
+        "forceFit": null,
+        "hideHeaders": true,
+        "scroll": "none",
+        "store": "DomainDataStoreB"
+    },
+    "designerId": "1cd27aaf-2f12-486c-b416-d5e7568a9cbc",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": null,
+                "dataIndex": "domain_name",
+                "text": "Domain_name",
+                "flex": 1
+            },
+            "designerId": "d1b9c18d-76e7-4e9a-8e3d-563b943624ed"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "dataIndex": "domain_link",
+                "text": "Domain_link"
+            },
+            "designerId": "7cde0808-fab7-48d7-8796-15b4694b4178"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDomainGridPanelBAfterRender",
+                "implHandler": [
+                    "\r",
+                    "Ext.getStore('DomainDataStoreB').load({\r",
+                    "\tcallback: function(records, operation, success) {\r",
+                    "\t\tvar this_domains = Ext.getStore('DomainDataStoreB').data;\r",
+                    "\t\tvar data_length = this_domains.length;\r",
+                    "\r",
+                    "\t\tvar thisActiveDomainB = '';\r",
+                    "\t\tfor (i = 0; i < data_length; i++) {\r",
+                    "\t\t\tif (this_domains.items[i].data.selected === true) {\r",
+                    "\t\t\t\tthisActiveDomainB = this_domains.items[i];\r",
+                    "\t\t\t}\r",
+                    "\t\t}\r",
+                    "\r",
+                    "\t\tif (thisActiveDomainB === '') {\r",
+                    "\t\t\tthisActiveDomainB = this_domains.items[0];\r",
+                    "\t\t}\r",
+                    "\r",
+                    "\t\tcomponent.selModel.doSelect(thisActiveDomainB);\r",
+                    "\t\t//console.log(thisActiveDomainB);\r",
+                    "\t}\r",
+                    "});\r",
+                    ""
+                ],
+                "delay": 100,
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "7a00348e-a37e-4745-a9b3-5b0a76f78202"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDomainGridPanelBItemContextMenu",
+                "implHandler": [
+                    "/*\r",
+                    "tree_context_menu = new Ext.menu.Menu({\r",
+                    "items: [\r",
+                    "changeDomainName,\r",
+                    "createRootFolder,\r",
+                    "new Ext.menu.Separator(),\r",
+                    "openTrashbox\r",
+                    "]\r",
+                    "});\r",
+                    "\r",
+                    "tree_context_menu.showAt(e.getXY());\r",
+                    "return false;\r",
+                    "*/"
+                ],
+                "name": "itemcontextmenu",
+                "scope": "me"
+            },
+            "designerId": "2c869e78-6f0e-42e2-bd90-37b17c387bae"
+        }
+    ]
+}

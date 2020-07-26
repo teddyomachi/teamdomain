@@ -1,0 +1,215 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 10,
+        "id": "localMenu",
+        "designer|userClassName": "LocalMenu",
+        "designer|userAlias": "localmenu"
+    },
+    "designerId": "44b10b40-d4cc-41bb-87ac-ce76381d4e0a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "hidden": true,
+                "id": "activeData",
+                "bodyPadding": 10,
+                "title": "My Form"
+            },
+            "designerId": "616bc779-ce5d-43a9-857d-260825efb535",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeDomainA_name",
+                        "fieldLabel": "Label",
+                        "name": "activeDomaina_name"
+                    },
+                    "designerId": "ced5da36-727c-4125-b714-60753d9d176d"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeDomainA_hash",
+                        "fieldLabel": "Label",
+                        "name": "activeDomaina_hash"
+                    },
+                    "designerId": "702512d0-4a77-46c9-97d3-f0ad43f810b2"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeDomainB_name",
+                        "fieldLabel": "Label",
+                        "name": "activeDomainb_name"
+                    },
+                    "designerId": "6dc8b751-486b-4dca-affb-93bbcbfdda42"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeDomainB_hash",
+                        "fieldLabel": "Label",
+                        "name": "activeDomainb_hash"
+                    },
+                    "designerId": "eaec2257-a8b8-45e4-9187-77ed3e4dfb77"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderA_name",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderA_name"
+                    },
+                    "designerId": "6518b67c-abc6-47de-ac0c-d98574903c19"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderA_hash",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderA_hash"
+                    },
+                    "designerId": "bcf997be-456f-437c-bec9-a227db771b05"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderA_readable",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderA_readable"
+                    },
+                    "designerId": "e490bf4b-c62a-4f14-8143-64b9022c4a57"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderA_writable",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderA_writable"
+                    },
+                    "designerId": "e3a775c8-993a-4430-a43c-8c32c1186fce"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderB_name",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderB_name"
+                    },
+                    "designerId": "d0859307-0fa0-4883-8c85-8b3e1036098c"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderB_hash",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderB_hash"
+                    },
+                    "designerId": "7f699b47-13e2-4aa2-bd4e-9d064c637f88"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderB_readable",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderB_readable"
+                    },
+                    "designerId": "f4a60cfd-182a-4467-968c-82ede62642f4"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "activeFolderB_writable",
+                        "fieldLabel": "Label",
+                        "name": "activeFolderB_writable"
+                    },
+                    "designerId": "59a86358-d401-4819-91f0-1774e4368937"
+                }
+            ]
+        }
+    ]
+}

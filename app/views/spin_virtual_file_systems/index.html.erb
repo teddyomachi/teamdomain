@@ -1,0 +1,29 @@
+<h1>Listing spin_virtual_file_systems</h1>
+
+<table>
+  <tr>
+    <th>Spin vfs type</th>
+    <th>Spin vfs access mode</th>
+    <th>Spin vfs name</th>
+    <th>Spin vfs attibutes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_virtual_file_systems.each do |spin_virtual_file_system| %>
+  <tr>
+    <td><%= spin_virtual_file_system.spin_vfs_type %></td>
+    <td><%= spin_virtual_file_system.spin_vfs_access_mode %></td>
+    <td><%= spin_virtual_file_system.spin_vfs_name %></td>
+    <td><%= spin_virtual_file_system.spin_vfs_attibutes %></td>
+    <td><%= link_to 'Show', spin_virtual_file_system %></td>
+    <td><%= link_to 'Edit', edit_spin_virtual_file_system_path(spin_virtual_file_system) %></td>
+    <td><%= link_to 'Destroy', spin_virtual_file_system, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin virtual file system', new_spin_virtual_file_system_path %>

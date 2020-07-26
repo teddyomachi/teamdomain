@@ -1,0 +1,23 @@
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/readapt-0.8.1/ext/readapt
+/Users/omachi.kazuhiro/.rbenv/versions/2.7.1/bin/ruby -I /Users/omachi.kazuhiro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200623-2146-cw1hnm.rb extconf.rb
+creating Makefile
+
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/readapt-0.8.1/ext/readapt
+make "DESTDIR=" clean
+
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/readapt-0.8.1/ext/readapt
+make "DESTDIR="
+compiling breakpoints.c
+compiling frame.c
+compiling hash_table.c
+compiling inspector.c
+compiling monitor.c
+compiling normalize.c
+compiling readapt.c
+compiling stack.c
+compiling threads.c
+linking shared-object readapt/readapt.bundle
+
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/readapt-0.8.1/ext/readapt
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 readapt.bundle ./.gem.20200623-2146-a7orai/readapt

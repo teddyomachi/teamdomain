@@ -1,0 +1,13 @@
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/json-2.1.0/ext/json
+/Users/omachi.kazuhiro/.rbenv/versions/2.7.1/bin/ruby -I /Users/omachi.kazuhiro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200623-2146-1tnu806.rb extconf.rb
+creating Makefile
+
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/omachi.kazuhiro/Development/secret-files/vendor/cache/ruby/2.7.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" install

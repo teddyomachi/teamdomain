@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_uid: 1
+  spin_uname: MyString
+  real_uname1: MyString
+  real_uname2: MyString
+  real_unameM: MyString
+  mail_addr: MyString
+  mail_addr2: MyString
+  organization1: MyString
+  organization2: MyString
+  organization3: MyString
+  organization4: MyString
+  organization5: MyString
+  organization6: MyString
+  organization8: MyString
+  tel_country_code_1: MyString
+  tel_area_code_1: MyString
+  tel_pid_code_1: MyString
+  tel_number_1: MyString
+  tel_ext_1: MyString
+  user_attributes: MyText
+  organization7: MyString
+
+two:
+  spin_uid: 1
+  spin_uname: MyString
+  real_uname1: MyString
+  real_uname2: MyString
+  real_unameM: MyString
+  mail_addr: MyString
+  mail_addr2: MyString
+  organization1: MyString
+  organization2: MyString
+  organization3: MyString
+  organization4: MyString
+  organization5: MyString
+  organization6: MyString
+  organization8: MyString
+  tel_country_code_1: MyString
+  tel_area_code_1: MyString
+  tel_pid_code_1: MyString
+  tel_number_1: MyString
+  tel_ext_1: MyString
+  user_attributes: MyText
+  organization7: MyString

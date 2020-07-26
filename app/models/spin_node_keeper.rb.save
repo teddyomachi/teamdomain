@@ -1,0 +1,916 @@
+# coding: utf-8
+require 'const/vfs_const'
+require 'const/acl_const'
+require 'tasks/session_management'
+require 'tasks/security'
+require 'utilities/file_manager_utilities'
+require 'pg'
+require 'pp'
+
+class SpinNodeKeeper < ActiveRecord::Base
+  include Vfs
+  include Acl
+  include FileManager
+  
+  # attr_accessible :title, :body
+  def self.test_and_set_layer_info layer_number, with_transaction = true
+    r = {}
+    if with_transaction
+      self.transaction do
+        l = self.find_by_layer layer_number
+        if l
+          l.last_x += 1
+          l.first_free_x = l.last_x
+          l.updated_at = Time.now
+          l.save
+          r = l
+        else
+          nl = self.new
+          nl.layer = layer_number
+          nl.last_x = 0
+          nl.first_free_x = 0
+          nl.save
+          r = nl
+        end
+      end # => end of transaction
+    else # => use this when call it in a transaction
+      l = self.find_by_layer layer_number
+      if l
+        l.last_x += 1
+        l.first_free_x = l.last_x
+        l.updated_at = Time.now
+        l.save
+        r = l
+      else
+        nl = self.new
+        nl.layer = layer_number
+        nl.last_x = 0
+        nl.first_free_x = 0
+        nl.save
+        r = nl
+      end
+    end
+    return r
+  end # => end of test_and_set_layer_info layer_number
+  
+  def self.test_and_set_x layer_number
+    lx = -1
+    layer = nil
+    # set pesimistic lock
+    ActiveRecord::Base.lock_optimistically = false
+    # get layer-0 lock! : for locking layers
+    layer0 = self.find(:first,:conditions=>["layer = ? AND ny = ?",LAYER0_LAYER,LAYER0_NY])
+    if layer0 == nil
+      ActiveRecord::Base.lock_optimistically = true
+      return lx
+    else
+      layer0.with_lock do
+        # check layer again
+        layer = self.find(:first,:conditions=>["layer = ? AND ny = ?",layer_number,layer_number*(-1)])
+        if layer == nil
+          layer = self.create(:nx => INITIAL_X_COORD_VALUE, :ny => layer_number*(-1), :layer => layer_number, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE)
+        end
+        lx = layer[:last_x] + 1
+        layer[:last_x] = lx
+        layer[:first_free_x] = lx + 1
+        layer[:updated_at] = Time.now
+        layer.save
+      end # => end of layer0.with_lock do        
+    end
+    # set pesimistic lock
+    ActiveRecord::Base.lock_optimistically = true
+    return lx
+  end # => end of test_and_set_x layer_number
+  
+  #  def self.test_and_set_xy_org sid, request_loc, vfile_name = '', node_type = NODE_FILE
+  #    # request_loc   [ X, Y, P, V ] : Y should be Z+-{0}, P spould be Z+, V may be REQUEST_COORD_VALUE
+  #    # vfile_name  : file or directory name to assign coordinate value
+  #    # node_type   : type of node { NODE_DIRECTORY, NODE_FILE,... } : optional
+  #    
+  #    # initialize var
+  #    node_loc = [] # => array of length 0
+  #    directory_node_exists = false
+  #    # start
+  #    # initialize
+  #    x = REQUEST_COORD_VALUE
+  #    y = REQUEST_COORD_VALUE
+  #    v = REQUEST_COORD_VALUE # => any negative value
+  #    #      request_rec = {}
+  #      
+  #    if request_loc[X] != REQUEST_COORD_VALUE # => new x-coord value is requested
+  #      x = request_loc[X]
+  #    end
+  #    if request_loc[Y] != REQUEST_COORD_VALUE # => new y-coord value is requested
+  #      y = request_loc[Y]
+  #    end
+  #
+  #    
+  #    layer_rec = {}
+  #    layer_rec_r = {}
+  #
+  #    create_new_layer = proc {|layer|
+  #      ret_val = nil
+  #      # set pesimistic lock
+  #      ActiveRecord::Base.lock_optimistically = false
+  #      # get layer-0 lock! : for locking layers
+  #      layer0 = self.find(:first,:conditions=>["layer = ? AND ny = ?",LAYER0_LAYER,LAYER0_NY])
+  #      if layer0 == nil
+  #        ret_val = nil # => exit from test_and_set_xy
+  #      else
+  #        layer0.with_lock do
+  #          # check layer again
+  #          new_layer = self.find(:first,:conditions=>["layer = ? AND ny = ?",layer,layer*(-1)])
+  #          if new_layer == nil
+  #            new_layer = self.create :nx => INITIAL_X_COORD_VALUE, :ny => layer*(-1), :layer => layer, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE
+  #          end
+  #          ret_val = new_layer
+  #          # create additional layers
+  #          inc_layers = 1
+  #          inc_layers.upto(ADD_NUMBER_OF_LAYERS) {|i|
+  #            new_layer_number = new_layer[:layer] + i
+  #            begin
+  #              nl = self.create :nx => INITIAL_X_COORD_VALUE, :ny => new_layer_number*(-1), :layer => new_layer_number, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE
+  #            rescue
+  #              next
+  #            end
+  #          }
+  #        end # => end of layer0.with_lock do        
+  #      end
+  #      # set pesimistic lock
+  #      ActiveRecord::Base.lock_optimistically = true
+  #      ret_val
+  #    }
+  #    
+  #    # check if there is a target layer first!
+  #    self.transaction do
+  #      layer_rec = self.find(:first,:conditions=>["layer = ? AND ny = ?",y,y*(-1)]) # => layer_rec number is 'y-coord' value
+  #      if layer_rec == nil
+  #        # I need new layer
+  #        layer_rec = create_new_layer.call y
+  #        # check layer again
+  #        if layer_rec == nil
+  #          tstxy_log_msg = "test_and_set_xy : layer_rec == il at layer = #{y}"
+  #          FileManager::logger(sid, tstxy_log_msg, nil)
+  #          return [ -1, -1, -1, -1 ]
+  #        end
+  #      end
+  #    end # => end of transaction
+  #
+  #    # set pesimistic lock
+  #    ActiveRecord::Base.lock_optimistically = false
+  #
+  #    self.transaction do
+  #      # is there rec for (x,y)?
+  #      request_rec = self.find(:first,:conditions=>["nx_pr = ? AND ny = ?",request_loc[PRX],y],:lock=>true)
+  #      if request_rec != nil # => already is
+  #        request_rec.with_lock do
+  #          x = request_rec[:nx]
+  #          prx = request_loc[PRX]
+  #          begin
+  #            if node_type == NODE_DIRECTORY
+  #              v = INITIAL_VERSION_NUMBER
+  #              directory_node_exists = true
+  #            else
+  #              vc = request_rec[:current_version]
+  #              v = request_rec[:current_version] + 1
+  #              request_rec[:current_version] = v
+  #              request_rec[:node_type] = node_type
+  #              request_rec.save!
+  #            end
+  #          rescue  ActiveRecord::RecordNotUnique
+  #            ActiveRecord::Base.lock_optimistically = true
+  #            #            msg_a = [ request_rec[:nx],request_rec[:layer],vc,nv0[:max_versions]]
+  #            tstxy_log_msg = "test_and_set_xy : exception : request_rec ActiveRecord::RecordNotUnique : " + request_rec.to_s
+  #            FileManager::logger(sid, tstxy_log_msg, nil)
+  #            return [ -1, -1, -1, -1 ]
+  #          end # => end of begin-rescue
+  #        end # => end of request_rec.with_lock
+  #      else # => no request_rec : request_rec == nil
+  #        # Get lock for the layer!
+  #        layer_retry_count = 2
+  #        while layer_retry_count >= 0
+  #          begin
+  #            layer_rec_r = self.find(:first,:conditions=>["layer = ? AND ny = ?",y,y*(-1)],:lock=>true) # => layer_rec number is 'y-coord' value
+  #            break
+  #          rescue ActiveRecord::RecordNotFound
+  #            layer_retry_count -= 1
+  #          end
+  #        end
+  #        if layer_retry_count < 0
+  #          return [ -1, -1, -1, -1 ]
+  #        end
+  #        layer_rec_r.with_lock do
+  #          request_rec_r = self.find(:first,:conditions=>["nx_pr = ? AND layer = ? AND node_name = ?",request_loc[PRX],y,vfile_name],:lock=>true)
+  #          if request_rec_r != nil
+  #            request_rec_r.with_lock do
+  #              x = request_rec_r[:nx]
+  #              prx = request_loc[PRX]
+  #              begin
+  #                if node_type == NODE_DIRECTORY
+  #                  v = INITIAL_VERSION_NUMBER
+  #                  directory_node_exists = true
+  #                else
+  #                  v = request_rec_r[:current_version] + 1
+  #                  request_rec_r[:current_version] = v
+  #                  request_rec_r[:node_type] = node_type
+  #                  request_rec_r.save!
+  #                end
+  #              rescue  ActiveRecord::RecordNotUnique
+  #                tstxy_log_msg = "test_and_set_xy : exception : request_rec_r ActiveRecord::RecordNotUnique : " + request_rec_r.to_s
+  #                FileManager::logger(sid, tstxy_log_msg, nil)
+  #                ActiveRecord::Base.lock_optimistically = true
+  #                return [ -1, -1, -1, -1 ]
+  #              end # => end of begin-rescue
+  #            end # => end of request_rec.with_lock
+  #          else # => no request_rec_r : request_rec_r == nil
+  #            # start
+  #            x = layer_rec_r[:first_free_x]
+  #            # => no P(x,y), create new
+  #            prx = request_loc[PRX]
+  #            v = INITIAL_VERSION_NUMBER
+  #            #          x = layer_rec_r[:first_free_x]
+  #            begin
+  #              new_node_keeper_rec =  self.create :nx => x, :ny => y, :layer => y, :nx_pr => prx, :node_name => vfile_name, :current_version => INITIAL_VERSION_NUMBER, :node_type => node_type
+  #              layer_rec_r[:last_x] = new_node_keeper_rec[:nx]
+  #              layer_rec_r[:first_free_x] = new_node_keeper_rec[:nx] + 1
+  #              layer_rec_r.save!
+  #            rescue ActiveRecord::RecordNotUnique
+  #              if node_type == NODE_DIRECTORY
+  #                node_loc = [ x, y, request_loc[PRX], v*(-1), nil, node_type ]
+  #              else
+  #                node_loc = [ x, y, request_loc[PRX], v, nil, node_type ]
+  #              end
+  #              return node_loc
+  #            end # => end of begin-rescue block
+  #          end # => end of if request_rec_r != nil
+  #        end # => layer_rec_r.with_lock do
+  #      end # => end of if request_rec != nil      
+  #    end # => end of transaction
+  #      
+  #    ActiveRecord::Base.lock_optimistically = true
+  #    
+  #    if directory_node_exists
+  #      node_loc = [ x, y, request_loc[PRX], v*(-1), nil, node_type ]
+  #    else
+  #      node_loc = [ x, y, request_loc[PRX], v, nil, node_type ]
+  #    end
+  #    
+  #    return node_loc
+  #  end # => end of test_and_set_xy parent_loc, vfile_name
+  #
+  #  def self.test_and_set_xy2 sid, request_loc, vfile_name = '', node_type = NODE_FILE
+  #    # request_loc   [ X, Y, P, V ] : Y should be Z+-{0}, P spould be Z+, V may be REQUEST_COORD_VALUE
+  #    # vfile_name  : file or directory name to assign coordinate value
+  #    # node_type   : type of node { NODE_DIRECTORY, NODE_FILE,... } : optional
+  #    
+  #    # initialize var
+  #    node_loc = [] # => array of length 0
+  #    directory_node_exists = false
+  #    # start
+  #    # initialize
+  #    x = REQUEST_COORD_VALUE
+  #    y = REQUEST_COORD_VALUE
+  #    prx = REQUEST_COORD_VALUE
+  #    v = REQUEST_COORD_VALUE # => any negative value
+  #    #      request_rec = {}
+  #      
+  #    if request_loc[X] != REQUEST_COORD_VALUE # => new x-coord value is requested
+  #      x = request_loc[X]
+  #    end
+  #    if request_loc[Y] != REQUEST_COORD_VALUE # => new y-coord value is requested
+  #      y = request_loc[Y]
+  #    end
+  #    if request_loc[PRX] != REQUEST_COORD_VALUE # => new x-coord value is requested
+  #      prx = request_loc[PRX]
+  #    end
+  #
+  #    
+  #    layer_rec = {}
+  #    layer_rec_r = {}
+  #
+  #    create_new_layer = proc {|layer|
+  #      ret_val = nil
+  #      # set pesimistic lock
+  #      ActiveRecord::Base.lock_optimistically = false
+  #      # get layer-0 lock! : for locking layers
+  #      layer0 = self.find(:first,:conditions=>["layer = ? AND ny = ?",LAYER0_LAYER,LAYER0_NY])
+  #      if layer0 == nil
+  #        ret_val = nil # => exit from test_and_set_xy
+  #      else
+  #        layer0.with_lock do
+  #          # check layer again
+  #          new_layer = self.find(:first,:conditions=>["layer = ? AND ny = ?",layer,layer*(-1)])
+  #          if new_layer == nil
+  #            new_layer = self.create :nx => INITIAL_X_COORD_VALUE, :ny => layer*(-1), :layer => layer, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE
+  #          end
+  #          ret_val = new_layer
+  #          # create additional layers
+  #          inc_layers = 1
+  #          inc_layers.upto(ADD_NUMBER_OF_LAYERS) {|i|
+  #            new_layer_number = new_layer[:layer] + i
+  #            begin
+  #              nl = self.create :nx => INITIAL_X_COORD_VALUE, :ny => new_layer_number*(-1), :layer => new_layer_number, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE
+  #            rescue
+  #              next
+  #            end
+  #          }
+  #        end # => end of layer0.with_lock do        
+  #      end
+  #      # set pesimistic lock
+  #      ActiveRecord::Base.lock_optimistically = true
+  #      ret_val
+  #    }
+  #    
+  #    # check if there is a target layer first!
+  #    self.transaction do
+  #      layer_rec = self.find(:first,:conditions=>["layer = ? AND ny = ?",y,y*(-1)]) # => layer_rec number is 'y-coord' value
+  #      if layer_rec == nil
+  #        # I need new layer
+  #        layer_rec = create_new_layer.call y
+  #        # check layer again
+  #        if layer_rec == nil
+  #          tstxy_log_msg = "test_and_set_xy : layer_rec == il at layer = #{y}"
+  #          FileManager::logger(sid, tstxy_log_msg, nil)
+  #          return [ -1, -1, -1, -1 ]
+  #        end
+  #      end
+  #    end # => end of transaction
+  #
+  #    # set pesimistic lock
+  #    ActiveRecord::Base.lock_optimistically = false
+  #
+  #    self.transaction do
+  #      # Get lock for the layer!
+  #      layer_retry_count = 2
+  #      while layer_retry_count >= 0
+  #        begin
+  #          layer_rec_r = self.find(:first,:conditions=>["layer = ? AND ny = ?",y,y*(-1)],:lock=>true) # => layer_rec number is 'y-coord' value
+  #          break
+  #        rescue ActiveRecord::RecordNotFound
+  #          layer_retry_count -= 1
+  #        end
+  #      end
+  #      if layer_retry_count < 0
+  #        return [ -1, -1, -1, -1 ]
+  #      end
+  #      layer_rec_r.with_lock do
+  #
+  #        existing_nodes = SpinNode.readonly.select("node_x_coord,node_y_coord,node_x_pr_coord,node_type,node_version").find(:all,:conditions=>["node_x_pr_coord = ? AND node_y_coord = ? AND node_name = ? AND is_void = false AND in_trash_flag = false",prx,y,vfile_name],:order=>"node_version DESC")
+  #        #        existing_nodes = SpinNode.readonly.find(:all,:conditions=>["node_x_pr_coord = ? AND node_y_coord = ? AND node_name = ?",prx,y,vfile_name],:order=>"node_version DESC")
+  #        if existing_nodes.length > 0
+  #          if existing_nodes[0][:node_type] == NODE_DIRECTORY and node_type == NODE_DIRECTORY
+  #            node_loc = [ existing_nodes[0][:node_x_coord], existing_nodes[0][:node_y_coord], existing_nodes[0][:node_x_pr_coord], INITIAL_VERSION_NUMBER * (-1), nil, node_type ]
+  #            ActiveRecord::Base.lock_optimistically = true
+  #            return node_loc # => returns existing direcotry node location
+  #          elsif existing_nodes[0][:node_type] == NODE_DIRECTORY and node_type != NODE_DIRECTORY
+  #            x = layer_rec_r[:first_free_x]
+  #            layer_rec_r[:last_x] = x
+  #            layer_rec_r[:first_free_x] = x + 1
+  #            layer_rec_r.save
+  #            node_loc = [ x, y, prx, INITIAL_VERSION_NUMBER, nil, node_type ]
+  #            ActiveRecord::Base.lock_optimistically = true
+  #            return node_loc # => returns existing direcotry node location
+  #          elsif existing_nodes[0][:node_type] != NODE_DIRECTORY and node_type == NODE_DIRECTORY
+  #            x = layer_rec_r[:first_free_x]
+  #            layer_rec_r[:last_x] = x
+  #            layer_rec_r[:first_free_x] = x + 1
+  #            layer_rec_r.save
+  #            node_loc = [ x, y, prx, INITIAL_VERSION_NUMBER, nil, node_type ]
+  #            ActiveRecord::Base.lock_optimistically = true
+  #            return node_loc # => returns existing direcotry node location
+  #          else # => file exists
+  #            node_loc = [ existing_nodes[0][:node_x_coord], y, prx, existing_nodes[0][:node_version] + 1, nil, node_type ]
+  #            ActiveRecord::Base.lock_optimistically = true
+  #            return node_loc # => returns existing direcotry node location
+  #          end
+  #        else # => no existing nodes
+  #          x = layer_rec_r[:first_free_x]
+  #          layer_rec_r[:last_x] = x
+  #          layer_rec_r[:first_free_x] = x + 1
+  #          layer_rec_r.save
+  #          node_loc = [ x, y, prx, INITIAL_VERSION_NUMBER, nil, node_type ]
+  #          ActiveRecord::Base.lock_optimistically = true
+  #          return node_loc # => returns existing direcotry node location
+  #        end # => end of if existing_nodes.length > 0
+  #      end # => layer_rec_r.with_lock do
+  #    end # => end of transaction
+  #      
+  #    ActiveRecord::Base.lock_optimistically = true
+  #    
+  #    if directory_node_exists
+  #      node_loc = [ x, y, request_loc[PRX], v*(-1), nil, node_type ]
+  #    else
+  #      node_loc = [ x, y, request_loc[PRX], v, nil, node_type ]
+  #    end
+  #    
+  #    return node_loc
+  #  end # => end of test_and_set_xy parent_loc, vfile_name
+
+  def self.xx_test_and_set_xy sid, request_loc, vfile_name = '', node_type = NODE_FILE
+    # request_loc   [ X, Y, P, V ] : Y should be Z+-{0}, P spould be Z+, V may be REQUEST_COORD_VALUE
+    # vfile_name  : file or directory name to assign coordinate value
+    # node_type   : type of node { NODE_DIRECTORY, NODE_FILE,... } : optional
+    
+    # initialize var
+    node_loc = [] # => array of length 0
+    directory_node_exists = false
+    # start
+    # initialize
+    x = REQUEST_COORD_VALUE
+    y = REQUEST_COORD_VALUE
+    v = REQUEST_COORD_VALUE # => any negative value
+    #      request_rec = {}
+      
+    if request_loc[X] != REQUEST_COORD_VALUE # => new x-coord value is requested
+      x = request_loc[X]
+    end
+    if request_loc[Y] != REQUEST_COORD_VALUE # => new y-coord value is requested
+      y = request_loc[Y]
+    end
+    if request_loc[V] != REQUEST_VERSION_NUMBER # => new y-coord value is requested
+      v = request_loc[V]
+    end
+
+    
+    layer_rec = {}
+
+    create_new_layer = proc {|layer|
+      ret_val = nil
+      # set pesimistic lock
+      #      ActiveRecord::Base.lock_optimistically = false
+      # get layer-0 lock! : for locking layers
+      new_layer = self.create(:nx => INITIAL_X_COORD_VALUE, :ny => layer*(-1), :layer => layer, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE)
+      ret_val = new_layer
+      # set pesimistic lock
+      ret_val
+    }
+    
+    # set pesimistic lock
+    ActiveRecord::Base.lock_optimistically = false
+
+    self.transaction do
+      retry_lock_count = SPIN_NODE_KEEPER_RETRY_COUNT
+      lock_object = nil
+      while retry_lock_count > 0 do
+        lock_object = self.find(:first,:conditions=>["ny < 0"],:lock=>true) # => layer_rec number is 'y-coord' value
+        if lock_object == nil
+          sleep(1 + SPIN_NODE_KEEPER_RETRY_COUNT - retry_lock_count)
+          retry_lock_count -= 1
+          next
+        else
+          break
+        end
+      end
+      
+      return NoXYPV if lock_object == nil
+            
+      lock_object.with_lock do # => lock object { parent, layer }
+        # check if there is a target layer first!
+        layer_rec = self.find(:first,:conditions=>["layer = ? AND ny = ?",y,y*(-1)]) # => layer_rec number is 'y-coord' value
+        if layer_rec == nil
+          # I need new layer
+          layer_rec = create_new_layer.call y
+          # check layer again
+          if layer_rec == nil
+            tstxy_log_msg = "test_and_set_xy : layer_rec == il at layer = #{y}"
+            FileManager::logger(sid, tstxy_log_msg, nil)
+            return NoXYPV
+          end
+        end
+
+        # is there rec for (x,y)?
+        request_rec = self.find(:first,:conditions=>["nx = ? AND ny = ? AND node_name = ?",request_loc[X],y,vfile_name],:lock=>true)
+        if request_rec
+          x = request_rec[:nx]
+          prx = request_loc[PRX]
+          begin
+            if node_type == NODE_DIRECTORY
+              v = INITIAL_VERSION_NUMBER
+              directory_node_exists = true
+            else
+              #              vc = request_rec[:current_version]
+              vc = (v == REQUEST_VERSION_NUMBER  ? request_rec[:current_version] + 1 : v)
+              v = vc
+              request_rec[:current_version] = vc
+              request_rec[:node_type] = node_type
+              request_rec.save!
+            end
+          rescue  ActiveRecord::RecordNotUnique
+            ActiveRecord::Base.lock_optimistically = true
+            #            msg_a = [ request_rec[:nx],request_rec[:layer],vc,nv0[:max_versions]]
+            tstxy_log_msg = "test_and_set_xy : exception : request_rec ActiveRecord::RecordNotUnique : " + request_rec.to_s
+            FileManager::logger(sid, tstxy_log_msg, nil)
+            return NoXYPV
+          end # => end of begin-rescue
+        else
+          # Is there rec for (prx,y)?
+          request_rec = self.find(:first,:conditions=>["nx_pr = ? AND ny = ? AND node_name = ?",request_loc[PRX],y,vfile_name],:lock=>true)
+          if request_rec.present?
+            x = request_rec[:nx]
+            prx = request_loc[PRX]
+            begin
+              if node_type == NODE_DIRECTORY
+                v = INITIAL_VERSION_NUMBER
+                directory_node_exists = true
+              else
+                #                vc = request_rec[:current_version]
+                vc = (v == REQUEST_VERSION_NUMBER  ? request_rec[:current_version] + 1 : v)
+                #                v = request_rec[:current_version] + 1
+                v = vc
+                request_rec[:current_version] = vc
+                request_rec[:node_type] = node_type
+                request_rec.save!
+              end
+            rescue  ActiveRecord::RecordNotUnique
+              ActiveRecord::Base.lock_optimistically = true
+              #            msg_a = [ request_rec[:nx],request_rec[:layer],vc,nv0[:max_versions]]
+              tstxy_log_msg = "test_and_set_xy : exception : request_rec ActiveRecord::RecordNotUnique : " + request_rec.to_s
+              FileManager::logger(sid, tstxy_log_msg, nil)
+              return NoXYPV
+            end # => end of begin-rescue
+          else # => no request_rec : request_rec == nil
+            # Get lock for the layer!
+            #            layer_retry_count = SPIN_NODE_KEEPER_RETRY_COUNT
+            if lock_object[:ny] < 0 # => lock object is a layer
+              request_rec_r = self.find(:first,:conditions=>["nx_pr = ? AND layer = ? AND node_name = ?",request_loc[PRX],y,vfile_name],:lock=>true)
+              if request_rec_r.present?
+                request_rec_r.with_lock do
+                  x = request_rec_r[:nx]
+                  prx = request_loc[PRX]
+                  begin
+                    if node_type == NODE_DIRECTORY
+                      v = INITIAL_VERSION_NUMBER
+                      directory_node_exists = true
+                    else
+                      vc = (v == REQUEST_VERSION_NUMBER  ? request_rec_r[:current_version] + 1 : v)
+                      #                    v = request_rec_r[:current_version] + 1
+                      v = vc
+                      request_rec_r[:current_version] = vc
+                      request_rec_r[:node_type] = node_type
+                      request_rec_r.save!
+                    end
+                  rescue  ActiveRecord::RecordNotUnique
+                    tstxy_log_msg = "test_and_set_xy : exception : request_rec_r ActiveRecord::RecordNotUnique : " + request_rec_r.to_s
+                    FileManager::logger(sid, tstxy_log_msg, nil)
+                    ActiveRecord::Base.lock_optimistically = true
+                    return NoXYPV
+                  end # => end of begin-rescue
+                end # => end of request_rec.with_lock
+              else # => no request_rec_r : request_rec_r == nil
+                # start
+                layer_rec_r = lock_object
+                x = layer_rec_r[:first_free_x]
+                # => no P(x,y), create new
+                prx = request_loc[PRX]
+                vc = (v == REQUEST_VERSION_NUMBER  ? INITIAL_VERSION_NUMBER : v)
+                if node_type == NODE_DIRECTORY
+                  v = INITIAL_VERSION_NUMBER
+                else
+                  v = vc
+                end
+                #          x = layer_rec_r[:first_free_x]
+                begin
+                  new_node_keeper_rec =  self.create(:nx => x, :ny => y, :layer => y, :nx_pr => prx, :node_name => vfile_name, :current_version => vc, :node_type => node_type)
+                  layer_rec_r[:last_x] = new_node_keeper_rec[:nx]
+                  layer_rec_r[:first_free_x] = new_node_keeper_rec[:nx] + 1
+                  layer_rec_r.save!
+                rescue ActiveRecord::RecordNotUnique
+                  if node_type == NODE_DIRECTORY
+                    node_loc = [ x, y, request_loc[PRX], v*(-1), nil, node_type ]
+                  else
+                    node_loc = [ x, y, request_loc[PRX], v, nil, node_type ]
+                  end
+                  return node_loc
+                end # => end of begin-rescue block
+              end # => end of if request_rec_r != nil
+            end # => end of if lock_object[:ny] < 0
+          end # => end of if request_rec != nil      
+        end # => end of if request_rec
+      end # => end of lock_object.with_lock
+    end # => end of transaction
+      
+    ActiveRecord::Base.lock_optimistically = true
+    
+    if directory_node_exists
+      node_loc = [ x, y, request_loc[PRX], v*(-1), nil, node_type ]
+    else
+      node_loc = [ x, y, request_loc[PRX], v, nil, node_type ]
+    end
+    
+    return node_loc
+  end # => end of test_and_set_xy parent_loc, vfile_name
+  
+  def self.test_and_set_xy sid, request_loc, vfile_name = '', node_type = NODE_FILE
+    # request_loc   [ X, Y, P, V ] : Y should be Z+-{0}, P spould be Z+, V may be REQUEST_COORD_VALUE
+    # vfile_name  : file or directory name to assign coordinate value
+    # node_type   : type of node { NODE_DIRECTORY, NODE_FILE,... } : optional
+    
+    # initialize var
+    node_loc = [] # => array of length 0
+    directory_node_exists = false
+    # start
+    # initialize
+    x = REQUEST_COORD_VALUE
+    y = REQUEST_COORD_VALUE
+    v = REQUEST_COORD_VALUE # => any negative value
+    #      request_rec = {}
+      
+    if request_loc[X] != REQUEST_COORD_VALUE # => new x-coord value is requested
+      x = request_loc[X]
+    end
+    if request_loc[Y] != REQUEST_COORD_VALUE # => new y-coord value is requested
+      y = request_loc[Y]
+    end
+    if request_loc[V] != REQUEST_VERSION_NUMBER # => new y-coord value is requested
+      v = request_loc[V]
+    end
+
+    layer0id = self.select('id').find_by_ny(LAYER0_NY)[:id]
+    
+    layer_rec = {}
+
+    create_new_layer = proc {|layer|
+      ret_val = nil
+      # set pesimistic lock
+      ActiveRecord::Base.lock_optimistically = false
+      # get layer-0 lock! : for locking layers
+      self.transaction do
+        self.find_by_sql('LOCK spin_node_keepers IN ACCESS EXCLUSIVE MODE')
+        self.find(layer0id)
+        #      if layer0 == nil
+        #        ret_val = nil # => exit from test_and_set_xy
+        #      else
+        #        layer0.with_lock do
+        # check layer again
+        new_layer = self.find(:first,:conditions=>["layer = ? AND ny = ?",layer,layer*(-1)])
+        if new_layer == nil
+          new_layer = self.create(:nx => INITIAL_X_COORD_VALUE, :ny => layer*(-1), :layer => layer, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE)
+        end
+        ret_val = new_layer
+        # create additional layers
+        #          inc_layers = 1
+        #          inc_layers.upto(ADD_NUMBER_OF_LAYERS) {|i|
+        #            new_layer_number = new_layer[:layer] + i
+        #            begin
+        #              nl = self.create(:nx => INITIAL_X_COORD_VALUE, :ny => new_layer_number*(-1), :layer => new_layer_number, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE)
+        #            rescue
+        #              next
+        #            end
+        #          }
+        #        end # => end of layer0.with_lock do        
+        #      end
+      end
+      # set pesimistic lock
+      ActiveRecord::Base.lock_optimistically = true
+      ret_val
+    }
+    
+    # check if there is a target layer first!
+    self.transaction do
+      layer_rec = self.find(:first,:conditions=>["layer = ? AND ny = ?",y,y*(-1)]) # => layer_rec number is 'y-coord' value
+      if layer_rec == nil
+        # I need new layer
+        layer_rec = create_new_layer.call y
+        # check layer again
+        if layer_rec == nil
+          tstxy_log_msg = "test_and_set_xy : layer_rec == il at layer = #{y}"
+          FileManager::logger(sid, tstxy_log_msg, nil)
+          return NoXYPV
+        end
+      end
+    end # => end of transaction
+
+    # set pesimistic lock
+    ActiveRecord::Base.lock_optimistically = false
+
+    self.transaction do
+      retry_lock_count = SPIN_NODE_KEEPER_RETRY_COUNT
+      lock_object = nil
+      while retry_lock_count > 0 do
+        self.find_by_sql('LOCK spin_node_keepers IN ACCESS EXCLUSIVE MODE')
+        lock_object = self.find(:first,:conditions=>["layer = ? AND ny = ?",y,y*(-1)]) # => layer_rec number is 'y-coord' value
+        if lock_object == nil
+          sleep(1 + SPIN_NODE_KEEPER_RETRY_COUNT - retry_lock_count)
+          retry_lock_count -= 1
+          next
+        else
+          break
+        end
+      end
+      
+      return NoXYPV if lock_object == nil
+            
+      #      lock_object.with_lock do # => lock object { parent, layer }
+      # is there rec for (x,y)?
+      request_rec = self.find(:first,:conditions=>["nx = ? AND ny = ? AND node_name = ?",request_loc[X],y,vfile_name],:lock=>true)
+      if request_rec
+        x = request_rec[:nx]
+        prx = request_loc[PRX]
+        begin
+          if node_type == NODE_DIRECTORY
+            v = INITIAL_VERSION_NUMBER
+            directory_node_exists = true
+          else
+            #              vc = request_rec[:current_version]
+            vc = (v == REQUEST_VERSION_NUMBER  ? request_rec[:current_version] + 1 : v)
+            v = vc
+            request_rec[:current_version] = vc
+            request_rec[:node_type] = node_type
+            request_rec.save!
+          end
+        rescue  ActiveRecord::RecordNotUnique
+          ActiveRecord::Base.lock_optimistically = true
+          #            msg_a = [ request_rec[:nx],request_rec[:layer],vc,nv0[:max_versions]]
+          tstxy_log_msg = "test_and_set_xy : exception : request_rec ActiveRecord::RecordNotUnique : " + request_rec.to_s
+          FileManager::logger(sid, tstxy_log_msg, nil)
+          return NoXYPV
+        end # => end of begin-rescue
+      else
+        # Is there rec for (prx,y)?
+        request_rec = self.find(:first,:conditions=>["nx_pr = ? AND ny = ? AND node_name = ?",request_loc[PRX],y,vfile_name],:lock=>true)
+        if request_rec.present?
+          x = request_rec[:nx]
+          prx = request_loc[PRX]
+          begin
+            if node_type == NODE_DIRECTORY
+              v = INITIAL_VERSION_NUMBER
+              directory_node_exists = true
+            else
+              #                vc = request_rec[:current_version]
+              vc = (v == REQUEST_VERSION_NUMBER  ? request_rec[:current_version] + 1 : v)
+              #                v = request_rec[:current_version] + 1
+              v = vc
+              request_rec[:current_version] = vc
+              request_rec[:node_type] = node_type
+              request_rec.save!
+            end
+          rescue  ActiveRecord::RecordNotUnique
+            ActiveRecord::Base.lock_optimistically = true
+            #            msg_a = [ request_rec[:nx],request_rec[:layer],vc,nv0[:max_versions]]
+            tstxy_log_msg = "test_and_set_xy : exception : request_rec ActiveRecord::RecordNotUnique : " + request_rec.to_s
+            FileManager::logger(sid, tstxy_log_msg, nil)
+            return NoXYPV
+          end # => end of begin-rescue
+        else # => no request_rec : request_rec == nil
+          # Get lock for the layer!
+          #            layer_retry_count = SPIN_NODE_KEEPER_RETRY_COUNT
+          if lock_object[:ny] < 0 # => lock object is a layer
+            request_rec_r = self.find(:first,:conditions=>["nx_pr = ? AND layer = ? AND node_name = ?",request_loc[PRX],y,vfile_name],:lock=>true)
+            if request_rec_r.present?
+              request_rec_r.with_lock do
+                x = request_rec_r[:nx]
+                prx = request_loc[PRX]
+                begin
+                  if node_type == NODE_DIRECTORY
+                    v = INITIAL_VERSION_NUMBER
+                    directory_node_exists = true
+                  else
+                    vc = (v == REQUEST_VERSION_NUMBER  ? request_rec_r[:current_version] + 1 : v)
+                    #                    v = request_rec_r[:current_version] + 1
+                    v = vc
+                    request_rec_r[:current_version] = vc
+                    request_rec_r[:node_type] = node_type
+                    request_rec_r.save!
+                  end
+                rescue  ActiveRecord::RecordNotUnique
+                  tstxy_log_msg = "test_and_set_xy : exception : request_rec_r ActiveRecord::RecordNotUnique : " + request_rec_r.to_s
+                  FileManager::logger(sid, tstxy_log_msg, nil)
+                  ActiveRecord::Base.lock_optimistically = true
+                  return NoXYPV
+                end # => end of begin-rescue
+              end # => end of request_rec.with_lock
+            else # => no request_rec_r : request_rec_r == nil
+              # start
+              layer_rec_r = lock_object
+              x = layer_rec_r[:first_free_x]
+              # => no P(x,y), create new
+              prx = request_loc[PRX]
+              vc = (v == REQUEST_VERSION_NUMBER  ? INITIAL_VERSION_NUMBER : v)
+              if node_type == NODE_DIRECTORY
+                v = INITIAL_VERSION_NUMBER
+              else
+                v = vc
+              end
+              #          x = layer_rec_r[:first_free_x]
+              begin
+                new_node_keeper_rec =  self.create(:nx => x, :ny => y, :layer => y, :nx_pr => prx, :node_name => vfile_name, :current_version => vc, :node_type => node_type)
+                layer_rec_r[:last_x] = new_node_keeper_rec[:nx]
+                layer_rec_r[:first_free_x] = new_node_keeper_rec[:nx] + 1
+                layer_rec_r.save!
+              rescue ActiveRecord::RecordNotUnique
+                if node_type == NODE_DIRECTORY
+                  node_loc = [ x, y, request_loc[PRX], v*(-1), nil, node_type ]
+                else
+                  node_loc = [ x, y, request_loc[PRX], v, nil, node_type ]
+                end
+                return node_loc
+              end # => end of begin-rescue block
+            end # => end of if request_rec_r != nil
+          end # => end of if lock_object[:ny] < 0
+        end # => end of if request_rec != nil      
+      end # => end of if request_rec
+      #      end # => end of lock_object.with_lock
+    end # => end of transaction
+      
+    ActiveRecord::Base.lock_optimistically = true
+    
+    if directory_node_exists
+      node_loc = [ x, y, request_loc[PRX], v*(-1), nil, node_type ]
+    else
+      node_loc = [ x, y, request_loc[PRX], v, nil, node_type ]
+    end
+    
+    return node_loc
+  end # => end of test_and_set_xy parent_loc, vfile_name
+  
+  def self.delete_node_keeper_record(px,py,v = ANY_VERSION)
+    # set pesimistic lock
+    ActiveRecord::Base.lock_optimistically = false
+        
+    self.transaction do
+      
+      self.find_by_sql('LOCK spin_node_keepers IN ACCESS EXCLUSIVE MODE')
+      knode = self.find(:first,:conditions=>["nx = ? AND ny = ?",px,py])
+      if knode == nil
+        return false
+      end
+    
+      if knode[:current_version].present?
+        if v == ANY_VERSION or v == knode[:current_version]
+          knode.destroy
+        elsif v < knode[:current_version]
+          return true
+        else  # => v > knode[:current_version]
+          return false
+        end    
+      else
+        return true
+      end
+    
+    end # => end of transaction
+    
+  end # => end of SpinNodeKeeper.delete_node_keeper_record(sid,delete_file_key)
+  
+  def self.modify_node_keeper_node_name(px,py,new_node_name)
+    # set pesimistic lock
+    ActiveRecord::Base.lock_optimistically = false
+    
+    self.transaction do
+      
+      self.find_by_sql('LOCK spin_node_keepers IN ACCESS EXCLUSIVE MODE')
+      knode = self.find(:first,:conditions=>["nx = ? AND ny = ?",px,py])
+      # get layer-0 lock! : for locking layers
+      if knode == nil # => exit -1
+        ActiveRecord::Base.lock_optimistically = true
+        return ERROR_FAILED_TO_CHANGE_NODE_NAME
+      end
+
+      knode.with_lock do
+        knode[:node_name] = new_node_name
+        knode.save
+      end
+
+    end # => end of transaction
+
+    ActiveRecord::Base.lock_optimistically = true
+
+    return INFO_CHANGE_NODE_NAME_SUCCESS
+
+  end # => end of SpinNodeKeeper.delete_node_keeper_record(sid,delete_file_key)
+  
+  def self.init_spin_node_keeper
+    # set pesimistic lock
+    ActiveRecord::Base.lock_optimistically = false
+    
+    # get layer-0 lock! : for locking layers
+    layer0 = self.find(:first,:conditions=>["layer = ? AND ny = ?",LAYER0_LAYER,LAYER0_NY],:lock=>true)
+    if layer0 == nil
+      layer0 = self.create :nx => INITIAL_X_COORD_VALUE, :ny => LAYER0_NY, :layer => LAYER0_LAYER, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE
+      if layer0 == nil # => exit -1
+        ActiveRecord::Base.lock_optimistically = true
+        return ERROR_SYSTEM_INIT_NODE_KEEPER
+      end
+    end
+
+    layer0.with_lock do
+      # check layer again
+      # create additional layers
+      inc_layers = FIRST_LAYER
+      inc_layers.upto(ADD_NUMBER_OF_LAYERS) {|i|
+        new_layer = self.find(:first,:conditions=>["layer = ? AND ny = ?",i,i*(-1)])
+        if new_layer == nil
+          begin
+            new_layer = self.create :nx => INITIAL_X_COORD_VALUE, :ny => i*(-1), :layer => i, :last_x => INITIAL_X_COORD_VALUE-1, :first_free_x => INITIAL_X_COORD_VALUE
+          rescue
+            log_msg = ":init_spin_node_keeper => failed to create new layer at #{i}"
+            FileManager::logger(ADMIN_SESSION_ID, log_msg, nil)
+          end
+        end
+      }
+    end # => end of layer0.with_lock do        
+
+    ActiveRecord::Base.lock_optimistically = true
+    
+  end # => end of init_spin_node_keeper
+  
+end

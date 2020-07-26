@@ -1,0 +1,35 @@
+<h1>Listing domain_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Hash key</th>
+    <th>Cont location</th>
+    <th>Domain writable status</th>
+    <th>Domain name</th>
+    <th>Domain link</th>
+    <th>Img</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @domain_data.each do |domain_datum| %>
+  <tr>
+    <td><%= domain_datum.session_id %></td>
+    <td><%= domain_datum.hash_key %></td>
+    <td><%= domain_datum.cont_location %></td>
+    <td><%= domain_datum.domain_writable_status %></td>
+    <td><%= domain_datum.domain_name %></td>
+    <td><%= domain_datum.domain_link %></td>
+    <td><%= domain_datum.img %></td>
+    <td><%= link_to 'Show', domain_datum %></td>
+    <td><%= link_to 'Edit', edit_domain_datum_path(domain_datum) %></td>
+    <td><%= link_to 'Destroy', domain_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Domain datum', new_domain_datum_path %>

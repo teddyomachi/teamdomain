@@ -1,0 +1,5 @@
+Ext = {
+	buildSettings: {
+		scopeResetCSS: true
+	}
+};

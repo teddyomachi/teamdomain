@@ -1,0 +1,19 @@
+{
+	"groups" :
+	[
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"target_hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"group_name": "Xプロジェクト",
+			"group_description": "Xプロジェクト・メンバー",
+			"gruop_id": "01"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ed",
+			"target_hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ed",
+			"group_name": "Yプロジェクト",
+			"group_description": "Yプロジェクト・メンバー",
+			"gruop_id": "02"
+		}
+	]
+}

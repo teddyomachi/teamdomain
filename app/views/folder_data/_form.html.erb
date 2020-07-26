@@ -1,0 +1,133 @@
+<%= form_for(@folder_datum) do |f| %>
+  <% if @folder_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@folder_datum.errors.count, "error") %> prohibited this folder_datum from being saved:</h2>
+
+      <ul>
+      <% @folder_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hash_key %><br />
+    <%= f.text_field :hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_location %><br />
+    <%= f.text_field :cont_location %>
+  </div>
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :img %><br />
+    <%= f.text_field :img %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_name %><br />
+    <%= f.text_field :folder_name %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %>
+  </div>
+  <div class="field">
+    <%= f.label :ownership %><br />
+    <%= f.text_field :ownership %>
+  </div>
+  <div class="field">
+    <%= f.label :control_right %><br />
+    <%= f.text_field :control_right %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_readable_status %><br />
+    <%= f.text_field :parent_readable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_writable_status %><br />
+    <%= f.text_field :parent_writable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_readable_status %><br />
+    <%= f.text_field :folder_readable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_writable_status %><br />
+    <%= f.text_field :folder_writable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :workingFolder %><br />
+    <%= f.text_field :workingFolder %>
+  </div>
+  <div class="field">
+    <%= f.label :subFolders %><br />
+    <%= f.number_field :subFolders %>
+  </div>
+  <div class="field">
+    <%= f.label :fileNumber %><br />
+    <%= f.number_field :fileNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %><br />
+    <%= f.text_field :creator %>
+  </div>
+  <div class="field">
+    <%= f.label :created_date %><br />
+    <%= f.date_select :created_date %>
+  </div>
+  <div class="field">
+    <%= f.label :updater %><br />
+    <%= f.text_field :updater %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_date %><br />
+    <%= f.date_select :updated_date %>
+  </div>
+  <div class="field">
+    <%= f.label :usedSpace %><br />
+    <%= f.number_field :usedSpace %>
+  </div>
+  <div class="field">
+    <%= f.label :restSpace %><br />
+    <%= f.number_field :restSpace %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br />
+    <%= f.number_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :usedRate %><br />
+    <%= f.number_field :usedRate %>
+  </div>
+  <div class="field">
+    <%= f.label :cls %><br />
+    <%= f.text_field :cls %>
+  </div>
+  <div class="field">
+    <%= f.label :expanded %><br />
+    <%= f.check_box :expanded %>
+  </div>
+  <div class="field">
+    <%= f.label :leaf %><br />
+    <%= f.check_box :leaf %>
+  </div>
+  <div class="field">
+    <%= f.label :children %><br />
+    <%= f.text_field :children %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

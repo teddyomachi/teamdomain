@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  session_id: MyString
+  hash_key: MyString
+  cont_location: MyString
+  id: MyString
+  img: MyString
+  text: MyString
+  folder_name: MyString
+  owner: MyString
+  ownership: MyString
+  control_right: MyString
+  parent_readable_status: MyString
+  parent_writable_status: MyString
+  folder_readable_status: MyString
+  folder_writable_status: MyString
+  workingFolder: MyString
+  subFolders: 1
+  fileNumber: 1
+  creator: MyString
+  created_date: 2012-11-27
+  updater: MyString
+  updated_date: 2012-11-27
+  usedSpace: 1
+  restSpace: 1
+  capacity: 1
+  usedRate: 1
+  cls: MyString
+  expanded: false
+  leaf: false
+  children: MyString
+
+two:
+  session_id: MyString
+  hash_key: MyString
+  cont_location: MyString
+  id: MyString
+  img: MyString
+  text: MyString
+  folder_name: MyString
+  owner: MyString
+  ownership: MyString
+  control_right: MyString
+  parent_readable_status: MyString
+  parent_writable_status: MyString
+  folder_readable_status: MyString
+  folder_writable_status: MyString
+  workingFolder: MyString
+  subFolders: 1
+  fileNumber: 1
+  creator: MyString
+  created_date: 2012-11-27
+  updater: MyString
+  updated_date: 2012-11-27
+  usedSpace: 1
+  restSpace: 1
+  capacity: 1
+  usedRate: 1
+  cls: MyString
+  expanded: false
+  leaf: false
+  children: MyString

@@ -1,0 +1,63 @@
+<h1>Listing spin_user_attributes</h1>
+
+<table>
+  <tr>
+    <th>Spin uid</th>
+    <th>Spin uname</th>
+    <th>Real uname1</th>
+    <th>Real uname2</th>
+    <th>Real unamem</th>
+    <th>Mail addr</th>
+    <th>Mail addr2</th>
+    <th>Organization1</th>
+    <th>Organization2</th>
+    <th>Organization3</th>
+    <th>Organization4</th>
+    <th>Organization5</th>
+    <th>Organization6</th>
+    <th>Organization8</th>
+    <th>Tel country code 1</th>
+    <th>Tel area code 1</th>
+    <th>Tel pid code 1</th>
+    <th>Tel number 1</th>
+    <th>Tel ext 1</th>
+    <th>User attributes</th>
+    <th>Organization7</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_user_attributes.each do |spin_user_attribute| %>
+  <tr>
+    <td><%= spin_user_attribute.spin_uid %></td>
+    <td><%= spin_user_attribute.spin_uname %></td>
+    <td><%= spin_user_attribute.real_uname1 %></td>
+    <td><%= spin_user_attribute.real_uname2 %></td>
+    <td><%= spin_user_attribute.real_unameM %></td>
+    <td><%= spin_user_attribute.mail_addr %></td>
+    <td><%= spin_user_attribute.mail_addr2 %></td>
+    <td><%= spin_user_attribute.organization1 %></td>
+    <td><%= spin_user_attribute.organization2 %></td>
+    <td><%= spin_user_attribute.organization3 %></td>
+    <td><%= spin_user_attribute.organization4 %></td>
+    <td><%= spin_user_attribute.organization5 %></td>
+    <td><%= spin_user_attribute.organization6 %></td>
+    <td><%= spin_user_attribute.organization8 %></td>
+    <td><%= spin_user_attribute.tel_country_code_1 %></td>
+    <td><%= spin_user_attribute.tel_area_code_1 %></td>
+    <td><%= spin_user_attribute.tel_pid_code_1 %></td>
+    <td><%= spin_user_attribute.tel_number_1 %></td>
+    <td><%= spin_user_attribute.tel_ext_1 %></td>
+    <td><%= spin_user_attribute.user_attributes %></td>
+    <td><%= spin_user_attribute.organization7 %></td>
+    <td><%= link_to 'Show', spin_user_attribute %></td>
+    <td><%= link_to 'Edit', edit_spin_user_attribute_path(spin_user_attribute) %></td>
+    <td><%= link_to 'Destroy', spin_user_attribute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin user attribute', new_spin_user_attribute_path %>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-TYpe'/>
+    </head>
+    <body>
+        <%= @user[:name] %> 様<br>
+        <br>
+        <pre>
+            <%=  @vpath[:folder_vpath] %>にファイルがアップロードされました。
+<br>
+            <%= @vpath[:file_vpath] %> : <%= @file_size %><br>
+            ダウンロードURL<br>
+            <%= @url %>
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  storage_server: MyString
+  storage_root: MyString
+  mapping_logic: MyString
+  storage_max_size: 1
+  storage_attributes: MyText
+
+two:
+  storage_server: MyString
+  storage_root: MyString
+  mapping_logic: MyString
+  storage_max_size: 1
+  storage_attributes: MyText

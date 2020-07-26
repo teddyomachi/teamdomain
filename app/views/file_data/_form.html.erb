@@ -1,0 +1,185 @@
+<%= form_for(@file_datum) do |f| %>
+  <% if @file_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@file_datum.errors.count, "error") %> prohibited this file_datum from being saved:</h2>
+
+      <ul>
+      <% @file_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hash_key %><br />
+    <%= f.text_field :hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_location %><br />
+    <%= f.text_field :cont_location %>
+  </div>
+  <div class="field">
+    <%= f.label :file_name %><br />
+    <%= f.text_field :file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :file_type %><br />
+    <%= f.text_field :file_type %>
+  </div>
+  <div class="field">
+    <%= f.label :file_size %><br />
+    <%= f.number_field :file_size %>
+  </div>
+  <div class="field">
+    <%= f.label :file_version %><br />
+    <%= f.number_field :file_version %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :thumbnail_image %><br />
+    <%= f.text_field :thumbnail_image %>
+  </div>
+  <div class="field">
+    <%= f.label :created_date %><br />
+    <%= f.date_select :created_date %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %><br />
+    <%= f.text_field :creator %>
+  </div>
+  <div class="field">
+    <%= f.label :modified_date %><br />
+    <%= f.date_select :modified_date %>
+  </div>
+  <div class="field">
+    <%= f.label :modifier %><br />
+    <%= f.text_field :modifier %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %>
+  </div>
+  <div class="field">
+    <%= f.label :ownership %><br />
+    <%= f.text_field :ownership %>
+  </div>
+  <div class="field">
+    <%= f.label :control_right %><br />
+    <%= f.text_field :control_right %>
+  </div>
+  <div class="field">
+    <%= f.label :lock %><br />
+    <%= f.text_field :lock %>
+  </div>
+  <div class="field">
+    <%= f.label :id_lc_by %><br />
+    <%= f.text_field :id_lc_by %>
+  </div>
+  <div class="field">
+    <%= f.label :name_lc_by %><br />
+    <%= f.text_field :name_lc_by %>
+  </div>
+  <div class="field">
+    <%= f.label :dirty %><br />
+    <%= f.text_field :dirty %>
+  </div>
+  <div class="field">
+    <%= f.label :keyword %><br />
+    <%= f.text_field :keyword %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :file_exact_size %><br />
+    <%= f.number_field :file_exact_size %>
+  </div>
+  <div class="field">
+    <%= f.label :icon_image %><br />
+    <%= f.text_field :icon_image %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle %><br />
+    <%= f.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= f.label :frame_size %><br />
+    <%= f.text_field :frame_size %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :producer %><br />
+    <%= f.text_field :producer %>
+  </div>
+  <div class="field">
+    <%= f.label :produced_date %><br />
+    <%= f.date_select :produced_date %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :client %><br />
+    <%= f.text_field :client %>
+  </div>
+  <div class="field">
+    <%= f.label :copyright %><br />
+    <%= f.text_field :copyright %>
+  </div>
+  <div class="field">
+    <%= f.label :portrait_right %><br />
+    <%= f.text_field :portrait_right %>
+  </div>
+  <div class="field">
+    <%= f.label :access_group %><br />
+    <%= f.text_field :access_group %>
+  </div>
+  <div class="field">
+    <%= f.label :file_readable_status %><br />
+    <%= f.text_field :file_readable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :file_writable_status %><br />
+    <%= f.text_field :file_writable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :open_status %><br />
+    <%= f.text_field :open_status %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_hash_key %><br />
+    <%= f.text_field :folder_hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_readable_status %><br />
+    <%= f.text_field :folder_readable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_writable_status %><br />
+    <%= f.text_field :folder_writable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br />
+    <%= f.text_field :details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

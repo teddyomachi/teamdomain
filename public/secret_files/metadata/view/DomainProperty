@@ -1,0 +1,806 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "hidden": true,
+        "id": "domainProperty",
+        "margin": "10 10 0 10",
+        "designer|userClassName": "DomainProperty",
+        "designer|userAlias": "domainproperty",
+        "autoScroll": true,
+        "layout": "vbox",
+        "bodyPadding": null,
+        "title": "ワークエリア"
+    },
+    "designerId": "97aa1978-c28b-4bd5-97cd-2f7920c66bca",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "height": 138,
+                "hidden": true,
+                "id": null,
+                "itemId": "showDomainThumbnail",
+                "padding": "",
+                "bodyPadding": 5,
+                "title": null
+            },
+            "designerId": "dfc0c607-bbd5-4ff3-88d6-3885e2bf3c18",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "implHandler": [
+                            "<img src=\"data/{img}\" height=\"128px\" style=\"float: center\" />\r",
+                            ""
+                        ],
+                        "designer|displayName": "tpl"
+                    },
+                    "designerId": "9e27596a-b80e-4241-87ce-6a7f7c4d771f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "hidden": true,
+                "bodyPadding": null,
+                "activeTab": 0
+            },
+            "designerId": "aabecde5-bfd7-4011-8d89-ac7df15fc703",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": true,
+                        "height": 150,
+                        "id": "createFolder",
+                        "padding": null,
+                        "autoScroll": true,
+                        "bodyPadding": 5,
+                        "title": "フォルダ作成"
+                    },
+                    "designerId": "ba7bd080-7ab1-440f-ad2b-dfeaf11a3c40",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "e9e3bf40-f323-4ec3-b741-78dd5ac6289e"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "cont_location"
+                            },
+                            "designerId": "7cd335fc-bf2f-439c-8cf3-98cac0674233"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "hash_key"
+                            },
+                            "designerId": "4464b512-673c-411a-971f-739ef0fb0f52"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "margin": null,
+                                "padding": "0 10 0 10",
+                                "title": "このワークエリアの配下に新たにフォルダを作成します。"
+                            },
+                            "designerId": "3f13d703-8ff1-4e5b-bd74-eb18557aee2b",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "id": "domain_name_2",
+                                        "itemId": null,
+                                        "fieldLabel": null,
+                                        "name": "domain_name",
+                                        "fieldStyle": null
+                                    },
+                                    "designerId": "9d3da645-5495-47b6-96e2-ea76dc5c4c15"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "margin": null,
+                                "padding": "0 10 0 10",
+                                "title": "新しいフォルダの名前を入力して下さい。"
+                            },
+                            "designerId": "b85b6650-7a6d-4330-9f8a-d63a010a302d",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "id": "new_root_folder",
+                                        "itemId": null,
+                                        "fieldLabel": null,
+                                        "name": "new_folder_name",
+                                        "allowBlank": false,
+                                        "blankText": "新しいフォルダ名を入力して下さい。",
+                                        "emptyText": "新しいフォルダ名を入力して下さい。",
+                                        "vtype": null
+                                    },
+                                    "designerId": "ed462a72-057e-4a4d-a3fb-98008849f2b3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": null,
+                                "id": "btn_create_root_folder",
+                                "margin": "0 0 0 205",
+                                "width": 100,
+                                "text": "作成",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"新規に作成するフォルダ名を入力してから、このボタンを押して下さい。\"\r",
+                                    "}"
+                                ],
+                                "type": "submit"
+                            },
+                            "designerId": "41ef60c2-a8bf-45a5-96c1-d01db314184c",
+                            "cn": [
+                                {
+                                    "type": "basicfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var formX = this.up().getForm().getFieldValues();\r",
+                                            "\r",
+                                            "if (formX.domain_name === '') {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ドメイン選択',\r",
+                                            "\t\tmsg: 'ドメインを選択して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (formX.new_folder_name === '') {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'フォルダ名入力',\r",
+                                            "\t\tmsg: 'フォルダ名を入力して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "formX = Ext.apply({session_id: this_session_id},formX);\r",
+                                            "formX = Ext.apply({request_type: 'create_root_folder'},formX);\r",
+                                            "\r",
+                                            "Ext.Ajax.request({\r",
+                                            "\turl: 'tdx/updatedata.tdx',\r",
+                                            "\tmethod: 'POST',\r",
+                                            "\tjsonData: formX,\r",
+                                            "\tsuccess: handleSuccess,\r",
+                                            "\tfailure: handleFailure\r",
+                                            "});\r",
+                                            "\r",
+                                            "function handleSuccess(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'フォルダ作成失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tif (formX.cont_location === 'folder_a') {\r",
+                                            "\t\t\tExt.getStore('FolderDataStoreA').load();\r",
+                                            "\t\t\tExt.getStore('TargetFolderAT').load();\r",
+                                            "\t\t\tExt.getStore('TargetFolderATFi').load();\r",
+                                            "\t\t} else if (formX.cont_location === 'folder_b') {\r",
+                                            "\t\t\tExt.getStore('FolderDataStoreB').load();\r",
+                                            "\t\t\tExt.getStore('TargetFolderBT').load();\r",
+                                            "\t\t\tExt.getStore('TargetFolderBTFi').load();\r",
+                                            "\t\t}\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailure(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'フォルダ作成失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "6b763807-edab-41b0-a223-86bcde5aac41"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": true,
+                        "height": 100,
+                        "hidden": true,
+                        "id": "showDomainProperty",
+                        "padding": null,
+                        "autoScroll": true,
+                        "bodyPadding": 5,
+                        "title": "プロパティ"
+                    },
+                    "designerId": "8c276be2-e005-4007-8bed-322b234e7d74",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "82d13ea8-a906-41ce-91b5-77a9e0ccada7"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "cont_location"
+                            },
+                            "designerId": "f5ce821c-f9eb-40b4-a443-2a15de7e577b"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "hash_key"
+                            },
+                            "designerId": "dca4790b-050a-4c9a-8be4-12df0cf60eb5"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": null,
+                                "id": "domain_name_1",
+                                "itemId": null,
+                                "margin": 0,
+                                "width": 320,
+                                "fieldLabel": "ドメイン名",
+                                "labelWidth": 90,
+                                "name": "domain_name",
+                                "allowBlank": false,
+                                "emptyText": "ドメインを選択して下さい。"
+                            },
+                            "designerId": "74df2609-a4f3-4117-b543-03a224fbae10"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": null,
+                                "id": "btn_change_domain_name",
+                                "itemId": "",
+                                "margin": "5 0 5 210",
+                                "width": 100,
+                                "text": "ドメイン名変更",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"ドメイン名を変更する場合には、現在のドメイン名を上書きしてから、このボタンを押して下さい。\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "b7c36d80-243c-409e-b0b3-3e5326213dbd",
+                            "cn": [
+                                {
+                                    "type": "basicfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var formX = this.up().getForm().getFieldValues();\r",
+                                            "\r",
+                                            "if (formX.domain_name === '') {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ドメイン選択',\r",
+                                            "\t\tmsg: 'ドメインを選択して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "formX = Ext.apply({session_id: this_session_id},formX);\r",
+                                            "formX = Ext.apply({request_type: 'change_domain_name'},formX);\r",
+                                            "\r",
+                                            "Ext.Ajax.request({\r",
+                                            "\turl: 'tdx/updatedata.tdx',\r",
+                                            "\tmethod: 'POST',\r",
+                                            "\tjsonData: formX,\r",
+                                            "\tsuccess: handleSuccess,\r",
+                                            "\tfailure: handleFailure\r",
+                                            "});\r",
+                                            "\r",
+                                            "function handleSuccess(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'ドメイン名変更失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tExt.getStore('DomainDataStoreA').load();\r",
+                                            "\t\tExt.getStore('DomainDataStoreB').load();\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailure(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ドメイン名変更失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "3925d941-2510-4567-8714-1b3d66bca2bd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": null,
+                                "margin": 0,
+                                "width": 320,
+                                "fieldLabel": "リンク先",
+                                "labelWidth": 90,
+                                "name": "domain_link",
+                                "value": null,
+                                "fieldStyle": null
+                            },
+                            "designerId": "c362d730-5599-4214-9972-30b7dafa3974"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": true,
+                        "hidden": true,
+                        "id": "createRootFile",
+                        "autoScroll": true,
+                        "bodyPadding": 5,
+                        "title": "ファイル追加"
+                    },
+                    "designerId": "c0480fcd-38b8-4368-8ff8-483375dae3bf",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "padding": "0 10 0 10",
+                                "layout": "auto",
+                                "title": "このドメインの配下にファイルを追加します。"
+                            },
+                            "designerId": "e2e13d97-9bc1-4285-9696-8436f6194bbd",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": null,
+                                        "name": "request_type",
+                                        "value": [
+                                            "upload_root_file"
+                                        ]
+                                    },
+                                    "designerId": "824895e0-1bb7-43d9-b675-1c93babc3a5b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": null,
+                                        "name": "cont_location"
+                                    },
+                                    "designerId": "132b25ae-1c89-42a9-b024-fdfc9b9e0b8e"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": null,
+                                        "name": "hash_key"
+                                    },
+                                    "designerId": "a9394821-3ed2-4a50-93b9-98cffeaffba8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 20,
+                                        "width": 303,
+                                        "fieldLabel": null,
+                                        "name": "domain_name",
+                                        "value": null,
+                                        "fieldStyle": null
+                                    },
+                                    "designerId": "a5f2ba27-ceae-47b6-a64b-a1326d26c569"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "padding": "0 10 0 10",
+                                "title": "ファイルを選択して下さい。"
+                            },
+                            "designerId": "0fbbdd2f-91da-49ce-b4e4-8baac81ef75b",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.File",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "id": "uploadRootFile",
+                                        "itemId": "uploadRootFile",
+                                        "fieldLabel": null,
+                                        "name": "upload_file",
+                                        "readOnly": false,
+                                        "allowBlank": false,
+                                        "emptyText": "ファイルを選択してください。",
+                                        "buttonText": "ファイル選択"
+                                    },
+                                    "designerId": "3a3db880-3132-4164-867c-026e2300c4b6",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onUploadRootFileChange",
+                                                "implHandler": [
+                                                    "value = value.replace('C:\\\\fakepath\\\\', '');\r",
+                                                    ""
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "4ecf21b3-974b-4e68-9f83-1a5918e883ea"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": null,
+                                        "fieldLabel": "Label",
+                                        "name": "another_name"
+                                    },
+                                    "designerId": "a419431a-2c6a-4ff2-8cee-9b35c72ef6e7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": null,
+                                "id": "btn_upload_root_file",
+                                "margin": "0 0 0 205",
+                                "width": 100,
+                                "iconCls": null,
+                                "text": "追加",
+                                "tooltip": [
+                                    "{\r",
+                                    "\thtml: \"ファイルを追加するフォルダを確認してから、「ファイル選択」ボタンを押して、追加するファイルを選択して下さい。<br/>確認が済んだら、このボタンを押して下さい。\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "4309f40f-47fe-4fc6-9ba7-84486be4195b",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "var formX = this.up().getForm().getFieldValues();\r",
+                                            "if (formX.text === '') {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ドメイン選択',\r",
+                                            "\t\tmsg: 'ドメインの選択を確認して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "var form = this.up('form').getForm();\r",
+                                            "var up_filename = form._fields.items[5].value;\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(up_filename)) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'追加ファイル選択',\r",
+                                            "\t\tmsg: '追加ファイルを選択して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "} else {\r",
+                                            "\tvar dataY = Ext.apply({session_id: this_session_id}, formX);\r",
+                                            "\tdataY = Ext.apply({upload_filename: up_filename}, dataY);\r",
+                                            "\tdataY = Ext.apply({request_type: \"upload_root_file\"}, dataY);\r",
+                                            "\r",
+                                            "\tExt.Ajax.request({\r",
+                                            "\t\turl: 'tdx/updatedata.tdx',\r",
+                                            "\t\tjsonData: dataY,\r",
+                                            "\t\tsuccess: handleSuccess,\r",
+                                            "\t\tfailure: handleFailure\r",
+                                            "\t});\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleSuccess(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\r",
+                                            "\tvar request_success      = obj.success;\r",
+                                            "\tvar request_hashkey      = obj.hashkey;\r",
+                                            "\tvar request_redirect_uri = obj.redirect_uri;\r",
+                                            "\tvar new_filename         = this_session_id + request_hashkey;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'ファイル送信失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t} else {\r",
+                                            "\t\tExt.getCmp('createRootFile').getForm().setValues({\r",
+                                            "\t\t\tanother_name: new_filename\r",
+                                            "\t\t});\r",
+                                            "\t\tsendFile(form, up_filename, request_redirect_uri);\r",
+                                            "\t}\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailure(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ファイル追加失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            "function sendFile(form, up_filename, request_redirect_uri) {\r",
+                                            "\tform.submit({\r",
+                                            "\t\turl: request_redirect_uri,\r",
+                                            "\t\twaitMsg: 'ファイルを追加中です...',\r",
+                                            "\r",
+                                            "\t\tsuccess: function(form, action){\r",
+                                            "\t\t\tif(action.result.success === true){\r",
+                                            "\t\t\t\tExt.Msg.show({\r",
+                                            "\t\t\t\t\ttitle:'ファイルの追加完了',\r",
+                                            "\t\t\t\t\tmsg: up_filename +'<br/> をサーバに追加しました。',\r",
+                                            "\t\t\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t\t\t});\r",
+                                            "\t\t\t\tif (formX.cont_location === 'folder_a') {\r",
+                                            "\t\t\t\t\tExt.getStore('FileDataStoreA').load();\r",
+                                            "\t\t\t\t} else if (formX.cont_location === 'folder_b') {\r",
+                                            "\t\t\t\t\tExt.getStore('FileDataStoreB').load();\r",
+                                            "\t\t\t\t}\r",
+                                            "\t\t\t\tform._fields.items[5].value = '';\r",
+                                            "\t\t\t}\r",
+                                            "\r",
+                                            "\t\t},\r",
+                                            "\r",
+                                            "\t\tfailure: function(form, action){\r",
+                                            "\t\t\tif (action.failureType === CONNECT_FAILURE) {\r",
+                                            "\t\t\t\tExt.Msg.alert('Error', 'Status:'+action.response.status+': '+ action.response.statusText);\r",
+                                            "\t\t\t}\r",
+                                            "\t\t\tif (action.failureType === SERVER_INVALID){\r",
+                                            "\t\t\t\tExt.Msg.alert('Invalid', action.result.errormsg);\r",
+                                            "\t\t\t}\r",
+                                            "\t\t}\r",
+                                            "\t});\r",
+                                            "}\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "9b96f4d2-7ff5-4fdd-9270-ac85d2ef9c6f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "187105be-bfb8-4a92-8290-3a8b1e8e3f1e"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

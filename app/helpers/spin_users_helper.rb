@@ -1,0 +1,2 @@
+module SpinUsersHelper
+end

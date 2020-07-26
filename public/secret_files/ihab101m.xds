@@ -1,0 +1,560 @@
+{
+    "name": "ihab101m",
+    "settings": {
+        "urlPrefix": "http://localhost/ria/ihab101m",
+        "spacesToIndent": "tab",
+        "exportPath": "C:/xampp/htdocs/ria/ihab_home",
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "codeGenFormat": "Class",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "instantiateStore": true,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext40",
+    "topInstanceFileMap": {
+        "20b95233-43bf-493c-abee-b27b1770e114": {
+            "paths": [
+                "metadata/view/MainView",
+                "app/view/override/MainView.js",
+                "app/view/MainView.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MainView"
+        },
+        "a0490be2-6197-4745-9323-063d06375ffd": {
+            "paths": [
+                "metadata/store/FileDataStoreA",
+                "app/store/override/FileDataStoreA.js",
+                "app/store/FileDataStoreA.js"
+            ],
+            "className": "FileDataStoreA"
+        },
+        "bd6ce3f5-ea62-4f2d-8229-c3990453676c": {
+            "paths": [
+                "metadata/store/DomainDataStoreA",
+                "app/store/override/DomainDataStoreA.js",
+                "app/store/DomainDataStoreA.js"
+            ],
+            "className": "DomainDataStoreA"
+        },
+        "c5aeb3a6-0b9a-45dc-8660-9e565896314c": {
+            "paths": [
+                "metadata/model/FileData",
+                "app/model/override/FileData.js",
+                "app/model/FileData.js"
+            ],
+            "className": "FileData"
+        },
+        "b127ef4c-4408-4a3d-a3e9-50dfa048eae7": {
+            "paths": [
+                "metadata/model/DomainData",
+                "app/model/override/DomainData.js",
+                "app/model/DomainData.js"
+            ],
+            "className": "DomainData"
+        },
+        "7542b383-a29f-47d8-af89-837dfba61a32": {
+            "paths": [
+                "metadata/store/FolderDataStoreA",
+                "app/store/override/FolderDataStoreA.js",
+                "app/store/FolderDataStoreA.js"
+            ],
+            "className": "FolderDataStoreA"
+        },
+        "6a74cf8f-fd23-47ee-a90e-8cccb851e5d9": {
+            "paths": [
+                "metadata/model/FolderData",
+                "app/model/override/FolderData.js",
+                "app/model/FolderData.js"
+            ],
+            "className": "FolderData"
+        },
+        "fb97b092-af17-4460-87e9-5662ef1cdeb3": {
+            "paths": [
+                "metadata/controller/showDataProperty",
+                "app/controller/override/showDataProperty.js",
+                "app/controller/showDataProperty.js"
+            ],
+            "className": "showDataProperty"
+        },
+        "3edbc2a5-fbc6-4c11-b005-2931ba7830e8": {
+            "paths": [
+                "metadata/store/RecyclerDataStore",
+                "app/store/override/RecyclerDataStore.js",
+                "app/store/RecyclerDataStore.js"
+            ],
+            "className": "RecyclerDataStore"
+        },
+        "86d050f1-a69e-4a0e-a900-1b9fcb313ec3": {
+            "paths": [
+                "metadata/model/RecyclerData",
+                "app/model/override/RecyclerData.js",
+                "app/model/RecyclerData.js"
+            ],
+            "className": "RecyclerData"
+        },
+        "4aef3ae5-920c-44e3-91ec-bc42e49ca7e8": {
+            "paths": [
+                "metadata/store/SearchConditionStore",
+                "app/store/override/SearchConditionStore.js",
+                "app/store/SearchConditionStore.js"
+            ],
+            "className": "SearchConditionStore"
+        },
+        "263f95f9-5e86-4625-961f-05a61100fac5": {
+            "paths": [
+                "metadata/store/SearchOptionStore",
+                "app/store/override/SearchOptionStore.js",
+                "app/store/SearchOptionStore.js"
+            ],
+            "className": "SearchOptionStore"
+        },
+        "afec12bf-69e0-4a4e-8819-9d81af4268e5": {
+            "paths": [
+                "metadata/model/SearchConditionData",
+                "app/model/override/SearchConditionData.js",
+                "app/model/SearchConditionData.js"
+            ],
+            "className": "SearchConditionData"
+        },
+        "e0ae6b56-8eb6-443f-82b7-709deeda1ae2": {
+            "paths": [
+                "metadata/model/SearchOptionData",
+                "app/model/override/SearchOptionData.js",
+                "app/model/SearchOptionData.js"
+            ],
+            "className": "SearchOptionData"
+        },
+        "7ec73c78-35f0-4b01-aec9-22a816f09c10": {
+            "paths": [
+                "metadata/store/FileDataStoreS",
+                "app/store/override/FileDataStoreS.js",
+                "app/store/FileDataStoreS.js"
+            ],
+            "className": "FileDataStoreS"
+        },
+        "75f520e9-b5fe-4cd1-96e3-8029418e2f13": {
+            "paths": [
+                "metadata/store/GroupAllStore",
+                "app/store/override/GroupAllStore.js",
+                "app/store/GroupAllStore.js"
+            ],
+            "className": "GroupAllStore"
+        },
+        "b689b7fc-1454-4676-b0a9-ea54be30864e": {
+            "paths": [
+                "metadata/model/GroupData",
+                "app/model/override/GroupData.js",
+                "app/model/GroupData.js"
+            ],
+            "className": "GroupData"
+        },
+        "257ff4b3-1a70-4659-81eb-72b3bed5eb6f": {
+            "paths": [
+                "metadata/store/GroupFolderStore",
+                "app/store/override/GroupFolderStore.js",
+                "app/store/GroupFolderStore.js"
+            ],
+            "className": "GroupFolderStore"
+        },
+        "64d61b97-c07d-479d-8d92-573d34e422a1": {
+            "paths": [
+                "metadata/store/GroupFileStore",
+                "app/store/override/GroupFileStore.js",
+                "app/store/GroupFileStore.js"
+            ],
+            "className": "GroupFileStore"
+        },
+        "cfb90061-1567-4f1e-bd90-a2184846268e": {
+            "paths": [
+                "metadata/store/GroupCreatedStore",
+                "app/store/override/GroupCreatedStore.js",
+                "app/store/GroupCreatedStore.js"
+            ],
+            "className": "GroupCreatedStore"
+        },
+        "41042e99-fdea-429a-a936-0f10d2009456": {
+            "paths": [
+                "metadata/store/MemberDataStore",
+                "app/store/override/MemberDataStore.js",
+                "app/store/MemberDataStore.js"
+            ],
+            "className": "MemberDataStore"
+        },
+        "c47d0e7f-718b-4a70-a4fc-e9077e672694": {
+            "paths": [
+                "metadata/model/MemberData",
+                "app/model/override/MemberData.js",
+                "app/model/MemberData.js"
+            ],
+            "className": "MemberData"
+        },
+        "7c176d6c-78b1-4a5d-a30f-84960e4c708a": {
+            "paths": [
+                "metadata/store/FileDataStoreB",
+                "app/store/override/FileDataStoreB.js",
+                "app/store/FileDataStoreB.js"
+            ],
+            "className": "FileDataStoreB"
+        },
+        "21440cfb-4d36-49a1-953c-495aa9a08930": {
+            "paths": [
+                "metadata/store/FolderDataStoreB",
+                "app/store/override/FolderDataStoreB.js",
+                "app/store/FolderDataStoreB.js"
+            ],
+            "className": "FolderDataStoreB"
+        },
+        "4293f2e6-712c-4de8-a4cd-f03b345a63ac": {
+            "paths": [
+                "metadata/view/DomainGridPanelA",
+                "app/view/override/DomainGridPanelA.js",
+                "app/view/DomainGridPanelA.js"
+            ],
+            "className": "DomainGridPanelA"
+        },
+        "536b984f-ac70-4e5f-afce-a3d52e713b9b": {
+            "paths": [
+                "metadata/view/FolderPanelA",
+                "app/view/override/FolderPanelA.js",
+                "app/view/FolderPanelA.js"
+            ],
+            "className": "FolderPanelA"
+        },
+        "1cd27aaf-2f12-486c-b416-d5e7568a9cbc": {
+            "paths": [
+                "metadata/view/DomainGridPanelB",
+                "app/view/override/DomainGridPanelB.js",
+                "app/view/DomainGridPanelB.js"
+            ],
+            "className": "DomainGridPanelB"
+        },
+        "76813e57-4ccb-43d0-88a2-a3472d3b86e1": {
+            "paths": [
+                "metadata/view/FolderPanelB",
+                "app/view/override/FolderPanelB.js",
+                "app/view/FolderPanelB.js"
+            ],
+            "className": "FolderPanelB"
+        },
+        "b7f91229-85c8-4abb-98dd-aea8fe406ff0": {
+            "paths": [
+                "metadata/view/GlobalMenu",
+                "app/view/override/GlobalMenu.js",
+                "app/view/GlobalMenu.js"
+            ],
+            "className": "GlobalMenu"
+        },
+        "97aa1978-c28b-4bd5-97cd-2f7920c66bca": {
+            "paths": [
+                "metadata/view/DomainProperty",
+                "app/view/override/DomainProperty.js",
+                "app/view/DomainProperty.js"
+            ],
+            "className": "DomainProperty"
+        },
+        "f8cb8f94-cfd2-4cef-be90-5f4ca8d7f05b": {
+            "paths": [
+                "metadata/view/FolderProperty",
+                "app/view/override/FolderProperty.js",
+                "app/view/FolderProperty.js"
+            ],
+            "className": "FolderProperty"
+        },
+        "0d49ca59-c278-44b5-8d87-f39389ca7048": {
+            "paths": [
+                "metadata/view/FileProperty",
+                "app/view/override/FileProperty.js",
+                "app/view/FileProperty.js"
+            ],
+            "className": "FileProperty"
+        },
+        "3d11c633-21b6-45d6-88b2-37ae1a3c26dc": {
+            "paths": [
+                "metadata/view/SearchCondition",
+                "app/view/override/SearchCondition.js",
+                "app/view/SearchCondition.js"
+            ],
+            "className": "SearchCondition"
+        },
+        "574f7e9a-a5ac-44d7-9ac7-a8e04a9eccac": {
+            "paths": [
+                "metadata/view/Trashbox",
+                "app/view/override/Trashbox.js",
+                "app/view/Trashbox.js"
+            ],
+            "className": "Trashbox"
+        },
+        "94da37cd-5c15-4dd6-9360-2e6aeb38e72e": {
+            "paths": [
+                "metadata/view/FileWholeDsp",
+                "app/view/override/FileWholeDsp.js",
+                "app/view/FileWholeDsp.js"
+            ],
+            "className": "FileWholeDsp"
+        },
+        "c02c6e1b-1e12-485b-9f44-4bb657dba202": {
+            "paths": [
+                "metadata/view/GroupDsp",
+                "app/view/override/GroupDsp.js",
+                "app/view/GroupDsp.js"
+            ],
+            "className": "GroupDsp"
+        },
+        "967af6ca-8d31-4820-b146-715af2d98c57": {
+            "paths": [
+                "metadata/store/MailSenderStore",
+                "app/store/override/MailSenderStore.js",
+                "app/store/MailSenderStore.js"
+            ],
+            "className": "MailSenderStore"
+        },
+        "9d6fbf26-b6d1-4c73-97b6-a7e536508cc9": {
+            "paths": [
+                "metadata/model/SenderData",
+                "app/model/override/SenderData.js",
+                "app/model/SenderData.js"
+            ],
+            "className": "SenderData"
+        },
+        "8a583364-a276-47c9-9901-5bb24d023286": {
+            "paths": [
+                "metadata/controller/OpenFileAction",
+                "app/controller/override/OpenFileAction.js",
+                "app/controller/OpenFileAction.js"
+            ],
+            "className": "OpenFileAction"
+        },
+        "44b10b40-d4cc-41bb-87ac-ce76381d4e0a": {
+            "paths": [
+                "metadata/view/LocalMenu",
+                "app/view/override/LocalMenu.js",
+                "app/view/LocalMenu.js"
+            ],
+            "className": "LocalMenu"
+        },
+        "6bdee07c-915e-4f9d-8857-89fafa4d6f6a": {
+            "paths": [
+                "metadata/store/TargetFolderAT",
+                "app/store/override/TargetFolderAT.js",
+                "app/store/TargetFolderAT.js"
+            ],
+            "className": "TargetFolderAT"
+        },
+        "21678008-5d48-4d22-aad7-3333174f17db": {
+            "paths": [
+                "metadata/store/TargetFolderBT",
+                "app/store/override/TargetFolderBT.js",
+                "app/store/TargetFolderBT.js"
+            ],
+            "className": "TargetFolderBT"
+        },
+        "81d3813b-5fbe-4cf7-9c46-7170d7c345f6": {
+            "paths": [
+                "metadata/model/TargetFolderData",
+                "app/model/override/TargetFolderData.js",
+                "app/model/TargetFolderData.js"
+            ],
+            "className": "TargetFolderData"
+        },
+        "71ca9e39-a40a-4c21-b043-e700f3e28fd8": {
+            "paths": [
+                "metadata/store/TargetFolderATFi",
+                "app/store/override/TargetFolderATFi.js",
+                "app/store/TargetFolderATFi.js"
+            ],
+            "className": "TargetFolderATFi"
+        },
+        "232ae994-21e5-4b03-8418-093864e840fd": {
+            "paths": [
+                "metadata/store/TargetFolderBTFi",
+                "app/store/override/TargetFolderBTFi.js",
+                "app/store/TargetFolderBTFi.js"
+            ],
+            "className": "TargetFolderBTFi"
+        },
+        "66f51bc5-aad5-42b9-934e-4102b5f84fd4": {
+            "paths": [
+                "metadata/view/workingWin",
+                "app/view/override/workingWin.js",
+                "app/view/workingWin.js"
+            ],
+            "className": "workingWin"
+        },
+        "3c14673d-37be-4c61-8cba-7402538db91f": {
+            "paths": [
+                "metadata/view/optionWin",
+                "app/view/override/optionWin.js",
+                "app/view/optionWin.js"
+            ],
+            "className": "optionWin"
+        },
+        "32aa66e3-d41f-4ed9-9ed1-3be18d4978a9": {
+            "paths": [
+                "metadata/store/workingFileStore",
+                "app/store/override/workingFileStore.js",
+                "app/store/workingFileStore.js"
+            ],
+            "className": "workingFileStore"
+        },
+        "e89c03e9-234a-48c5-95ba-b990ebc3de80": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "7888fa24-5d03-4429-b0b7-2c8fcc836bae": {
+            "paths": [
+                "metadata/store/DomainDataStoreB",
+                "app/store/override/DomainDataStoreB.js",
+                "app/store/DomainDataStoreB.js"
+            ],
+            "className": "DomainDataStoreB"
+        },
+        "1acf6ccc-bc17-4d8b-a6f7-2a42919109b3": {
+            "paths": [
+                "metadata/store/ActiveOperatorStore",
+                "app/store/override/ActiveOperatorStore.js",
+                "app/store/ActiveOperatorStore.js"
+            ],
+            "className": "ActiveOperatorStore"
+        },
+        "4950dc38-f054-4fca-939b-c7b8c25493f1": {
+            "paths": [
+                "metadata/model/OperatorData",
+                "app/model/override/OperatorData.js",
+                "app/model/OperatorData.js"
+            ],
+            "className": "OperatorData"
+        },
+        "65c7ad5b-0d44-4ff1-b5c7-4debae7a24c7": {
+            "paths": [
+                "metadata/model/MemberManagementData",
+                "app/model/override/MemberManagementData.js",
+                "app/model/MemberManagementData.js"
+            ],
+            "className": "MemberManagementData"
+        },
+        "2edddc03-8f35-4b84-89d8-07b0ffe212ba": {
+            "paths": [
+                "metadata/view/UserDsp",
+                "app/view/override/UserDsp.js",
+                "app/view/UserDsp.js"
+            ],
+            "className": "UserDsp"
+        },
+        "c5d17f41-99aa-4622-acaa-47411b0d881f": {
+            "paths": [
+                "metadata/view/PrivilegeDsp",
+                "app/view/override/PrivilegeDsp.js",
+                "app/view/PrivilegeDsp.js"
+            ],
+            "className": "PrivilegeDsp"
+        },
+        "0c8f2a45-12f5-4674-8879-48c2eb6309b8": {
+            "paths": [
+                "metadata/view/SearchDsp",
+                "app/view/override/SearchDsp.js",
+                "app/view/SearchDsp.js"
+            ],
+            "className": "SearchDsp"
+        },
+        "4951981c-1c29-43da-b64b-738751dbf5b2": {
+            "paths": [
+                "metadata/store/MemberManagementDataStore",
+                "app/store/override/MemberManagementDataStore.js",
+                "app/store/MemberManagementDataStore.js"
+            ],
+            "className": "MemberManagementDataStore"
+        },
+        "b49401f7-a947-44eb-824b-f71eb5229e03": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "20b95233-43bf-493c-abee-b27b1770e114",
+            "b7f91229-85c8-4abb-98dd-aea8fe406ff0",
+            "44b10b40-d4cc-41bb-87ac-ce76381d4e0a",
+            "4293f2e6-712c-4de8-a4cd-f03b345a63ac",
+            "536b984f-ac70-4e5f-afce-a3d52e713b9b",
+            "1cd27aaf-2f12-486c-b416-d5e7568a9cbc",
+            "76813e57-4ccb-43d0-88a2-a3472d3b86e1",
+            "94da37cd-5c15-4dd6-9360-2e6aeb38e72e",
+            "0c8f2a45-12f5-4674-8879-48c2eb6309b8",
+            "c5d17f41-99aa-4622-acaa-47411b0d881f",
+            "c02c6e1b-1e12-485b-9f44-4bb657dba202",
+            "2edddc03-8f35-4b84-89d8-07b0ffe212ba",
+            "97aa1978-c28b-4bd5-97cd-2f7920c66bca",
+            "f8cb8f94-cfd2-4cef-be90-5f4ca8d7f05b",
+            "0d49ca59-c278-44b5-8d87-f39389ca7048",
+            "3d11c633-21b6-45d6-88b2-37ae1a3c26dc",
+            "574f7e9a-a5ac-44d7-9ac7-a8e04a9eccac",
+            "66f51bc5-aad5-42b9-934e-4102b5f84fd4",
+            "3c14673d-37be-4c61-8cba-7402538db91f"
+        ],
+        "store": [
+            "1acf6ccc-bc17-4d8b-a6f7-2a42919109b3",
+            "bd6ce3f5-ea62-4f2d-8229-c3990453676c",
+            "7888fa24-5d03-4429-b0b7-2c8fcc836bae",
+            "7542b383-a29f-47d8-af89-837dfba61a32",
+            "6bdee07c-915e-4f9d-8857-89fafa4d6f6a",
+            "71ca9e39-a40a-4c21-b043-e700f3e28fd8",
+            "21440cfb-4d36-49a1-953c-495aa9a08930",
+            "21678008-5d48-4d22-aad7-3333174f17db",
+            "232ae994-21e5-4b03-8418-093864e840fd",
+            "a0490be2-6197-4745-9323-063d06375ffd",
+            "7c176d6c-78b1-4a5d-a30f-84960e4c708a",
+            "7ec73c78-35f0-4b01-aec9-22a816f09c10",
+            "32aa66e3-d41f-4ed9-9ed1-3be18d4978a9",
+            "3edbc2a5-fbc6-4c11-b005-2931ba7830e8",
+            "4aef3ae5-920c-44e3-91ec-bc42e49ca7e8",
+            "263f95f9-5e86-4625-961f-05a61100fac5",
+            "75f520e9-b5fe-4cd1-96e3-8029418e2f13",
+            "257ff4b3-1a70-4659-81eb-72b3bed5eb6f",
+            "64d61b97-c07d-479d-8d92-573d34e422a1",
+            "cfb90061-1567-4f1e-bd90-a2184846268e",
+            "41042e99-fdea-429a-a936-0f10d2009456",
+            "967af6ca-8d31-4820-b146-715af2d98c57",
+            "4951981c-1c29-43da-b64b-738751dbf5b2"
+        ],
+        "controller": [
+            "fb97b092-af17-4460-87e9-5662ef1cdeb3",
+            "8a583364-a276-47c9-9901-5bb24d023286"
+        ],
+        "model": [
+            "4950dc38-f054-4fca-939b-c7b8c25493f1",
+            "b127ef4c-4408-4a3d-a3e9-50dfa048eae7",
+            "6a74cf8f-fd23-47ee-a90e-8cccb851e5d9",
+            "c5aeb3a6-0b9a-45dc-8660-9e565896314c",
+            "81d3813b-5fbe-4cf7-9c46-7170d7c345f6",
+            "86d050f1-a69e-4a0e-a900-1b9fcb313ec3",
+            "afec12bf-69e0-4a4e-8819-9d81af4268e5",
+            "e0ae6b56-8eb6-443f-82b7-709deeda1ae2",
+            "b689b7fc-1454-4676-b0a9-ea54be30864e",
+            "c47d0e7f-718b-4a70-a4fc-e9077e672694",
+            "65c7ad5b-0d44-4ff1-b5c7-4debae7a24c7",
+            "9d6fbf26-b6d1-4c73-97b6-a7e536508cc9"
+        ],
+        "resource": [
+            "e89c03e9-234a-48c5-95ba-b990ebc3de80",
+            "b49401f7-a947-44eb-824b-f71eb5229e03"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

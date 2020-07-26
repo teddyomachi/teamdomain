@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pane_domains_a: MyString
+  pane_domains_b: MyString
+  pane_folders_a: MyString
+  pane_folders_b: MyString
+  pane_file_list_a: MyString
+  pane_file_list_b: MyString
+  pane_file_list_s: MyString
+  pane_folders_at: MyString
+  pane_folders_bt: MyString
+  pane_groupo_list_all: MyString
+  pane_group_list_created: MyString
+  pane_group_list_file: MyString
+  pane_group_list_folder: MyString
+  pane_mail_senders: MyString
+  pane_member_list_mygroup: MyString
+  pane_recycler: MyString
+  pane_search_conditions: MyString
+  pane_search_option: MyString
+  pane_working_files: MyString
+
+two:
+  pane_domains_a: MyString
+  pane_domains_b: MyString
+  pane_folders_a: MyString
+  pane_folders_b: MyString
+  pane_file_list_a: MyString
+  pane_file_list_b: MyString
+  pane_file_list_s: MyString
+  pane_folders_at: MyString
+  pane_folders_bt: MyString
+  pane_groupo_list_all: MyString
+  pane_group_list_created: MyString
+  pane_group_list_file: MyString
+  pane_group_list_folder: MyString
+  pane_mail_senders: MyString
+  pane_member_list_mygroup: MyString
+  pane_recycler: MyString
+  pane_search_conditions: MyString
+  pane_search_option: MyString
+  pane_working_files: MyString

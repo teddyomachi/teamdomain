@@ -1,0 +1,65 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoSync": null,
+        "model": "FolderData",
+        "storeId": "FolderDataStoreA",
+        "designer|userClassName": "FolderDataStoreA",
+        "filterOnLoad": null,
+        "sortOnLoad": null,
+        "nodeParam": null,
+        "root": null
+    },
+    "designerId": "7542b383-a29f-47d8-af89-837dfba61a32",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/foldersA.sfl"
+            },
+            "designerId": "6df13828-0cf1-4df2-b8cb-8e428f302218",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "designerId": "f2b1dbc7-f954-4c1f-9eb9-a628b531a2da"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreeStoreLoad",
+                "implHandler": [
+                    "afterLoadedA(treestore, node, records);"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "e62fcb87-9763-461b-ac92-a57e5741784b"
+        }
+    ]
+}

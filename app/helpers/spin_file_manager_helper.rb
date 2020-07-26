@@ -1,0 +1,2 @@
+module SpinFileManagerHelper
+end

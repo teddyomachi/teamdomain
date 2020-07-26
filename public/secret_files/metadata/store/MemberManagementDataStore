@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "MemberManagementData",
+        "storeId": "MemberManagementDataStore",
+        "designer|userClassName": "MemberManagementDataStore"
+    },
+    "designerId": "4951981c-1c29-43da-b64b-738751dbf5b2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/user_list.sfl"
+            },
+            "designerId": "4d827296-d278-4030-8e96-62bca4fa6f40",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "users"
+                    },
+                    "designerId": "4182b958-4398-4bbe-be3d-6aaf7a88dbbe"
+                }
+            ]
+        }
+    ]
+}

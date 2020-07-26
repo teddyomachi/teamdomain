@@ -1,0 +1,55 @@
+<h1>Listing search_condition_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Target folder</th>
+    <th>Target file name</th>
+    <th>Target file size min</th>
+    <th>Target file size max</th>
+    <th>Target creator</th>
+    <th>Target created by me</th>
+    <th>Target created date begin</th>
+    <th>Target created date end</th>
+    <th>Target modifier</th>
+    <th>Target modified by me</th>
+    <th>Target modified date begin</th>
+    <th>Target modified date end</th>
+    <th>Target subfolder</th>
+    <th>Target locked by me</th>
+    <th>Target checked out by me</th>
+    <th>Target max display files</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @search_condition_data.each do |search_condition_datum| %>
+  <tr>
+    <td><%= search_condition_datum.session_id %></td>
+    <td><%= search_condition_datum.target_folder %></td>
+    <td><%= search_condition_datum.target_file_name %></td>
+    <td><%= search_condition_datum.target_file_size_min %></td>
+    <td><%= search_condition_datum.target_file_size_max %></td>
+    <td><%= search_condition_datum.target_creator %></td>
+    <td><%= search_condition_datum.target_created_by_me %></td>
+    <td><%= search_condition_datum.target_created_date_begin %></td>
+    <td><%= search_condition_datum.target_created_date_end %></td>
+    <td><%= search_condition_datum.target_modifier %></td>
+    <td><%= search_condition_datum.target_modified_by_me %></td>
+    <td><%= search_condition_datum.target_modified_date_begin %></td>
+    <td><%= search_condition_datum.target_modified_date_end %></td>
+    <td><%= search_condition_datum.target_subfolder %></td>
+    <td><%= search_condition_datum.target_locked_by_me %></td>
+    <td><%= search_condition_datum.target_checked_out_by_me %></td>
+    <td><%= search_condition_datum.target_max_display_files %></td>
+    <td><%= link_to 'Show', search_condition_datum %></td>
+    <td><%= link_to 'Edit', edit_search_condition_datum_path(search_condition_datum) %></td>
+    <td><%= link_to 'Destroy', search_condition_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Search condition datum', new_search_condition_datum_path %>

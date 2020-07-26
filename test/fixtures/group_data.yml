@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  session_id: MyString
+  hash_key: MyString
+  target_hash_key: MyString
+  id: MyString
+  editable_status: MyString
+  group_name: MyString
+  group_description: MyString
+  group_privilege: MyString
+  member_id: MyString
+  member_name: MyString
+  member_description: MyString
+
+two:
+  session_id: MyString
+  hash_key: MyString
+  target_hash_key: MyString
+  id: MyString
+  editable_status: MyString
+  group_name: MyString
+  group_description: MyString
+  group_privilege: MyString
+  member_id: MyString
+  member_name: MyString
+  member_description: MyString

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  session_id: MyString
+  active_operator_name: MyString
+  active_operator_id: MyString
+  operator_group_editable: MyString
+  session_id: MyString
+  last_session_id: MyString
+
+two:
+  session_id: MyString
+  active_operator_name: MyString
+  active_operator_id: MyString
+  operator_group_editable: MyString
+  session_id: MyString
+  last_session_id: MyString

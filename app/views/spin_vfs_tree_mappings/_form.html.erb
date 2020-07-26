@@ -1,0 +1,25 @@
+<%= form_for(@spin_vfs_tree_mapping) do |f| %>
+  <% if @spin_vfs_tree_mapping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_vfs_tree_mapping.errors.count, "error") %> prohibited this spin_vfs_tree_mapping from being saved:</h2>
+
+      <ul>
+      <% @spin_vfs_tree_mapping.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spin_vfs %><br />
+    <%= f.text_field :spin_vfs %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_node_tree %><br />
+    <%= f.text_field :spin_node_tree %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

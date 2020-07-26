@@ -1,0 +1,57 @@
+<%= form_for(@spin_domain) do |f| %>
+  <% if @spin_domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_domain.errors.count, "error") %> prohibited this spin_domain from being saved:</h2>
+
+      <ul>
+      <% @spin_domain.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spin_did %><br />
+    <%= f.number_field :spin_did %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_domain_name %><br />
+    <%= f.text_field :spin_domain_name %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_domain_disp_name %><br />
+    <%= f.text_field :spin_domain_disp_name %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_server %><br />
+    <%= f.text_field :spin_server %>
+  </div>
+  <div class="field">
+    <%= f.label :domain_writable_status %><br />
+    <%= f.text_field :domain_writable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :domain_link %><br />
+    <%= f.text_field :domain_link %>
+  </div>
+  <div class="field">
+    <%= f.label :img %><br />
+    <%= f.text_field :img %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_domain_root %><br />
+    <%= f.text_field :spin_domain_root %>
+  </div>
+  <div class="field">
+    <%= f.label :domain_descr %><br />
+    <%= f.text_area :domain_descr %>
+  </div>
+  <div class="field">
+    <%= f.label :domain_atrtributes %><br />
+    <%= f.text_area :domain_atrtributes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

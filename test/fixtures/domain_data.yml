@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  session_id: MyString
+  hash_key: MyString
+  cont_location: MyString
+  domain_writable_status: MyString
+  domain_name: MyString
+  domain_link: MyString
+  img: MyString
+
+two:
+  session_id: MyString
+  hash_key: MyString
+  cont_location: MyString
+  domain_writable_status: MyString
+  domain_name: MyString
+  domain_link: MyString
+  img: MyString

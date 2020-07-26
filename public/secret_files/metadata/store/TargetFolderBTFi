@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "TargetFolderData",
+        "storeId": "TargetFolderBTFi",
+        "designer|userClassName": "TargetFolderBTFi"
+    },
+    "designerId": "232ae994-21e5-4b03-8418-093864e840fd",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/foldersBTFi.sfl"
+            },
+            "designerId": "2e8274f4-09a1-43e8-8f78-ed3e4dd3e3a4",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "84a14e14-3d33-492b-ab7a-13a7887bc7ba"
+                }
+            ]
+        }
+    ]
+}

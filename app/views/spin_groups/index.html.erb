@@ -1,0 +1,29 @@
+<h1>Listing spin_groups</h1>
+
+<table>
+  <tr>
+    <th>Spin gid</th>
+    <th>Spin group name</th>
+    <th>Group descr</th>
+    <th>Group atrtributes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_groups.each do |spin_group| %>
+  <tr>
+    <td><%= spin_group.spin_gid %></td>
+    <td><%= spin_group.spin_group_name %></td>
+    <td><%= spin_group.group_descr %></td>
+    <td><%= spin_group.group_atrtributes %></td>
+    <td><%= link_to 'Show', spin_group %></td>
+    <td><%= link_to 'Edit', edit_spin_group_path(spin_group) %></td>
+    <td><%= link_to 'Destroy', spin_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin group', new_spin_group_path %>

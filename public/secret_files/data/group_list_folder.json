@@ -1,0 +1,32 @@
+{
+	"groups" :
+	[
+		{
+			"group_name": "Xプロジェクト",
+			"member_name": "伊藤, 松方, 山本, 高橋, 若槻, 浜口, 岡田, 廣田",
+			"group_privilege": "rw-"
+		}
+/*		,
+		{
+			"group_name": "営業部",
+			"group_description": "営業部",
+			"group_privilege": "r--"
+		},
+		{
+			"group_name": "開発一部",
+			"group_description": "開発一部",
+			"group_privilege": "rw-"
+		},
+		{
+			"group_name": "開発二部",
+			"group_description": "開発二部",
+			"group_privilege": "---"
+		},
+		{
+			"group_name": "大町和裕",
+			"group_description": "開発一部",
+			"group_privilege": "rwa"
+		}
+*/
+	]
+}

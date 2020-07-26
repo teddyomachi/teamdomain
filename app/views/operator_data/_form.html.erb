@@ -1,0 +1,41 @@
+<%= form_for(@operator_datum) do |f| %>
+  <% if @operator_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@operator_datum.errors.count, "error") %> prohibited this operator_datum from being saved:</h2>
+
+      <ul>
+      <% @operator_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :active_operator_name %><br />
+    <%= f.text_field :active_operator_name %>
+  </div>
+  <div class="field">
+    <%= f.label :active_operator_id %><br />
+    <%= f.text_field :active_operator_id %>
+  </div>
+  <div class="field">
+    <%= f.label :operator_group_editable %><br />
+    <%= f.text_field :operator_group_editable %>
+  </div>
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :last_session_id %><br />
+    <%= f.text_field :last_session_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

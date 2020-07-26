@@ -1,0 +1,71 @@
+{
+    "name": "ihab_login101",
+    "settings": {
+        "urlPrefix": "http://localhost/ria/ihab_login101",
+        "spacesToIndent": "tab",
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "codeGenFormat": "Class",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "instantiateStore": true,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext40",
+    "topInstanceFileMap": {
+        "03b32c1d-bee4-434c-99e7-069af2f0175f": {
+            "paths": [
+                "metadata/view/LoginWin",
+                "app/view/override/LoginWin.js",
+                "app/view/LoginWin.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "LoginWin"
+        },
+        "0abe0cdd-4c8e-4be2-b46f-66c2d9772002": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "01d5bdbc-274b-44bb-8cac-62760d3145c4": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "5266bc86-fb12-4c96-b929-bcb7b296b405": {
+            "paths": [
+                "metadata/view/ActivationWin",
+                "app/view/override/ActivationWin.js",
+                "app/view/ActivationWin.js"
+            ],
+            "className": "ActivationWin"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "03b32c1d-bee4-434c-99e7-069af2f0175f",
+            "5266bc86-fb12-4c96-b929-bcb7b296b405"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "0abe0cdd-4c8e-4be2-b46f-66c2d9772002",
+            "01d5bdbc-274b-44bb-8cac-62760d3145c4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

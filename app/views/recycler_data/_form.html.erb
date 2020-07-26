@@ -1,0 +1,45 @@
+<%= form_for(@recycler_datum) do |f| %>
+  <% if @recycler_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recycler_datum.errors.count, "error") %> prohibited this recycler_datum from being saved:</h2>
+
+      <ul>
+      <% @recycler_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hash_key %><br />
+    <%= f.text_field :hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_location %><br />
+    <%= f.text_field :cont_location %>
+  </div>
+  <div class="field">
+    <%= f.label :file_name %><br />
+    <%= f.text_field :file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :file_type %><br />
+    <%= f.text_field :file_type %>
+  </div>
+  <div class="field">
+    <%= f.label :file_exact_size %><br />
+    <%= f.number_field :file_exact_size %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

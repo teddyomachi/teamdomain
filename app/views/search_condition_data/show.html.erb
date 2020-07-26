@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @search_condition_datum.session_id %>
+</p>
+
+<p>
+  <b>Target folder:</b>
+  <%= @search_condition_datum.target_folder %>
+</p>
+
+<p>
+  <b>Target file name:</b>
+  <%= @search_condition_datum.target_file_name %>
+</p>
+
+<p>
+  <b>Target file size min:</b>
+  <%= @search_condition_datum.target_file_size_min %>
+</p>
+
+<p>
+  <b>Target file size max:</b>
+  <%= @search_condition_datum.target_file_size_max %>
+</p>
+
+<p>
+  <b>Target creator:</b>
+  <%= @search_condition_datum.target_creator %>
+</p>
+
+<p>
+  <b>Target created by me:</b>
+  <%= @search_condition_datum.target_created_by_me %>
+</p>
+
+<p>
+  <b>Target created date begin:</b>
+  <%= @search_condition_datum.target_created_date_begin %>
+</p>
+
+<p>
+  <b>Target created date end:</b>
+  <%= @search_condition_datum.target_created_date_end %>
+</p>
+
+<p>
+  <b>Target modifier:</b>
+  <%= @search_condition_datum.target_modifier %>
+</p>
+
+<p>
+  <b>Target modified by me:</b>
+  <%= @search_condition_datum.target_modified_by_me %>
+</p>
+
+<p>
+  <b>Target modified date begin:</b>
+  <%= @search_condition_datum.target_modified_date_begin %>
+</p>
+
+<p>
+  <b>Target modified date end:</b>
+  <%= @search_condition_datum.target_modified_date_end %>
+</p>
+
+<p>
+  <b>Target subfolder:</b>
+  <%= @search_condition_datum.target_subfolder %>
+</p>
+
+<p>
+  <b>Target locked by me:</b>
+  <%= @search_condition_datum.target_locked_by_me %>
+</p>
+
+<p>
+  <b>Target checked out by me:</b>
+  <%= @search_condition_datum.target_checked_out_by_me %>
+</p>
+
+<p>
+  <b>Target max display files:</b>
+  <%= @search_condition_datum.target_max_display_files %>
+</p>
+
+
+<%= link_to 'Edit', edit_search_condition_datum_path(@search_condition_datum) %> |
+<%= link_to 'Back', search_condition_data_path %>

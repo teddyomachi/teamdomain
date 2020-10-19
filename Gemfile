@@ -17,7 +17,6 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'puma', '~> 3.11.4'
 # Use SCSS for stylesheets
 gem 'sassc-rails' #, '~> 5.0'
-gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 # Use Uglifier as compressor for JavaScript assets
 # gem 'uglifier', '>= 4.1.12'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

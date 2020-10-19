@@ -1,0 +1,465 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 420,
+        "itemId": "activationWin",
+        "minWidth": 350,
+        "width": 461,
+        "designer|userClassName": "ActivationWin",
+        "layout": "fit",
+        "closable": false,
+        "title": "アクティベーション"
+    },
+    "designerId": "5266bc86-fb12-4c96-b929-bcb7b296b405",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "itemId": "activationForm",
+                "autoScroll": true,
+                "layout": "vbox",
+                "bodyPadding": 10,
+                "bodyStyle": [
+                    "background:black\r",
+                    ""
+                ],
+                "title": null
+            },
+            "designerId": "8e23c998-ada2-4ea2-870b-e052eaea3094",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<span style=\"color:orange\">以下の項目を入力してください。</span>",
+                        "margin": "0 0 3 0",
+                        "text": ""
+                    },
+                    "designerId": "84545255-5374-4ae4-9f86-21ecfa28a271"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "container|align": "stretch",
+                        "container|padding": "0 0 3 0",
+                        "margin": 0,
+                        "layout": "vbox",
+                        "title": null
+                    },
+                    "designerId": "db458d5e-9a14-47b8-9fb5-b3cda51dfc95",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "fieldLabel": "UID",
+                                "name": "user_id"
+                            },
+                            "designerId": "97a02f30-af4c-40dd-b973-f052926c67cb"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "margin": "3 0 0 0",
+                                "fieldLabel": "ユーザ名",
+                                "labelWidth": null,
+                                "name": "user_name",
+                                "allowBlank": false
+                            },
+                            "designerId": "12c2de82-e4bd-471e-91ae-30e40626d81d"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<span style=\"color:orange\">* 必ず変更して下さい。<br/>既に使われているユーザ名は使用できません</span>",
+                                "margin": "0 0 3 10",
+                                "text": ""
+                            },
+                            "designerId": "a075be60-3fed-4e0f-b00f-c3965544e2bf"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "margin": null,
+                                "fieldLabel": "氏名",
+                                "name": "user_description",
+                                "allowBlank": false
+                            },
+                            "designerId": "66a1aadc-192d-4c9c-88ed-b86caa0065bd"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "container|align": "stretch",
+                                "height": 70,
+                                "layout": "vbox",
+                                "title": null
+                            },
+                            "designerId": "7e94f83f-4417-42f5-bd68-398a7a9448b5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "margin": "3 0 3 0",
+                                        "fieldLabel": "メールアドレス",
+                                        "labelWidth": 150,
+                                        "name": "user_mail",
+                                        "inputType": null,
+                                        "allowBlank": false,
+                                        "vtype": "email"
+                                    },
+                                    "designerId": "ae44601f-7aee-429f-b2a5-a88aaabf528c"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "メールアドレス(確認)",
+                                        "labelWidth": 150,
+                                        "name": "user_mail2",
+                                        "inputType": null,
+                                        "allowBlank": false,
+                                        "vtype": "email"
+                                    },
+                                    "designerId": "2f72b8c0-b66a-4c82-a407-5a294eea941d"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "hidden": true,
+                                        "html": "<span style=\"color:orange\">* メールアドレスは様々な通知に使用しますので、正確に入力して下さい。</span>",
+                                        "margin": "0 0 3 10",
+                                        "text": null
+                                    },
+                                    "designerId": "5dd2d28e-a6bb-4611-a298-3ffcb19a176a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "学生証番号",
+                                "name": "user_tel",
+                                "allowBlank": false
+                            },
+                            "designerId": "59b5bf09-a99a-49a3-b550-8494764e0d47"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "専攻",
+                                "name": "user_major",
+                                "allowBlank": false
+                            },
+                            "designerId": "efd58fe8-d84a-4a99-a27b-421dfa833b26"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "研究室",
+                                "name": "user_org",
+                                "allowBlank": false
+                            },
+                            "designerId": "5099db93-d232-4d72-a7c5-6426fc578fa1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "a8a1a193-c211-4f3b-b044-77881a28f6e5",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "キャンセル"
+                            },
+                            "designerId": "d67fd25d-510d-4100-8f82-fc292fb8a23a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "button.up('.window').close();\r",
+                                            "Ext.create('MyApp.view.LoginWin').show();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "9207bb82-dade-4dcf-a581-46daf85ee2a0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "1a7db1dc-097f-4ecf-86ec-afc6e81fa1c2"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "formBind": true,
+                                "text": "登録"
+                            },
+                            "designerId": "237946cf-54eb-42cd-9aca-698c086d1b9e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "var form = Ext.ComponentQuery.query('#activationForm')[0].getValues();\r",
+                                            "\r",
+                                            "var userName  = form.user_name;\r",
+                                            "var userDesc  = form.user_description;\r",
+                                            "var userMail  = form.user_mail;\r",
+                                            "var userMail2 = form.user_mail2;\r",
+                                            "var userTel   = form.user_tel;\r",
+                                            "var userMaj   = form.user_major;\r",
+                                            "var userOrg   = form.user_org;\r",
+                                            "\r",
+                                            "\r",
+                                            "if (loggedInUserName === userName) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'ユーザ名入力',\r",
+                                            "\t\tmsg: 'ユーザ名を変更して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            "/*\r",
+                                            "if (Ext.isEmpty(userDesc)) {\r",
+                                            "Ext.Msg.show({\r",
+                                            "title:'氏名入力',\r",
+                                            "msg: '氏名を入力して下さい。',\r",
+                                            "icon: Ext.Msg.ERROR,\r",
+                                            "buttons: Ext.Msg.OK\r",
+                                            "});\r",
+                                            "return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(userMail)) {\r",
+                                            "Ext.Msg.show({\r",
+                                            "title:'メールアドレス入力',\r",
+                                            "msg: 'メールアドレスを入力して下さい。',\r",
+                                            "icon: Ext.Msg.ERROR,\r",
+                                            "buttons: Ext.Msg.OK\r",
+                                            "});\r",
+                                            "return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(userMail2)) {\r",
+                                            "Ext.Msg.show({\r",
+                                            "title:'メールアドレス(確認)入力',\r",
+                                            "msg: 'メールアドレス(確認用)を入力して下さい。',\r",
+                                            "icon: Ext.Msg.ERROR,\r",
+                                            "buttons: Ext.Msg.OK\r",
+                                            "});\r",
+                                            "return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(userTel)) {\r",
+                                            "Ext.Msg.show({\r",
+                                            "title:'学生番号入力',\r",
+                                            "msg: '学生番号を入力して下さい。',\r",
+                                            "icon: Ext.Msg.ERROR,\r",
+                                            "buttons: Ext.Msg.OK\r",
+                                            "});\r",
+                                            "return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(userMaj)) {\r",
+                                            "Ext.Msg.show({\r",
+                                            "title:'専攻入力',\r",
+                                            "msg: '専攻を入力して下さい。',\r",
+                                            "icon: Ext.Msg.ERROR,\r",
+                                            "buttons: Ext.Msg.OK\r",
+                                            "});\r",
+                                            "return;\r",
+                                            "}\r",
+                                            "*/\r",
+                                            "\r",
+                                            "if (userMail !== userMail2) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'メールアドレス不一致',\r",
+                                            "\t\tmsg: 'メールアドレスが一致しません。再入力して下さい。',\r",
+                                            "\t\ticon: Ext.Msg.ERROR,\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\treturn;\r",
+                                            "}\r",
+                                            "\r",
+                                            "//-------------------------------\r",
+                                            "var sendingData = Ext.apply({session_id: Ses_id}, form);\r",
+                                            "sendingData = Ext.apply({request_type: 'user_activation'}, sendingData);\r",
+                                            "\r",
+                                            "//------------------\r",
+                                            "Ext.Ajax.request({\r",
+                                            "\turl: 'tdx/updatedata.tdx',\r",
+                                            "\t//url: 'activation.php',\r",
+                                            "\tmethod: 'POST',\r",
+                                            "\tjsonData: sendingData,\r",
+                                            "\tsuccess: handleSuccess,\r",
+                                            "\tfailure: handleFailure\r",
+                                            "});\r",
+                                            "\r",
+                                            "function handleSuccess(response) {\r",
+                                            "\tobj = Ext.decode(response.responseText);\r",
+                                            "\tvar request_success = obj.success;\r",
+                                            "\r",
+                                            "\tif (request_success === false) {\r",
+                                            "\t\tvar request_errors = obj.errors;\r",
+                                            "\t\tExt.Msg.show({\r",
+                                            "\t\t\ttitle:'初期設定失敗',\r",
+                                            "\t\t\tmsg: request_errors,\r",
+                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t\t});\r",
+                                            "\t\t//Ext.ComponentQuery.query('#activationForm')[0].getForm().reset();\r",
+                                            "\t} else {\r",
+                                            "\t\t//var redirect = '../ihab411/index.html?ses_id=' + Ses_id;\r",
+                                            "\t\tvar redirect = '../ihab/index.html?ses_id=' + Ses_id;\r",
+                                            "\t\twindow.location = redirect;\t\r",
+                                            "\t}\r",
+                                            "}\r",
+                                            "\r",
+                                            "function handleFailure(response) {\r",
+                                            "\tExt.Msg.show({\r",
+                                            "\t\ttitle:'初期設定失敗',\r",
+                                            "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                            "\t});\r",
+                                            "\tExt.ComponentQuery.query('#activationForm')[0].getForm().reset();\r",
+                                            "}\r",
+                                            "\r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "db8ca6d1-c87a-43fb-b5f2-9ba3ab8592c7"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_session: MyString
+  session_status: 1
+  session_expire: 2012-11-28
+  spin_uid: 1
+  spin_uname: MyString
+  spin_login_time: 2012-11-28
+  spin_last_login: 2012-11-28
+  spin_last_logout: 2012-11-28
+  spin_session_data: MyText
+  spin_search_condition_id: MyString
+  spin_search_option_id: MyString
+  spin_domaindata_A_id: MyString
+  spin_domaindata_B_id: MyString
+  spin_filedata_id: MyString
+  spin_folderdata_A_id: MyString
+  spin_folder_data_B_id: MyString
+  spin_groupdata_id: MyString
+  spin_memberdata_id: MyString
+  spin_operatordata_id: MyString
+  spin_recycledata_id: MyString
+  spin_senderdata_id: MyString
+
+two:
+  spin_session: MyString
+  session_status: 1
+  session_expire: 2012-11-28
+  spin_uid: 1
+  spin_uname: MyString
+  spin_login_time: 2012-11-28
+  spin_last_login: 2012-11-28
+  spin_last_logout: 2012-11-28
+  spin_session_data: MyText
+  spin_search_condition_id: MyString
+  spin_search_option_id: MyString
+  spin_domaindata_A_id: MyString
+  spin_domaindata_B_id: MyString
+  spin_filedata_id: MyString
+  spin_folderdata_A_id: MyString
+  spin_folder_data_B_id: MyString
+  spin_groupdata_id: MyString
+  spin_memberdata_id: MyString
+  spin_operatordata_id: MyString
+  spin_recycledata_id: MyString
+  spin_senderdata_id: MyString

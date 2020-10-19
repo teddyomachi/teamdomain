@@ -1,0 +1,53 @@
+{
+	"recycler" :
+	[
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"cont_location": "folder_a",
+			"file_name": "anime.mp4",
+			"file_type": "mp4",
+			"file_exact_size": "2234032",
+			"url": "../original_data/anime.mp4"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"cont_location": "folder_a",
+			"file_name": "anime.ogg",
+			"file_type": "ogg",
+			"file_exact_size": "3000034",
+			"url": "../original_data/anime.ogg"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"cont_location": "folder_a",
+			"file_name": "aria-aria.doc",
+			"file_type": "doc",
+			"file_exact_size": "123456",
+			"url": "../original_data/aria-aria.doc"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"cont_location": "folder_a",
+			"file_name": "aira-aira.xls",
+			"file_type": "xls",
+			"file_exact_size": "2234032",
+			"url": "../original_data/aira-aira.xls"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"cont_location": "folder_a",
+			"file_name": "teamA.mp4",
+			"file_type": "mp4",
+			"file_exact_size": "5234032",
+			"url": "../original_data/anime.mp4"
+		},
+		{
+			"hash_key": "2001:0db8:bd05:01d2:288a:1fc0:0001:58ec",
+			"cont_location": "folder_a",
+			"file_name": "teamB.mp4",
+			"file_type": "mp4",
+			"file_exact_size": "4523032",
+			"url": "../original_data/anime.mp4"
+		}
+	]
+}

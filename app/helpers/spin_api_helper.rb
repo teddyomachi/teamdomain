@@ -1,0 +1,2 @@
+module SpinApiHelper
+end

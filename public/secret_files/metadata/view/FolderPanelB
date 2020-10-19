@@ -1,0 +1,228 @@
+{
+    "type": "Ext.tree.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "folderPanelB",
+        "itemId": "folderPanelB",
+        "designer|userClassName": "FolderPanelB",
+        "designer|userAlias": "folderpanelb",
+        "autoScroll": true,
+        "maintainFlex": true,
+        "collapseDirection": "bottom",
+        "collapseFirst": null,
+        "collapsed": null,
+        "title": "フォルダ2",
+        "forceFit": null,
+        "store": "FolderDataStoreB",
+        "rootVisible": false
+    },
+    "designerId": "76813e57-4ccb-43d0-88a2-a3472d3b86e1",
+    "cn": [
+        {
+            "type": "Ext.tree.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "style": null,
+                "autoScroll": null
+            },
+            "designerId": "a38615d9-3d74-469f-b22c-0774a41a32ba"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFolderPanelBBeforeItemExpand",
+                "implHandler": [
+                    "/*\r",
+                    "if (PartialLoad_FileList === true) {\r",
+                    "PartialLoad_FileList = false;\r",
+                    "return;\r",
+                    "}\r",
+                    "*/\r",
+                    "\r",
+                    "var sendData = nodeinterface.raw;\r",
+                    "sendData = Ext.apply({session_id: this_session_id}, sendData);\r",
+                    "sendData = Ext.apply({request_type: 'expand_folder'}, sendData);\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "\turl: 'tdx/updatedata.tdx',\r",
+                    "\tmethod: 'POST',\r",
+                    "\tjsonData: sendData,\r",
+                    "\tsuccess: handleSuccess,\r",
+                    "\tfailure: handleFailure\r",
+                    "});\r",
+                    "\r",
+                    "function handleSuccess(response) {\r",
+                    "\tvar obj = Ext.decode(response.responseText);\r",
+                    "\tvar request_success = obj.success;\r",
+                    "\tvar request_status  = obj.status;\r",
+                    "\tvar request_dirty   = obj.isDirty;\r",
+                    "\r",
+                    "\tif (request_success === false) {\r",
+                    "\t\tvar request_errors = obj.errors;\r",
+                    "\t\tExt.Msg.show({\r",
+                    "\t\t\ttitle:'サブフォルダの表示失敗',\r",
+                    "\t\t\tmsg: 'Status: '.request_status,\r",
+                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                    "\t\t});\r",
+                    "\t} else {\r",
+                    "\t\tif (request_dirty === true) {\r",
+                    "\t\t\tExt.getStore('FolderDataStoreB').load();\r",
+                    "\t\t} else if (request_status === 2050) {\r",
+                    "\t\t\tPartialLoad = true;\r",
+                    "\t\t\tExt.getStore('FolderDataStoreB').load({\r",
+                    "\t\t\t\tnode: nodeinterface,\r",
+                    "\t\t\t\turl: 'spin/foldersB.sfl'\r",
+                    "\t\t\t});\r",
+                    "\t\t\t//Ext.ComponentQuery.query('#folderPanelB')[0].selModel.doSelect(nodeinterface);\r",
+                    "\t\t}\r",
+                    "\t}\r",
+                    "}\r",
+                    "\r",
+                    "function handleFailure(response) {\r",
+                    "\tExt.Msg.show({\r",
+                    "\t\ttitle:'サブフォルダ表示失敗',\r",
+                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                    "\t\tbuttons: Ext.Msg.OK\r",
+                    "\t});\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "beforeitemexpand",
+                "scope": "me"
+            },
+            "designerId": "75fd5309-331f-445c-ade1-661751751a2b"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFolderPanelBBeforeItemCollapse",
+                "implHandler": [
+                    "BeforeSelectedNodeB = LastSelectedNodeB;\r",
+                    "\r",
+                    "//console.log('@FolderBColl BeforeSelectedNodeA', BeforeSelectedNodeA);\r",
+                    "//console.log('@FolderBColl LastSelectedNodeA', LastSelectedNodeA);\r",
+                    "\r",
+                    "LastSelectedNodeB = nodeinterface;\r",
+                    "\r",
+                    "var sendData = nodeinterface.raw;\r",
+                    "\r",
+                    "sendData = Ext.apply({session_id: this_session_id}, sendData);\r",
+                    "sendData = Ext.apply({request_type: 'collapse_folder'}, sendData);\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "\turl: 'tdx/updatedata.tdx',\r",
+                    "\tmethod: 'POST',\r",
+                    "\tjsonData: sendData,\r",
+                    "\tsuccess: handleSuccess,\r",
+                    "\tfailure: handleFailure\r",
+                    "});\r",
+                    "\r",
+                    "function handleSuccess(response) {\r",
+                    "\tobj = Ext.decode(response.responseText);\r",
+                    "\tvar request_success = obj.success;\r",
+                    "\r",
+                    "\tif (request_success === false) {\r",
+                    "\t\tvar request_errors = obj.errors;\r",
+                    "\t\tExt.Msg.show({\r",
+                    "\t\t\ttitle:'サブフォルダのクローズ失敗',\r",
+                    "\t\t\tmsg: request_errors,\r",
+                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                    "\t\t});\r",
+                    "\t} else {\r",
+                    "\t\tif (LastSelectedNodeB !== BeforeSelectedNodeB) {\r",
+                    "\t\t\tExt.ComponentQuery.query('#folderPanelB')[0].selModel.doSelect(LastSelectedNodeB);\r",
+                    "\t\t}\t\r",
+                    "\t}\r",
+                    "\treturn;\r",
+                    "}\r",
+                    "\r",
+                    "function handleFailure(response) {\r",
+                    "\tExt.Msg.show({\r",
+                    "\t\ttitle:'サブフォルダのクローズ失敗',\r",
+                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                    "\t\tbuttons: Ext.Msg.OK\r",
+                    "\t});\r",
+                    "}"
+                ],
+                "name": "beforeitemcollapse",
+                "scope": "me"
+            },
+            "designerId": "9897966c-c362-4aac-bdae-e821d35f62d0"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFolderPanelBItemContextMenu",
+                "implHandler": [
+                    "tree_context_menu = new Ext.menu.Menu({\r",
+                    "\titems: [\r",
+                    "\tchangeFolderName,\r",
+                    "\tnew Ext.menu.Separator(),\r",
+                    "\t//copyFolder,\r",
+                    "\tmoveFolder,\r",
+                    "\tdeleteFolder,\r",
+                    "\tnew Ext.menu.Separator(),\r",
+                    "\t//releaseFolderOwnership,\r",
+                    "\t//acquireFolderOwnership,\r",
+                    "\tsettingFolderAccessRight,\r",
+                    "\tnew Ext.menu.Separator(),\r",
+                    "\tcreateSubFolder,\r",
+                    "\tappendFile,\r",
+                    "\tnew Ext.menu.Separator(),\r",
+                    "\tsearchFiles,\r",
+                    "\tnew Ext.menu.Separator(),\r",
+                    "\topenTrashbox\r",
+                    "\t]\r",
+                    "});\r",
+                    "\r",
+                    "tree_context_menu.showAt(e.getXY());\r",
+                    "return false;"
+                ],
+                "name": "itemcontextmenu",
+                "scope": "me"
+            },
+            "designerId": "84664a3d-a5e1-4bf5-8dda-9a5db5c789b7"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFolderPanelBBeforeItemDblClick",
+                "implHandler": [
+                    "return false;"
+                ],
+                "name": "beforeitemdblclick",
+                "scope": "me"
+            },
+            "designerId": "3c54f27a-be72-41ca-9867-cc3e577a0d06"
+        }
+    ]
+}

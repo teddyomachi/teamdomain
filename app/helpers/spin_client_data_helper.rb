@@ -1,0 +1,2 @@
+module SpinClientDataHelper
+end

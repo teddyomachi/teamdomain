@@ -1,0 +1,33 @@
+<%= form_for(@search_option_datum) do |f| %>
+  <% if @search_option_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_option_datum.errors.count, "error") %> prohibited this search_option_datum from being saved:</h2>
+
+      <ul>
+      <% @search_option_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :option_name %><br />
+    <%= f.text_field :option_name %>
+  </div>
+  <div class="field">
+    <%= f.label :field_name %><br />
+    <%= f.text_field :field_name %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

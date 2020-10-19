@@ -1,0 +1,1714 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "UserDsp",
+        "designer|userAlias": "mypanel22",
+        "layout": "hbox",
+        "title": "ユーザ管理"
+    },
+    "designerId": "2edddc03-8f35-4b84-89d8-07b0ffe212ba",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "id": "UserManagementList",
+                "itemId": "userManagementList",
+                "autoScroll": true,
+                "title": null,
+                "store": "MemberManagementDataStore"
+            },
+            "designerId": "70179897-5d95-43df-8048-d24691d2ce01",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "style": null
+                    },
+                    "designerId": "419e6096-09df-4385-aa1c-203911ca5c4d"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "id": "Members_page_bar",
+                        "width": null,
+                        "displayInfo": true,
+                        "store": "MemberManagementDataStore"
+                    },
+                    "designerId": "412d47de-84c1-4895-b640-465e3473a752"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "5f062ea4-efb8-4834-b194-3e6842047a9a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowModelSelect",
+                                "implHandler": [
+                                    "Ext.getCmp('UserUpdateForm').getForm().setValues({\r",
+                                    "\tuser_id\t\t\t\t: record.data.user_id,\r",
+                                    "\tuser_name\t\t\t: record.data.user_name,\r",
+                                    "\tuser_description\t: record.data.user_description,\r",
+                                    "\tuser_mail\t\t\t: record.data.user_mail,\r",
+                                    "\tuser_tel\t\t\t: record.data.user_tel,\r",
+                                    "\tuser_org\t\t\t: record.data.user_org,\r",
+                                    "\tuser_major\t\t\t: record.data.user_major,\r",
+                                    "\tuser_pw\t\t\t\t: record.data.user_pw,\r",
+                                    "\tuser_directory\t\t: record.data.user_directory,\r",
+                                    "\tp_group_id\t\t\t: record.data.p_group_id,\r",
+                                    "\tp_group_name\t\t: record.data.p_group_name,\r",
+                                    "\tp_group_description\t: record.data.p_group_description\r",
+                                    "});\r",
+                                    "\r",
+                                    "Ext.getCmp('UserDeleteForm').getForm().setValues({\r",
+                                    "\tuser_id\t\t\t\t: record.data.user_id,\r",
+                                    "\tuser_name\t\t\t: record.data.user_name,\r",
+                                    "\tuser_description\t: record.data.user_description,\r",
+                                    "\tuser_mail\t\t\t: record.data.user_mail,\r",
+                                    "\tuser_tel\t\t\t: record.data.user_tel,\r",
+                                    "\tuser_org\t\t\t: record.data.user_org,\r",
+                                    "\tuser_major\t\t\t: record.data.user_major,\r",
+                                    "\tuser_pw\t\t\t\t: record.data.user_pw,\r",
+                                    "\tuser_directory\t\t: record.data.user_directory,\r",
+                                    "\tp_group_id\t\t\t: record.data.p_group_id,\r",
+                                    "\tp_group_name\t\t: record.data.p_group_name,\r",
+                                    "\tp_group_description\t: record.data.p_group_description\r",
+                                    "});"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "designerId": "5a84c0e9-e6a2-4f75-9bbf-c46fb99043e3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "dataIndex": "hash_key",
+                        "hideable": false,
+                        "text": "Hash_key"
+                    },
+                    "designerId": "cfd67395-f4d3-482e-8181-494bcd491ce4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 60,
+                        "dataIndex": "user_id",
+                        "text": "UID"
+                    },
+                    "designerId": "4987991d-d732-4412-a08e-94fb9afe9494"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_name",
+                        "text": "ユーザー名"
+                    },
+                    "designerId": "bd0eae3f-31d4-4d77-90e1-49ad201a016a"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_description",
+                        "text": "氏名"
+                    },
+                    "designerId": "5bc9de98-e893-4d61-9a3e-2ddc44d1004d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_mail",
+                        "text": "メール"
+                    },
+                    "designerId": "91564371-feec-41b9-92e0-cbf10eea127f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_tel",
+                        "text": "学生番号"
+                    },
+                    "designerId": "0b624635-ea28-43b1-85ad-6727b54334af"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_major",
+                        "text": "専攻"
+                    },
+                    "designerId": "0cdb46a4-8a9c-40ec-ab58-6be61f33a7c7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_org",
+                        "text": "研究室"
+                    },
+                    "designerId": "1fe34a52-0900-4728-84ef-9cea9088d2ca"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_directory",
+                        "text": "ディレクトリ"
+                    },
+                    "designerId": "6d207198-1769-4cfc-b309-26ad635ee56c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "user_pw",
+                        "text": "パスワード"
+                    },
+                    "designerId": "dfe42687-a33a-4a9b-95b8-7c8a20ea13a4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 60,
+                        "dataIndex": "p_group_id",
+                        "text": "GID"
+                    },
+                    "designerId": "b78657c2-2de4-4d3c-8303-2f939b382896"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "p_group_name",
+                        "text": "グループ名"
+                    },
+                    "designerId": "1a392b18-b36a-41bd-a07c-4c962dfafb92"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "p_group_description",
+                        "text": "グループ補助名"
+                    },
+                    "designerId": "30f5adeb-c1b3-49f0-90a9-8cb827f1db91"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "width": 350,
+                "activeTab": 0
+            },
+            "designerId": "44f2cdc6-a0b5-49e0-b923-3f9ee4ce3937",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "iconCls": "",
+                        "title": "追加"
+                    },
+                    "designerId": "9c8d7777-f0cf-4a23-aed0-dc503376611f",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "data/small_icon/add_small.png"
+                            },
+                            "designerId": "d045b8df-fb26-46cc-a705-4de33b35ffc7"
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": true,
+                                "id": "UserCreateForm",
+                                "itemId": "userCreateForm",
+                                "autoScroll": true,
+                                "bodyPadding": 10,
+                                "title": null
+                            },
+                            "designerId": "1b150193-fe51-4fd0-97a8-449b5851036f",
+                            "cn": [
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "designerId": "c84ee13e-29eb-46ca-ba80-ff19a50bff01",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.toolbar.Fill",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null
+                                            },
+                                            "designerId": "9620f7dd-f990-4111-a15b-9d7413a38b1c"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "icon": "data/small_icon/add_small.png",
+                                                "text": "追加実行"
+                                            },
+                                            "designerId": "70a4d81b-6514-4a5c-ac6e-453e7cecef17",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onButtonClick",
+                                                        "implHandler": [
+                                                            "var formData = Ext.ComponentQuery.query('#userCreateForm')[0].getForm().getValues();\r",
+                                                            "\r",
+                                                            "//!formData.user_id || !formData.p_group_idを外した。(20140211)\r",
+                                                            "//if (!formData.user_name || !formData.user_pw || !formData.p_group_name) { \r",
+                                                            "if (!formData.user_name || !formData.user_pw) {\r",
+                                                            "\tExt.Msg.show({\r",
+                                                            "\t\ttitle:'データ入力',\r",
+                                                            "\t\tmsg:'*印のついたすべてのデータを入力して下さい',\r",
+                                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t});\r",
+                                                            "\treturn;\r",
+                                                            "}\r",
+                                                            "\r",
+                                                            "formData = Ext.apply({session_id: this_session_id}, {formData: formData});\r",
+                                                            "var sendingData = Ext.apply({request_type: \"createUser\"},formData);\r",
+                                                            "\r",
+                                                            "Ext.Ajax.request({\r",
+                                                            "\turl: 'tdx/updatedata.tdx',\r",
+                                                            "\t//url: 'php/request.php',\r",
+                                                            "\tjsonData: sendingData,\r",
+                                                            "\tsuccess: handlerSuccess,\r",
+                                                            "\tfailure: handlerFailure\r",
+                                                            "});\r",
+                                                            "\r",
+                                                            "function handlerSuccess(response){\r",
+                                                            "\tobj = Ext.decode(response.responseText);\r",
+                                                            "\tvar request_success = obj.success;\r",
+                                                            "\tif (request_success === false) {\r",
+                                                            "\t\tvar request_errors = obj.errors;\r",
+                                                            "\t\tExt.Msg.show({\r",
+                                                            "\t\t\ttitle:'ユーザ追加失敗',\r",
+                                                            "\t\t\tmsg:request_errors,\r",
+                                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t\t});\r",
+                                                            "\t} else {\r",
+                                                            "\t\tExt.ComponentQuery.query('#userManagementList')[0].getSelectionModel().deselectAll();\r",
+                                                            "\t\tExt.ComponentQuery.query('#userUpdateForm')[0].getForm().reset();\r",
+                                                            "\t\tExt.ComponentQuery.query('#userDeleteForm')[0].getForm().reset();\r",
+                                                            "\t\tExt.getStore('MemberManagementDataStore').load();\r",
+                                                            "\t\tExt.getCmp('Members_page_bar').moveFirst();\r",
+                                                            "\t}\r",
+                                                            "}\r",
+                                                            "\r",
+                                                            "function handlerFailure(response){\r",
+                                                            "\tExt.Msg.show({\r",
+                                                            "\t\ttitle:'データ送信失敗',\r",
+                                                            "\t\tmsg:'サーバとの通信に失敗しました。',\r",
+                                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t});\r",
+                                                            "\treturn;\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "9859d89c-d5e0-4938-9063-b4680cf87523"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "*印のある項目は入力が必須です。"
+                                    },
+                                    "designerId": "fb6771a6-90a9-49bb-80c1-3964fa9dc05e"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "autoScroll": null,
+                                        "title": "ユーザー"
+                                    },
+                                    "designerId": "ac772d73-5007-4fe9-b028-6cfeb9d84cea",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "UID",
+                                                "labelWidth": 140,
+                                                "name": "user_id",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "c290ea6c-4a0a-445b-9264-415b69332c42"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "ユーザー名*",
+                                                "labelWidth": 140,
+                                                "name": "user_name",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "4f7226cf-699f-4eac-87fd-a5f1718d4d30"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "氏名",
+                                                "labelWidth": 140,
+                                                "name": "user_description"
+                                            },
+                                            "designerId": "e1c8d4ec-36ca-438c-a814-760a7ee543b3"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "メールアドレス",
+                                                "labelWidth": 140,
+                                                "name": "user_mail",
+                                                "inputType": null,
+                                                "vtype": "email"
+                                            },
+                                            "designerId": "44c3887d-147d-4010-ac0b-d98680e74f9e"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "学生番号",
+                                                "labelWidth": 140,
+                                                "name": "user_tel",
+                                                "inputType": null,
+                                                "vtype": null
+                                            },
+                                            "designerId": "5c86b533-2d5d-4edd-921e-6bad9dcd1e68"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "専攻",
+                                                "labelWidth": 140,
+                                                "name": "user_major",
+                                                "inputType": null,
+                                                "vtype": null
+                                            },
+                                            "designerId": "97373ac5-139d-447d-bba3-8c522621c6e6"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "研究室",
+                                                "labelWidth": 140,
+                                                "name": "user_org",
+                                                "inputType": null,
+                                                "vtype": null
+                                            },
+                                            "designerId": "5c5bcfdc-db39-41d7-b99a-ebc215326112"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "パスワード*",
+                                                "labelWidth": 140,
+                                                "name": "user_pw",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "73a51fa2-26e8-4d84-b8d7-d42ff8411c45"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "ログインディレクトリ",
+                                                "labelWidth": 140,
+                                                "name": "user_directory"
+                                            },
+                                            "designerId": "ae8e2c92-0d3a-4176-bab8-ec21b82c03ab"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(ログインディレクトリが未入力の場合には、ユーザホームディレクトリを指定したことになります。)"
+                                            },
+                                            "designerId": "5e9bea70-6c18-49f4-872e-4fda0af2e631"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "プライマリ・グループ"
+                                    },
+                                    "designerId": "79cf490b-6339-4f36-96ae-b74faaa1faad",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "GID",
+                                                "labelStyle": "",
+                                                "labelWidth": 140,
+                                                "name": "p_group_id",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "4118f12f-39f7-467a-b35a-8edd5c93747c"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(ユーザーがどこのグループにも属さない場合には、UIDと同じIDを入力して下さい。)"
+                                            },
+                                            "designerId": "ee800ff5-9a90-4387-9e6e-b190461b1914"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "グループ名",
+                                                "labelWidth": 140,
+                                                "name": "p_group_name",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "61d38c69-e11f-4672-9280-b7555a04c44b"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(既存のGIDと入力したグループ名が一致しない場合には、GIDを優先します。)"
+                                            },
+                                            "designerId": "a3289786-654b-4531-93d7-98990a90b5a2"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "グループ補助名",
+                                                "labelWidth": 140,
+                                                "name": "p_group_description"
+                                            },
+                                            "designerId": "2854da39-163a-43b7-8f81-644fa0aec692"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": null,
+                        "layout": "fit",
+                        "title": "更新"
+                    },
+                    "designerId": "b6ba27a4-b9ab-4d70-9a28-883dcede2a79",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "data/small_icon/modify_small.png"
+                            },
+                            "designerId": "41699633-e781-4057-87e2-533a595d823d"
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": true,
+                                "id": "UserUpdateForm",
+                                "itemId": "userUpdateForm",
+                                "autoScroll": true,
+                                "bodyPadding": 10,
+                                "title": null
+                            },
+                            "designerId": "71350e59-c14b-4099-88cc-d478b9a95ef2",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "hidden": true,
+                                        "fieldLabel": "Label",
+                                        "name": "hash_key"
+                                    },
+                                    "designerId": "f927aae4-4778-4549-a500-ac09e0295367"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "designerId": "a9efbbef-235d-4f7d-9fec-69c2d8a4bca5",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.toolbar.Fill",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null
+                                            },
+                                            "designerId": "d786f5e9-0a92-43dc-b24c-8e06a1019063"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "icon": "data/small_icon/modify_small.png",
+                                                "text": "更新実行"
+                                            },
+                                            "designerId": "af19aad5-6d64-4c8a-b0f7-fd662d71b761",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onButtonClick1",
+                                                        "implHandler": [
+                                                            "var formData = Ext.ComponentQuery.query('#userUpdateForm')[0].getForm().getValues();\r",
+                                                            "\r",
+                                                            "//!formData.user_id || !formData.p_group_id\r",
+                                                            "//if (!formData.user_name || !formData.user_pw || !formData.p_group_name) {\r",
+                                                            "if (!formData.user_name || !formData.user_pw) {\r",
+                                                            "\tExt.Msg.show({\r",
+                                                            "\t\ttitle:'データ入力',\r",
+                                                            "\t\tmsg:'*印のついたすべてのデータを入力して下さい',\r",
+                                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t});\r",
+                                                            "\treturn;\r",
+                                                            "}\r",
+                                                            "\r",
+                                                            "formData = Ext.apply({session_id: this_session_id}, {formData: formData});\r",
+                                                            "var sendingData = Ext.apply({request_type: \"updateUser\"},formData);\r",
+                                                            "\r",
+                                                            "Ext.Ajax.request({\r",
+                                                            "\turl: 'tdx/updatedata.tdx',\r",
+                                                            "\t//url: 'php/request.php',\r",
+                                                            "\tjsonData: sendingData,\r",
+                                                            "\tsuccess: handlerSuccess,\r",
+                                                            "\tfailure: handlerFailure\r",
+                                                            "});\r",
+                                                            "\r",
+                                                            "function handlerSuccess(response){\r",
+                                                            "\tobj = Ext.decode(response.responseText);\r",
+                                                            "\tvar request_success = obj.success;\r",
+                                                            "\tif (request_success === false) {\r",
+                                                            "\t\tvar request_errors = obj.errors;\r",
+                                                            "\t\tExt.Msg.show({\r",
+                                                            "\t\t\ttitle:'ユーザデータ更新失敗',\r",
+                                                            "\t\t\tmsg:request_errors,\r",
+                                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t\t});\r",
+                                                            "\t} else {\r",
+                                                            "\t\tExt.ComponentQuery.query('#userManagementList')[0].getSelectionModel().deselectAll();\r",
+                                                            "\t\tExt.ComponentQuery.query('#userUpdateForm')[0].getForm().reset();\r",
+                                                            "\t\tExt.ComponentQuery.query('#userDeleteForm')[0].getForm().reset();\r",
+                                                            "\t\tExt.getStore('MemberManagementDataStore').load();\r",
+                                                            "\t}\r",
+                                                            "}\r",
+                                                            "\r",
+                                                            "function handlerFailure(response){\r",
+                                                            "\tExt.Msg.show({\r",
+                                                            "\t\ttitle:'データ送信失敗',\r",
+                                                            "\t\tmsg:'サーバとの通信に失敗しました。',\r",
+                                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t});\r",
+                                                            "}\r",
+                                                            ""
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "56f0fa5d-1807-41e2-a79c-66cc13045324"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "*印のある項目は入力が必須です。"
+                                    },
+                                    "designerId": "fdc2e696-5cff-40d6-8c80-d95da0fa5f0c"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "ユーザー"
+                                    },
+                                    "designerId": "2c980345-ca24-47ed-b98c-f0a5ae6f51da",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "UID",
+                                                "labelWidth": 140,
+                                                "name": "user_id",
+                                                "readOnly": true,
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "8f822e77-ebb8-41a9-8553-9f19aed550a4"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "ユーザー名*",
+                                                "labelWidth": 140,
+                                                "name": "user_name",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "28f31e76-f2e3-4229-9351-f4a154546cc2"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "氏名",
+                                                "labelWidth": 140,
+                                                "name": "user_description"
+                                            },
+                                            "designerId": "cccffe60-63c1-4096-8670-46b7f7ff373c"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "メールアドレス",
+                                                "labelWidth": 140,
+                                                "name": "user_mail",
+                                                "inputType": null,
+                                                "vtype": "email"
+                                            },
+                                            "designerId": "ef341308-d755-4b96-af75-3dafc7da644d"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "学生番号",
+                                                "labelWidth": 140,
+                                                "name": "user_tel",
+                                                "inputType": null,
+                                                "vtype": null
+                                            },
+                                            "designerId": "d077bb23-b773-4bef-b62f-00456bc9f11f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "専攻",
+                                                "labelWidth": 140,
+                                                "name": "user_major",
+                                                "inputType": null,
+                                                "vtype": null
+                                            },
+                                            "designerId": "28fb284a-9c67-4d85-8367-560fb2dd88ad"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "研究室",
+                                                "labelWidth": 140,
+                                                "name": "user_org",
+                                                "inputType": null,
+                                                "vtype": null
+                                            },
+                                            "designerId": "a3ea6226-eb76-47e6-89d7-1fafaf43b3e6"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "パスワード*",
+                                                "labelWidth": 140,
+                                                "name": "user_pw",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "259880e2-7f66-4350-a65b-015e0415189b"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "ログインディレクトリ",
+                                                "labelWidth": 140,
+                                                "name": "user_directory"
+                                            },
+                                            "designerId": "302a8143-3762-45c1-b84a-a8d6e7c51830"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(ログインディレクトリが未入力の場合には、ユーザホームディレクトリを指定したことになります。)"
+                                            },
+                                            "designerId": "2f9a394a-943c-4892-952f-4f8db2b26878"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "プライマリ・グループ"
+                                    },
+                                    "designerId": "85550e1f-41af-4d89-ba7d-1b07d4b34121",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "GID",
+                                                "labelStyle": "",
+                                                "labelWidth": 140,
+                                                "name": "p_group_id",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "52d6d93e-0ab3-43ea-acd8-3812f174e5d9"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(ユーザーがどこのグループにも属さない場合には、UIDと同じIDを入力して下さい。)"
+                                            },
+                                            "designerId": "322a582c-2393-4832-bd1a-9845b86d20af"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "グループ名",
+                                                "labelWidth": 140,
+                                                "name": "p_group_name",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "254aba01-324f-451d-8c72-20d49b6adc7f"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(既存のGIDと入力したグループ名が一致しない場合には、GIDを優先します。)"
+                                            },
+                                            "designerId": "cf6db31a-0680-4720-bf18-4d901ed0c325"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "グループ補助名",
+                                                "labelWidth": 140,
+                                                "name": "p_group_description"
+                                            },
+                                            "designerId": "c4c231f2-77ac-4dd3-904b-a35b722232f1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "削除"
+                    },
+                    "designerId": "4c1b16cb-3745-46e4-aa70-365cb9d65f92",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "data/small_icon/delete_small.png"
+                            },
+                            "designerId": "19abbbf6-f909-4a2c-9fbf-e772f75a92ff"
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": true,
+                                "id": "UserDeleteForm",
+                                "itemId": "userDeleteForm",
+                                "autoScroll": true,
+                                "bodyPadding": 10,
+                                "title": null
+                            },
+                            "designerId": "e43ce33c-316c-4f2a-a98d-9a891ffa4d61",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "hidden": true,
+                                        "fieldLabel": "Label",
+                                        "name": "hash_key"
+                                    },
+                                    "designerId": "9329bb05-75dd-440c-9d7e-bdc63145f137"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "designerId": "75c8eda2-a30d-43be-9870-0e241fe1f256",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.toolbar.Fill",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null
+                                            },
+                                            "designerId": "5ea391f4-6ff4-4391-bdb9-d3ebe1789b1d"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "icon": "data/small_icon/delete_small.png",
+                                                "text": "削除実行"
+                                            },
+                                            "designerId": "a4a7c5e0-db53-48e0-84bf-1c846837c4e3",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onButtonClick2",
+                                                        "implHandler": [
+                                                            "var formData = Ext.ComponentQuery.query('#userDeleteForm')[0].getForm().getValues();\r",
+                                                            "\r",
+                                                            "formData = Ext.apply({session_id: this_session_id}, {formData: formData});\r",
+                                                            "var sendingData = Ext.apply({request_type: \"deleteUser\"},formData);\r",
+                                                            "Ext.ComponentQuery.query('#userManagementList')[0].getSelectionModel().deselectAll(); \r",
+                                                            "\r",
+                                                            "Ext.Ajax.request({\r",
+                                                            "\turl: 'tdx/updatedata.tdx',\r",
+                                                            "\t//url: 'php/request.php',\r",
+                                                            "\tjsonData: sendingData,\r",
+                                                            "\tsuccess: handlerSuccess,\r",
+                                                            "\tfailure: handlerFailure\r",
+                                                            "});\r",
+                                                            "\r",
+                                                            "function handlerSuccess(response){\r",
+                                                            "\tobj = Ext.decode(response.responseText);\r",
+                                                            "\tvar request_success = obj.success;\r",
+                                                            "\tif (request_success === false) {\r",
+                                                            "\t\tvar request_errors = obj.errors;\r",
+                                                            "\t\tExt.Msg.show({\r",
+                                                            "\t\t\ttitle:'ユーザ削除失敗',\r",
+                                                            "\t\t\tmsg:request_errors,\r",
+                                                            "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t\t});\r",
+                                                            "\t} else {\r",
+                                                            "\t\tExt.ComponentQuery.query('#userManagementList')[0].getSelectionModel().deselectAll();\r",
+                                                            "\t\tExt.ComponentQuery.query('#userUpdateForm')[0].getForm().reset();\r",
+                                                            "\t\tExt.ComponentQuery.query('#userDeleteForm')[0].getForm().reset();\r",
+                                                            "\t\tExt.getStore('MemberManagementDataStore').load();\r",
+                                                            "\t}\r",
+                                                            "}\r",
+                                                            "\r",
+                                                            "function handlerFailure(response){\r",
+                                                            "\tExt.Msg.show({\r",
+                                                            "\t\ttitle:'データ送信失敗',\r",
+                                                            "\t\tmsg:'サーバとの通信に失敗しました。',\r",
+                                                            "\t\tbuttons: Ext.Msg.OK\r",
+                                                            "\t});\r",
+                                                            "\treturn;\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "6ab64fff-5b41-477a-bdc3-5c69ff809282"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "ユーザー"
+                                    },
+                                    "designerId": "c6ac4b42-f174-4419-8357-ada67ccfb5f1",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "UID",
+                                                "labelWidth": 140,
+                                                "name": "user_id",
+                                                "readOnly": true,
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "9e85a3b4-ca35-4fe1-b12c-f46b7cb36de8"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "ユーザー名",
+                                                "labelWidth": 140,
+                                                "name": "user_name",
+                                                "readOnly": true,
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "1b6aeeab-67c2-4708-86ff-e15f67d9e312"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "氏名",
+                                                "labelWidth": 140,
+                                                "name": "user_description",
+                                                "readOnly": true
+                                            },
+                                            "designerId": "ad3ce501-0f8a-4f92-9bce-b3a273588a58"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "メールアドレス",
+                                                "labelWidth": 140,
+                                                "name": "user_mail",
+                                                "inputType": null,
+                                                "readOnly": true,
+                                                "vtype": null
+                                            },
+                                            "designerId": "c0343311-027c-4822-8574-5478297608c9"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "学生番号",
+                                                "labelWidth": 140,
+                                                "name": "user_tel",
+                                                "inputType": null,
+                                                "readOnly": true,
+                                                "vtype": null
+                                            },
+                                            "designerId": "5ffb2455-b65b-4f08-9d76-7fbc5450117d"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "専攻",
+                                                "labelWidth": 140,
+                                                "name": "user_major",
+                                                "inputType": null,
+                                                "readOnly": true,
+                                                "vtype": null
+                                            },
+                                            "designerId": "ed691ed6-e02a-49e7-937c-f7a5b6f3797d"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "研究室",
+                                                "labelWidth": 140,
+                                                "name": "user_org",
+                                                "inputType": null,
+                                                "readOnly": true,
+                                                "vtype": null
+                                            },
+                                            "designerId": "a5773619-4e29-4721-9546-38af5420ccf4"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "パスワード",
+                                                "labelWidth": 140,
+                                                "name": "user_pw",
+                                                "readOnly": true,
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "25bb948e-4dda-4cb7-8ad5-6cea091273ff"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "ログインディレクトリ",
+                                                "labelWidth": 140,
+                                                "name": "user_directory",
+                                                "readOnly": true
+                                            },
+                                            "designerId": "5f889e04-64cd-415e-9cbe-9a0b331dcc9a"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(ログインディレクトリが未入力の場合には、ユーザホームディレクトリを指定したことになります。)"
+                                            },
+                                            "designerId": "2eacc6fe-2457-40c3-b096-d8dd47236b79"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "プライマリ・グループ"
+                                    },
+                                    "designerId": "a52f3f49-7011-4776-8676-a386545c2f6a",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "hidden": true,
+                                                "fieldLabel": "GID",
+                                                "labelStyle": "",
+                                                "labelWidth": 140,
+                                                "name": "p_group_id",
+                                                "readOnly": true,
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "00aa1f74-dae2-4e08-ad1a-30dd7f5231cb"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(ユーザーがどこのグループにも属さない場合には、UIDと同じIDを入力して下さい。)"
+                                            },
+                                            "designerId": "0e78410f-c1a3-4839-99e0-1c0aaf84031f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "グループ名",
+                                                "labelWidth": 140,
+                                                "name": "p_group_name",
+                                                "readOnly": true,
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "c8582075-c97c-4fe4-9c6b-d7a778cc0812"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "hidden": true,
+                                                "style": [
+                                                    "{\r",
+                                                    "\t\"color\": \"orange\",\r",
+                                                    "\t\"font-style\": \"italic\"\r",
+                                                    "\t}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "text": "(既存のGIDと入力したグループ名が一致しない場合には、GIDを優先します。)"
+                                            },
+                                            "designerId": "e885c1d8-8a8d-4b7c-8268-9e392337915c"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "グループ補助名",
+                                                "labelWidth": 140,
+                                                "name": "p_group_description",
+                                                "readOnly": true
+                                            },
+                                            "designerId": "6f6b281f-bed5-4480-8ef3-dcd9ca8308a0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "Ext.getStore('MemberManagementDataStore').load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "758fb9f4-c5ee-42a2-b7cd-015a28b9429b"
+        }
+    ]
+}

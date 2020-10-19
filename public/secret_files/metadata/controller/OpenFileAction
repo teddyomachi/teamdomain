@@ -1,0 +1,135 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OpenFileAction"
+    },
+    "designerId": "8a583364-a276-47c9-9901-5bb24d023286",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelItemDblClickA",
+                "implHandler": [
+                    "var dataX = record.data;\r",
+                    "\r",
+                    "var readableRight  = dataX.file_readable_status;\r",
+                    "var writableRight  = dataX.file_writable_status;\r",
+                    "\r",
+                    "var editableStatus = dataX.lock;\r",
+                    "var openStatus     = dataX.open_status;\r",
+                    "\r",
+                    "var showFileName   = dataX.file_name;\r",
+                    "var fileType       = dataX.file_type;\r",
+                    "\r",
+                    "var contLocation   = dataX.cont_location;\r",
+                    "\r",
+                    "var readChecked  = record.data.folder_readable_status;\r",
+                    "var writeChecked = record.data.folder_writable_status;\r",
+                    "\r",
+                    "doOpenFile(dataX, readableRight, writableRight, editableStatus, openStatus, showFileName, fileType, readChecked, writeChecked, contLocation);\r",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#listGridPanelA"
+            },
+            "designerId": "03e69865-c9d6-491a-b5e2-b08abbf1afc0"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "FileView",
+                "selector": "#teamDomain"
+            },
+            "designerId": "73235b9a-b5b1-4104-9823-884ca520bbb9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelItemDblClickB",
+                "implHandler": [
+                    "var dataX = record.data;\r",
+                    "\r",
+                    "var readableRight  = dataX.file_readable_status;\r",
+                    "var writableRight  = dataX.file_writable_status;\r",
+                    "\r",
+                    "var editableStatus = dataX.lock;\r",
+                    "var openStatus     = dataX.open_status;\r",
+                    "\r",
+                    "var showFileName   = dataX.file_name;\r",
+                    "var fileType       = dataX.file_type;\r",
+                    "\r",
+                    "var contLocation   = dataX.cont_location;\r",
+                    "\r",
+                    "var readChecked  = record.data.folder_readable_status;\r",
+                    "var writeChecked = record.data.folder_writable_status;\r",
+                    "\r",
+                    "doOpenFile(dataX, readableRight, writableRight, editableStatus, openStatus, showFileName, fileType, readChecked, writeChecked, contLocation);\r",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#listGridPanelB"
+            },
+            "designerId": "5d19abbf-0789-4e12-ab39-61361edd1fe3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelItemDblClickS",
+                "implHandler": [
+                    "var dataX = record.data;\r",
+                    "\r",
+                    "var readableRight  = dataX.file_readable_status;\r",
+                    "var writableRight  = dataX.file_writable_status;\r",
+                    "\r",
+                    "var editableStatus = dataX.lock;\r",
+                    "var openStatus     = dataX.open_status;\r",
+                    "\r",
+                    "var showFileName   = dataX.file_name;\r",
+                    "var fileType       = dataX.file_type;\r",
+                    "\r",
+                    "var contLocation   = dataX.cont_location;\r",
+                    "\r",
+                    "var readChecked  = record.data.folder_readable_status;\r",
+                    "var writeChecked = record.data.folder_writable_status;\r",
+                    "\r",
+                    "doOpenFile(dataX, readableRight, writableRight, editableStatus, openStatus, showFileName, fileType, readChecked, writeChecked, contLocation);\r",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#searchedListGridPanel"
+            },
+            "designerId": "5f37ab54-47b0-4801-97d3-d9245e27da3a"
+        }
+    ]
+}

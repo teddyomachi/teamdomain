@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_uid: 1
+  spin_uname: MyString
+  user_level_x: 1
+  user_level_y: 1
+  spin_gid: 1
+  spin_projid: 1
+  spin_passwd: MyString
+
+two:
+  spin_uid: 1
+  spin_uname: MyString
+  user_level_x: 1
+  user_level_y: 1
+  spin_gid: 1
+  spin_projid: 1
+  spin_passwd: MyString

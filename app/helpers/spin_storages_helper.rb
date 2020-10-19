@@ -1,0 +1,2 @@
+module SpinStoragesHelper
+end

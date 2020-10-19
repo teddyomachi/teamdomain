@@ -1,0 +1,559 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "frame": true,
+        "id": "reCycler",
+        "designer|userClassName": "Trashbox",
+        "designer|userAlias": "trashbox",
+        "layout": "fit",
+        "bodyPadding": 5,
+        "title": "ゴミ箱"
+    },
+    "designerId": "574f7e9a-a5ac-44d7-9ac7-a8e04a9eccac",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|padding": null,
+                "margin": null,
+                "padding": null,
+                "layout": "vbox",
+                "title": "削除したファイルとフォルダ"
+            },
+            "designerId": "1ec6acfa-d306-4fe0-bd40-7fadf2897149",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "height": null,
+                        "itemId": "trashList",
+                        "margin": "5 0 10 0",
+                        "autoScroll": true,
+                        "title": null,
+                        "store": "RecyclerDataStore"
+                    },
+                    "designerId": "19a2baa6-414e-4e52-92f4-6f3786318a2c",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "style": null
+                            },
+                            "designerId": "bf346228-d9ec-4e36-b0b4-d104c578962b"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "designerId": "3c6727cc-1ea6-4e06-b744-3fe8a4ca51e2"
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "weight": 2,
+                                "width": null,
+                                "afterPageText": null,
+                                "beforePageText": null,
+                                "displayInfo": true,
+                                "displayMsg": null,
+                                "emptyMsg": null,
+                                "firstText": null,
+                                "lastText": null,
+                                "nextText": null,
+                                "prevText": null,
+                                "refreshText": null,
+                                "store": "RecyclerDataStore"
+                            },
+                            "designerId": "021e1955-425b-4b3c-bc80-cc56d3d8fd04"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "weight": 1,
+                                "ui": [
+                                    "footer"
+                                ]
+                            },
+                            "designerId": "55cae64d-adeb-4119-8249-0ff5975fa733",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "margin": "5 5 0 0",
+                                        "width": 100,
+                                        "text": "元に戻す",
+                                        "tooltip": [
+                                            "{\r",
+                                            "\thtml: \"択したフォルダとファイルを元の位置に戻します。\"\r",
+                                            "}"
+                                        ],
+                                        "tooltipType": "title"
+                                    },
+                                    "designerId": "1b3c1741-df62-43a0-8072-cd42cf8b5ff1",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "var componentM = Ext.getCmp('reCycler');\r",
+                                                    "var grid = componentM.down('#trashList');\r",
+                                                    "\r",
+                                                    "var records = grid.getSelectionModel().getSelection(), data = [];\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(records)) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'ファイル/フォルダ選択',\r",
+                                                    "\t\tmsg: 'ファイル/フォルダを選択して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "for (var i = 0; i < records.length; i++) {\r",
+                                                    "\tdata.push(records[i].data);\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "var dataX = Ext.apply({session_id: this_session_id}, data);\r",
+                                                    "dataX = Ext.apply({request_type: \"escape_files\"},dataX);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tjsonData: dataX,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'「ゴミ箱のフォルダ/ファイルを元に戻す」の失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\trequestRefresh2();\r",
+                                                    "\t}\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'「ゴミ箱のフォルダ/ファイルを元に戻す」の失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "//ファイルリスト再読み込み用\r",
+                                                    "function requestRefresh2() {\r",
+                                                    "\t//console.log(data);\r",
+                                                    "\tsending_cont_location\t= \"\";\r",
+                                                    "\tsending_hash_key\t\t= \"THIS_WAS_CALLED_FROM_TRASH\";\r",
+                                                    "\r",
+                                                    "\tvar requestRefreshData\t= Ext.apply({session_id: this_session_id}, {cont_location: sending_cont_location});\r",
+                                                    "\trequestRefreshData\t= Ext.apply(requestRefreshData, {hash_key: sending_hash_key});\r",
+                                                    "\trequestRefreshData\t= Ext.apply({event_type: \"property_trashbox_escape\"}, requestRefreshData);\r",
+                                                    "\trequestRefreshData\t= Ext.apply({request_type: \"update_folder_list\"}, requestRefreshData);\r",
+                                                    "\r",
+                                                    "\tExt.Ajax.request({\r",
+                                                    "\t\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\t\tjsonData: requestRefreshData,\r",
+                                                    "\t\tsuccess: handleSuccess2,\r",
+                                                    "\t\tfailure: handleFailure2\r",
+                                                    "\t});\r",
+                                                    "\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleSuccess2(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\tvar request_status  = obj.status;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors  = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'「ゴミ箱のフォルダ/ファイルを元に戻す」の失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.getStore('RecyclerDataStore').load();\r",
+                                                    "\r",
+                                                    "\t\tExt.getStore('FolderDataStoreA').load();\r",
+                                                    "\t\tExt.getStore('TargetFolderAT').load();\r",
+                                                    "\t\tExt.getStore('TargetFolderATFi').load();\r",
+                                                    "\r",
+                                                    "\t\tExt.getStore('FolderDataStoreB').load();\r",
+                                                    "\t\tExt.getStore('TargetFolderBT').load();\r",
+                                                    "\t\tExt.getStore('TargetFolderBTFi').load();\r",
+                                                    "\r",
+                                                    "\t\tExt.getStore('FileDataStoreA').load();\r",
+                                                    "\t\tExt.getStore('FileDataStoreB').load();\r",
+                                                    "\t}\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure2(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'「ゴミ箱のフォルダ/ファイルを元に戻す」の失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "f04d675d-c84f-4a9d-a79f-746cebf91717"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "margin": "5 5 0 0",
+                                        "width": 100,
+                                        "text": "削除",
+                                        "tooltip": [
+                                            "{\r",
+                                            "\thtml: \"選択したフォルダとファイルを削除します。<br/>この操作後には、削除したフォルダとファイルを元に戻すことはできなくなります。\"\r",
+                                            "}"
+                                        ],
+                                        "tooltipType": "title"
+                                    },
+                                    "designerId": "ccac81f4-87a9-4074-adc8-511e5ada3c12",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "var componentM = Ext.getCmp('reCycler');\r",
+                                                    "var grid = componentM.down('#trashList');\r",
+                                                    "\r",
+                                                    "var records = grid.getSelectionModel().getSelection(), data = [];\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(records)) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'ファイル/フォルダ選択',\r",
+                                                    "\t\tmsg: 'ファイル/フォルダを選択して下さい。',\r",
+                                                    "\t\ticon: Ext.Msg.ERROR,\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "for (var i = 0; i < records.length; i++) {\r",
+                                                    "\tdata.push(records[i].data);\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "var dataX = Ext.apply({session_id: this_session_id}, data);\r",
+                                                    "dataX = Ext.apply({request_type: \"throw_files\"}, dataX);\r",
+                                                    "\r",
+                                                    "Ext.Ajax.request({\r",
+                                                    "\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\tjsonData: dataX,\r",
+                                                    "\tsuccess: handleSuccess,\r",
+                                                    "\tfailure: handleFailure\r",
+                                                    "});\r",
+                                                    "\r",
+                                                    "function handleSuccess(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'ゴミ箱のフォルダ/ファイルの削除失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\t//requestRefresh3();\r",
+                                                    "\t\tExt.getStore('RecyclerDataStore').load();\t\r",
+                                                    "\t}\r",
+                                                    "\treturn;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'ゴミ箱のフォルダ/ファイルの削除失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "//ファイルリスト再読み込み用\r",
+                                                    "function requestRefresh3() {\r",
+                                                    "\tsending_cont_location\t= \"\";\r",
+                                                    "\tsending_hash_key\t\t= \"THIS_WAS_CALLED_FROM_TRASH\";\r",
+                                                    "\r",
+                                                    "\tvar requestRefreshData\t= Ext.apply({session_id: this_session_id}, {cont_location: sending_cont_location});\r",
+                                                    "\trequestRefreshData\t= Ext.apply(requestRefreshData, {hash_key: sending_hash_key});\r",
+                                                    "\trequestRefreshData\t= Ext.apply({event_type: \"property_trashbox_throw\"}, requestRefreshData);\r",
+                                                    "\trequestRefreshData\t= Ext.apply({request_type: \"update_folder_list\"}, requestRefreshData);\r",
+                                                    "\r",
+                                                    "\tExt.Ajax.request({\r",
+                                                    "\t\turl: 'tdx/updatedata.tdx',\r",
+                                                    "\t\tjsonData: requestRefreshData,\r",
+                                                    "\t\tsuccess: handleSuccess3,\r",
+                                                    "\t\tfailure: handleFailure3\r",
+                                                    "\t});\r",
+                                                    "\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleSuccess3(response) {\r",
+                                                    "\tobj = Ext.decode(response.responseText);\r",
+                                                    "\r",
+                                                    "\tvar request_success = obj.success;\r",
+                                                    "\tvar request_status  = obj.status;\r",
+                                                    "\r",
+                                                    "\tif (request_success === false) {\r",
+                                                    "\t\tvar request_errors  = obj.errors;\r",
+                                                    "\t\tExt.Msg.show({\r",
+                                                    "\t\t\ttitle:'ゴミ箱のフォルダ/ファイルの削除失敗',\r",
+                                                    "\t\t\tmsg: request_errors,\r",
+                                                    "\t\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t\t});\r",
+                                                    "\t} else {\r",
+                                                    "\t\tExt.getStore('RecyclerDataStore').load();\t\r",
+                                                    "\t}\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "function handleFailure3(response) {\r",
+                                                    "\tExt.Msg.show({\r",
+                                                    "\t\ttitle:'ゴミ箱のフォルダ/ファイルの削除失敗',\r",
+                                                    "\t\tmsg: 'サーバとの通信に失敗しました。',\r",
+                                                    "\t\tbuttons: Ext.Msg.OK\r",
+                                                    "\t});\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "1f1677c2-e0ff-4c77-b4b7-22f921abf495"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "dataIndex": "hash_key",
+                                "hideable": false,
+                                "text": "Hash_key"
+                            },
+                            "designerId": "19b0ea9a-7539-4584-8857-1aefd38b837c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "dataIndex": "cont_location",
+                                "hideable": false,
+                                "text": "Cont_location"
+                            },
+                            "designerId": "c20de113-18c7-478a-b4fb-c7f828a55964"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "file_name",
+                                "text": "名前",
+                                "flex": 1
+                            },
+                            "designerId": "289c42e5-88a6-403a-a603-107d2062906a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 40,
+                                "defaultWidth": null,
+                                "dataIndex": "file_type",
+                                "text": "種類"
+                            },
+                            "designerId": "eb51bacb-d52b-4a78-9ab3-644a8dbf9c1e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 80,
+                                "align": "right",
+                                "dataIndex": "file_size",
+                                "text": "サイズ"
+                            },
+                            "designerId": "5446a35a-0941-4253-ba57-1eca77ee5583",
+                            "cn": [
+                                {
+                                    "type": "basicfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value, metaData, record, rowIndex, colIndex, store, view"
+                                        ],
+                                        "implHandler": [
+                                            "var fileSizeUpper = record.data.file_size_upper;\r",
+                                            "var fileSize      = record.data.file_size;\r",
+                                            "var size          = fileSizeUpper * Math.pow(2, 31) + fileSize;\r",
+                                            "\r",
+                                            "if (size === \"\") {\r",
+                                            "\treturn \"-\";\r",
+                                            "} else if (size < 1024) {\r",
+                                            "\treturn size + \" B\";\r",
+                                            "} else if (size < 1048576) {\r",
+                                            "\treturn (Math.round(size / 1024)) + \" KB\";\r",
+                                            "} else if (size < 1073741824) {\r",
+                                            "\treturn (Math.round(((size*10) / 1048576))/10) + \" MB\";\r",
+                                            "} else if (size < 1099511627776) {\r",
+                                            "\treturn (Math.round(((size*100) / 1073741824))/100) + \" GB\";\r",
+                                            "} else if (size < 1125899906842624) {\r",
+                                            "\treturn (Math.round(((size*100) / 1099511627776))/100) + \" TB\";\r",
+                                            "} else {\r",
+                                            "\treturn (Math.round(((size*100) / 1125899906842624))/100) + \" PB\";\r",
+                                            "}\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "c85d2ebb-0706-4ac5-82b9-1325a88bb193"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "dataIndex": "url",
+                                "text": "URL",
+                                "flex": 1
+                            },
+                            "designerId": "e5ecc3cc-4711-4956-9fb4-8de56aa294ae"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReCyclerAfterRender",
+                "implHandler": [
+                    "Ext.getStore('RecyclerDataStore').load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "2dfee982-751e-44e2-81bc-3ebb7276da35"
+        }
+    ]
+}

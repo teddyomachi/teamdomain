@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "RecyclerData",
+        "storeId": "RecyclerDataStore",
+        "designer|userClassName": "RecyclerDataStore"
+    },
+    "designerId": "3edbc2a5-fbc6-4c11-b005-2931ba7830e8",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/recycler.sfl"
+            },
+            "designerId": "4a0d3f9d-eedb-445d-b04e-3965fa882ab1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "recycler"
+                    },
+                    "designerId": "02f8cddd-f85b-4a68-a0fe-f444966a212b"
+                }
+            ]
+        }
+    ]
+}

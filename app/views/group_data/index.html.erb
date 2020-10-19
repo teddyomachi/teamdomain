@@ -1,0 +1,43 @@
+<h1>Listing group_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Hash key</th>
+    <th>Target hash key</th>
+    <th>Id</th>
+    <th>Editable status</th>
+    <th>Group name</th>
+    <th>Group description</th>
+    <th>Group privilege</th>
+    <th>Member</th>
+    <th>Member name</th>
+    <th>Member description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @group_data.each do |group_datum| %>
+  <tr>
+    <td><%= group_datum.session_id %></td>
+    <td><%= group_datum.hash_key %></td>
+    <td><%= group_datum.target_hash_key %></td>
+    <td><%= group_datum.id %></td>
+    <td><%= group_datum.editable_status %></td>
+    <td><%= group_datum.group_name %></td>
+    <td><%= group_datum.group_description %></td>
+    <td><%= group_datum.group_privilege %></td>
+    <td><%= group_datum.member_id %></td>
+    <td><%= group_datum.member_name %></td>
+    <td><%= group_datum.member_description %></td>
+    <td><%= link_to 'Show', group_datum %></td>
+    <td><%= link_to 'Edit', edit_group_datum_path(group_datum) %></td>
+    <td><%= link_to 'Destroy', group_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Group datum', new_group_datum_path %>

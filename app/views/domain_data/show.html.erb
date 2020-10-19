@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @domain_datum.session_id %>
+</p>
+
+<p>
+  <b>Hash key:</b>
+  <%= @domain_datum.hash_key %>
+</p>
+
+<p>
+  <b>Cont location:</b>
+  <%= @domain_datum.cont_location %>
+</p>
+
+<p>
+  <b>Domain writable status:</b>
+  <%= @domain_datum.domain_writable_status %>
+</p>
+
+<p>
+  <b>Domain name:</b>
+  <%= @domain_datum.domain_name %>
+</p>
+
+<p>
+  <b>Domain link:</b>
+  <%= @domain_datum.domain_link %>
+</p>
+
+<p>
+  <b>Img:</b>
+  <%= @domain_datum.img %>
+</p>
+
+
+<%= link_to 'Edit', edit_domain_datum_path(@domain_datum) %> |
+<%= link_to 'Back', domain_data_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spin vfs type:</b>
+  <%= @spin_virtual_file_system.spin_vfs_type %>
+</p>
+
+<p>
+  <b>Spin vfs access mode:</b>
+  <%= @spin_virtual_file_system.spin_vfs_access_mode %>
+</p>
+
+<p>
+  <b>Spin vfs name:</b>
+  <%= @spin_virtual_file_system.spin_vfs_name %>
+</p>
+
+<p>
+  <b>Spin vfs attibutes:</b>
+  <%= @spin_virtual_file_system.spin_vfs_attibutes %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_virtual_file_system_path(@spin_virtual_file_system) %> |
+<%= link_to 'Back', spin_virtual_file_systems_path %>

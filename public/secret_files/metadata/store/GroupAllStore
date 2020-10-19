@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "GroupData",
+        "storeId": "MyJsonStore7",
+        "designer|userClassName": "GroupAllStore",
+        "groupField": "group_name"
+    },
+    "designerId": "75f520e9-b5fe-4cd1-96e3-8029418e2f13",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/group_list_all.sfl"
+            },
+            "designerId": "01d718b6-9321-4fbf-b8d1-9e858f478142",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "members"
+                    },
+                    "designerId": "2b6235d0-0b7c-45ba-bc55-816b153526cd"
+                }
+            ]
+        }
+    ]
+}

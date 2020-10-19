@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_vfs_type: MyString
+  spin_vfs_access_mode: MyString
+  spin_vfs_name: MyString
+  spin_vfs_attibutes: MyText
+
+two:
+  spin_vfs_type: MyString
+  spin_vfs_access_mode: MyString
+  spin_vfs_name: MyString
+  spin_vfs_attibutes: MyText

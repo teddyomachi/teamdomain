@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SECRET FILES</title>
+
+        <!-- 次の2行はブラウザが対応している場合に、ページキャッシュを無効にする処理 -->
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache">
+
+        <!-- ページの有効期限を指定する。キャッシュを無効にするにはcontent="0" -->
+        <meta http-equiv="Expires" content="0">
+
+        <!-- For CELLA (below) -->
+        <link rel="stylesheet" type="text/css" href="resources/css/my-ext-blue.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/template.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
+        <script type="text/javascript" src="../ext/ext-all-debug.js"></script>
+        <!-- For CELLA (above) -->
+
+        <script type="text/javascript">
+            <!--
+                //When using GET method
+            var args = {};
+            var query = location.search.substring(1);
+            var pairs = query.split("&");
+            for (var i = 0; i < pairs.length; i++) {
+                var pos = pairs[i].indexOf('=');
+                if (pos == -1)
+                    continue;
+                var name = pairs[i].substring(0, pos);
+                var value = pairs[i].substring(pos + 1);
+                value = decodeURIComponent(value);
+                args[name] = value;
+            }
+            var this_session_name = name;
+            var this_session_id = args[this_session_name];
+            var operator_right = true;		//this must be loaded from the server.
+            //var operatorName      = 'Woodville';	//this must be loaded from the server.
+            //var operatorId        = 'd1-0001';	//this must be loaded from the server.
+            var this_op_name = 'dummy';
+            This_op_group_editable = false;
+            This_op_cntrl_editable = false;
+            //var InitialFlagA = 0;
+            //var InitialFlagB = 0;
+            var PartialLoad = false;
+            var ThisSelectedDomain;
+            var thisActiveRecordA;
+            var LastSelectedNodeA = [];
+            var LastSelectedNodeB = [];
+            var BeforeSelectedNodeA = [];
+            var BeforeSelectedNodeB = [];
+            var LastSelectedNodeAFo = [];
+            var LastSelectedNodeBFo = [];
+            var LastSelectedNodeAFi = [];
+            var LastSelectedNodeBFi = [];
+            var SelectedFileType = '';
+            var SelectedFileUrl = '';
+            var SelectedFileThum = '';
+            var PartialStatus = false;
+            var ErrorNo = '';
+
+            var DomainLoadingCount = 0;
+            var FolderLoadingCountA = 0;
+            var FolderLoadingCountB = 0;
+
+            var GroupDspClosed = false;
+            var UserDspClosed = false;
+
+            var PrivilegeEdit = false;
+
+            var Busy = false;
+
+            var isAgentInstall = false;
+            var currentVirtualPath = '';
+            var listDispSize = 'min';  // max / mid / min : 大表示・中表示・小表示
+            var boxDispSizeA = 'mid';
+            var boxDispSizeS = 'mid';
+            var TargetComp = '';
+
+            // リスト・サムネイル表示フラグ
+            var listActive = false;
+            var thumbnailActive = false;
+
+            var header = "Agentの通信に失敗しました。";
+            var xhr = createXMLHttpRequest();
+            if (xhr) {
+                isAgentInstall = false;
+                xhr.open("GET", "http://127.0.0.1:18880/spinagent/system/is_alive.tdx", false);
+//                    xhr.open("GET", "http://192.168.100.8:18880/spinagent/system/is_alive.tdx", false);
+                try {
+                    xhr.send(null);
+                    if (200 === xhr.status) {
+                        var data = JSON.parse(xhr.responseText);
+                        if (data.success) {
+                            isAgentInstall = true;
+                        } else {
+                            alert(header + "\n\n" + data.errors);
+                        }
+                    } else {
+                        alert(header);
+                    }
+                } catch (e) {
+//                        alert(header  + "\n\n" + e);
+                }
+            }
+
+            function createXMLHttpRequest() {
+                if (window.XMLHttpRequest) {
+                    return new XMLHttpRequest();
+                }
+                if (window.ActiveXObject) {
+                    try {
+                        return new ActiveXObject("Msxml2.XMLHTTP.6.0");
+                    } catch (e) {
+                    }
+                    try {
+                        return new ActiveXObject("Msxml2.XMLHTTP.3.0");
+                    } catch (e) {
+                    }
+                    try {
+                        return new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                    }
+
+                }
+                return false;
+            }
+            ;
+
+            /*
+             //When using Cookie
+             //session_name = PHPSESSID
+             var cookies = {};
+             var all = document.cookie;
+             if (all !== "") {
+             var list = all.split("; ");
+             for ( var i = 0; i < list.length; i++ )	{
+             var cookie = list[i];
+             var p	  = cookie.indexOf("=");
+             var name   = cookie.substring(0,p);
+             var value  = cookie.substring(p+1);
+             value	  = decodeURIComponent(value);
+             cookies[name] = value;
+             if (name === "PHPSESSID") {
+             var this_session_name = name;
+             var this_session_id   = value;
+             //alert(value);
+             }
+             }
+             }
+             */
+            // -->
+        </script>
+        <script type="text/javascript" src="app_main.js"></script>
+        <script type="text/javascript" src="../ext/locale/ext-lang-ja.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/Control.js"></script>
+        <script type="text/javascript" src="js/MyCheckDomainStatus.js"></script>
+        <script type="text/javascript" src="js/MyCheckFolderStatus.js"></script>
+        <script type="text/javascript" src="js/MyCheckFileStatus.js"></script>
+        <script type="text/javascript" src="js/MyOpenFiles.js"></script>
+        <script type="text/javascript" src="js/GenericFunction.js"></script>
+        <script type="text/javascript" src="js/lodash.js"></script>
+
+        <script type="text/javascript" src="js/AgentCallApi.js"></script>
+        <script type="text/javascript" src="js/AgentFileManager.js"></script>
+        <script type="text/javascript" src="js/PreviewWindow.js"></script>
+
+        <!--
+        <script type="text/javascript" src="js/Reappearance.js"></script>
+        <script type="text/javascript" src="js/SelectedConditions.js"></script>
+        -->
+
+        <!--
+        <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+        <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+        -->
+
+    </head>
+    <!--
+    <body style="background-color: black;">
+    -->
+    <body>
+        <div id="loading">
+            <span id="logo" class="logo"></span>
+        </div>
+    </body>
+</html>

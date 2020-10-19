@@ -1,0 +1,131 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MemberData"
+    },
+    "designerId": "c47d0e7f-718b-4a70-a4fc-e9077e672694",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "hash_key",
+                "type": "string"
+            },
+            "designerId": "c255dd95-d2b2-4195-82f9-a005c2743453"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "member_id",
+                "type": "string"
+            },
+            "designerId": "6a73bd45-af59-40a9-957c-bfad456e0e06"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "member_name",
+                "type": "string"
+            },
+            "designerId": "1d5ef750-2285-4abd-89a4-0bc1d296787c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "member_description",
+                "type": "string"
+            },
+            "designerId": "4c0a786c-6e5b-442c-8d92-d7e844174064"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "member_remark",
+                "type": "string"
+            },
+            "designerId": "a6ca281f-dcaa-4e4a-afe0-2c61b844d856"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "group_name",
+                "type": "string"
+            },
+            "designerId": "9f11e032-c746-4a36-946f-0db1b0747338"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "group_description",
+                "type": "string"
+            },
+            "designerId": "3fecb991-02f7-4bbc-bf02-75bf818a6b0c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "group_id",
+                "type": "string"
+            },
+            "designerId": "6de81ab3-9e5c-4415-9079-c51cc8dcf40c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "data_class",
+                "type": "int"
+            },
+            "designerId": "bff6ef82-b3ad-4f95-8646-63dc3f01834e"
+        }
+    ]
+}

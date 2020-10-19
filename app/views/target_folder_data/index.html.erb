@@ -1,0 +1,43 @@
+<h1>Listing target_folder_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Target hash key</th>
+    <th>Target cont location</th>
+    <th>Id</th>
+    <th>Text</th>
+    <th>Target folder</th>
+    <th>Target folder writable status</th>
+    <th>Target folder readable status</th>
+    <th>Target ownership</th>
+    <th>Target parent readable status</th>
+    <th>Target parent writable status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @target_folder_data.each do |target_folder_datum| %>
+  <tr>
+    <td><%= target_folder_datum.session_id %></td>
+    <td><%= target_folder_datum.target_hash_key %></td>
+    <td><%= target_folder_datum.target_cont_location %></td>
+    <td><%= target_folder_datum.id %></td>
+    <td><%= target_folder_datum.text %></td>
+    <td><%= target_folder_datum.target_folder %></td>
+    <td><%= target_folder_datum.target_folder_writable_status %></td>
+    <td><%= target_folder_datum.target_folder_readable_status %></td>
+    <td><%= target_folder_datum.target_ownership %></td>
+    <td><%= target_folder_datum.target_parent_readable_status %></td>
+    <td><%= target_folder_datum.target_parent_writable_status %></td>
+    <td><%= link_to 'Show', target_folder_datum %></td>
+    <td><%= link_to 'Edit', edit_target_folder_datum_path(target_folder_datum) %></td>
+    <td><%= link_to 'Destroy', target_folder_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Target folder datum', new_target_folder_datum_path %>

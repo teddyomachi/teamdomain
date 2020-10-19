@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spin gid:</b>
+  <%= @spin_group.spin_gid %>
+</p>
+
+<p>
+  <b>Spin group name:</b>
+  <%= @spin_group.spin_group_name %>
+</p>
+
+<p>
+  <b>Group descr:</b>
+  <%= @spin_group.group_descr %>
+</p>
+
+<p>
+  <b>Group atrtributes:</b>
+  <%= @spin_group.group_atrtributes %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_group_path(@spin_group) %> |
+<%= link_to 'Back', spin_groups_path %>

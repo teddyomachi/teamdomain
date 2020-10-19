@@ -1,0 +1,105 @@
+<h1>Listing file_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Hash key</th>
+    <th>Cont location</th>
+    <th>File name</th>
+    <th>File type</th>
+    <th>File size</th>
+    <th>File version</th>
+    <th>Url</th>
+    <th>Thumbnail image</th>
+    <th>Created date</th>
+    <th>Creator</th>
+    <th>Modified date</th>
+    <th>Modifier</th>
+    <th>Owner</th>
+    <th>Ownership</th>
+    <th>Control right</th>
+    <th>Lock</th>
+    <th>Id lc by</th>
+    <th>Name lc by</th>
+    <th>Dirty</th>
+    <th>Keyword</th>
+    <th>Description</th>
+    <th>File exact size</th>
+    <th>Icon image</th>
+    <th>Title</th>
+    <th>Subtitle</th>
+    <th>Frame size</th>
+    <th>Duration</th>
+    <th>Producer</th>
+    <th>Produced date</th>
+    <th>Location</th>
+    <th>Client</th>
+    <th>Copyright</th>
+    <th>Portrait right</th>
+    <th>Access group</th>
+    <th>File readable status</th>
+    <th>File writable status</th>
+    <th>Open status</th>
+    <th>Folder hash key</th>
+    <th>Folder readable status</th>
+    <th>Folder writable status</th>
+    <th>Details</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @file_data.each do |file_datum| %>
+  <tr>
+    <td><%= file_datum.session_id %></td>
+    <td><%= file_datum.hash_key %></td>
+    <td><%= file_datum.cont_location %></td>
+    <td><%= file_datum.file_name %></td>
+    <td><%= file_datum.file_type %></td>
+    <td><%= file_datum.file_size %></td>
+    <td><%= file_datum.file_version %></td>
+    <td><%= file_datum.url %></td>
+    <td><%= file_datum.thumbnail_image %></td>
+    <td><%= file_datum.created_date %></td>
+    <td><%= file_datum.creator %></td>
+    <td><%= file_datum.modified_date %></td>
+    <td><%= file_datum.modifier %></td>
+    <td><%= file_datum.owner %></td>
+    <td><%= file_datum.ownership %></td>
+    <td><%= file_datum.control_right %></td>
+    <td><%= file_datum.lock %></td>
+    <td><%= file_datum.id_lc_by %></td>
+    <td><%= file_datum.name_lc_by %></td>
+    <td><%= file_datum.dirty %></td>
+    <td><%= file_datum.keyword %></td>
+    <td><%= file_datum.description %></td>
+    <td><%= file_datum.file_exact_size %></td>
+    <td><%= file_datum.icon_image %></td>
+    <td><%= file_datum.title %></td>
+    <td><%= file_datum.subtitle %></td>
+    <td><%= file_datum.frame_size %></td>
+    <td><%= file_datum.duration %></td>
+    <td><%= file_datum.producer %></td>
+    <td><%= file_datum.produced_date %></td>
+    <td><%= file_datum.location %></td>
+    <td><%= file_datum.client %></td>
+    <td><%= file_datum.copyright %></td>
+    <td><%= file_datum.portrait_right %></td>
+    <td><%= file_datum.access_group %></td>
+    <td><%= file_datum.file_readable_status %></td>
+    <td><%= file_datum.file_writable_status %></td>
+    <td><%= file_datum.open_status %></td>
+    <td><%= file_datum.folder_hash_key %></td>
+    <td><%= file_datum.folder_readable_status %></td>
+    <td><%= file_datum.folder_writable_status %></td>
+    <td><%= file_datum.details %></td>
+    <td><%= link_to 'Show', file_datum %></td>
+    <td><%= link_to 'Edit', edit_file_datum_path(file_datum) %></td>
+    <td><%= link_to 'Destroy', file_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New File datum', new_file_datum_path %>

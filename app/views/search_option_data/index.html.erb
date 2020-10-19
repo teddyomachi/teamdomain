@@ -1,0 +1,29 @@
+<h1>Listing search_option_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Option name</th>
+    <th>Field name</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @search_option_data.each do |search_option_datum| %>
+  <tr>
+    <td><%= search_option_datum.session_id %></td>
+    <td><%= search_option_datum.option_name %></td>
+    <td><%= search_option_datum.field_name %></td>
+    <td><%= search_option_datum.value %></td>
+    <td><%= link_to 'Show', search_option_datum %></td>
+    <td><%= link_to 'Edit', edit_search_option_datum_path(search_option_datum) %></td>
+    <td><%= link_to 'Destroy', search_option_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Search option datum', new_search_option_datum_path %>

@@ -1,0 +1,13 @@
+.login-form {
+	//background-color: #f8dce0;
+	//background-image:url(data/login.png);
+	//background-image: url("../data/login.png")
+	background-image: url(data/login.png) ! important;
+}
+
+.initial-window {
+	//background-color: #f8dce0;
+	//background-image:url(data/login.png);
+	//background-image: url("../data/login.png")
+	background-image: url(data/login.png) ! important;
+}

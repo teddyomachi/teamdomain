@@ -1,0 +1,33 @@
+<%= form_for(@spin_group) do |f| %>
+  <% if @spin_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_group.errors.count, "error") %> prohibited this spin_group from being saved:</h2>
+
+      <ul>
+      <% @spin_group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spin_gid %><br />
+    <%= f.number_field :spin_gid %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_group_name %><br />
+    <%= f.text_field :spin_group_name %>
+  </div>
+  <div class="field">
+    <%= f.label :group_descr %><br />
+    <%= f.text_area :group_descr %>
+  </div>
+  <div class="field">
+    <%= f.label :group_atrtributes %><br />
+    <%= f.text_area :group_atrtributes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

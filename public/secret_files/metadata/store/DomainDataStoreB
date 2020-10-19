@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "DomainData",
+        "storeId": "DomainDataStoreB",
+        "designer|userClassName": "DomainDataStoreB"
+    },
+    "designerId": "7888fa24-5d03-4429-b0b7-2c8fcc836bae",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/domainsB.sfl"
+            },
+            "designerId": "8c776e01-cc99-4cd9-986e-3c187e4c0232",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "domains"
+                    },
+                    "designerId": "ae7d08b0-f10c-4e51-bde3-2fd3a35adc92"
+                }
+            ]
+        }
+    ]
+}

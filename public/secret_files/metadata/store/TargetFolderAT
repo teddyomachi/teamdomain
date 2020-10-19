@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "TargetFolderData",
+        "storeId": "TargetFolderAT",
+        "designer|userClassName": "TargetFolderAT",
+        "nodeParam": null
+    },
+    "designerId": "6bdee07c-915e-4f9d-8857-89fafa4d6f6a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/foldersAT.sfl"
+            },
+            "designerId": "29ac1520-28d6-4613-a57a-ee18d9e83ee1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "d599ef7e-0899-4a1c-839d-74c219bf9d32"
+                }
+            ]
+        }
+    ]
+}

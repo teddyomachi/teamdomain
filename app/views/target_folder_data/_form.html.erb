@@ -1,0 +1,61 @@
+<%= form_for(@target_folder_datum) do |f| %>
+  <% if @target_folder_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@target_folder_datum.errors.count, "error") %> prohibited this target_folder_datum from being saved:</h2>
+
+      <ul>
+      <% @target_folder_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target_hash_key %><br />
+    <%= f.text_field :target_hash_key %>
+  </div>
+  <div class="field">
+    <%= f.label :target_cont_location %><br />
+    <%= f.text_field :target_cont_location %>
+  </div>
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="field">
+    <%= f.label :target_folder %><br />
+    <%= f.text_field :target_folder %>
+  </div>
+  <div class="field">
+    <%= f.label :target_folder_writable_status %><br />
+    <%= f.text_field :target_folder_writable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :target_folder_readable_status %><br />
+    <%= f.text_field :target_folder_readable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :target_ownership %><br />
+    <%= f.text_field :target_ownership %>
+  </div>
+  <div class="field">
+    <%= f.label :target_parent_readable_status %><br />
+    <%= f.text_field :target_parent_readable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :target_parent_writable_status %><br />
+    <%= f.text_field :target_parent_writable_status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

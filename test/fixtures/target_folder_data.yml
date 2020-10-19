@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  session_id: MyString
+  target_hash_key: MyString
+  target_cont_location: MyString
+  id: 1.5
+  text: MyString
+  target_folder: MyString
+  target_folder_writable_status: MyString
+  target_folder_readable_status: MyString
+  target_ownership: MyString
+  target_parent_readable_status: MyString
+  target_parent_writable_status: MyString
+
+two:
+  session_id: MyString
+  target_hash_key: MyString
+  target_cont_location: MyString
+  id: 1.5
+  text: MyString
+  target_folder: MyString
+  target_folder_writable_status: MyString
+  target_folder_readable_status: MyString
+  target_ownership: MyString
+  target_parent_readable_status: MyString
+  target_parent_writable_status: MyString

@@ -1,0 +1,85 @@
+<%= form_for(@search_condition_datum) do |f| %>
+  <% if @search_condition_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_condition_datum.errors.count, "error") %> prohibited this search_condition_datum from being saved:</h2>
+
+      <ul>
+      <% @search_condition_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :session_id %><br />
+    <%= f.text_field :session_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target_folder %><br />
+    <%= f.text_field :target_folder %>
+  </div>
+  <div class="field">
+    <%= f.label :target_file_name %><br />
+    <%= f.text_field :target_file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :target_file_size_min %><br />
+    <%= f.number_field :target_file_size_min %>
+  </div>
+  <div class="field">
+    <%= f.label :target_file_size_max %><br />
+    <%= f.number_field :target_file_size_max %>
+  </div>
+  <div class="field">
+    <%= f.label :target_creator %><br />
+    <%= f.text_field :target_creator %>
+  </div>
+  <div class="field">
+    <%= f.label :target_created_by_me %><br />
+    <%= f.check_box :target_created_by_me %>
+  </div>
+  <div class="field">
+    <%= f.label :target_created_date_begin %><br />
+    <%= f.date_select :target_created_date_begin %>
+  </div>
+  <div class="field">
+    <%= f.label :target_created_date_end %><br />
+    <%= f.date_select :target_created_date_end %>
+  </div>
+  <div class="field">
+    <%= f.label :target_modifier %><br />
+    <%= f.text_field :target_modifier %>
+  </div>
+  <div class="field">
+    <%= f.label :target_modified_by_me %><br />
+    <%= f.check_box :target_modified_by_me %>
+  </div>
+  <div class="field">
+    <%= f.label :target_modified_date_begin %><br />
+    <%= f.date_select :target_modified_date_begin %>
+  </div>
+  <div class="field">
+    <%= f.label :target_modified_date_end %><br />
+    <%= f.date_select :target_modified_date_end %>
+  </div>
+  <div class="field">
+    <%= f.label :target_subfolder %><br />
+    <%= f.check_box :target_subfolder %>
+  </div>
+  <div class="field">
+    <%= f.label :target_locked_by_me %><br />
+    <%= f.check_box :target_locked_by_me %>
+  </div>
+  <div class="field">
+    <%= f.label :target_checked_out_by_me %><br />
+    <%= f.check_box :target_checked_out_by_me %>
+  </div>
+  <div class="field">
+    <%= f.label :target_max_display_files %><br />
+    <%= f.number_field :target_max_display_files %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

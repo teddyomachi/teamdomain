@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_uid: 1
+  spin_gid: 1
+
+two:
+  spin_uid: 1
+  spin_gid: 1

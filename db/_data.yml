@@ -1,0 +1,3531 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2018-08-16 08:42:47.894793'
+    - '2018-11-21 09:36:29.934541'
+
+---
+spin_access_controls:
+  columns:
+  - id
+  - spin_node_hashkey
+  - spin_uid_access_right
+  - spin_gid_access_right
+  - spin_world_access_right
+  - created_at
+  - updated_at
+  - managed_node_hashkey
+  - spin_node_type
+  - spin_uid
+  - spin_gid
+  - spin_domain_flag
+  - user_level_x
+  - user_level_y
+  - is_void
+  - px
+  - py
+  - ppx
+  - notify_upload
+  - notify_modify
+  - notify_delete
+  - root_node_hashkey
+  - lock_version
+  records: 
+  - - 3
+    - 47d3ad3e0cd2ed5d8470e215305c4005ba80890e
+    - 0
+    - 7
+    - 0
+    - '2018-11-19 07:20:11.942964'
+    - '2018-11-19 07:20:11.942979'
+    - d697ab76b60ca45e24c5e4beac64cc29fa5925c2
+    - 32768
+    - -1
+    - 0
+    - 0
+    - -1
+    - -1
+    - false
+    - 11
+    - 5
+    - 2
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+  - - 8
+    - c36c1879a149517cc627308bd71f3af2dd64b61f
+    - 0
+    - 7
+    - 0
+    - '2018-11-21 09:42:24.726207'
+    - '2018-11-21 09:42:24.72622'
+    - 9b55939498c9812c5e924ffef75bd83d3f27a76b
+    - 32768
+    - -1
+    - 0
+    - 0
+    - -1
+    - -1
+    - false
+    - 3
+    - 4
+    - 1
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+  - - 9
+    - e744cd1a48fea7ec72b20994f5745563417aef69
+    - 15
+    - 7
+    - 0
+    - '2018-11-21 09:43:22.269585'
+    - '2018-11-21 09:43:22.269603'
+    - cabb635adcfd0883058bd34408c8f4100be11b03
+    - 1
+    - 0
+    - 0
+    - 0
+    - -1
+    - -1
+    - false
+    - 16
+    - 5
+    - 3
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+  - - 10
+    - d80a6851c3a723196f104c4f716d6defcc4a1372
+    - 0
+    - 7
+    - 0
+    - '2018-11-21 09:44:19.384443'
+    - '2018-11-21 09:44:19.384661'
+    - cabb635adcfd0883058bd34408c8f4100be11b03
+    - 1
+    - -1
+    - 1017
+    - 0
+    - -1
+    - -1
+    - false
+    - 16
+    - 5
+    - 3
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+
+---
+spin_domains:
+  columns:
+  - id
+  - spin_did
+  - spin_domain_name
+  - spin_domain_root
+  - domain_descr
+  - created_at
+  - updated_at
+  - spin_domain_disp_name
+  - spin_server
+  - domain_root_node_hashkey
+  - hash_key
+  - cont_location
+  - domain_writable_status
+  - domain_link
+  - img
+  - spin_uid
+  - spin_gid
+  - spin_uid_access_right
+  - spin_gid_access_right
+  - spin_world_access_right
+  - spin_updated_at
+  - lock_version
+  - domain_attributes
+  records: 
+  - - 1
+    - 0
+    - root
+    - "/"
+    - virtual root domain
+    - '2018-08-16 08:42:48.64684'
+    - '2018-08-16 08:42:48.661236'
+    - root domain
+    - 127.0.0.1
+    - e562f69ec36e625116376f376d991e41613e9bf3
+    - 519c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - t
+    - file_type_icon/Drawer.png
+    - file_type_icon/Drawer.png
+    - 0
+    - 0
+    - 15
+    - 0
+    - 0
+    - '2018-08-16 08:42:48.660627'
+    - 1
+    - "{}"
+  - - 2
+    - 1
+    - client work area for YORKS
+    - "/spin/clients/YORKS/personel"
+    - YORKS user domain
+    - '2018-08-16 08:42:48.64684'
+    - '2018-10-09 01:40:32.318009'
+    - Work area
+    - 127.0.0.1
+    - b789e8b4f2001a6e7f4a2a56bda26921f46e1c35
+    - f19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - t
+    - file_type_icon/Drawer.png
+    - file_type_icon/Drawer.png
+    - 1000
+    - 1000
+    - 15
+    - 7
+    - 1
+    - '2018-10-09 01:40:32.317247'
+    - 4
+    - "{}"
+  - - 3
+    - 2
+    - client work area for CAMUS
+    - "/spin/clients/CAMUS/personel"
+    - CAMUS user domain
+    - '2018-08-16 08:42:48.64684'
+    - '2018-08-21 09:54:49.913639'
+    - " CASSETTE MUSIUM"
+    - 127.0.0.1
+    - 1c64a3eb2b51a3218d489ee3d71b32d34ba983d3
+    - a19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - t
+    - file_type_icon/Drawer.png
+    - file_type_icon/Drawer.png
+    - 500
+    - 500
+    - 15
+    - 7
+    - 0
+    - '2018-08-21 09:54:49.912946'
+    - 5
+    - "{}"
+  - - 4
+    - 3
+    - new
+    - "/spin/clients/MAKEWAVE/shared/new"
+    - ''
+    - '2018-11-19 07:20:11.900219'
+    - '2018-11-21 06:12:23.072491'
+    - new
+    - localhost
+    - d697ab76b60ca45e24c5e4beac64cc29fa5925c2
+    - d7fd38b5498a8c7ab9160090a92ec21e200a85e3
+    - folder_a
+    - t
+    - file_type_icon/Drawer.png
+    - file_type_icon/Drawer.png
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - '2018-11-21 06:12:23.072084'
+    - 4
+    - ''
+  - - 5
+    - 4
+    - organization
+    - "/spin/clients/MAKEWAVE/organization"
+    - ''
+    - '2018-11-21 09:42:24.709385'
+    - '2018-11-21 09:44:19.420029'
+    - organization
+    - localhost
+    - 9b55939498c9812c5e924ffef75bd83d3f27a76b
+    - c94f7a17487e183e8bce26a7ab2e48bc4025daa7
+    - folder_a
+    - t
+    - file_type_icon/Drawer.png
+    - file_type_icon/Drawer.png
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - '2018-11-21 09:44:19.419329'
+    - 2
+    - ''
+
+---
+spin_file_servers:
+  columns:
+  - id
+  - server_name
+  - server_host_name
+  - server_protocol
+  - server_alt_protocols
+  - server_port
+  - root_user
+  - root_password
+  - created_at
+  - updated_at
+  - api_path
+  - max_connections
+  - max_pg_connections
+  - receive_timeout
+  - send_timeout
+  - session_timeout
+  - spin_url_server_name
+  records: 
+  - - 1
+    - 127.0.0.1:18880
+    - 127.0.0.1
+    - http
+    - ''
+    - 18880
+    - root
+    - One4AllAll4One
+    - '2018-08-16 08:42:48.334594'
+    - '2018-08-16 08:42:48.334594'
+    - "/filemanager/spin_api_request"
+    - 
+    - -1
+    - 3600
+    - 3600
+    - -1
+    - http://192.168.100.8
+  - - 2
+    - 127.0.0.1:18881
+    - 127.0.0.1
+    - http
+    - ''
+    - 18881
+    - root
+    - One4AllAll4One
+    - '2018-08-16 08:42:48.352666'
+    - '2018-08-16 08:42:48.352666'
+    - "/filemanager/spin_api_request"
+    - 
+    - -1
+    - 3600
+    - 3600
+    - -1
+    - http://192.168.100.8:3000
+
+---
+spin_group_members:
+  columns:
+  - id
+  - spin_uid
+  - spin_gid
+  - created_at
+  - updated_at
+  - id_type
+  - lock_version
+  records: 
+  - - 1
+    - 0
+    - 0
+    - '2018-08-16 09:07:11.745649'
+    - '2018-08-16 09:07:11.745649'
+    - 256
+    - 0
+  - - 2
+    - 1000
+    - 1001
+    - '2018-08-16 09:07:11.745649'
+    - '2018-08-16 09:07:11.745649'
+    - 256
+    - 0
+  - - 3
+    - 1001
+    - 0
+    - '2018-08-16 09:07:11.745649'
+    - '2018-08-16 09:07:11.745649'
+    - 256
+    - 0
+  - - 4
+    - 1001
+    - 1009
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 256
+    - 0
+  - - 5
+    - 501
+    - 500
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 256
+    - 0
+  - - 6
+    - 502
+    - 500
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 256
+    - 0
+  - - 7
+    - 503
+    - 500
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 256
+    - 0
+  - - 8
+    - 504
+    - 500
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 256
+    - 0
+  - - 9
+    - 505
+    - 500
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 256
+    - 0
+  - - 10
+    - 501
+    - 501
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 2
+    - 0
+  - - 11
+    - 502
+    - 502
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 2
+    - 0
+  - - 12
+    - 503
+    - 503
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 2
+    - 0
+  - - 13
+    - 504
+    - 504
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 2
+    - 0
+  - - 14
+    - 505
+    - 505
+    - '2018-08-17 03:44:36.178364'
+    - '2018-08-17 03:44:36.178364'
+    - 2
+    - 0
+  - - 15
+    - 1007
+    - 1014
+    - '2018-10-02 12:29:21.784626'
+    - '2018-10-02 12:29:21.784626'
+    - 256
+    - 0
+  - - 16
+    - 1008
+    - 1015
+    - '2018-10-02 13:41:39.36322'
+    - '2018-10-02 13:41:39.36322'
+    - 256
+    - 0
+  - - 17
+    - 1009
+    - 1016
+    - '2018-10-02 14:05:10.87435'
+    - '2018-10-02 14:05:10.87435'
+    - 256
+    - 0
+  - - 18
+    - 1010
+    - 1017
+    - '2018-10-09 01:40:32.125843'
+    - '2018-10-09 01:40:32.125843'
+    - 256
+    - 0
+  - - 19
+    - 1001
+    - 1018
+    - '2018-11-19 05:20:28.922009'
+    - '2018-11-19 05:20:28.922009'
+    - 1
+    - 0
+
+---
+spin_groups:
+  columns:
+  - id
+  - spin_gid
+  - spin_group_name
+  - group_descr
+  - group_atrtributes
+  - created_at
+  - updated_at
+  - owner_id
+  - id_type
+  - lock_version
+  records: 
+  - - 2
+    - 1000
+    - yorksadmin
+    - ヨークス管理者グループ
+    - 
+    - '2018-08-16 08:57:14.537462'
+    - '2018-08-16 08:57:14.537462'
+    - 1000
+    - 2
+    - 0
+  - - 3
+    - 1001
+    - yorksadmin
+    - ヨークス管理者グループ
+    - 
+    - '2018-08-16 09:07:11.594928'
+    - '2018-08-16 09:07:11.594928'
+    - 1000
+    - 2
+    - 0
+  - - 5
+    - 1002
+    - 社長室
+    - ''
+    - 
+    - '2018-08-16 23:32:36.807605'
+    - '2018-08-16 23:32:36.807605'
+    - 1000
+    - 1
+    - 0
+  - - 6
+    - 1003
+    - 総務部
+    - ''
+    - 
+    - '2018-08-16 23:32:49.977119'
+    - '2018-08-16 23:32:49.977119'
+    - 1000
+    - 1
+    - 0
+  - - 7
+    - 1004
+    - MD・営業
+    - ''
+    - 
+    - '2018-08-17 03:39:57.04768'
+    - '2018-08-17 03:39:57.04768'
+    - 1000
+    - 1
+    - 0
+  - - 8
+    - 1005
+    - 製造・生産
+    - ''
+    - 
+    - '2018-08-17 03:40:13.839947'
+    - '2018-08-17 03:40:13.839947'
+    - 1000
+    - 1
+    - 0
+  - - 9
+    - 1006
+    - 物流
+    - ''
+    - 
+    - '2018-08-17 03:40:24.551088'
+    - '2018-08-17 03:40:24.551088'
+    - 1000
+    - 1
+    - 0
+  - - 10
+    - 1007
+    - 肌着
+    - ''
+    - 
+    - '2018-08-17 03:40:32.194685'
+    - '2018-08-17 03:40:32.194685'
+    - 1000
+    - 1
+    - 0
+  - - 11
+    - 1008
+    - 全社
+    - ''
+    - 
+    - '2018-08-17 03:40:43.156573'
+    - '2018-08-17 03:40:43.156573'
+    - 1000
+    - 1
+    - 0
+  - - 12
+    - 1009
+    - 社長室
+    - ''
+    - 
+    - '2018-08-17 03:44:36.164538'
+    - '2018-08-17 03:44:36.164538'
+    - 1001
+    - 2
+    - 0
+  - - 13
+    - 500
+    - CAMUS
+    - CASSETTE MUSIUM GROUP
+    - 
+    - '2018-08-17 03:44:36.164538'
+    - '2018-08-17 03:44:36.164538'
+    - 500
+    - 1
+    - 0
+  - - 14
+    - 1010
+    - 物流部
+    - ''
+    - 
+    - '2018-09-21 01:06:06.0018'
+    - '2018-09-21 01:06:06.0018'
+    - 1003
+    - 2
+    - 0
+  - - 17
+    - 1013
+    - 物流部
+    - ''
+    - 
+    - '2018-09-21 10:23:07.937409'
+    - '2018-09-21 10:23:07.937409'
+    - 1006
+    - 2
+    - 0
+  - - 24
+    - 1014
+    - YORKS
+    - works group
+    - 
+    - '2018-10-02 12:29:21.746327'
+    - '2018-10-02 12:29:21.746327'
+    - 1007
+    - 2
+    - 0
+  - - 25
+    - 1015
+    - YU
+    - YU-group
+    - 
+    - '2018-10-02 13:41:39.349504'
+    - '2018-10-02 13:41:39.349504'
+    - 1008
+    - 2
+    - 0
+  - - 26
+    - 1016
+    - t11
+    - t11-g
+    - 
+    - '2018-10-02 14:05:10.861706'
+    - '2018-10-02 14:05:10.861706'
+    - 1009
+    - 2
+    - 0
+  - - 27
+    - 1017
+    - teddy-y-g
+    - ''
+    - 
+    - '2018-10-09 01:40:32.111716'
+    - '2018-10-09 01:40:32.111716'
+    - 1010
+    - 2
+    - 0
+  - - 28
+    - 1018
+    - 管理部グループ
+    - ''
+    - 
+    - '2018-11-19 04:47:45.646787'
+    - '2018-11-19 04:47:45.646787'
+    - 0
+    - 1
+    - 0
+
+---
+spin_nodes:
+  columns:
+  - id
+  - spin_node_hashkey
+  - node_x_coord
+  - node_y_coord
+  - node_x_pr_coord
+  - node_type
+  - node_version
+  - node_name
+  - in_trash_flag
+  - is_dirty_flag
+  - is_under_maintenance_flag
+  - in_use_uid
+  - created_at
+  - updated_at
+  - spin_uid
+  - spin_gid
+  - spin_uid_access_right
+  - spin_gid_access_right
+  - spin_world_access_right
+  - created_by
+  - updated_by
+  - spin_private_key
+  - spin_public_key
+  - rsa_key
+  - max_versions
+  - node_attributes
+  - latest
+  - lock_uid
+  - is_open_flag
+  - spin_url
+  - is_pending
+  - spin_vfs_id
+  - spin_storage_id
+  - node_size
+  - node_size_upper
+  - node_content_type
+  - user_level_x
+  - user_level_y
+  - trashed_at
+  - is_void
+  - is_expanded
+  - is_domain_root_node
+  - spin_updated_at
+  - lock_status
+  - mtime
+  - ctime
+  - lock_mode
+  - details
+  - is_sticky
+  - changed_by
+  - node_description
+  - spin_created_at
+  - virtual_path
+  - orphan
+  - modifier
+  - creator
+  - spin_tree_type
+  - spin_node_tree
+  - notified_at
+  - notify_type
+  - notified_new_at
+  - notified_modification_at
+  - notified_delete_at
+  - memo1
+  - memo2
+  - memo3
+  - memo4
+  - memo5
+  - is_synchronized
+  - is_archive
+  - key_virtual_path
+  - is_paused
+  - lock_version
+  - local_node_size
+  - local_node_size_upper
+  records: 
+  - - 1
+    - e562f69ec36e625116376f376d991e41613e9bf3
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - "/"
+    - false
+    - false
+    - false
+    - -1
+    - '2018-08-16 08:42:48.520745'
+    - '2018-08-16 08:42:48.554801'
+    - 0
+    - 0
+    - 15
+    - 0
+    - 0
+    - -1
+    - -1
+    - |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEpAIBAAKCAQEAvuhIb4v0iPEjNIuz4up/awweqoLCz1i3l5xJh7YDi/5uwso7
+      4lr+DVefqWAj8gVcf6m7Sk7qMGYEguzbDUXUmaxUpLC/Hb6dBMar7vT/MTRvqDv0
+      GDJGrIFwB+PP6gHQh5MeXmt+f8Aaq226gvVCQVf7DJmomFFgm0pVTYd4NQW8Vu8G
+      ebKrs31MuPZN+LiJi0/j5pjwwvbNIQ9u0sC9f+CDAett6zYbnVs2P3MtcjhRzhhD
+      /3K+nj8YkPFJrPbuKODFb1eMcFy+wet8zXnNoKxf5qhJ4OgV5KK5+DGf5Mi6MLCY
+      8Qv6mV+MwNG99SKE6bjysdVzu/BEUzuRT+saUQIDAQABAoIBAD88GaI5LYqetRaW
+      n8MuAX6nyRCZt4WO0WE6t3BobcxVPsLu0d8sXLJ2r8AexElKVVVEF3GJqjDV2fC0
+      G+rNkppEZtUWZnenx8LpO9Iu/MiDoeiL01KgdKB3T3CNmTTd3QDLTmfgG0qdizf1
+      ZK40JvoV9mY6D4pEikdl29OOZ9bHuCoTt2+kvNDmYVOOjfGU8hoAIVbqmBh2bvgl
+      /IHAAg1/SE6gIsQCciH2WYBa2qoNcfN6R/HT55kmrA37aCJxJT/rjOdW8AHv140y
+      rUdrIUS6of+mxTysMdhU+9+Hv9zxKm/kYTtbGjTOdQAQB0sh7ebsWoFWfGSTIAUM
+      AzJe/7ECgYEA+AlT5+2BZs1RgH01XTVRWFAEBxZe2afNjPOMxmyRoJQRpLeW9WOZ
+      1bHj9KntayF4lEqMDNP9FN3xxJchbksjkr7GcGXB2PSSOSr9+JM+AotwV2eTibko
+      bXRrd/deYwK6SF0gkAaQHOMuSQJ/93KgHQQLGojb3E7hKSSaAa1eGpcCgYEAxQll
+      tAq0Wnv/Vf+olQ9o2Ng1sx/+qm8Yv1JjI7VtGUVrFEd+lB+VOCQQ5nbDMB6+8DZf
+      UKQgUBzff5oPX0CB5Ty24oScK9rkBiq8tkB0lGmsON4TUzIP9h+pIKWZjd5RV1nH
+      lvPd9ucB1f4hYpAsuui3+CtqjAWF7J8umePnl1cCgYEAhYb3/aZ1gDNOCf7dyJTY
+      etNwp6QaYdAdLyE6CuQNrcWojeUrxmTdPxZqIp+MKZ02PZa4OHuzBhXJfszheW/H
+      8cr0JzQQnExln5MOcFBMFLCeRN+EpKLiKbJ/3HB2BpVEVYqU6hQuZu7CTxmibELw
+      AU7Y72r3+W0Zd721juuW+ncCgYEAjdcn+aXDE2gz9WqnpzaCmad7cMlVgMedHw1m
+      BOyz7v9ECEM3YdYii1mbOOzBskBP34iksN6VzFYcpjT3X/CGEcnVNdeUvRVEFRRq
+      6SAZTEWODxn++2MMjndYPwI3OiOSlrkwrwA7B2Rgs/XPfq6fJKYm2WYXu1i2ghJN
+      b8bajt0CgYB573TzoC3zdK33gYPX8UMrdWk1O5moTmRXoX/nHLUGeJahL/cY5bKv
+      B74Sqv8ib52+qTFeLtkw+lyzLYmOGSQ37I0fhhmZ9/nhyejaqmRgZhb7uODYNmog
+      Y0xplrEtK77C3ezKX5/2DKshuzNck31xvrW8H28r/m9dVDoJE5imhw==
+      -----END RSA PRIVATE KEY-----
+    - |
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvuhIb4v0iPEjNIuz4up/
+      awweqoLCz1i3l5xJh7YDi/5uwso74lr+DVefqWAj8gVcf6m7Sk7qMGYEguzbDUXU
+      maxUpLC/Hb6dBMar7vT/MTRvqDv0GDJGrIFwB+PP6gHQh5MeXmt+f8Aaq226gvVC
+      QVf7DJmomFFgm0pVTYd4NQW8Vu8GebKrs31MuPZN+LiJi0/j5pjwwvbNIQ9u0sC9
+      f+CDAett6zYbnVs2P3MtcjhRzhhD/3K+nj8YkPFJrPbuKODFb1eMcFy+wet8zXnN
+      oKxf5qhJ4OgV5KK5+DGf5Mi6MLCY8Qv6mV+MwNG99SKE6bjysdVzu/BEUzuRT+sa
+      UQIDAQAB
+      -----END PUBLIC KEY-----
+    - |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEowIBAAKCAQEAyh357RDK4/Zj9J8S+AQW0Xp++sr2FCbnANZ8TIDJfoE7AmRv
+      mKG4ZgSj9DF106xop1vmTNgGEg8+7guxxLsf0jPGKJKyGJg6+i065+eWVoS8YY7b
+      qihqSUFdUygoAlUWlYjrG1UrCLlzryN5WuK8/aYwGN0tH0A+bI8/vzJPYtPOFVtx
+      nktE2KguxTBb7dY2alTJQZh2K+9qgUZyVN88sOpHMnUEoypmut5wR9F1hYPfql2Z
+      FwWYEi04v7mTx7Wel7SwfpjHiL2mn7t/XuLn4TL1WDFE7Pl8WMDyQ5DjQO19K0bU
+      /eMbC6s8uWrbUGEwAsibHWCnmtkn9keYa1WykwIDAQABAoIBAQCtlXMZG+v0Pp73
+      70qeQPzL6dV2VKtlAUgx2wOjvJPQlvJ0CoghYPr6ew/IYFYedhrnaTDwXDNSfU+B
+      p/+Dw2X/5MFSBTL5lnxIcmH921KteZBEhSm5CL7HrWCWU42Q+zzLLm0k609rTcLB
+      7siBuuuvOHRkVkgzZ7x1Bc4syeuOJmxmEwI127h5eFIuovyJtNLS6n1HxtY18LlH
+      KIGplG9xSsWt5nZxXA3y83q/6yz5bHeHP+Kzz9KTIVGg+I0tm9zA7o6G78mbbOJb
+      9DPsblY8ORybLElyfvAUibAML7OyPcSgjRU05zk2QPJhaFZC/xwUfi8e5ggCFNbO
+      FDihR5mhAoGBAPM8EPh9/xRudNf9UUUzX2yJxXzy8JfKD6zUFCz2XvjTyyU7CTxn
+      Uc5ARcUqXNLmbDTSg2O8WHq7EKsgMbyKBO1XK9TXK/BD/0YfcR7tJ/d0sZn22HJJ
+      EjR4dkLPoXRzlZKjHbMbleo5TJN1VMqNmqGNNIhxEEbMM45jP6976ERjAoGBANS5
+      e6EydrkfJU8iobH+k9KIo9r8UVL0rd0NFrkMu0m8oLH1HB877iOxUb+ZRO3GR0dr
+      RiAtxMcOGArb2DVOy82UaHViN5LQ4OY+e8M1EZE2TnCRxLkxj/zPJCd6YHVIn1of
+      XEm48lRE1exfzgEG3cHFL47EnWBdkp//M9on1rgRAoGBAOJ5Uh/dSQ1gD2Ewl2RE
+      ghwQZ5aAqW3bkR7N1P9MYn9yzFqdDmt0lCHjjFMZr5YbQDMqs3XA3+1ekhWUA1tW
+      c2H94Wzq8BllZqGHEw/Fp4nr2JXP1hcLXG0IoKxyoRVJrcH8KOIk1EBjG57NB6cV
+      lB3J2VkVVR9mcLaqSJj/WPObAn8uiGSC3ocZ97YxmWHFjerIIxu0y3z+qIdf030k
+      /aP6fUippPSB4Jo3NJKtVtm9KaJt/QlaAKkK4gpgVbb18kaisdQn2VROyWJo+0IX
+      cYRmP3rpJPnjiPP2WVmPSTXQchJppHKLrelUhbpF+q8Vimr3+CpvEJNcgRuR5EFz
+      d0OBAoGBANXVpkJTiIOZR1gzrP1OpODc7WVuU7RxcbICz9zdhzZKeBR+KDeqxtmf
+      9SOIzfro4LeCScuP+i/P0nq0maU70U5moZ2LjUgUXwYkNqxYpNg8k+4FaGGUHIjG
+      3hp6TI0ntYPrz8tl4n4Hm56RePNN/gOho5JHyjOfcwXoV9DDogFu
+      -----END RSA PRIVATE KEY-----
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - ''
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 78aa1a92a4649278124a472a6dcb171610c145ed
+    - 
+    - 0
+    - 
+    - -1
+    - -1
+    - '2000-12-31 15:00:00'
+    - false
+    - false
+    - true
+    - '2018-08-16 08:42:48.553521'
+    - 0
+    - '2018-08-16 08:42:48.553538'
+    - '2018-08-16 08:42:48.553548'
+    - 0
+    - ''
+    - false
+    - -1
+    - 
+    - '2018-08-16 08:42:48.553575'
+    - "/"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 1
+    - -1
+    - -1
+  - - 2
+    - 6b9fdefcd73a7854d06f98d4c930ad2b32946543
+    - 0
+    - 1
+    - 0
+    - 1
+    - 0
+    - "/spin"
+    - false
+    - false
+    - false
+    - -1
+    - '2018-08-16 08:42:48.569882'
+    - '2018-08-16 08:53:23.882779'
+    - 0
+    - 0
+    - 15
+    - 0
+    - 0
+    - -1
+    - -1
+    - |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEpAIBAAKCAQEAvuhIb4v0iPEjNIuz4up/awweqoLCz1i3l5xJh7YDi/5uwso7
+      4lr+DVefqWAj8gVcf6m7Sk7qMGYEguzbDUXUmaxUpLC/Hb6dBMar7vT/MTRvqDv0
+      GDJGrIFwB+PP6gHQh5MeXmt+f8Aaq226gvVCQVf7DJmomFFgm0pVTYd4NQW8Vu8G
+      ebKrs31MuPZN+LiJi0/j5pjwwvbNIQ9u0sC9f+CDAett6zYbnVs2P3MtcjhRzhhD
+      /3K+nj8YkPFJrPbuKODFb1eMcFy+wet8zXnNoKxf5qhJ4OgV5KK5+DGf5Mi6MLCY
+      8Qv6mV+MwNG99SKE6bjysdVzu/BEUzuRT+saUQIDAQABAoIBAD88GaI5LYqetRaW
+      n8MuAX6nyRCZt4WO0WE6t3BobcxVPsLu0d8sXLJ2r8AexElKVVVEF3GJqjDV2fC0
+      G+rNkppEZtUWZnenx8LpO9Iu/MiDoeiL01KgdKB3T3CNmTTd3QDLTmfgG0qdizf1
+      ZK40JvoV9mY6D4pEikdl29OOZ9bHuCoTt2+kvNDmYVOOjfGU8hoAIVbqmBh2bvgl
+      /IHAAg1/SE6gIsQCciH2WYBa2qoNcfN6R/HT55kmrA37aCJxJT/rjOdW8AHv140y
+      rUdrIUS6of+mxTysMdhU+9+Hv9zxKm/kYTtbGjTOdQAQB0sh7ebsWoFWfGSTIAUM
+      AzJe/7ECgYEA+AlT5+2BZs1RgH01XTVRWFAEBxZe2afNjPOMxmyRoJQRpLeW9WOZ
+      1bHj9KntayF4lEqMDNP9FN3xxJchbksjkr7GcGXB2PSSOSr9+JM+AotwV2eTibko
+      bXRrd/deYwK6SF0gkAaQHOMuSQJ/93KgHQQLGojb3E7hKSSaAa1eGpcCgYEAxQll
+      tAq0Wnv/Vf+olQ9o2Ng1sx/+qm8Yv1JjI7VtGUVrFEd+lB+VOCQQ5nbDMB6+8DZf
+      UKQgUBzff5oPX0CB5Ty24oScK9rkBiq8tkB0lGmsON4TUzIP9h+pIKWZjd5RV1nH
+      lvPd9ucB1f4hYpAsuui3+CtqjAWF7J8umePnl1cCgYEAhYb3/aZ1gDNOCf7dyJTY
+      etNwp6QaYdAdLyE6CuQNrcWojeUrxmTdPxZqIp+MKZ02PZa4OHuzBhXJfszheW/H
+      8cr0JzQQnExln5MOcFBMFLCeRN+EpKLiKbJ/3HB2BpVEVYqU6hQuZu7CTxmibELw
+      AU7Y72r3+W0Zd721juuW+ncCgYEAjdcn+aXDE2gz9WqnpzaCmad7cMlVgMedHw1m
+      BOyz7v9ECEM3YdYii1mbOOzBskBP34iksN6VzFYcpjT3X/CGEcnVNdeUvRVEFRRq
+      6SAZTEWODxn++2MMjndYPwI3OiOSlrkwrwA7B2Rgs/XPfq6fJKYm2WYXu1i2ghJN
+      b8bajt0CgYB573TzoC3zdK33gYPX8UMrdWk1O5moTmRXoX/nHLUGeJahL/cY5bKv
+      B74Sqv8ib52+qTFeLtkw+lyzLYmOGSQ37I0fhhmZ9/nhyejaqmRgZhb7uODYNmog
+      Y0xplrEtK77C3ezKX5/2DKshuzNck31xvrW8H28r/m9dVDoJE5imhw==
+      -----END RSA PRIVATE KEY-----
+    - |
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvuhIb4v0iPEjNIuz4up/
+      awweqoLCz1i3l5xJh7YDi/5uwso74lr+DVefqWAj8gVcf6m7Sk7qMGYEguzbDUXU
+      maxUpLC/Hb6dBMar7vT/MTRvqDv0GDJGrIFwB+PP6gHQh5MeXmt+f8Aaq226gvVC
+      QVf7DJmomFFgm0pVTYd4NQW8Vu8GebKrs31MuPZN+LiJi0/j5pjwwvbNIQ9u0sC9
+      f+CDAett6zYbnVs2P3MtcjhRzhhD/3K+nj8YkPFJrPbuKODFb1eMcFy+wet8zXnN
+      oKxf5qhJ4OgV5KK5+DGf5Mi6MLCY8Qv6mV+MwNG99SKE6bjysdVzu/BEUzuRT+sa
+      UQIDAQAB
+      -----END PUBLIC KEY-----
+    - |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEowIBAAKCAQEAyh357RDK4/Zj9J8S+AQW0Xp++sr2FCbnANZ8TIDJfoE7AmRv
+      mKG4ZgSj9DF106xop1vmTNgGEg8+7guxxLsf0jPGKJKyGJg6+i065+eWVoS8YY7b
+      qihqSUFdUygoAlUWlYjrG1UrCLlzryN5WuK8/aYwGN0tH0A+bI8/vzJPYtPOFVtx
+      nktE2KguxTBb7dY2alTJQZh2K+9qgUZyVN88sOpHMnUEoypmut5wR9F1hYPfql2Z
+      FwWYEi04v7mTx7Wel7SwfpjHiL2mn7t/XuLn4TL1WDFE7Pl8WMDyQ5DjQO19K0bU
+      /eMbC6s8uWrbUGEwAsibHWCnmtkn9keYa1WykwIDAQABAoIBAQCtlXMZG+v0Pp73
+      70qeQPzL6dV2VKtlAUgx2wOjvJPQlvJ0CoghYPr6ew/IYFYedhrnaTDwXDNSfU+B
+      p/+Dw2X/5MFSBTL5lnxIcmH921KteZBEhSm5CL7HrWCWU42Q+zzLLm0k609rTcLB
+      7siBuuuvOHRkVkgzZ7x1Bc4syeuOJmxmEwI127h5eFIuovyJtNLS6n1HxtY18LlH
+      KIGplG9xSsWt5nZxXA3y83q/6yz5bHeHP+Kzz9KTIVGg+I0tm9zA7o6G78mbbOJb
+      9DPsblY8ORybLElyfvAUibAML7OyPcSgjRU05zk2QPJhaFZC/xwUfi8e5ggCFNbO
+      FDihR5mhAoGBAPM8EPh9/xRudNf9UUUzX2yJxXzy8JfKD6zUFCz2XvjTyyU7CTxn
+      Uc5ARcUqXNLmbDTSg2O8WHq7EKsgMbyKBO1XK9TXK/BD/0YfcR7tJ/d0sZn22HJJ
+      EjR4dkLPoXRzlZKjHbMbleo5TJN1VMqNmqGNNIhxEEbMM45jP6976ERjAoGBANS5
+      e6EydrkfJU8iobH+k9KIo9r8UVL0rd0NFrkMu0m8oLH1HB877iOxUb+ZRO3GR0dr
+      RiAtxMcOGArb2DVOy82UaHViN5LQ4OY+e8M1EZE2TnCRxLkxj/zPJCd6YHVIn1of
+      XEm48lRE1exfzgEG3cHFL47EnWBdkp//M9on1rgRAoGBAOJ5Uh/dSQ1gD2Ewl2RE
+      ghwQZ5aAqW3bkR7N1P9MYn9yzFqdDmt0lCHjjFMZr5YbQDMqs3XA3+1ekhWUA1tW
+      c2H94Wzq8BllZqGHEw/Fp4nr2JXP1hcLXG0IoKxyoRVJrcH8KOIk1EBjG57NB6cV
+      lB3J2VkVVR9mcLaqSJj/WPObAn8uiGSC3ocZ97YxmWHFjerIIxu0y3z+qIdf030k
+      /aP6fUippPSB4Jo3NJKtVtm9KaJt/QlaAKkK4gpgVbb18kaisdQn2VROyWJo+0IX
+      cYRmP3rpJPnjiPP2WVmPSTXQchJppHKLrelUhbpF+q8Vimr3+CpvEJNcgRuR5EFz
+      d0OBAoGBANXVpkJTiIOZR1gzrP1OpODc7WVuU7RxcbICz9zdhzZKeBR+KDeqxtmf
+      9SOIzfro4LeCScuP+i/P0nq0maU70U5moZ2LjUgUXwYkNqxYpNg8k+4FaGGUHIjG
+      3hp6TI0ntYPrz8tl4n4Hm56RePNN/gOho5JHyjOfcwXoV9DDogFu
+      -----END RSA PRIVATE KEY-----
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - ''
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 78aa1a92a4649278124a472a6dcb171610c145ed
+    - 
+    - 0
+    - 
+    - -1
+    - -1
+    - '2000-12-31 15:00:00'
+    - false
+    - false
+    - true
+    - '2018-08-16 08:53:23.882012'
+    - 0
+    - '2018-08-16 08:42:48.588806'
+    - '2018-08-16 08:53:23.882012'
+    - 0
+    - ''
+    - false
+    - 0
+    - 
+    - '2018-08-16 08:42:48.588843'
+    - "/spin"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 2
+    - -1
+    - -1
+  - - 3
+    - 912653ef3a76badc08a52ae56ceb1b3a1a54ffd3
+    - 0
+    - 2
+    - 0
+    - 1
+    - 1
+    - clients
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-16 08:53:23.864218'
+    - '2018-08-21 09:02:03.383906'
+    - 0
+    - 0
+    - 15
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-21 09:02:03.383459'
+    - 0
+    - '2018-08-16 08:53:23.864039'
+    - '2018-08-21 09:02:03.383459'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-16 08:53:23.864069'
+    - "/spin/clients"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 3
+    - -1
+    - -1
+  - - 4
+    - db1f9e85bf16f704ca1308c09c5b262fb39ae0ad
+    - 0
+    - 3
+    - 0
+    - 1
+    - 1
+    - YORKS
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-16 08:53:39.696394'
+    - '2018-08-16 08:53:52.033635'
+    - 1000
+    - 1000
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-16 08:53:52.032898'
+    - 0
+    - '2018-08-16 08:53:39.696102'
+    - '2018-08-16 08:53:52.032898'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-16 08:53:39.696152'
+    - "/spin/clients/YORKS"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 1
+    - -1
+    - -1
+  - - 5
+    - b789e8b4f2001a6e7f4a2a56bda26921f46e1c35
+    - 0
+    - 4
+    - 0
+    - 1
+    - 1
+    - personel
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-16 08:53:51.985109'
+    - '2018-10-09 01:40:32.304866'
+    - 1000
+    - 1000
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - true
+    - '2018-10-09 01:40:32.304074'
+    - 0
+    - '2018-08-16 08:53:51.984849'
+    - '2018-10-09 01:40:32.304074'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-16 08:53:51.984889'
+    - "/spin/clients/YORKS/personel"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 10
+    - -1
+    - -1
+  - - 6
+    - 4693592d199a2c539269f0aadbd66f538318b890
+    - 0
+    - 5
+    - 0
+    - 1
+    - 1
+    - yorksaadmin
+    - true
+    - false
+    - true
+    - 0
+    - '2018-08-16 08:57:14.668201'
+    - '2018-08-16 09:04:52.753414'
+    - 1000
+    - 1000
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-16 09:04:52.748825'
+    - 0
+    - '2018-08-16 08:57:14.668043'
+    - '2018-08-16 08:57:14.668064'
+    - 0
+    - 
+    - true
+    - 0
+    - ''
+    - '2018-08-16 08:57:14.668071'
+    - "/spin/clients/YORKS/personel/yorksaadmin"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 3
+    - -1
+    - -1
+  - - 7
+    - e03ca1dbcf756759f678bb0b3f9495b3a6d0f38f
+    - 1
+    - 5
+    - 0
+    - 1
+    - 1
+    - yorksadmin
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-16 09:07:11.816341'
+    - '2018-09-21 04:59:13.260201'
+    - 1000
+    - 1001
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-09-21 04:59:13.259508'
+    - 0
+    - '2018-08-16 09:07:11.816011'
+    - '2018-09-21 04:59:13.259508'
+    - 0
+    - 
+    - true
+    - 1000
+    - ''
+    - '2018-08-16 09:07:11.816061'
+    - "/spin/clients/YORKS/personel/yorksadmin"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 7
+    - -1
+    - -1
+  - - 9
+    - 132409c8895a90c6e0ace53026a148dd406222c0
+    - 2
+    - 5
+    - 0
+    - 1
+    - 1
+    - teddy
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-16 23:10:41.857327'
+    - '2018-08-16 23:11:25.271761'
+    - 1001
+    - 1002
+    - 15
+    - 7
+    - 0
+    - 1000
+    - 1000
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - true
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-16 23:10:41.857022'
+    - 0
+    - '2018-08-16 23:10:41.857002'
+    - '2018-08-16 23:10:41.857057'
+    - 0
+    - 
+    - true
+    - 1000
+    - ''
+    - '2018-08-16 23:10:41.857067'
+    - "/spin/clients/YORKS/personel/teddy"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 1
+    - -1
+    - -1
+  - - 10
+    - 91ec4d0fa3ff3c4b3fe56cb223eb5bc1aaee2886
+    - 3
+    - 5
+    - 0
+    - 1
+    - 1
+    - t-yoshida
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-17 03:44:36.242486'
+    - '2018-08-17 03:44:36.242486'
+    - 1001
+    - 1009
+    - 15
+    - 7
+    - 0
+    - 1000
+    - 1000
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-17 03:44:36.242237'
+    - 0
+    - '2018-08-17 03:44:36.242213'
+    - '2018-08-17 03:44:36.242251'
+    - 0
+    - 
+    - true
+    - 1000
+    - ''
+    - '2018-08-17 03:44:36.242264'
+    - "/spin/clients/YORKS/personel/t-yoshida"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 11
+    - 19b1a04b4d7f1c0d4a317d405dd2a53cdc6a320f
+    - 1
+    - 3
+    - 0
+    - 1
+    - 1
+    - MAKEWAVE
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-17 04:27:07.685688'
+    - '2018-08-17 04:27:44.115648'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-17 04:27:44.114843'
+    - 0
+    - '2018-08-17 04:27:07.685426'
+    - '2018-08-17 04:27:44.114843'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-17 04:27:07.685466'
+    - "/spin/clients/MAKEWAVE"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 3
+    - -1
+    - -1
+  - - 12
+    - 668881c2def799e201aa0bf762b6cad250832e76
+    - 1
+    - 4
+    - 1
+    - 1
+    - 1
+    - personel
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-17 04:27:21.042837'
+    - '2018-08-17 04:27:21.042837'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-17 04:27:21.042597'
+    - 0
+    - '2018-08-17 04:27:21.042578'
+    - '2018-08-17 04:27:21.042608'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-17 04:27:21.042617'
+    - "/spin/clients/MAKEWAVE/personel"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 13
+    - da1b3cf59802a60e3db551b0b327e2b30eca6e84
+    - 2
+    - 4
+    - 1
+    - 1
+    - 1
+    - shared
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-17 04:27:29.912622'
+    - '2018-09-10 10:56:06.155149'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-09-10 10:56:06.154409'
+    - 0
+    - '2018-08-17 04:27:29.912363'
+    - '2018-09-10 10:56:06.154409'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-17 04:27:29.912402'
+    - "/spin/clients/MAKEWAVE/shared"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 3
+    - -1
+    - -1
+  - - 14
+    - 9b55939498c9812c5e924ffef75bd83d3f27a76b
+    - 3
+    - 4
+    - 1
+    - 1
+    - 1
+    - organization
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-17 04:27:44.08419'
+    - '2018-11-21 09:44:19.408263'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - true
+    - '2018-11-21 09:44:19.407759'
+    - 0
+    - '2018-08-17 04:27:44.083901'
+    - '2018-11-21 09:44:19.407759'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-17 04:27:44.083938'
+    - "/spin/clients/MAKEWAVE/organization"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 3
+    - -1
+    - -1
+  - - 15
+    - e21d231a2af341402dd0e237326b523da2feb5ed
+    - 4
+    - 5
+    - 2
+    - 1
+    - 1
+    - test
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-17 04:28:02.392301'
+    - '2018-08-20 01:14:16.197905'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-20 01:14:16.197128'
+    - 0
+    - '2018-08-17 04:28:02.391984'
+    - '2018-08-20 01:14:16.197128'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-17 04:28:02.392066'
+    - "/spin/clients/MAKEWAVE/shared/test"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 2
+    - -1
+    - -1
+  - - 18
+    - 9b6002bbe26df9a776bc3cfad3a7b79d1aa2ae13
+    - 2
+    - 3
+    - 0
+    - 1
+    - 1
+    - CAMUS
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-21 09:02:03.363268'
+    - '2018-08-21 09:23:04.149617'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-21 09:23:04.148845'
+    - 0
+    - '2018-08-21 09:02:03.36312'
+    - '2018-08-21 09:23:04.148845'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-21 09:02:03.363143'
+    - "/spin/clients/CAMUS"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 1
+    - -1
+    - -1
+  - - 19
+    - 1c64a3eb2b51a3218d489ee3d71b32d34ba983d3
+    - 4
+    - 4
+    - 2
+    - 1
+    - 1
+    - personel
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-21 09:23:04.118912'
+    - '2018-08-21 09:54:49.898617'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - true
+    - '2018-08-21 09:54:49.897836'
+    - 0
+    - '2018-08-21 09:23:04.118651'
+    - '2018-08-21 09:54:49.897836'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-21 09:23:04.118691'
+    - "/spin/clients/CAMUS/personel"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 6
+    - -1
+    - -1
+  - - 20
+    - 6da8587a0bdc4274558c72d98dcda47288c9e5b2
+    - 5
+    - 5
+    - 4
+    - 1
+    - 1
+    - CAMUS001
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-21 09:53:43.209433'
+    - '2018-08-21 09:53:43.209433'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-21 09:53:43.209211'
+    - 0
+    - '2018-08-21 09:53:43.20919'
+    - '2018-08-21 09:53:43.209222'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-21 09:53:43.209231'
+    - "/spin/clients/CAMUS/personel/CAMUS001"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 21
+    - 5c814eefda67e2f364e2bd9e1148b74769a1497e
+    - 6
+    - 5
+    - 4
+    - 1
+    - 1
+    - CAMUS002
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-21 09:54:03.694164'
+    - '2018-08-21 09:54:20.766934'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-21 09:54:20.766076'
+    - 0
+    - '2018-08-21 09:54:03.693921'
+    - '2018-08-21 09:54:20.766076'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-21 09:54:03.693959'
+    - "/spin/clients/CAMUS/personel/CAMUS002"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 1
+    - -1
+    - -1
+  - - 22
+    - 64fe58ac3942f9945f51be20baeec2aab358ab7f
+    - 7
+    - 5
+    - 4
+    - 1
+    - 1
+    - CAMUS003
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-21 09:54:32.729017'
+    - '2018-08-21 09:54:32.729017'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-21 09:54:32.728808'
+    - 0
+    - '2018-08-21 09:54:32.728796'
+    - '2018-08-21 09:54:32.728814'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-21 09:54:32.728818'
+    - "/spin/clients/CAMUS/personel/CAMUS003"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 23
+    - aee91020ab7315b9b347785674daa0a2323c6517
+    - 8
+    - 5
+    - 4
+    - 1
+    - 1
+    - CAMUS004
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-21 09:54:42.450821'
+    - '2018-08-21 09:54:42.450821'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-21 09:54:42.45055'
+    - 0
+    - '2018-08-21 09:54:42.45053'
+    - '2018-08-21 09:54:42.45056'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-21 09:54:42.450569'
+    - "/spin/clients/CAMUS/personel/CAMUS004"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 24
+    - 1194d667be01e26873f836fcb249eef033f0812c
+    - 9
+    - 5
+    - 4
+    - 1
+    - 1
+    - CAMUS005
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-21 09:54:49.869018'
+    - '2018-08-21 09:54:49.869018'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-21 09:54:49.86877'
+    - 0
+    - '2018-08-21 09:54:49.868742'
+    - '2018-08-21 09:54:49.86878'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-21 09:54:49.86879'
+    - "/spin/clients/CAMUS/personel/CAMUS005"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 25
+    - cd0e71ea8a0594ae64d6023a6d46bb37eecfda2a
+    - 10
+    - 5
+    - 2
+    - 1
+    - 1
+    - TEST2
+    - false
+    - false
+    - true
+    - 0
+    - '2018-08-23 21:23:17.697474'
+    - '2018-08-23 21:23:17.697474'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-08-23 21:23:17.697306'
+    - 0
+    - '2018-08-23 21:23:17.697291'
+    - '2018-08-23 21:23:17.697312'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-08-23 21:23:17.697318'
+    - "/spin/clients/MAKEWAVE/shared/TEST2"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 26
+    - d697ab76b60ca45e24c5e4beac64cc29fa5925c2
+    - 11
+    - 5
+    - 2
+    - 1
+    - 1
+    - new
+    - false
+    - false
+    - true
+    - 0
+    - '2018-09-10 10:56:06.109335'
+    - '2018-11-21 06:12:23.063094'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - true
+    - '2018-11-21 06:12:23.062607'
+    - 0
+    - '2018-09-10 10:56:06.109064'
+    - '2018-11-21 06:12:23.062607'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-09-10 10:56:06.109118'
+    - "/spin/clients/MAKEWAVE/shared/new"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 5
+    - -1
+    - -1
+  - - 30
+    - fe73177b1bc6c6cdbf0644be7a94ce0a5b5e0383
+    - 12
+    - 5
+    - 0
+    - 1
+    - 1
+    - test-y
+    - false
+    - false
+    - true
+    - 0
+    - '2018-10-02 12:29:22.155697'
+    - '2018-10-02 12:29:22.155697'
+    - 1007
+    - 1014
+    - 15
+    - 7
+    - 0
+    - 1000
+    - 1000
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-10-02 12:29:22.155024'
+    - 0
+    - '2018-10-02 12:29:22.154967'
+    - '2018-10-02 12:29:22.155064'
+    - 0
+    - 
+    - true
+    - 1000
+    - ''
+    - '2018-10-02 12:29:22.155104'
+    - "/spin/clients/YORKS/personel/test-y"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 31
+    - e8d53ab82f7069662d2e4f794e007335fc1fa750
+    - 13
+    - 5
+    - 0
+    - 1
+    - 1
+    - YU001
+    - false
+    - false
+    - true
+    - 0
+    - '2018-10-02 13:41:39.662568'
+    - '2018-10-02 13:42:25.096029'
+    - 1008
+    - 1015
+    - 15
+    - 7
+    - 0
+    - 1000
+    - 1000
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-10-02 13:42:25.093858'
+    - 0
+    - '2018-10-02 13:41:39.662366'
+    - '2018-10-02 13:42:25.093858'
+    - 0
+    - 
+    - true
+    - 1008
+    - ''
+    - '2018-10-02 13:41:39.662395'
+    - "/spin/clients/YORKS/personel/YU001"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 1
+    - -1
+    - -1
+  - - 33
+    - 43b32accb79fceea33866348a597f2d5343ff9d3
+    - 14
+    - 5
+    - 0
+    - 1
+    - 1
+    - t11
+    - false
+    - false
+    - true
+    - 0
+    - '2018-10-02 14:05:10.990945'
+    - '2018-10-02 14:05:10.990945'
+    - 1009
+    - 1016
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-10-02 14:05:10.990489'
+    - 0
+    - '2018-10-02 14:05:10.990472'
+    - '2018-10-02 14:05:10.990496'
+    - 0
+    - 
+    - true
+    - 0
+    - ''
+    - '2018-10-02 14:05:10.990502'
+    - "/spin/clients/YORKS/personel/t11"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 34
+    - 20888a2a0c0d59ad7c4cd010adb843ac30c4d223
+    - 15
+    - 5
+    - 0
+    - 1
+    - 1
+    - teddy-y
+    - false
+    - false
+    - true
+    - 0
+    - '2018-10-09 01:40:32.271946'
+    - '2018-10-09 01:40:32.271946'
+    - 1010
+    - 1017
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-10-09 01:40:32.271531'
+    - 0
+    - '2018-10-09 01:40:32.271515'
+    - '2018-10-09 01:40:32.271537'
+    - 0
+    - 
+    - true
+    - 0
+    - ''
+    - '2018-10-09 01:40:32.271542'
+    - "/spin/clients/YORKS/personel/teddy-y"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+  - - 36
+    - cabb635adcfd0883058bd34408c8f4100be11b03
+    - 16
+    - 5
+    - 3
+    - 1
+    - 1
+    - MKTG
+    - false
+    - false
+    - true
+    - 0
+    - '2018-11-21 09:43:22.151513'
+    - '2018-11-21 09:43:22.151513'
+    - 0
+    - 0
+    - 15
+    - 7
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 2
+    - '{"type":"folder"}'
+    - true
+    - -1
+    - false
+    - 
+    - false
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - 
+    - 
+    - 0
+    - application/octet-stream
+    - -1
+    - -1
+    - '2001-01-01 00:00:00'
+    - false
+    - false
+    - false
+    - '2018-11-21 09:43:22.15119'
+    - 0
+    - '2018-11-21 09:43:22.15115'
+    - '2018-11-21 09:43:22.151206'
+    - 0
+    - 
+    - false
+    - 0
+    - ''
+    - '2018-11-21 09:43:22.151217'
+    - "/spin/clients/MAKEWAVE/organization/MKTG"
+    - false
+    - -1
+    - -1
+    - 0
+    - 0
+    - '2000-12-31 15:00:00'
+    - -1
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - '2000-12-31 15:00:00'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - false
+    - false
+    - 
+    - false
+    - 0
+    - -1
+    - -1
+
+---
+spin_user_attributes:
+  columns:
+  - id
+  - spin_uid
+  - created_at
+  - updated_at
+  - spin_uname
+  - real_uname1
+  - real_uname2
+  - real_unameM
+  - mail_addr
+  - mail_addr2
+  - organization1
+  - organization2
+  - organization3
+  - organization4
+  - organization5
+  - organization6
+  - organization7
+  - organization8
+  - tel_country_code_1
+  - tel_area_code_1
+  - tel_pid_code_1
+  - tel_number_1
+  - tel_ext_1
+  - user_attributes
+  records: 
+  - - 2
+    - 1000
+    - '2018-08-16 09:07:11.76503'
+    - '2018-08-16 09:07:11.76503'
+    - yorksadmin
+    - ヨークス管理者
+    - ''
+    - ''
+    - yorksadmin@makewavejapan.com
+    - ''
+    - ヨークス株式会社
+    - 管理
+    - Y001
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '{"real_uname1":"ヨークス管理者","organization1":"ヨークス株式会社","organization2":"管理","organization3":"Y001","user_directory":""}'
+  - - 4
+    - 1001
+    - '2018-08-17 03:44:36.190468'
+    - '2018-08-17 03:44:36.190468'
+    - t-yoshida
+    - 吉田勉
+    - ''
+    - ''
+    - t-yoshida@yorks.co.jp
+    - ''
+    - ''
+    - 社長室
+    - '001'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '{"real_uname1":"吉田勉","organization1":"","organization2":"社長室","organization3":"001","user_directory":""}'
+  - - 5
+    - 1007
+    - '2018-10-02 12:29:21.836536'
+    - '2018-10-02 12:29:21.836536'
+    - test-y
+    - test user
+    - ''
+    - ''
+    - testy@x.com
+    - ''
+    - YKS
+    - MKTG
+    - '0013'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '{"real_uname1":"test user","organization1":"YKS","organization2":"MKTG","organization3":"0013","user_directory":""}'
+  - - 6
+    - 1008
+    - '2018-10-02 13:41:39.381783'
+    - '2018-10-02 13:41:39.381783'
+    - YU001
+    - YU
+    - ''
+    - ''
+    - yu@x.co.jp
+    - ''
+    - YRKS
+    - MKTG
+    - u001
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '{"real_uname1":"YU","organization1":"YRKS","organization2":"MKTG","organization3":"u001","user_directory":""}'
+  - - 7
+    - 1009
+    - '2018-10-02 14:05:10.888556'
+    - '2018-10-02 14:05:10.888556'
+    - t11
+    - t11
+    - ''
+    - ''
+    - t11@x.com
+    - ''
+    - TT
+    - T
+    - T11
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '{"real_uname1":"t11","organization1":"TT","organization2":"T","organization3":"T11","user_directory":""}'
+  - - 8
+    - 1010
+    - '2018-10-09 01:40:32.138892'
+    - '2018-10-09 01:40:32.138892'
+    - teddy-y
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '{"real_uname1":"","organization1":"","organization2":"","organization3":"","user_directory":""}'
+
+---
+spin_users:
+  columns:
+  - id
+  - spin_uid
+  - spin_uname
+  - user_level_x
+  - user_level_y
+  - spin_gid
+  - spin_projid
+  - spin_passwd
+  - created_at
+  - updated_at
+  - spin_login_directory
+  - spin_default_server
+  - spin_default_domain
+  - spin_passwd_expiration
+  - is_group_editor
+  - quota_gb
+  - quota_upper_gb
+  - activated
+  records: 
+  - - 1
+    - 0
+    - root
+    - 10000
+    - 10000
+    - 0
+    - 0
+    - One4AllAll4One
+    - '2018-08-16 08:42:47.984062'
+    - '2018-08-16 08:42:47.984062'
+    - 6b9fdefcd73a7854d06f98d4c930ad2b32946543
+    - 127.0.0.1
+    - 519c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 2
+    - 500
+    - template-user-CAMUS
+    - 0
+    - 0
+    - 500
+    - 500
+    - 
+    - '2018-08-16 08:42:47.984062'
+    - '2018-08-16 08:42:47.984062'
+    - 
+    - 
+    - a19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - false
+    - -1
+    - -1
+    - true
+  - - 3
+    - 1000
+    - yorksadmin
+    - 10000
+    - 10000
+    - 0
+    - 
+    - "#SecretFilesY001"
+    - '2018-08-16 09:07:11.578938'
+    - '2018-08-16 09:07:11.971978'
+    - e03ca1dbcf756759f678bb0b3f9495b3a6d0f38f
+    - 
+    - f19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 5
+    - 1001
+    - t-yoshida
+    - 0
+    - 0
+    - 1009
+    - 
+    - '9504'
+    - '2018-08-17 03:44:36.147896'
+    - '2018-08-17 03:44:36.147896'
+    - 
+    - 
+    - 
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 6
+    - 501
+    - CAMUS001
+    - 0
+    - 0
+    - 501
+    - 
+    - "#SecretFiles-CAMUS001"
+    - '2018-08-17 03:44:36.147896'
+    - '2018-08-17 03:44:36.147896'
+    - 6da8587a0bdc4274558c72d98dcda47288c9e5b2
+    - 
+    - a19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - false
+    - -1
+    - -1
+    - true
+  - - 7
+    - 502
+    - CAMUS002
+    - 0
+    - 0
+    - 502
+    - 
+    - "#SecretFiles-CAMUS002"
+    - '2018-08-17 03:44:36.147896'
+    - '2018-08-17 03:44:36.147896'
+    - 5c814eefda67e2f364e2bd9e1148b74769a1497e
+    - 
+    - a19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - false
+    - -1
+    - -1
+    - true
+  - - 8
+    - 503
+    - CAMUS003
+    - 0
+    - 0
+    - 503
+    - 
+    - "#SecretFiles-CAMUS003"
+    - '2018-08-17 03:44:36.147896'
+    - '2018-08-17 03:44:36.147896'
+    - 64fe58ac3942f9945f51be20baeec2aab358ab7f
+    - 
+    - a19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - false
+    - -1
+    - -1
+    - true
+  - - 9
+    - 504
+    - CAMUS004
+    - 0
+    - 0
+    - 504
+    - 
+    - "#SecretFiles-CAMUS004"
+    - '2018-08-17 03:44:36.147896'
+    - '2018-08-17 03:44:36.147896'
+    - aee91020ab7315b9b347785674daa0a2323c6517
+    - 
+    - a19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - false
+    - -1
+    - -1
+    - true
+  - - 10
+    - 505
+    - CAMUS005
+    - 0
+    - 0
+    - 505
+    - 
+    - "#SecretFiles-CAMUS005"
+    - '2018-08-17 03:44:36.147896'
+    - '2018-08-17 03:44:36.147896'
+    - 1194d667be01e26873f836fcb249eef033f0812c
+    - 
+    - a19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - false
+    - -1
+    - -1
+    - true
+  - - 11
+    - 1002
+    - t-tomiyama
+    - 0
+    - 0
+    - 1010
+    - 
+    - '123456783'
+    - '2018-09-21 01:04:58.499865'
+    - '2018-09-21 01:04:58.499865'
+    - 
+    - 
+    - 
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 12
+    - 1003
+    - Miyagawa Harutaka
+    - 0
+    - 0
+    - 1010
+    - 
+    - '123456783'
+    - '2018-09-21 01:06:05.985646'
+    - '2018-09-21 01:06:05.985646'
+    - 
+    - 
+    - 
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 15
+    - 1006
+    - 宮川
+    - 0
+    - 0
+    - 1013
+    - 
+    - '5151'
+    - '2018-09-21 10:23:07.921066'
+    - '2018-09-21 10:23:07.921066'
+    - 
+    - 
+    - 
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 22
+    - 1007
+    - test-y
+    - 0
+    - 0
+    - 1014
+    - 
+    - test-y
+    - '2018-10-02 12:29:21.709998'
+    - '2018-10-02 12:29:22.653944'
+    - fe73177b1bc6c6cdbf0644be7a94ce0a5b5e0383
+    - 
+    - f19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 23
+    - 1008
+    - YU001
+    - 0
+    - 0
+    - 1015
+    - 
+    - YU001
+    - '2018-10-02 13:41:39.316759'
+    - '2018-10-02 13:41:39.822969'
+    - e8d53ab82f7069662d2e4f794e007335fc1fa750
+    - 
+    - f19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 24
+    - 1009
+    - t11
+    - 0
+    - 0
+    - 1016
+    - 
+    - t11
+    - '2018-10-02 14:05:10.850936'
+    - '2018-10-02 14:05:11.147516'
+    - 43b32accb79fceea33866348a597f2d5343ff9d3
+    - 
+    - f19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - true
+    - -1
+    - -1
+    - true
+  - - 25
+    - 1010
+    - teddy-y
+    - 0
+    - 0
+    - 1017
+    - 
+    - teddy-y
+    - '2018-10-09 01:40:32.098578'
+    - '2018-10-09 01:40:32.397209'
+    - 20888a2a0c0d59ad7c4cd010adb843ac30c4d223
+    - 
+    - f19c4b1925cbd58b618fc75063cdb5175ccfad85
+    - 
+    - true
+    - -1
+    - -1
+    - true
+
+---
+spin_virtual_file_systems:
+  columns:
+  - id
+  - spin_vfs_type
+  - spin_vfs_access_mode
+  - spin_vfs_name
+  - created_at
+  - updated_at
+  - spin_vfs_id
+  - spin_vfs_size
+  - spin_vfs_max_entries
+  - spin_vfs_storage_logic
+  - is_default
+  - spin_vfs_attributes
+  records: 
+  - - 1
+    - CLUSTER
+    - READ_WRITE
+    - secret_files_vfs
+    - '2018-08-16 08:42:48.099056'
+    - '2018-08-16 08:42:48.099056'
+    - 224c4c315ca6c73e87e4ed5515dbc694ebfe24e4
+    - -1
+    - -1
+    - SPANNING
+    - true
+    - '{"author"=>"MAKEWAVE JAPAN Co., Ltd.", "copyright"=>"2018 MAKEWAVE JAPAN Co.,
+      Ltd. All rights reserved.", "service_type"=>"CLOUD"}'
+  - - 2
+    - CLUSTER
+    - READ_WRITE
+    - secret_files_spanning_vfs
+    - '2018-08-16 08:42:48.112408'
+    - '2018-08-16 08:42:48.112408'
+    - 506565f9392c5ae008bfea8e471f2aa13c033042
+    - -1
+    - -1
+    - SPANNING
+    - false
+    - '{"author"=>"MAKEWAVE JAPAN Co., Ltd.", "copyright"=>"2018 MAKEWAVE JAPAN Co.,
+      Ltd. All rights reserved.", "service_type"=>"CLOUD"}'
+  - - 3
+    - TIER1
+    - READ_WRITE
+    - secret_files_ilm_vfs
+    - '2018-08-16 08:42:48.124308'
+    - '2018-08-16 08:42:48.124308'
+    - 2d296f9d738c641a29d6b1fc92183200e43dde81
+    - -1
+    - -1
+    - ILM
+    - false
+    - '{"author"=>"MAKEWAVE JAPAN Co., Ltd.", "copyright"=>"2018 MAKEWAVE JAPAN Co.,
+      Ltd. All rights reserved.", "service_type"=>"CLOUD"}'
+  - - 4
+    - OBJECT_STORAGE_S3
+    - READ_WRITE
+    - secret_files_object_storage_vfs
+    - '2018-08-16 08:42:48.13626'
+    - '2018-08-16 08:42:48.13626'
+    - 1b2eab0ba8763fe80b2901b38c91b5dee44481be
+    - -1
+    - -1
+    - SPANNING
+    - false
+    - '{"author"=>"MAKEWAVE JAPAN Co., Ltd.", "copyright"=>"2018 MAKEWAVE JAPAN Co.,
+      Ltd. All rights reserved.", "service_type"=>"CLOUD"}'

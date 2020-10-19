@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Node x coord:</b>
+  <%= @spin_object.node_x_coord %>
+</p>
+
+<p>
+  <b>Node y coord:</b>
+  <%= @spin_object.node_y_coord %>
+</p>
+
+<p>
+  <b>Node x pr coord:</b>
+  <%= @spin_object.node_x_pr_coord %>
+</p>
+
+<p>
+  <b>Node type:</b>
+  <%= @spin_object.node_type %>
+</p>
+
+<p>
+  <b>Node version:</b>
+  <%= @spin_object.node_version %>
+</p>
+
+<p>
+  <b>Object name:</b>
+  <%= @spin_object.object_name %>
+</p>
+
+<p>
+  <b>Object attributes:</b>
+  <%= @spin_object.object_attributes %>
+</p>
+
+<p>
+  <b>Src platform:</b>
+  <%= @spin_object.src_platform %>
+</p>
+
+<p>
+  <b>Src attributes:</b>
+  <%= @spin_object.src_attributes %>
+</p>
+
+<p>
+  <b>Date created:</b>
+  <%= @spin_object.date_created %>
+</p>
+
+<p>
+  <b>Date modified:</b>
+  <%= @spin_object.date_modified %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_object_path(@spin_object) %> |
+<%= link_to 'Back', spin_objects_path %>

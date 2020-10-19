@@ -1,0 +1,26 @@
+/* For icon */
+div.icon-wrapA{width:110px;height:110px;line-height: 1.2;float: left; white-space: nowrap;margin: 10px;font-family:arial,sans-serif;font-size: x-small; text-align:center}
+div.icon-wrapB{width:110px;height:110px;line-height: 1.2;float: left; white-space: nowrap;margin: 10px;font-family:arial,sans-serif;font-size: x-small; text-align:center}
+div.icon-wrapS{width:110px;height:110px;line-height: 1.2;float: left; white-space: nowrap;margin: 10px;font-family:arial,sans-serif;font-size: x-small; text-align:center}
+span.each-name{clear: both;width: 70px;white-space:normal}
+
+/* For Thumbnail Block */
+div.thumb-wrapAB{width:212px;height:212px;float:left;line-height:1.2;font-family:arial,sans-serif;font-size:x-small;padding-bottom:5px;border:dotted 1px #999999;padding: 5px;margin:5px}
+div.thumb-wrapBB{width:212px;height:212px;float:left;line-height:1.2;font-family:arial,sans-serif;font-size:x-small;padding-bottom:5px;border:dotted 1px #999999;padding: 5px;margin:5px}
+div.thumb-wrapSB{width:212px;height:212px;float:left;line-height:1.2;font-family:arial,sans-serif;font-size:x-small;padding-bottom:5px;border:dotted 1px #999999;padding: 5px;margin:5px}
+video.each-block{width:200px;height:140px}
+span.icon-block{width: 200px; height: 140px}
+caption{margin: 1px; padding: 0px}
+ul.each{margin-left: 0px;margin-top:0px}
+
+/* For Thumbnail List */
+div.thumb-wrapAL{float:left;line-height:1.2;font-family:arial,sans-serif;font-size:x-small;padding-bottom:5px;border:dotted 1px #999999;padding:5px;margin:5px;width:98%}
+div.thumb-wrapBL{float:left;line-height:1.2;font-family:arial,sans-serif;font-size:x-small;padding-bottom:5px;border:dotted 1px #999999;padding:5px;margin:5px;width:98%}
+div.thumb-wrapSL{float:left;line-height:1.2;font-family:arial,sans-serif;font-size:x-small;padding-bottom:5px;border:dotted 1px #999999;padding:5px;margin:5px;width:98%}
+video.each-layer{width:200px;height:150px;float:left}
+span.each-layer{width:200px;height:150px;float:left}
+span.property{float:left;white-space:nowrap;margin:0 10px 0 10px}
+
+/* Common Behavior */
+.x-item-selected{background-color:Lavender;border:solid 1px #7A8FA4}
+.x-item-over{background-color:whiteSmoke; border: solid 1px #DADDDF}

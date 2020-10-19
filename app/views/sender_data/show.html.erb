@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @sender_datum.session_id %>
+</p>
+
+<p>
+  <b>Memeber:</b>
+  <%= @sender_datum.memeber_id %>
+</p>
+
+<p>
+  <b>Sender:</b>
+  <%= @sender_datum.sender_id %>
+</p>
+
+<p>
+  <b>Sender name:</b>
+  <%= @sender_datum.sender_name %>
+</p>
+
+<p>
+  <b>Sender email:</b>
+  <%= @sender_datum.sender_email %>
+</p>
+
+
+<%= link_to 'Edit', edit_sender_datum_path(@sender_datum) %> |
+<%= link_to 'Back', sender_data_path %>

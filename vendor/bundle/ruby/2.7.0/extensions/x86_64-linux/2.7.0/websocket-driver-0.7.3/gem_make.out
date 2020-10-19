@@ -1,0 +1,15 @@
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/home/teamdomain/.rbenv/versions/2.7.2/bin/ruby -I /home/teamdomain/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20201006-52309-1dghymy.rb extconf.rb
+creating Makefile
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20201006-52309-mnfzzq

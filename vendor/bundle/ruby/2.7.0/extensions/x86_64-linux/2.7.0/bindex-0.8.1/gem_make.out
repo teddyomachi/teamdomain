@@ -1,0 +1,15 @@
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+/home/teamdomain/.rbenv/versions/2.7.2/bin/ruby -I /home/teamdomain/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20201006-52309-6u0j69.rb extconf.rb
+creating Makefile
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20201006-52309-1gersv5/skiptrace/internal

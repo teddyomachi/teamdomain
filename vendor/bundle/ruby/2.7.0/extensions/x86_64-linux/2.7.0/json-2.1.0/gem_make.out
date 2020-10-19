@@ -1,0 +1,13 @@
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/json-2.1.0/ext/json
+/home/teamdomain/.rbenv/versions/2.7.2/bin/ruby -I /home/teamdomain/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20201006-52309-1wh3qy.rb extconf.rb
+creating Makefile
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: `all' に対して行うべき事はありません.
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" install

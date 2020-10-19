@@ -1,0 +1,13 @@
+.x-innerhtml !important{
+	width: 100%;
+	height: 100%;
+}
+
+.x-object-box !important{
+	width: 100%;
+	height: 100%;
+}
+
+.my-comment {
+	font-size: x-small;
+}

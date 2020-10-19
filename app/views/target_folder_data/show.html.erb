@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @target_folder_datum.session_id %>
+</p>
+
+<p>
+  <b>Target hash key:</b>
+  <%= @target_folder_datum.target_hash_key %>
+</p>
+
+<p>
+  <b>Target cont location:</b>
+  <%= @target_folder_datum.target_cont_location %>
+</p>
+
+<p>
+  <b>Id:</b>
+  <%= @target_folder_datum.id %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @target_folder_datum.text %>
+</p>
+
+<p>
+  <b>Target folder:</b>
+  <%= @target_folder_datum.target_folder %>
+</p>
+
+<p>
+  <b>Target folder writable status:</b>
+  <%= @target_folder_datum.target_folder_writable_status %>
+</p>
+
+<p>
+  <b>Target folder readable status:</b>
+  <%= @target_folder_datum.target_folder_readable_status %>
+</p>
+
+<p>
+  <b>Target ownership:</b>
+  <%= @target_folder_datum.target_ownership %>
+</p>
+
+<p>
+  <b>Target parent readable status:</b>
+  <%= @target_folder_datum.target_parent_readable_status %>
+</p>
+
+<p>
+  <b>Target parent writable status:</b>
+  <%= @target_folder_datum.target_parent_writable_status %>
+</p>
+
+
+<%= link_to 'Edit', edit_target_folder_datum_path(@target_folder_datum) %> |
+<%= link_to 'Back', target_folder_data_path %>

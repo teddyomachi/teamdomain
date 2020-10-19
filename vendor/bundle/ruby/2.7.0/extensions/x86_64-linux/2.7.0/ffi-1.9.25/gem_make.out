@@ -1,0 +1,125 @@
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/ffi-1.9.25/ext/ffi_c
+/home/teamdomain/.rbenv/versions/2.7.2/bin/ruby -I /home/teamdomain/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20201006-52309-1qiz3sn.rb extconf.rb
+checking for ffi_call() in -lffi... yes
+checking for ffi_closure_alloc()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+checking for shlwapi.h... no
+checking for ruby/thread.h... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for ffi_prep_cif_var()... yes
+creating extconf.h
+creating Makefile
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/ffi-1.9.25/ext/ffi_c
+make "DESTDIR=" clean
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/ffi-1.9.25/ext/ffi_c
+make "DESTDIR="
+compiling AbstractMemory.c
+compiling ArrayType.c
+compiling Buffer.c
+compiling Call.c
+Call.c: 関数 ‘rbffi_CallFunction’ 内:
+Call.c:412:20: 警告: 互換性のないポインタ型から 1 番目の ‘rb_rescue2’ の引数に渡しています [-Wincompatible-pointer-types]
+  412 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~
+      |                    |
+      |                    VALUE (*)(void *) {aka long unsigned int (*)(void *)}
+In file included from /home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby.h:33,
+                 from Call.c:45:
+/home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1988:18: 備考: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(void *)’ {aka ‘long unsigned int (*)(void *)’}
+ 1988 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                  ^~~~~~~~~~~~~~~
+Call.c:412:56: 警告: 互換性のないポインタ型から 3 番目の ‘rb_rescue2’ の引数に渡しています [-Wincompatible-pointer-types]
+  412 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                        |
+      |                                                        VALUE (*)(void *, VALUE) {aka long unsigned int (*)(void *, long unsigned int)}
+In file included from /home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby.h:33,
+                 from Call.c:45:
+/home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1988:40: 備考: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(void *, VALUE)’ {aka ‘long unsigned int (*)(void *, long unsigned int)’}
+ 1988 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~
+compiling ClosurePool.c
+compiling DataConverter.c
+compiling DynamicLibrary.c
+compiling Function.c
+Function.c: 関数 ‘callback_with_gvl’ 内:
+Function.c:740:16: 警告: 互換性のないポインタ型から 1 番目の ‘rb_rescue2’ の引数に渡しています [-Wincompatible-pointer-types]
+  740 |     rb_rescue2(invoke_callback, (VALUE) data, save_callback_exception, (VALUE) data, rb_eException, (VALUE) 0);
+      |                ^~~~~~~~~~~~~~~
+      |                |
+      |                VALUE (*)(void *) {aka long unsigned int (*)(void *)}
+In file included from /home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby.h:33,
+                 from Function.c:49:
+/home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1988:18: 備考: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(void *)’ {aka ‘long unsigned int (*)(void *)’}
+ 1988 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                  ^~~~~~~~~~~~~~~
+Function.c:740:47: 警告: 互換性のないポインタ型から 3 番目の ‘rb_rescue2’ の引数に渡しています [-Wincompatible-pointer-types]
+  740 |     rb_rescue2(invoke_callback, (VALUE) data, save_callback_exception, (VALUE) data, rb_eException, (VALUE) 0);
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               VALUE (*)(void *, VALUE) {aka long unsigned int (*)(void *, long unsigned int)}
+In file included from /home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby.h:33,
+                 from Function.c:49:
+/home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1988:40: 備考: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(void *, VALUE)’ {aka ‘long unsigned int (*)(void *, long unsigned int)’}
+ 1988 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~
+compiling FunctionInfo.c
+compiling LastError.c
+compiling LongDouble.c
+LongDouble.c: 関数 ‘rbffi_longdouble_new’ 内:
+LongDouble.c:19:59: 警告: 互換性のないポインタ型から 3 番目の ‘rb_rescue’ の引数に渡しています [-Wincompatible-pointer-types]
+   19 |         rb_cBigDecimal = rb_rescue(bigdecimal_load, Qnil, bigdecimal_failed, rb_cObject);
+      |                                                           ^~~~~~~~~~~~~~~~~
+      |                                                           |
+      |                                                           VALUE (*)(VALUE) {aka long unsigned int (*)(long unsigned int)}
+In file included from /home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby.h:33,
+                 from LongDouble.h:33,
+                 from LongDouble.c:1:
+/home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1987:39: 備考: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’}
+ 1987 | VALUE rb_rescue(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~
+compiling MappedType.c
+compiling MemoryPointer.c
+compiling MethodHandle.c
+compiling Platform.c
+compiling Pointer.c
+compiling Struct.c
+compiling StructByReference.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Thread.c
+compiling Type.c
+compiling Types.c
+compiling Variadic.c
+Variadic.c: 関数 ‘variadic_invoke’ 内:
+Variadic.c:274:20: 警告: 互換性のないポインタ型から 1 番目の ‘rb_rescue2’ の引数に渡しています [-Wincompatible-pointer-types]
+  274 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~
+      |                    |
+      |                    VALUE (*)(void *) {aka long unsigned int (*)(void *)}
+In file included from /home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby.h:33,
+                 from Variadic.c:43:
+/home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1988:18: 備考: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(void *)’ {aka ‘long unsigned int (*)(void *)’}
+ 1988 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                  ^~~~~~~~~~~~~~~
+Variadic.c:274:56: 警告: 互換性のないポインタ型から 3 番目の ‘rb_rescue2’ の引数に渡しています [-Wincompatible-pointer-types]
+  274 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                        |
+      |                                                        VALUE (*)(void *, VALUE) {aka long unsigned int (*)(void *, long unsigned int)}
+In file included from /home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby.h:33,
+                 from Variadic.c:43:
+/home/teamdomain/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1988:40: 備考: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(void *, VALUE)’ {aka ‘long unsigned int (*)(void *, long unsigned int)’}
+ 1988 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~
+compiling ffi.c
+linking shared-object ffi_c.so
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/V2.0/vendor/bundle/ruby/2.7.0/gems/ffi-1.9.25/ext/ffi_c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20201006-52309-cww3wx

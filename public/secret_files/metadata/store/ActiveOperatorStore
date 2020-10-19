@@ -1,0 +1,98 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "OperatorData",
+        "storeId": "ActiveOperatorStore",
+        "designer|userClassName": "ActiveOperatorStore"
+    },
+    "designerId": "1acf6ccc-bc17-4d8b-a6f7-2a42919109b3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/active_operator.sfl"
+            },
+            "designerId": "890853da-e15d-4009-adb8-a507933b3714",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "operator"
+                    },
+                    "designerId": "0b439b14-0a2e-4cc0-b008-5cf6906b5405"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "var this_records = store.data.items[0].data;\r",
+                    "\r",
+                    "this_op_name\t\t\t= this_records.operator_name;\r",
+                    "this_op_id\t\t\t\t= this_records.operator_id;\r",
+                    "this_op_description\t\t= this_records.user_description;\r",
+                    "This_op_group_editable\t= this_records.operator_group_editable;\r",
+                    "This_op_cntrl_editable\t= this_records.operator_control_editable;\r",
+                    "this_op_created_date\t= this_records.rule_created_date;\r",
+                    "this_op_disp_ext\t\t= this_records.disp_ext;\r",
+                    "this_op_auto_save\t\t= this_records.auto_save;\r",
+                    "this_op_disp_tree\t\t= this_records.disp_tree;\r",
+                    "this_op_mail\t\t\t= this_records.user_mail;\r",
+                    "this_op_tel\t\t\t\t= this_records.user_tel;\r",
+                    "this_op_major\t\t\t= this_records.user_major;\r",
+                    "this_op_org\t\t\t\t= this_records.user_org;\r",
+                    "\r",
+                    "Ext.getCmp('activeUser').getForm().setValues({\r",
+                    "\tactive_op_name: this_op_name\r",
+                    "});\r",
+                    "\r",
+                    "Ext.getCmp('createFile').getForm().setValues({\r",
+                    "\tsession_id: this_session_id\r",
+                    "});\r",
+                    "\r",
+                    "//console.log(This_op_group_editable);\r",
+                    "if (This_op_group_editable !== true && GroupDspClosed === false) {\r",
+                    "\t//console.log(Ext.getCmp('groupDsp'));\r",
+                    "\tExt.getCmp('groupDsp').close();\r",
+                    "\t//Ext.getCmp('groupDsp').disable();\r",
+                    "\tGroupDspClosed = true;\r",
+                    "}\r",
+                    "\r",
+                    "//console.log(This_op_cntrl_editable);\r",
+                    "if (This_op_cntrl_editable !== true && UserDspClosed === false) {\r",
+                    "\tExt.getCmp('userDsp').close();\r",
+                    "\tUserDspClosed = true;\r",
+                    "}\r",
+                    "\r",
+                    "Ext.ComponentQuery.query('#westSideB')[0].collapse();"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "e4c138eb-5e1b-41f2-a5c3-6aca45fd2536"
+        }
+    ]
+}

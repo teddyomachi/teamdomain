@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoSync": null,
+        "model": "MemberData",
+        "storeId": "MemberDataStore",
+        "designer|userClassName": "MemberDataStore"
+    },
+    "designerId": "41042e99-fdea-429a-a936-0f10d2009456",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/member_list_mygroup.sfl"
+            },
+            "designerId": "e36ef678-c18d-45d0-8c70-e7a67e0df1e2",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "members"
+                    },
+                    "designerId": "828de306-0182-4b96-9976-87ff653d6209"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @operator_datum.session_id %>
+</p>
+
+<p>
+  <b>Active operator name:</b>
+  <%= @operator_datum.active_operator_name %>
+</p>
+
+<p>
+  <b>Active operator:</b>
+  <%= @operator_datum.active_operator_id %>
+</p>
+
+<p>
+  <b>Operator group editable:</b>
+  <%= @operator_datum.operator_group_editable %>
+</p>
+
+<p>
+  <b>Session:</b>
+  <%= @operator_datum.session_id %>
+</p>
+
+<p>
+  <b>Last session:</b>
+  <%= @operator_datum.last_session_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_operator_datum_path(@operator_datum) %> |
+<%= link_to 'Back', operator_data_path %>

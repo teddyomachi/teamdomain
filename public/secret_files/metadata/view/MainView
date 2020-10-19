@@ -1,0 +1,521 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "teamDomain",
+        "designer|userClassName": "MainView",
+        "designer|userAlias": "mainView",
+        "designer|initialView": true,
+        "layout": "border"
+    },
+    "designerId": "20b95233-43bf-493c-abee-b27b1770e114",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "height": null,
+                "id": "topMenuPanel",
+                "layout": "fit",
+                "title": null
+            },
+            "designerId": "f9383764-4fe5-417c-80ab-b69811846d26",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "dock": "top"
+                    },
+                    "designerId": "070ebbc6-a71f-434d-81f6-8f5e255f3a51",
+                    "masterInstanceId": "b7f91229-85c8-4abb-98dd-aea8fe406ff0"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "designerId": "36350339-5404-4e0a-bd57-0f1d5ada284c",
+                    "masterInstanceId": "44b10b40-d4cc-41bb-87ac-ce76381d4e0a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "container|align": "stretch",
+                "id": "westSidePanel",
+                "maxWidth": 400,
+                "minWidth": 170,
+                "width": 170,
+                "resizeHandles": "e",
+                "layout": "vbox",
+                "title": null
+            },
+            "designerId": "7844ebec-d0ea-4b20-aef5-6bee0551a3f0",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "container|align": "stretch",
+                        "layout": "vbox",
+                        "title": "ワークエリア1"
+                    },
+                    "designerId": "980f5e9b-5dab-42a0-838a-12293615b1f8",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": null,
+                                "minHeight": null,
+                                "layout|flex": null,
+                                "dock": null
+                            },
+                            "designerId": "7f829f18-70e0-4b10-b4c6-32f81d0f4ef7",
+                            "masterInstanceId": "4293f2e6-712c-4de8-a4cd-f03b345a63ac"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "dock": null
+                            },
+                            "designerId": "5013b107-5023-4d56-9480-70fd0bf90256",
+                            "masterInstanceId": "536b984f-ac70-4e5f-afce-a3d52e713b9b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "container|align": "stretch",
+                        "itemId": "westSideB",
+                        "layout": "vbox",
+                        "suspendLayout": null,
+                        "collapseDirection": "bottom",
+                        "collapsed": false,
+                        "collapsible": true,
+                        "title": "ワークエリア2"
+                    },
+                    "designerId": "a6d71bef-0c6c-429d-b755-63654e036d3f",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "stateful": null,
+                                "height": null,
+                                "minHeight": null,
+                                "overlapHeader": null,
+                                "forceFit": null,
+                                "layout|flex": null
+                            },
+                            "designerId": "4663002b-5ce3-4e0d-8928-fa91698cc389",
+                            "masterInstanceId": "1cd27aaf-2f12-486c-b416-d5e7568a9cbc"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "stateful": null,
+                                "animate": null,
+                                "layout|flex": 1
+                            },
+                            "designerId": "1eb59c7b-6528-45d8-bed6-d23136088a0b",
+                            "masterInstanceId": "76813e57-4ccb-43d0-88a2-a3472d3b86e1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|floatable": null,
+                "layout|region": "east",
+                "layout|split": true,
+                "autoRender": null,
+                "hidden": null,
+                "id": "eastSidePanel",
+                "itemId": null,
+                "maxWidth": null,
+                "minWidth": null,
+                "padding": null,
+                "width": 350,
+                "resizeHandles": null,
+                "bodyPadding": null,
+                "collapseFirst": null,
+                "collapsed": true,
+                "collapsible": true,
+                "hideCollapseTool": null,
+                "title": "プロパティ表示・操作",
+                "activeTab": 1
+            },
+            "designerId": "0871f1bc-b2a8-4990-8802-3d70530d5da5",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "2e34a4b1-4a5c-4220-b733-5e4e656caceb",
+                    "masterInstanceId": "97aa1978-c28b-4bd5-97cd-2f7920c66bca",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true
+                            },
+                            "designerId": "410d6305-45e4-40ed-9e5f-b1d8fd420fc4"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "c97b0ba4-907c-4288-89a7-bb682003dbda",
+                    "masterInstanceId": "f8cb8f94-cfd2-4cef-be90-5f4ca8d7f05b",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "97cf54df-2231-4888-bb0a-78961b563b94"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "235dfe45-c594-46e9-8f9c-7761af4e796b",
+                    "masterInstanceId": "0d49ca59-c278-44b5-8d87-f39389ca7048",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "0c047fc7-3ec6-4a96-ab17-694082338446"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "9e747f88-05dc-4dce-a114-133550b578b8",
+                    "masterInstanceId": "3d11c633-21b6-45d6-88b2-37ae1a3c26dc",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "8aa18416-7bb3-4b81-b427-b4458d9fe581"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": null
+                    },
+                    "designerId": "ed0c2f1e-7fb0-4745-a9f3-55f521374720",
+                    "masterInstanceId": "574f7e9a-a5ac-44d7-9ac7-a8e04a9eccac",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "2a3bec46-41d3-44e5-afac-860b82b29b54"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "layout|region": "center",
+                "id": "centerMainPanel",
+                "title": null,
+                "activeTab": 0,
+                "maxTabWidth": 150,
+                "minTabWidth": 120
+            },
+            "designerId": "554b8dbe-5fee-435d-a8e2-c6f197cc5043",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "4e95f952-5c17-45ad-896a-140a19d19012",
+                    "masterInstanceId": "94da37cd-5c15-4dd6-9360-2e6aeb38e72e",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "ded09956-f90b-4b22-a7bc-40596413881f"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "ファイル検索結果"
+                    },
+                    "designerId": "2deb4af3-8ebb-402a-b8ca-4a98735d15d1",
+                    "masterInstanceId": "0c8f2a45-12f5-4674-8879-48c2eb6309b8",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "6127d463-0272-4409-9d6f-f80fe8713d2a"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "ea44f661-362d-4f6d-817c-d5429610a1fe",
+                    "masterInstanceId": "c5d17f41-99aa-4622-acaa-47411b0d881f",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "f0cfdb2a-d301-4c1b-8ded-64bbedad3da4"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "34eeb8ea-90f2-44cc-afeb-98bcb7d5ccdd",
+                    "masterInstanceId": "c02c6e1b-1e12-485b-9f44-4bb657dba202",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "499048bc-4a07-4738-b6b5-4328863289c7"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "userDsp"
+                    },
+                    "designerId": "bcc333de-7f56-4c09-8eba-b397da5cbbd5",
+                    "masterInstanceId": "2edddc03-8f35-4b84-89d8-07b0ffe212ba",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "5d154cdb-7189-4e4f-9573-d9fb8e1d7e8e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "south",
+                "height": 20,
+                "id": "southPanel",
+                "layout": "fit",
+                "title": null
+            },
+            "designerId": "cc8dfffb-ebca-4c6a-bd18-abc3cab5c511",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "id": "footer"
+                    },
+                    "designerId": "03ad0a8c-4437-4ca8-9337-ef7b79044c9d",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "6906b042-42c2-444a-8f23-136060437af4"
+                        },
+                        {
+                            "type": "Ext.toolbar.TextItem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "(c)  2018  MAKEWAVE JAPAN Co.,Ltd. All rights reserved."
+                            },
+                            "designerId": "658aa046-5af9-4a66-901e-56c319481e64"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

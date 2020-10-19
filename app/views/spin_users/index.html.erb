@@ -1,0 +1,35 @@
+<h1>Listing spin_users</h1>
+
+<table>
+  <tr>
+    <th>Spin uid</th>
+    <th>Spin uname</th>
+    <th>User level x</th>
+    <th>User level y</th>
+    <th>Spin gid</th>
+    <th>Spin projid</th>
+    <th>Spin passwd</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_users.each do |spin_user| %>
+  <tr>
+    <td><%= spin_user.spin_uid %></td>
+    <td><%= spin_user.spin_uname %></td>
+    <td><%= spin_user.user_level_x %></td>
+    <td><%= spin_user.user_level_y %></td>
+    <td><%= spin_user.spin_gid %></td>
+    <td><%= spin_user.spin_projid %></td>
+    <td><%= spin_user.spin_passwd %></td>
+    <td><%= link_to 'Show', spin_user %></td>
+    <td><%= link_to 'Edit', edit_spin_user_path(spin_user) %></td>
+    <td><%= link_to 'Destroy', spin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin user', new_spin_user_path %>

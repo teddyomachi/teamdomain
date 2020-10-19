@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @recycler_datum.session_id %>
+</p>
+
+<p>
+  <b>Hash key:</b>
+  <%= @recycler_datum.hash_key %>
+</p>
+
+<p>
+  <b>Cont location:</b>
+  <%= @recycler_datum.cont_location %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @recycler_datum.file_name %>
+</p>
+
+<p>
+  <b>File type:</b>
+  <%= @recycler_datum.file_type %>
+</p>
+
+<p>
+  <b>File exact size:</b>
+  <%= @recycler_datum.file_exact_size %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @recycler_datum.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_recycler_datum_path(@recycler_datum) %> |
+<%= link_to 'Back', recycler_data_path %>

@@ -1,0 +1,39 @@
+.label-s {
+	font-size: x-small !important;
+}
+
+.my-item-disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0.1) !important;
+  opacity: 0.1 !important; 
+}
+
+
+.my-disabled-panel {
+	opacity: 1.0 !important; 
+	-moz-opacity: 1.0 !important;
+	filter: alpha(opacity=1.0) !important;
+}
+
+.my-item-disabled {
+	opacity: 0 !important; 
+	-moz-opacity: 0 !important;
+	filter: alpha(opacity=0) !important;
+}
+
+.my-disabled-btn {
+	opacity: 0 !important; 
+	-moz-opacity: 0 !important;
+	filter: alpha(opacity=0) !important;
+}
+
+.x-tree-icon-member {
+        background-image:url(../data/small_icon/User.png);
+    }
+    
+.x-tree-icon-group {
+        background-image:url(../data/small_icon/User_group.png);
+    }
+    
+.x-grid-tree-node-expanded .x-tree-icon-group {
+  background-image:url(../data/small_icon/User_group.png);
+}

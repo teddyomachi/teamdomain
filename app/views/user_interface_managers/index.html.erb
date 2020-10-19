@@ -1,0 +1,60 @@
+<h1>Listing user_interface_managers</h1>
+
+<table>
+  <tr>
+    <th>Pane domains a</th>
+    <th>Pane domains b</th>
+    <th>Pane folders a</th>
+    <th>Pane folders b</th>
+    <th>Pane file list a</th>
+    <th>Pane file list b</th>
+    <th>Pane file list s</th>
+    <th>Pane folders at</th>
+    <th>Pane folders bt</th>
+    <th>Pane groupo list all</th>
+    <th>Pane group list created</th>
+    <th>Pane group list file</th>
+    <th>Pane group list folder</th>
+    <th>Pane mail senders</th>
+    <th>Pane member list mygroup</th>
+    <th>Pane recycler</th>
+    <th>Pane search conditions</th>
+    <th>Pane search option</th>
+    <th>Pane working files</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_interface_managers.each do |user_interface_manager| %>
+  <tr>
+    <td><%= user_interface_manager.pane_domains_a %></td>
+    <td><%= user_interface_manager.pane_domains_b %></td>
+    <td><%= user_interface_manager.pane_folders_a %></td>
+    <td><%= user_interface_manager.pane_folders_b %></td>
+    <td><%= user_interface_manager.pane_file_list_a %></td>
+    <td><%= user_interface_manager.pane_file_list_b %></td>
+    <td><%= user_interface_manager.pane_file_list_s %></td>
+    <td><%= user_interface_manager.pane_folders_at %></td>
+    <td><%= user_interface_manager.pane_folders_bt %></td>
+    <td><%= user_interface_manager.pane_groupo_list_all %></td>
+    <td><%= user_interface_manager.pane_group_list_created %></td>
+    <td><%= user_interface_manager.pane_group_list_file %></td>
+    <td><%= user_interface_manager.pane_group_list_folder %></td>
+    <td><%= user_interface_manager.pane_mail_senders %></td>
+    <td><%= user_interface_manager.pane_member_list_mygroup %></td>
+    <td><%= user_interface_manager.pane_recycler %></td>
+    <td><%= user_interface_manager.pane_search_conditions %></td>
+    <td><%= user_interface_manager.pane_search_option %></td>
+    <td><%= user_interface_manager.pane_working_files %></td>
+    <td><%= user_interface_manager.pane_clipboards %></td>
+    <td><%= link_to 'Show', user_interface_manager %></td>
+    <td><%= link_to 'Edit', edit_user_interface_manager_path(user_interface_manager) %></td>
+    <td><%= link_to 'Destroy', user_interface_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User interface manager', new_user_interface_manager_path %>

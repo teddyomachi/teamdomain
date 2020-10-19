@@ -1,0 +1,33 @@
+<h1>Listing operator_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Active operator name</th>
+    <th>Active operator</th>
+    <th>Operator group editable</th>
+    <th>Session</th>
+    <th>Last session</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @operator_data.each do |operator_datum| %>
+  <tr>
+    <td><%= operator_datum.session_id %></td>
+    <td><%= operator_datum.active_operator_name %></td>
+    <td><%= operator_datum.active_operator_id %></td>
+    <td><%= operator_datum.operator_group_editable %></td>
+    <td><%= operator_datum.session_id %></td>
+    <td><%= operator_datum.last_session_id %></td>
+    <td><%= link_to 'Show', operator_datum %></td>
+    <td><%= link_to 'Edit', edit_operator_datum_path(operator_datum) %></td>
+    <td><%= link_to 'Destroy', operator_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Operator datum', new_operator_datum_path %>

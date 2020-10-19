@@ -1,0 +1,23 @@
+{
+	"conditions":
+	[
+		{
+			"target_folder": "映像他",
+			"target_file_name": "LadyGaGa",
+			"target_file_size_min": "100000",
+			"target_file_size_max": "300000",
+			"target_creator": "木村浩二",
+			"target_created_by_me": "1",
+			"target_created_by_begin": "2012/07/01",
+			"target_created_date_end": "2012/07/20",
+			"target_modifier": "木村浩二",
+			"target_modified_by_me": "",
+			"target_modified_date_begin": "",
+			"target_modified_date_end": "",
+			"target_subfolder": "1",
+			"target_locked_by_me": "",
+			"target_checked_out_by_me": "",
+			"target_max_display_files": ""
+		}
+	]
+}

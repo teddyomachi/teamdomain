@@ -1,0 +1,33 @@
+<h1>Listing member_data</h1>
+
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Hash key</th>
+    <th>Member</th>
+    <th>Member name</th>
+    <th>Member description</th>
+    <th>Member remark</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @member_data.each do |member_datum| %>
+  <tr>
+    <td><%= member_datum.session_id %></td>
+    <td><%= member_datum.hash_key %></td>
+    <td><%= member_datum.member_id %></td>
+    <td><%= member_datum.member_name %></td>
+    <td><%= member_datum.member_description %></td>
+    <td><%= member_datum.member_remark %></td>
+    <td><%= link_to 'Show', member_datum %></td>
+    <td><%= link_to 'Edit', edit_member_datum_path(member_datum) %></td>
+    <td><%= link_to 'Destroy', member_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Member datum', new_member_datum_path %>

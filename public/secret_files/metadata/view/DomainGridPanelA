@@ -1,0 +1,154 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 50,
+        "id": "domainGridPanelA",
+        "itemId": "domainGridPanelA",
+        "minHeight": null,
+        "width": null,
+        "designer|userClassName": "DomainGridPanelA",
+        "designer|userAlias": "domaingridpanela",
+        "title": null,
+        "hideHeaders": true,
+        "scroll": "none",
+        "store": "DomainDataStoreA"
+    },
+    "designerId": "4293f2e6-712c-4de8-a4cd-f03b345a63ac",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": null,
+                "dataIndex": "domain_name",
+                "text": "Domain_name",
+                "flex": 1
+            },
+            "designerId": "7837a20d-657c-497f-8e02-efdb6d60bc20"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "dataIndex": "domain_link",
+                "text": "Domain_link"
+            },
+            "designerId": "c7bf580c-3e8d-42b5-a2d7-28906c6a3e1a"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDomainGridPanelAAfterRender",
+                "implHandler": [
+                    "\r",
+                    "Ext.getStore('DomainDataStoreA').load({\r",
+                    "\tcallback: function(records, operation, success) {\r",
+                    "\t\tvar this_domains = Ext.getStore('DomainDataStoreA').data;\r",
+                    "\t\tvar data_length = this_domains.length;\r",
+                    "\r",
+                    "\t\tvar thisActiveDomainA = '';\r",
+                    "\t\tfor (i = 0; i < data_length; i++) {\r",
+                    "\t\t\tif (this_domains.items[i].data.selected === true) {\r",
+                    "\t\t\t\tthisActiveDomainA = this_domains.items[i];\r",
+                    "\t\t\t}\r",
+                    "\t\t}\r",
+                    "\r",
+                    "\t\tif (thisActiveDomainA === '') {\r",
+                    "\t\t\tthisActiveDomainA = this_domains.items[0];\r",
+                    "\t\t}\r",
+                    "\r",
+                    "\t\tcomponent.selModel.doSelect(thisActiveDomainA);\r",
+                    "\t\t//console.log(thisActiveDomainA);\r",
+                    "\r",
+                    "\t\tvar show_target_folder = 'folder_a';\r",
+                    "\r",
+                    "\t\tvar viewDomain = Ext.ComponentQuery.query('mainView')[0];\r",
+                    "\r",
+                    "\t\tif (thisActiveDomainA) {\r",
+                    "\t\t\tviewDomain.down('#showDomainThumbnail').update(thisActiveDomainA.data);\r",
+                    "\t\t\tviewDomain.down('#showDomainProperty').loadRecord(thisActiveDomainA);\r",
+                    "\t\t\tviewDomain.down('#createFolder').loadRecord(thisActiveDomainA);\r",
+                    "\r",
+                    "\t\t\tExt.getCmp('createFolder').getForm().setValues({\r",
+                    "\t\t\t\tcont_location: show_target_folder\r",
+                    "\t\t\t});\r",
+                    "\r",
+                    "\t\t\tExt.getCmp('activeData').getForm().setValues({\r",
+                    "\t\t\t\tactiveDomainA_name: thisActiveDomainA.data.domain_name,   \r",
+                    "\t\t\t\tactiveDomainA_hash: thisActiveDomainA.data.hash_key\r",
+                    "\t\t\t});\r",
+                    "\r",
+                    "\t\t\tvar editChecked = thisActiveDomainA.data.domain_writable_status;\r",
+                    "\r",
+                    "\t\t\tif (editChecked === true) {\r",
+                    "\t\t\t\tExt.getCmp('domain_name_1').enable();\r",
+                    "\t\t\t\tExt.getCmp('btn_change_domain_name').enable();\r",
+                    "\t\t\t\tExt.getCmp('new_root_folder').enable();\r",
+                    "\t\t\t\tExt.getCmp('btn_create_root_folder').enable();\r",
+                    "\t\t\t} else {\r",
+                    "\t\t\t\tExt.getCmp('domain_name_1').disable();\r",
+                    "\t\t\t\tExt.getCmp('btn_change_domain_name').disable();\r",
+                    "\t\t\t\tExt.getCmp('new_root_folder').disable();\r",
+                    "\t\t\t\tExt.getCmp('btn_create_root_folder').disable();\r",
+                    "\t\t\t}\r",
+                    "\t\t}\r",
+                    "\t}\r",
+                    "});\r",
+                    ""
+                ],
+                "delay": 10,
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "59eb3934-7599-4853-bf47-bc53dc976cb1"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDomainGridPanelAItemContextMenu",
+                "implHandler": [
+                    "/*\r",
+                    "tree_context_menu = new Ext.menu.Menu({\r",
+                    "items: [\r",
+                    "changeDomainName,\r",
+                    "createRootFolder,\r",
+                    "new Ext.menu.Separator(),\r",
+                    "openTrashbox\r",
+                    "]\r",
+                    "});\r",
+                    "\r",
+                    "tree_context_menu.showAt(e.getXY());\r",
+                    "return false;\r",
+                    "*/"
+                ],
+                "name": "itemcontextmenu",
+                "scope": "me"
+            },
+            "designerId": "48f6e09f-fbcd-4a55-8205-b04d549c24a6"
+        }
+    ]
+}

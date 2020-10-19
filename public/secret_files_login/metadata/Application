@@ -1,0 +1,38 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "views": [
+            "LoginWin",
+            "ActivationWin"
+        ],
+        "autoCreateViewport": true,
+        "name": "MyApp"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.override(Ext.data.Connection, {\r",
+                    "\ttimeout: 300000\r",
+                    "});\r",
+                    "\r",
+                    "//Ext.Ajax.timeout = 300000;"
+                ]
+            },
+            "designerId": "31ae3e37-32b8-4c58-b983-96e9a8b0a4e2"
+        }
+    ]
+}

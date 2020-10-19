@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spin_vfs: MyString
+  spin_node_tree: MyString
+
+two:
+  spin_vfs: MyString
+  spin_node_tree: MyString

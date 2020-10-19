@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spin did:</b>
+  <%= @spin_domain.spin_did %>
+</p>
+
+<p>
+  <b>Spin domain name:</b>
+  <%= @spin_domain.spin_domain_name %>
+</p>
+
+<p>
+  <b>Spin domain disp name:</b>
+  <%= @spin_domain.spin_domain_disp_name %>
+</p>
+
+<p>
+  <b>Spin domain root:</b>
+  <%= @spin_domain.spin_domain_root %>
+</p>
+
+<p>
+  <b>Domain descr:</b>
+  <%= @spin_domain.domain_descr %>
+</p>
+
+<p>
+  <b>Domain atrtributes:</b>
+  <%= @spin_domain.domain_atrtributes %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_domain_path(@spin_domain) %> |
+<%= link_to 'Back', spin_domains_path %>

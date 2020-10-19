@@ -1,0 +1,416 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended to check this file into your version control system.
+
+ActiveRecord::Schema.define(:version => 20121217110546) do
+
+  # domain情報表示データテーブル
+  # ユーザインタフェース（UI）の「ドメインA」と「ドメインB」に表示されるドメインの情報
+  # SPINのドメインとは、仮想ファイルシステムのサブ・ツリーのrootディレクトリである
+  # domainは任意に追加、変更、削除することができるが、デフォルトのdomain「個人」、「組織」
+  #　「プロジェクト」および「ローカル」は変更することが出来ない
+  
+  create_table "domain_data", :force => true do |t|
+    t.string   "session_id" # => アプリケーションのセッションID　32byteの文字列
+    t.string   "hash_key" # => データのユニークIDコードでデータを特定することができる　40byteの文字列
+    t.string   "cont_location"  # => データをコンテンツとして表示するペイン（ pane）のID
+    t.string   "domain_writable_status" # => domainの変更、削除が可能なことを示すフラグ　trueならば変更、削除が可能
+    t.string   "domain_name"  # => domainの名称
+    t.string   "domain_link"  # => 未使用
+    t.string   "img"  # => domainのアイコン
+    t.datetime "created_at",             :null => false # => データの登録日時
+    t.datetime "updated_at",             :null => false # => データの更新日時
+  end
+
+  #　ファイル情報表示データテーブル
+  #　file_dataは、UI中央のメイン・ペインの「フォルダA」、「フォルダB」に表示されるファイルとフォルダの情報
+  #　左端の「フォルダA」、「フォルダB」で選択されたフォルダの内容を表示するペインに表示される
+  create_table "file_data", :force => true do |t|
+    t.string   "session_id" # => アプリケーションのセッションID　32byteの文字列
+    t.string   "hash_key" # => データのユニークIDコードでデータを特定することができる　40byteの文字列
+    t.string   "cont_location"  # => データをコンテンツとして表示するペイン（ pane）のID
+    t.string   "file_name"  # => ファイル名
+    t.string   "file_type"  # => データのタイプ　｛ファイル、フォルダ、シンボリック・リンク等｝
+    t.integer  "file_size"  # => データのサイズ　byte単位
+    t.integer  "file_version" # => データのバージョン番号
+    t.string   "url"  # => データに割り当てられたURL
+    t.string   "thumbnail_image"  # => サムネール画像のパス情報
+    t.date     "created_date" # => データの作成日時。アップロードされたデータの場合は、アップロード元の作成日時情報を使用
+    t.string   "creator"  # => 作成者のID。アップロードされたデータの場合は、アップロードを行ったユーザのID
+    t.date     "modified_date"  # => データの変更日時。アップロードされたデータの場合は、アップロード元の修正日時情報を使用
+    t.string   "modifier" # => データを変更したユーザのID。アップロードされたデータの場合は、アップロードを行ったユーザのID
+    t.string   "owner"  # => 所有者のユーザID
+    t.string   "ownership"  # => 所有者がユーザ自身か、他人または所有者なしかを示す　｛"me", "other", "nobody"｝
+    t.string   "control_right"  # => アクセス権変更が可能かどうかを示す　｛"true",　"false"｝
+    t.string   "lock" # => writeロックフラグ　｛0:unlocked, 1:write locked, 2:write locked by other, 4:shared checkout, 8:exclusive checkout｝
+    t.string   "id_lc_by" # =>　writeロックまたはチェックアウトしているユーザのID
+    t.string   "name_lc_by" # =>　writeロックまたはチェックアウトしているユーザの名前
+    t.string   "dirty"  # => ローカルで変更されたが、変更状態がサーバ上のデータに反映されていない状態をあらわすフラグ　｛"Wtrue", "false"｝
+    t.string   "keyword"
+    t.string   "description"
+    t.integer  "file_exact_size"
+    t.string   "icon_image"
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "frame_size"
+    t.string   "duration"
+    t.string   "producer"
+    t.date     "produced_date"
+    t.string   "location"
+    t.string   "client"
+    t.string   "copyright"
+    t.string   "portrait_right"
+    t.string   "access_group"
+    t.string   "file_readable_status"
+    t.string   "file_writable_status"
+    t.string   "open_status"
+    t.string   "folder_hash_key"
+    t.string   "folder_readable_status"
+    t.string   "folder_writable_status"
+    t.string   "details"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "folder_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "hash_key"
+    t.string   "cont_location"
+    t.string   "img"
+    t.string   "text"
+    t.string   "folder_name"
+    t.string   "owner"
+    t.string   "ownership"
+    t.string   "control_right"
+    t.string   "parent_readable_status"
+    t.string   "parent_writable_status"
+    t.string   "folder_readable_status"
+    t.string   "folder_writable_status"
+    t.string   "workingFolder"
+    t.integer  "subFolders"
+    t.integer  "fileNumber"
+    t.string   "creator"
+    t.date     "created_date"
+    t.string   "updater"
+    t.date     "updated_date"
+    t.integer  "usedSpace"
+    t.integer  "restSpace"
+    t.integer  "capacity"
+    t.integer  "usedRate"
+    t.string   "cls"
+    t.boolean  "expanded"
+    t.boolean  "leaf"
+    t.string   "children"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "group_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "hash_key"
+    t.string   "target_hash_key"
+    t.string   "editable_status"
+    t.string   "group_name"
+    t.string   "group_description"
+    t.string   "group_privilege"
+    t.string   "member_id"
+    t.string   "member_name"
+    t.string   "member_description"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "member_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "hash_key"
+    t.string   "member_id"
+    t.string   "member_name"
+    t.string   "member_description"
+    t.string   "member_remark"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "operator_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "active_operator_name"
+    t.string   "active_operator_id"
+    t.string   "operator_group_editable"
+    t.string   "last_session_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  create_table "recycler_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "hash_key"
+    t.string   "cont_location"
+    t.string   "file_name"
+    t.string   "file_type"
+    t.integer  "file_exact_size"
+    t.string   "url"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "search_condition_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "target_folder"
+    t.string   "target_file_name"
+    t.integer  "target_file_size_min"
+    t.integer  "target_file_size_max"
+    t.string   "target_creator"
+    t.boolean  "target_created_by_me"
+    t.date     "target_created_date_begin"
+    t.date     "target_created_date_end"
+    t.string   "target_modifier"
+    t.boolean  "target_modified_by_me"
+    t.date     "target_modified_date_begin"
+    t.date     "target_modified_date_end"
+    t.boolean  "target_subfolder"
+    t.boolean  "target_locked_by_me"
+    t.boolean  "target_checked_out_by_me"
+    t.integer  "target_max_display_files"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "search_option_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "option_name"
+    t.string   "field_name"
+    t.string   "value"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "sender_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "memeber_id"
+    t.string   "sender_id"
+    t.string   "sender_name"
+    t.string   "sender_email"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "spin_domains", :force => true do |t|
+    t.integer  "spin_did"
+    t.string   "spin_domain_name"
+    t.string   "spin_domain_root"
+    t.text     "domain_descr"
+    t.text     "domain_atrtributes"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "spin_domain_disp_name"
+    t.string   "spin_server"
+    t.string   "domain_root_node_hashkey"
+  end
+
+  create_table "spin_group_members", :force => true do |t|
+    t.integer  "spin_uid"
+    t.integer  "spin_gid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "spin_groups", :force => true do |t|
+    t.integer  "spin_gid"
+    t.string   "spin_group_name"
+    t.text     "group_descr"
+    t.text     "group_atrtributes"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "spin_location_mapping", :id => false, :force => true do |t|
+    t.integer "node_x_coord"
+    t.integer "node_y_coord"
+    t.integer "node_x_pr_coord"
+    t.integer "node_type"
+    t.integer "node_version"
+    t.integer "location_id"
+    t.integer "fs_type"
+    t.string  "location_path"
+    t.integer "media_type"
+    t.boolean "offline_flag"
+    t.boolean "local_flag"
+    t.date    "date_created"
+    t.date    "date_modified"
+    t.integer "size_of_data",    :limit => 8
+    t.integer "spin_storage_id"
+    t.integer "storage_id"
+  end
+
+  create_table "spin_nodes", :id => false, :force => true do |t|
+    t.integer "node_x_coord",         :null => false
+    t.integer "node_y_coord",         :null => false
+    t.integer "node_x_pr_coord",      :null => false
+    t.integer "node_type"
+    t.integer "node_version",         :null => false
+    t.string  "node_name"
+    t.date    "node_created_date"
+    t.date    "node_modified_date"
+    t.boolean "in_trash_flag"
+    t.boolean "is_dirty_flag"
+    t.boolean "is_under_maintenance"
+    t.integer "in_use_uid"
+    t.string  "spin_node_hashkey"
+    t.integer "storage_id"
+  end
+
+  add_index "spin_nodes", ["spin_node_hashkey"], :name => "index_spin_nodes_on_spin_node_hashkey", :unique => true
+
+  create_table "spin_objects", :force => true do |t|
+    t.integer  "node_x_coord"
+    t.integer  "node_y_coord"
+    t.integer  "node_x_pr_coord"
+    t.integer  "node_type"
+    t.integer  "node_version"
+    t.string   "object_name"
+    t.text     "object_attributes"
+    t.string   "src_platform"
+    t.text     "src_attributes"
+    t.date     "date_created"
+    t.date     "date_modified"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "spin_sessions", :force => true do |t|
+    t.string   "spin_session_id"
+    t.integer  "session_status"
+    t.date     "session_expire"
+    t.integer  "spin_uid"
+    t.string   "spin_uname"
+    t.date     "spin_login_time"
+    t.date     "spin_last_login"
+    t.date     "spin_last_logout"
+    t.text     "spin_session_data"
+    t.string   "spin_search_condition_id"
+    t.string   "spin_search_option_id"
+    t.string   "spin_domaindata_A_id"
+    t.string   "spin_domaindata_B_id"
+    t.string   "spin_filedata_id"
+    t.string   "spin_folderdata_A_id"
+    t.string   "spin_folder_data_B_id"
+    t.string   "spin_groupdata_id"
+    t.string   "spin_memberdata_id"
+    t.string   "spin_operatordata_id"
+    t.string   "spin_recycledata_id"
+    t.string   "spin_senderdata_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "server_session_id"
+    t.text     "spin_session_params"
+    t.string   "initial_uri"
+    t.text     "spin_session_conf"
+  end
+
+  add_index "spin_sessions", ["server_session_id"], :name => "index_spin_sessions_on_server_session_id", :unique => true
+  add_index "spin_sessions", ["spin_session_id"], :name => "index_spin_sessions_on_spin_session_id", :unique => true
+
+  create_table "spin_storages", :force => true do |t|
+    t.string   "storage_server"
+    t.string   "storage_root"
+    t.string   "mapping_logic"
+    t.integer  "storage_max_size"
+    t.text     "storage_attributes"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "size_gb"
+    t.integer  "size_sub_gb"
+    t.integer  "entries_b"
+    t.integer  "entries_sub_b"
+    t.integer  "storage_type"
+    t.integer  "max_directories"
+    t.integer  "max_entries_per_directory"
+    t.string   "storage_name"
+  end
+
+  create_table "spin_symlinks", :id => false, :force => true do |t|
+    t.integer "linked_node_x_coord"
+    t.integer "linked_node_y_coord"
+    t.integer "linked_node_x_pr_coord"
+    t.integer "src_node_x_coord"
+    t.integer "src_node_y_coord"
+    t.integer "src_node_x_pr_coord"
+  end
+
+  create_table "spin_user_attributes", :force => true do |t|
+    t.integer  "spin_uid"
+    t.string   "spin_uname"
+    t.string   "real_uname1"
+    t.string   "real_uname2"
+    t.string   "real_unameM"
+    t.string   "mail_addr"
+    t.string   "mail_addr2"
+    t.string   "organization1"
+    t.string   "organization2"
+    t.string   "organization3"
+    t.string   "organization4"
+    t.string   "organization5"
+    t.string   "organization6"
+    t.string   "organization8"
+    t.string   "tel_country_code_1"
+    t.string   "tel_area_code_1"
+    t.string   "tel_pid_code_1"
+    t.string   "tel_number_1"
+    t.string   "tel_ext_1"
+    t.text     "user_attributes"
+    t.string   "organization7"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "spin_users", :force => true do |t|
+    t.integer  "spin_uid"
+    t.string   "spin_uname"
+    t.integer  "user_level_x"
+    t.integer  "user_level_y"
+    t.integer  "spin_gid"
+    t.integer  "spin_projid"
+    t.string   "spin_passwd"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "spin_login_directory"
+    t.string   "spin_default_server"
+    t.string   "spin_default_domain"
+    t.date     "spin_passwd_expiration"
+  end
+
+  create_table "target_folder_data", :force => true do |t|
+    t.string   "session_id"
+    t.string   "target_hash_key"
+    t.string   "target_cont_location"
+    t.string   "text"
+    t.string   "target_folder"
+    t.string   "target_folder_writable_status"
+    t.string   "target_folder_readable_status"
+    t.string   "target_ownership"
+    t.string   "target_parent_readable_status"
+    t.string   "target_parent_writable_status"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+end

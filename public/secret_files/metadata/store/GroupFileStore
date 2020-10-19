@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "GroupData",
+        "storeId": "GroupFileStore",
+        "designer|userClassName": "GroupFileStore"
+    },
+    "designerId": "64d61b97-c07d-479d-8d92-573d34e422a1",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "spin/group_list_file.sfl"
+            },
+            "designerId": "79194c5f-73c8-4d6a-b21f-6d5f98b0bc9c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "groups"
+                    },
+                    "designerId": "46fdd4ee-3c70-4646-b880-7443ec3f8a41"
+                }
+            ]
+        }
+    ]
+}

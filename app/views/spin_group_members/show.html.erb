@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spin uid:</b>
+  <%= @spin_group_member.spin_uid %>
+</p>
+
+<p>
+  <b>Spin gid:</b>
+  <%= @spin_group_member.spin_gid %>
+</p>
+
+
+<%= link_to 'Edit', edit_spin_group_member_path(@spin_group_member) %> |
+<%= link_to 'Back', spin_group_members_path %>

@@ -1,0 +1,159 @@
+/* 全体   ---------------------------------------------------- */
+*{
+	margin:0;
+	padding:0;
+}
+
+html {
+	height: 100%;
+	background-color: #fff;
+}
+
+body {
+	height: 100%;
+	width: 90%;
+	margin: 0px auto;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: rgba(0,0,0,.5);
+	box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.west {
+	float: left;
+	background-color: #fff;
+	height:100%;
+//	margin: 50px
+	margin: 10px
+}
+
+.main {
+	background-color: #fff;
+	height: 100%;
+	margin-left: 305px;
+	margin-right: 0px;
+}
+
+.i_west {
+	height:"100%";
+}
+
+.i_main {
+	height:"100%";
+}
+
+h1 {
+	text-align:left;
+	line-height: 100%;
+	margin-left: -10px;
+	margin-top:10px;
+	margin-bottom:30px;
+}
+
+h2 {
+	text-align:left;
+	margin-left: -10px;
+	margin-top:20px;
+	margin-bottom:10px;
+	margin-right: 0px;
+	line-height: 100%;
+	font-size: medium;
+}
+
+h3 {
+	text-align:left;
+	margin-left: 10px;
+	margin-right: 0px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	line-height: 100%;
+	font-size: medium;
+}
+
+h4 {
+	text-align:left;
+	line-height: 1.0;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	font-size: medium;
+}
+
+h5 {
+	text-align:left;
+	margin-left: 30px;
+	line-height: 100%;
+	margin-bottom: 10px;
+	font-size: medium;
+}
+
+h6 {
+	text-align:left;
+	margin-left: 40px;
+	line-height: 100%;
+	margin-bottom: 5px;
+	font-size: medium;
+}
+
+.content {
+	font-size: x-small;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+
+th {
+	text-align: left;
+	background-color: #ddd;
+	padding-left: 5px;
+}
+
+td {
+	background-color: #eee;
+	padding: 5px;
+}
+
+.remark {
+	color: red;
+}
+
+.comment {
+	color: blue;
+}
+/* 全体   ------------------------------------------------------ */
+#footer {
+	background-color: #808080;
+	width: 100%;
+	height: 50px;
+	margin-top: 0px;
+	margin-left: 310px;
+	margin-right: auto;
+	padding-top: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 80%;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+}
+
+/* Copyright ------------------------------------------------- */
+div #footer_copyright {
+	display: block;
+//	position: absolute;
+	margin-left: auto;
+	margin-top: 3px;
+	margin-right: 50px;
+	font-size: 80%;
+	color: #fff;
+}
+
+.clear_float {
+	clear:both;
+}

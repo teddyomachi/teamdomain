@@ -1,0 +1,2 @@
+module SpinM2aLoginHelper
+end

@@ -1,0 +1,101 @@
+<%= form_for(@spin_session) do |f| %>
+  <% if @spin_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spin_session.errors.count, "error") %> prohibited this spin_session from being saved:</h2>
+
+      <ul>
+      <% @spin_session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spin_session %><br />
+    <%= f.text_field :spin_session %>
+  </div>
+  <div class="field">
+    <%= f.label :session_status %><br />
+    <%= f.number_field :session_status %>
+  </div>
+  <div class="field">
+    <%= f.label :session_expire %><br />
+    <%= f.date_select :session_expire %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_uid %><br />
+    <%= f.number_field :spin_uid %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_uname %><br />
+    <%= f.text_field :spin_uname %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_login_time %><br />
+    <%= f.date_select :spin_login_time %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_last_login %><br />
+    <%= f.date_select :spin_last_login %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_last_logout %><br />
+    <%= f.date_select :spin_last_logout %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_session_data %><br />
+    <%= f.text_area :spin_session_data %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_search_condition_id %><br />
+    <%= f.text_field :spin_search_condition_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_search_option_id %><br />
+    <%= f.text_field :spin_search_option_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_domaindata_A_id %><br />
+    <%= f.text_field :spin_domaindata_A_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_domaindata_B_id %><br />
+    <%= f.text_field :spin_domaindata_B_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_filedata_id %><br />
+    <%= f.text_field :spin_filedata_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_folderdata_A_id %><br />
+    <%= f.text_field :spin_folderdata_A_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_folder_data_B_id %><br />
+    <%= f.text_field :spin_folder_data_B_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_groupdata_id %><br />
+    <%= f.text_field :spin_groupdata_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_memberdata_id %><br />
+    <%= f.text_field :spin_memberdata_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_operatordata_id %><br />
+    <%= f.text_field :spin_operatordata_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_recycledata_id %><br />
+    <%= f.text_field :spin_recycledata_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spin_senderdata_id %><br />
+    <%= f.text_field :spin_senderdata_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

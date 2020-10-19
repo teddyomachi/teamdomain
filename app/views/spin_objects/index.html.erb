@@ -1,0 +1,43 @@
+<h1>Listing spin_objects</h1>
+
+<table>
+  <tr>
+    <th>Node x coord</th>
+    <th>Node y coord</th>
+    <th>Node x pr coord</th>
+    <th>Node type</th>
+    <th>Node version</th>
+    <th>Object name</th>
+    <th>Object attributes</th>
+    <th>Src platform</th>
+    <th>Src attributes</th>
+    <th>Date created</th>
+    <th>Date modified</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spin_objects.each do |spin_object| %>
+  <tr>
+    <td><%= spin_object.node_x_coord %></td>
+    <td><%= spin_object.node_y_coord %></td>
+    <td><%= spin_object.node_x_pr_coord %></td>
+    <td><%= spin_object.node_type %></td>
+    <td><%= spin_object.node_version %></td>
+    <td><%= spin_object.object_name %></td>
+    <td><%= spin_object.object_attributes %></td>
+    <td><%= spin_object.src_platform %></td>
+    <td><%= spin_object.src_attributes %></td>
+    <td><%= spin_object.date_created %></td>
+    <td><%= spin_object.date_modified %></td>
+    <td><%= link_to 'Show', spin_object %></td>
+    <td><%= link_to 'Edit', edit_spin_object_path(spin_object) %></td>
+    <td><%= link_to 'Destroy', spin_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spin object', new_spin_object_path %>

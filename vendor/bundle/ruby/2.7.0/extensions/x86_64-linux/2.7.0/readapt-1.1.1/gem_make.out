@@ -1,0 +1,23 @@
+current directory: /home/teamdomain/RoRProjects/SECRETF/SECUREDOMAIN/vendor/bundle/ruby/2.7.0/gems/readapt-1.1.1/ext/readapt
+/home/teamdomain/.rbenv/versions/2.7.2/bin/ruby -I /home/teamdomain/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210124-61422-pr15fz.rb extconf.rb
+creating Makefile
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/SECUREDOMAIN/vendor/bundle/ruby/2.7.0/gems/readapt-1.1.1/ext/readapt
+make "DESTDIR=" clean
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/SECUREDOMAIN/vendor/bundle/ruby/2.7.0/gems/readapt-1.1.1/ext/readapt
+make "DESTDIR="
+compiling breakpoints.c
+compiling frame.c
+compiling hash_table.c
+compiling inspector.c
+compiling monitor.c
+compiling normalize.c
+compiling readapt.c
+compiling stack.c
+compiling threads.c
+linking shared-object readapt/readapt.so
+
+current directory: /home/teamdomain/RoRProjects/SECRETF/SECUREDOMAIN/vendor/bundle/ruby/2.7.0/gems/readapt-1.1.1/ext/readapt
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 readapt.so ./.gem.20210124-61422-1w6dma9/readapt

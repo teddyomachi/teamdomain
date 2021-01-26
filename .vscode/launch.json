@@ -5,11 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Listen for rdebug-ide",
+            "type": "Ruby",
+            "request": "attach",
+            "cwd": "${workspaceRoot}",
+            "remoteHost": "127.0.0.1",
+            "remotePort": "1234",
+            "remoteWorkspaceRoot": "${workspaceRoot}",
+        },
+        {
             "type": "ruby-debug",
             "request": "launch",
             "name": "Launch File",
             "program": "${workspaceFolder}/${command:AskForProgramName}",
-            "programArgs": [],
+            "programArgs": ["server"],
             "useBundler": false
         },
         {
@@ -20,6 +29,16 @@
             "args": [
                 "server"
             ]
+        },
+        {
+            "type": "ruby-debug",
+            "request": "launch",
+            "name": "Rails Debug",
+            "program": "${workspaceRoot}/bin/rails",
+            "programArgs": [
+                "s"
+            ],
+            "useBundler": false
         }
     ]
 }

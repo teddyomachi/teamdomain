@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -50,6 +50,7 @@ gem 'activerecord-session_store'
 gem 'capistrano', '~> 3.11.0'
 # gem 'capistrano-rails', group: :development
 
+gem 'readapt', '~> 1.1', '>= 1.1.1'
 gem 'ruby-debug-ide'
   gem 'debase'
   gem 'rdebug'
